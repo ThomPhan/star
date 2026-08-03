@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relating_to_Sub_Category1__c</fullName>
+    <description>US CGFP1-62</description>
+    <label>Relating to Sub Category1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Relating_To_Sub_Category__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Casino Cashiers</fullName>
+                <default>false</default>
+                <label>Casino Cashiers</label>
+            </value>
+            <value>
+                <fullName>Electronic Gaming Machines</fullName>
+                <default>false</default>
+                <label>Electronic Gaming Machines</label>
+            </value>
+            <value>
+                <fullName>Table Games</fullName>
+                <default>false</default>
+                <label>Table Games</label>
+            </value>
+            <value>
+                <fullName>Electronic Gaming</fullName>
+                <default>false</default>
+                <label>Electronic Gaming</label>
+            </value>
+            <value>
+                <fullName>Service Desk</fullName>
+                <default>false</default>
+                <label>Service Desk</label>
+            </value>
+            <value>
+                <fullName>Adding or withdrawing funds</fullName>
+                <default>false</default>
+                <label>Adding or withdrawing funds</label>
+            </value>
+            <value>
+                <fullName>Budgets or limits</fullName>
+                <default>false</default>
+                <label>Budgets or limits</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Orchid Room</controllingFieldValue>
+            <controllingFieldValue>The Ground Floor Suite</controllingFieldValue>
+            <controllingFieldValue>Cash Gaming</controllingFieldValue>
+            <controllingFieldValue>The Suite</controllingFieldValue>
+            <controllingFieldValue>Oasis</controllingFieldValue>
+            <controllingFieldValue>Sovereign</controllingFieldValue>
+            <valueName>Casino Cashiers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Orchid Room</controllingFieldValue>
+            <controllingFieldValue>The Ground Floor Suite</controllingFieldValue>
+            <controllingFieldValue>The Suite</controllingFieldValue>
+            <controllingFieldValue>Oasis</controllingFieldValue>
+            <controllingFieldValue>Sovereign</controllingFieldValue>
+            <valueName>Electronic Gaming Machines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Orchid Room</controllingFieldValue>
+            <controllingFieldValue>The Ground Floor Suite</controllingFieldValue>
+            <controllingFieldValue>Cash Gaming</controllingFieldValue>
+            <controllingFieldValue>The Suite</controllingFieldValue>
+            <controllingFieldValue>Cashless Gaming</controllingFieldValue>
+            <controllingFieldValue>Oasis</controllingFieldValue>
+            <controllingFieldValue>Sovereign</controllingFieldValue>
+            <valueName>Table Games</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cash Gaming</controllingFieldValue>
+            <controllingFieldValue>Cashless Gaming</controllingFieldValue>
+            <valueName>Electronic Gaming</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cash Gaming</controllingFieldValue>
+            <controllingFieldValue>Cashless Gaming</controllingFieldValue>
+            <valueName>Service Desk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless Gaming</controllingFieldValue>
+            <valueName>Adding or withdrawing funds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless Gaming</controllingFieldValue>
+            <valueName>Budgets or limits</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Declined_Join_Program_Cash_play_only</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*
+AND(
+ISPICKVAL(Does_the_patron_have_travel_document__c, &apos;No&apos;),
+ISPICKVAL(Does_the_patron_drive_to_NSW__c, &apos;NO&apos;))
+*/
+
+IF($Permission.Skip_Validations_Permission
+,false
+,AND(
+ISPICKVAL(Does_the_patron_have_travel_document__c, &apos;No&apos;),
+ISPICKVAL(Does_the_patron_drive_to_NSW__c, &apos;NO&apos;))
+)</errorConditionFormula>
+    <errorMessage>DECLINED JOIN PROGRAM, CASH PLAY ONLY</errorMessage>
+</ValidationRule>

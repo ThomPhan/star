@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Country_of_Citizenship</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Permission.Skip_Validations_Permission = FALSE &amp;&amp; ISPICKVAL(Country_of_Citizenship__c, &apos;&apos;) &amp;&amp; ISCHANGED(Country_of_Citizenship__c )</errorConditionFormula>
+    <errorMessage>Country of Citizenship cannot be blank</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Event_location_validation</fullName>
+    <active>true</active>
+    <description>If Event Location is selected as “Other”, please make the Others the mandatory field</description>
+    <errorConditionFormula>AND(
+$RecordType.DeveloperName = &quot;Event&quot;,
+ISBLANK(Others__c),
+ISPICKVAL( Event_Location__c , &quot;Others&quot;),
+$Permission.Skip_Validations_Permission = FALSE)</errorConditionFormula>
+    <errorDisplayField>Others__c</errorDisplayField>
+    <errorMessage>Please enter a value for &apos;Others&apos;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesforcePropertyID__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>SalesforcePropertyID</label>
+    <referenceTo>Property__c</referenceTo>
+    <relationshipLabel>Temp Gaming Data</relationshipLabel>
+    <relationshipName>Temp_Gaming_Data</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

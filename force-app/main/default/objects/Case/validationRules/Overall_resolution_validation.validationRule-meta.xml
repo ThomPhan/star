@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overall_resolution_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND($Profile.Name != &apos;System Administrator&apos;, NOT($Permission.Skip_Validations_Permission)), ISPICKVAL( Status , &apos;Closed - Finalise&apos;)  &amp;&amp;   ISBLANK(Overall_Resolution__c) &amp;&amp; RecordType.DeveloperName != &apos;Cashless_Support&apos;, false)</errorConditionFormula>
+    <errorDisplayField>Overall_Resolution__c</errorDisplayField>
+    <errorMessage>Overall Resolution field is a mandatory field when status is &apos;Closed - Finalise&apos;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InternationalPartA__c</fullName>
+    <label>Part A</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Does the person hold an Australian or New Zealand passport?</fullName>
+                <default>false</default>
+                <label>Does the person hold an Australian or New Zealand passport?</label>
+            </value>
+            <value>
+                <fullName>Does the person hold an Australian or New Zealand passport? If yes, obtain a copy and continue to Part B.</fullName>
+                <default>false</default>
+                <label>Does the person hold an Australian or New Zealand passport? If yes, obtain a copy and continue to Part B.</label>
+            </value>
+            <value>
+                <fullName>Does the person hold other countries passport other than Australia or New Zealand? If yes, obtain a copy. If no, continue to Part B.</fullName>
+                <default>false</default>
+                <label>Does the person hold other countries passport other than Australia or New Zealand? If yes, obtain a copy. If no, continue to Part B.</label>
+            </value>
+            <value>
+                <fullName>Has the person been inside Australia less than 3 months.</fullName>
+                <default>false</default>
+                <label>Has the person been inside Australia less than 3 months.</label>
+            </value>
+            <value>
+                <fullName>Has the person not entered Australia before this trip in the last 12 months?</fullName>
+                <default>false</default>
+                <label>Has the person not entered Australia before this trip in the last 12 months?</label>
+            </value>
+            <value>
+                <fullName>From our records, has the participant spent less than 180 days in Australia in the past 12 months? If no, unable to participate on a rebate program.</fullName>
+                <default>false</default>
+                <label>From our records, has the participant spent less than 180 days in Australia in the past 12 months? If no, unable to participate on a rebate program.</label>
+            </value>
+            <value>
+                <fullName>Does the person hold other countries passport other than Australia or New Zealand?</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Does the person hold other countries passport other than Australia or New Zealand?</label>
+            </value>
+            <value>
+                <fullName>For non-Australian passport holders, does the person have a tourist visa or a visa of subclass 600, 601, 602, 651 or 771?</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>For non-Australian passport holders, does the person have a tourist visa or a visa of subclass 600, 601, 602, 651 or 771?</label>
+            </value>
+            <value>
+                <fullName>Has the participant spent less than 180 days in Australia in the past 12 months?</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Has the participant spent less than 180 days in Australia in the past 12 months?</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

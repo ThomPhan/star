@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SOW_Refusal_True_SOW_fields_error</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( $Permission.Skip_Validations_Permission, false, 
+AND(Refused_to_provide_SOW__c = TRUE,
+OR(NOT(ISBLANK(Source_of_Wealth_for_Individuals__c)),
+NOT(ISBLANK(Source_of_Wealth__c))
+),
+OR(
+ISCHANGED(Source_of_Wealth_for_Individuals__c),
+ISCHANGED(Source_of_Wealth__c),
+$Permission.Skip_Validations_Permission = FALSE
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Patron refused to provide SOW information</errorMessage>
+</ValidationRule>

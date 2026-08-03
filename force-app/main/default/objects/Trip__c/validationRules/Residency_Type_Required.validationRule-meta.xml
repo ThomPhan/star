@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Residency_Type_Required</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(ISPICKVAL(Contact__r.Residency_Type__c, &apos;&apos;), true, false)</errorConditionFormula>
+    <errorMessage>Please select a Type on the Contact Record</errorMessage>
+</ValidationRule>

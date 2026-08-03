@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TravellerCannotBeSame</fullName>
+    <active>true</active>
+    <errorConditionFormula>Patron__c ==  Service__r.Contact__c &amp;&amp; NOT($Permission.Skip_Validations_Permission)</errorConditionFormula>
+    <errorMessage>Traveller cannot be the same as Patron</errorMessage>
+</ValidationRule>

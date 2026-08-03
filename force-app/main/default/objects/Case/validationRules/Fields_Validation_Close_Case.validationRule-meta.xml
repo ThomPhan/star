@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fields_Validation_Close_Case</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( $Permission.Skip_Validations_Permission, false,
+IF($Profile.Name != &apos;System Administrator&apos;, TEXT(PRIORVALUE(Status)) = &apos;Closed - Finalise&apos; &amp;&amp; (ISCHANGED( Post_Code__c)|| ISCHANGED( Membership_Id__c ) || ISCHANGED( Compliance__c)|| ISCHANGED(I_REQUIRE_A_RESPONSE__c)|| ISCHANGED(Event_Related__c)|| ISCHANGED( Feedback_Type__c )|| ISCHANGED( Property__c  ) || ISCHANGED( Relating_to__c )|| ISCHANGED( Relating_To_Sub_Category__c )|| ISCHANGED(Relating_to_Sub_Category1__c ) || ISCHANGED(Relating_to_Sub_Menu__c ) || ISCHANGED(Date_of_Visit__c ) || ISCHANGED(Status) || ISCHANGED(SourceId)|| ISCHANGED (Feedback__c)|| ISCHANGED(CreatedDate) || ISCHANGED(Overall_Resolution__c) || ISCHANGED(Priority ) || ISCHANGED(Area__c) || ISCHANGED(Department__c) || ISCHANGED(Category__c) || ISCHANGED(Issue__c) || ISCHANGED(SuppliedEmail) ||  ISCHANGED(  Parent_Case__c)|| ISCHANGED(SuppliedName)), false))</errorConditionFormula>
+    <errorMessage>Only Contact Name can be changed for  &apos;Close-Finalise&apos;</errorMessage>
+</ValidationRule>

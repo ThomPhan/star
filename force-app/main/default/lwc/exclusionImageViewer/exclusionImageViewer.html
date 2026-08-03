@@ -1,0 +1,114 @@
+<template>
+    <section
+        role="dialog"
+        tabindex="-1"
+        aria-modal="true"
+        aria-labelledby="viewer-heading"
+        class="slds-modal slds-fade-in-open slds-modal_large viewer-dialog"
+        onkeydown={handleKeyDown}
+    >
+        <div class="slds-modal__container">
+            <header class="slds-modal__header slds-grid slds-grid_align-spread">
+                <h2 id="viewer-heading" class="slds-modal__title slds-truncate">{altText}</h2>
+                <button
+                    class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                    title="Close"
+                    onclick={handleClose}
+                >
+                    <lightning-icon icon-name="utility:close" size="small" alternative-text="Close"></lightning-icon>
+                </button>
+            </header>
+
+            <div class="slds-modal__content viewer-content">
+                <div class="slds-grid slds-wrap">
+                    <!-- Media area with prev/next -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-3 viewer-media-col">
+                        <lightning-button-icon
+                            icon-name="utility:chevronleft"
+                            alternative-text="Previous"
+                            title="Previous"
+                            size="large"
+                            disabled={disablePrevious}
+                            onclick={handlePrevious}
+                            class="viewer-nav"
+                        ></lightning-button-icon>
+
+                        <div class="viewer-media">
+                            <template if:true={isLoadingImage}>
+                                <lightning-spinner alternative-text="Loading image" size="medium"></lightning-spinner>
+                            </template>
+                            <template if:true={showImage}>
+                                <img src={imageUrl} alt={altText} style={imageStyle} class="viewer-image" />
+                            </template>
+                            <template if:true={loadError}>
+                                <lightning-icon
+                                    icon-name="utility:image"
+                                    alternative-text={altText}
+                                    size="large"
+                                ></lightning-icon>
+                            </template>
+                        </div>
+
+                        <lightning-button-icon
+                            icon-name="utility:chevronright"
+                            alternative-text="Next"
+                            title="Next"
+                            size="large"
+                            disabled={disableNext}
+                            onclick={handleNext}
+                            class="viewer-nav"
+                        ></lightning-button-icon>
+                    </div>
+
+                    <!-- Metadata / actions panel -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3 slds-p-around_small viewer-meta">
+                        <template if:true={currentImage}>
+                            <dl class="slds-list_horizontal slds-wrap">
+                                <dt class="slds-item_label slds-text-color_weak">File</dt>
+                                <dd class="slds-item_detail slds-truncate" title={currentImage.fileName}>
+                                    {currentImage.fileName}
+                                </dd>
+                                <dt class="slds-item_label slds-text-color_weak">Type</dt>
+                                <dd class="slds-item_detail">{currentImage.contentType}</dd>
+                                <dt class="slds-item_label slds-text-color_weak">Modified</dt>
+                                <dd class="slds-item_detail">{currentImage.lastModified}</dd>
+                            </dl>
+                        </template>
+
+                        <div class="slds-m-top_medium">
+                            <lightning-button
+                                variant="brand"
+                                label="Download"
+                                title="Download"
+                                icon-name="utility:download"
+                                onclick={handleDownload}
+                            ></lightning-button>
+                        </div>
+
+                        <div class="slds-m-top_medium">
+                            <p class="slds-text-title_caps slds-m-bottom_xx-small">Zoom</p>
+                            <lightning-button-icon
+                                icon-name="utility:zoomin"
+                                alternative-text="Zoom in"
+                                title="Zoom in"
+                                onclick={handleZoomIn}
+                                class="slds-m-right_xx-small"
+                            ></lightning-button-icon>
+                            <lightning-button-icon
+                                icon-name="utility:zoomout"
+                                alternative-text="Zoom out"
+                                title="Zoom out"
+                                onclick={handleZoomOut}
+                            ></lightning-button-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="slds-modal__footer slds-grid slds-grid_align-center">
+                <span class="slds-text-body_small" aria-live="polite">{positionLabel}</span>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

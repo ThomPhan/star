@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patron_ExtId__c</fullName>
+    <description>Patron ID(external Id) of the Contact record</description>
+    <externalId>false</externalId>
+    <formula>Patron__r.Patron_ID__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Patron ID(external Id) of the Contact record</inlineHelpText>
+    <label>Patron ExtId</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

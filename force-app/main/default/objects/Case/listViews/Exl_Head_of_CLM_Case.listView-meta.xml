@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exl_Head_of_CLM_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>CLM revocation approval group</label>
+    <queue>Exl_Head_of_CLM</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

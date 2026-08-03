@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hotel_Booking</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Custom_Compact_Layout</compactLayoutAssignment>
+    <label>Hotel Booking</label>
+    <picklistValues>
+        <picklist>Car_Type__c</picklist>
+        <values>
+            <fullName>Mini Van %287 seater%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Class_of_Travel__c</picklist>
+        <values>
+            <fullName>Business Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cheapest Economy Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flexi Economy Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Economy Class</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cost_Centre__c</picklist>
+        <values>
+            <fullName>Brisbane - 1111</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Coast - 1111</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International - 1132</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney - 1111</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Drop_Off_Location__c</picklist>
+        <values>
+            <fullName>Brisbane Airport Dom Terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brisbane Airport Intl Terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Coast Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jones Bay Wharf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marina Mirage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Jet Base</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney Airport Dom Terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney Airport Intl Terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Darling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Darling Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Residencces</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Treasury Brisbane</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Flight_Booking_Status__c</picklist>
+        <values>
+            <fullName>Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request Cancellation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Flight_Charge__c</picklist>
+        <values>
+            <fullName>Gaming Comp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NGC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room Charge</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Flight_Region__c</picklist>
+        <values>
+            <fullName>International</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Flying_from__c</picklist>
+        <values>
+            <fullName>Auckland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bangkok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beijing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chengdu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guangzhou</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hong Kong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Macau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Malaysia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Melbourne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shanghai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Singapore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Flying_to__c</picklist>
+        <values>
+            <fullName>Auckland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bangkok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beijing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chengdu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guangzhou</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hong Kong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Macau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Malaysia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Melbourne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shanghai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Singapore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hotel_Booking_Status__c</picklist>
+        <values>
+            <fullName>Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Booking</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Request Cancellation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hotel__c</picklist>
+        <values>
+            <fullName>BNE - The Star Grand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BNE - Treasury</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GC - The Darling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GC - The Star Grand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SYD - The Darling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SYD - The Star Grand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SYD - The Star Residences</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Limo_Accessories__c</picklist>
+        <values>
+            <fullName>Trailer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Limo_Booking_Status__c</picklist>
+        <values>
+            <fullName>Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request Cancellation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Limo_Charge__c</picklist>
+        <values>
+            <fullName>GAMING COMP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NGC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROOM CHARGE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MOP_Status__c</picklist>
+        <values>
+            <fullName>%241CC - %241Credit Card in-Print</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ATP %E2%80%93 Adjust to play</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CALL REP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DNWM %E2%80%93 Do not waive monies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NGC %E2%80%93 Non-gaming Comp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POA %E2%80%93 Pay on Arrival</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RB %E2%80%93 Room %26 Breakfast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RO %E2%80%93 Room only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WM %E2%80%93 Waive Monies</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>One_way_OR_Return__c</picklist>
+        <values>
+            <fullName>One-way</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Other_Traveller_Class_of_Travel__c</picklist>
+        <values>
+            <fullName>Business Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cheapest Economy Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flexi Economy Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Economy Class</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pick_Up_Location__c</picklist>
+        <values>
+            <fullName>Brisbane Airport Dom Terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brisbane Airport Intl Terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Coast Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jones Bay Wharf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marina Mirage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Jet Base</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney Airport Dom Terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney Airport Intl Terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Darling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Darling Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Residencces</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Treasury Brisbane</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pre_Register__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Property__c</picklist>
+        <values>
+            <fullName>Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rate_Code__c</picklist>
+        <values>
+            <fullName>BAR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CASATP1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CASCOMP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CASDOM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CASINTL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CASNSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CASQLD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DIAMOND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GOLD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PLAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCDMND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCDMND2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCDMND3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCDMND4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCDMND5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCGOLD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCGOLDP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCPLAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCPLAT2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCPLAT3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCPLAT4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCPLAT5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Restaurant_Booking_Status__c</picklist>
+        <values>
+            <fullName>Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request Cancellation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Room_Type__c</picklist>
+        <values>
+            <fullName>1BC - 1 Bedroom City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1BH - 1 Bedroom Harbour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1BP - 1 Bedroom Pyrmont</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2BC - 2 Bedroom City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2BCL - 2 Bedroom Loft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2BG - 2 Bedroom Gym</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2BH - 2 Bedroom Harbour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2BP - 2 Bedroom Pyrmont</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2BPE - 2 Bedroom Ent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3BH - 3 Bedroom Harbour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACK - Accessible King Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AEK - Accessible Executive Deluxe King Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AMT - Ambulant Twin Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASCD - Adored Deluxe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASCN - Adored</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CBK - Corner Balcony King Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CBT - Corner Balcony Twin Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CK - Casino King %2818%2B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CK - City King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CP - Casino Parlour King %2818%2B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Casino Suite King %2818%2B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - City Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - Casino Twin %2818%2B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CT - City Twin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CW - Casino Wheelchair access Twin %2818%2B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CW - City Accessible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D1H - Deluxe 1 bedroom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D2H - Deluxe 2 bedroom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DD - Deluxe Double</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DK - Deluxe King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DKB - Billard Penthouse Deluxe Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DKE - Exercise Penthouse Deluxe Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DKM - Media Penthouse Deluxe Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DKS - Penthouse Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DRCK - Darling King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DRCT - Darling Twin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DRHK - Harbour King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DSS - Penthouse Spa Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DT - Deluxe Twin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKH - Executive King Harbour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EKP - Executive King Pyrmont</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EXK - Executive King Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EXT - Executive Twin Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GKS - Club Grande Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HS - Hotel Suite King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDHT - Interconnecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JKA - Stellar Accessible King Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JSPA - Jewel Spa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JSPH - Jewel Spa City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JSUH - Jewel City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JSUI - Jewel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JTS - Stellar Twin Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KKS - King Terrace Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OKWN - Ocean Terrace Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PHKN - Harbour King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PHTN - Harbour Twin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PK - Parlour King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PKNS - North Penthouses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PLNS - North Penthouses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PS - Skyline Penthouse Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSCD - Penthouse Deluxe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSCJ - Junior Penthouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSCN - Penthouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSH - Penthouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSK - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PTNS - North Penthouses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RK - River King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RS - River Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RSH - Royale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RW - River Accessible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCS - Skyline City Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKN - Superior King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKS - Stellar King Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSC - Star Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSH - Harbour Star</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSUH - Stellar Harbour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSUI - Stellar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STN - Superior Twin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUK - Superior Deluxe King Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUT - Superior Deluxe Twin Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VKS - Pacific View Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WDRL - Accessible King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WK - Wheelchair access King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WKP - Accessible King</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XKS - Club Suite</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SMS_Group__c</picklist>
+        <values>
+            <fullName>Domestic Non-Rebate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Domestic Rebate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IPM %2F Slots</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IRB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No SMS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service__c</picklist>
+        <values>
+            <fullName>Flight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restaurant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Special_Request__c</picklist>
+        <values>
+            <fullName>ADP %E2%80%93 International Adaptors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B3 %E2%80%93 2 Water%2C Shaving Kit%2C Dental Kit%2C Slippers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COT %E2%80%93 Baby Cot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROL %E2%80%93 Roll away bed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SACRN - Special offer request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHARE - Allow sharer to check in%2C approved by Paul Monaghan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHARE - Allow sharer to check in%2C approved by management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VVIP Gesture - Check-in Sharer%2C approved by Paul Monaghan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Special_Signage_Language__c</picklist>
+        <values>
+            <fullName>Chinese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English %28AU%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Venue__c</picklist>
+        <values>
+            <fullName>SYD - Black</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

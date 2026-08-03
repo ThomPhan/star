@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exclusion Image Gallery — Solution Design (S3-only MVP)</title>
+<style>
+  :root{
+    --bg:#0f1220; --panel:#171b2e; --ink:#e7e9f3; --muted:#9aa3c0; --line:#2a3050;
+    --accent:#5b8fd8; --accent2:#d98c3c; --good:#3fae6b; --warn:#d9a441; --bad:#d85b6a;
+    --chip:#232a45; --code:#0b0e1a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink)}
+  .layout{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+  nav{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:22px 18px;
+    background:var(--panel);border-right:1px solid var(--line)}
+  nav h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:18px 0 8px}
+  nav a{display:block;color:var(--ink);text-decoration:none;padding:5px 8px;border-radius:6px;font-size:13.5px}
+  nav a:hover{background:var(--chip)}
+  nav .brand{font-weight:700;font-size:15px;margin-bottom:4px}
+  nav .brand small{display:block;color:var(--muted);font-weight:400;font-size:12px;margin-top:3px}
+  main{padding:38px 46px;max-width:1080px}
+  h1{font-size:30px;margin:0 0 6px;line-height:1.2}
+  h2.sec{font-size:22px;margin:44px 0 12px;padding-top:10px;border-top:1px solid var(--line)}
+  h3{font-size:17px;margin:26px 0 8px;color:#c9d3f2}
+  p{color:var(--ink)}
+  .muted{color:var(--muted)}
+  .lead{font-size:16px;color:var(--muted);margin-top:0}
+  code{background:var(--code);padding:2px 6px;border-radius:5px;font-family:"SFMono-Regular",Consolas,monospace;font-size:13px;color:#c7d6ff}
+  pre{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:16px;overflow:auto;font-family:"SFMono-Regular",Consolas,monospace;font-size:12.5px;color:#c7d6ff}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--chip);color:#dbe3ff;font-weight:600}
+  tr:nth-child(even) td{background:#12162700}
+  .chip{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid var(--line)}
+  .in{background:rgba(63,174,107,.15);color:#8ee3ad;border-color:#2e6b47}
+  .out{background:rgba(216,91,106,.13);color:#ef9aa6;border-color:#6b2e38}
+  .later{background:rgba(217,164,65,.13);color:#f0d08a;border-color:#6b5a2e}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  .kv{display:grid;grid-template-columns:190px 1fr;gap:6px 14px;font-size:14px}
+  .kv div:nth-child(odd){color:var(--muted)}
+  .note{border-left:3px solid var(--accent);background:rgba(91,143,216,.08);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+  .warnbox{border-left:3px solid var(--warn);background:rgba(217,164,65,.08);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+  .okbox{border-left:3px solid var(--good);background:rgba(63,174,107,.08);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0}
+  .box{background:var(--chip);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13px;text-align:center}
+  .box.b-lwc{border-color:#3f6bae}.box.b-apex{border-color:#c98a3f}.box.b-sf{border-color:#3fae6b}.box.b-aws{border-color:#d85b6a}
+  .arrow{color:var(--muted);font-size:18px}
+  .legend span{margin-right:16px;font-size:12.5px;color:var(--muted)}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+  footer{margin:60px 0 20px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px}
+  .tag{font-size:11.5px;color:var(--muted);border:1px solid var(--line);padding:1px 7px;border-radius:5px;margin-left:6px}
+  ul.tight li{margin:3px 0}
+  .br{font-family:monospace;font-size:12px;color:var(--accent2)}
+  .day{display:inline-block;background:rgba(63,174,107,.15);color:#8ee3ad;border:1px solid #2e6b47;border-radius:6px;padding:1px 8px;font-size:12px;font-weight:600;margin-left:6px}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav>
+  <div class="brand">Exclusion Image Gallery<small>Salesforce ⇄ AWS S3 · One-Day MVP</small></div>
+  <h2>Contents</h2>
+  <a href="#summary">1. Executive Summary</a>
+  <a href="#scope">2. Scope (MVP)</a>
+  <a href="#context">3. Business Context</a>
+  <a href="#architecture">4. Solution Architecture</a>
+  <a href="#integration">5. S3 Integration Design</a>
+  <a href="#naming">6. Object Key &amp; Naming</a>
+  <a href="#components">7. Salesforce Components</a>
+  <a href="#apex">8. Apex Controller API</a>
+  <a href="#ux">9. UX / UI Design</a>
+  <a href="#flows">10. Sequence Flows</a>
+  <a href="#security">11. Security &amp; Access</a>
+  <a href="#errors">12. Validation &amp; Errors</a>
+  <a href="#nfr">13. Limits &amp; Performance</a>
+  <a href="#testing">14. Testing Strategy</a>
+  <a href="#risks">15. Assumptions &amp; Risks</a>
+  <a href="#future">16. Deferred / Roadmap</a>
+  <a href="#trace">17. Requirements Traceability</a>
+</nav>
+<main>
+  <h1>Exclusion Image Gallery</h1>
+  <p class="lead">Detailed Solution Design · <strong>One-Day MVP, S3-only</strong> · Salesforce Contact record tab backed by an AWS S3 image repository</p>
+  <div class="card">
+    <div class="kv">
+      <div>Document version</div><div>0.2 (S3-only MVP — supersedes v0.1 mirror-object draft)</div>
+      <div>Date</div><div>30 July 2026</div>
+      <div>Target org</div><div>The Star Entertainment Group — <strong>ST sandbox</strong></div>
+      <div>Named Credential</div><div><code>Salesforce_S3_Connection</code> (AwsSv4 · RolesAnywhere · <code>ap-southeast-2</code>)</div>
+      <div>Status</div><div><span class="chip later">Design — not yet built · <strong>nothing deployed to org</strong></span></div>
+      <div>Delivery target</div><div><span class="day">~1 day</span> single Apex class + single LWC, no custom object</div>
+    </div>
+  </div>
+
+  <!-- 1 -->
+  <h2 class="sec" id="summary">1. Executive Summary</h2>
+  <p>Patrons are represented in Salesforce as <strong>Contact</strong> records keyed by <code>Patron_ID__c</code>. This build adds <strong>one new tab</strong> to the Contact record — the <strong>Exclusion Evidence Gallery</strong> — that lists the exclusion images held for that patron in an external <strong>AWS S3</strong> bucket, and lets authorised users <strong>view, enlarge, download and upload</strong> them.</p>
+  <p>This is a deliberately <strong>minimal first cut</strong>. <strong>S3 is the single source of truth</strong> — there is <em>no</em> Salesforce custom object and <em>no</em> mirrored metadata record. The gallery is built directly from the S3 object listing (filename + last-modified date). Image bytes never live in Salesforce Files; they stream through <strong>Apex</strong>, which is required because AWS Signature V4 request signing must happen server-side (the browser cannot sign a request, and the Named Credential only signs calls that originate from Apex).</p>
+  <div class="okbox"><strong>Why S3-only?</strong> The single biggest effort driver in the fuller design was a custom index object (<code>Exclusion_Image__c</code>) with its fields, layouts, field history, triggers and reconciliation. Dropping it removes ~60% of the build while still delivering the tab, the gallery, view/enlarge, download and multi-file upload. Rich metadata capture, editing and audit are deferred to Phase 2 (§16).</p>
+  <div class="note">This build is a focused slice of the broader <em>Prevention of Play (POP)</em> program. Facial-recognition export, CID bulk migration, patron-merge transfer, exclusion reports, image removal and persona/jurisdiction access rules are explicitly <strong>out of scope</strong> and captured in §16.</div>
+
+  <!-- 2 -->
+  <h2 class="sec" id="scope">2. Scope <span class="tag">One-Day MVP</span></h2>
+  <h3>In scope <span class="tag">this build</span></h3>
+  <ul class="tight">
+    <li><span class="chip in">IN</span> New tab on the Contact record page showing that patron's exclusion images <span class="br">POP-2520 BR08</span></li>
+    <li><span class="chip in">IN</span> Gallery of thumbnails showing <strong>filename + date</strong>; friendly empty-gallery message <span class="br">BR11</span></li>
+    <li><span class="chip in">IN</span> Click-to-enlarge viewer with next / previous navigation <span class="br">BR28 BR29</span></li>
+    <li><span class="chip in">IN</span> Download a single image to the user's device <span class="br">BR19</span></li>
+    <li><span class="chip in">IN</span> Upload <strong>one or many</strong> images in a single workflow, with <strong>partial success</strong> <span class="br">BR22 BR23 BR38</span></li>
+    <li><span class="chip in">IN</span> File-format validation — accept <code>png</code>, <code>jpg/jpeg</code>, <code>webp</code>; reject everything else <span class="br">BR10</span></li>
+    <li><span class="chip in">IN</span> Sub-720p images are <strong>allowed</strong> — a soft, non-blocking warning only <span class="br">BR10</span></li>
+    <li><span class="chip in">IN</span> Every image linked to its patron (the S3 key is namespaced by <code>Patron_ID__c</code>) <span class="br">BR13</span></li>
+    <li><span class="chip in">IN</span> Accessibility: keyboard operable, screen-reader labels, alt text <span class="br">BR31</span></li>
+    <li><span class="chip in">IN</span> Single <code>Exclusion_Image_User</code> permission set (uniform access) grants tab + Apex</li>
+  </ul>
+  <h3>Consciously deferred by going S3-only <span class="tag">Phase 2</span></h3>
+  <ul class="tight">
+    <li><span class="chip later">LATER</span> Rich metadata capture &amp; editing — source property, event datetime, description, created-date-from-EXIF <span class="br">BR13</span></li>
+    <li><span class="chip later">LATER</span> Metadata change audit / field history <span class="br">BR15</span></li>
+    <li><span class="chip later">LATER</span> Salesforce reporting on images <span class="br">BR33</span></li>
+    <li><span class="chip later">LATER</span> Primary / favourite tagging &amp; custom ordering <span class="br">BR16 BR17 BR27</span></li>
+    <li><span class="chip later">LATER</span> Signed-form PDFs interleaved in the gallery (images only for MVP)</li>
+  </ul>
+  <h3>Out of scope <span class="tag">not this program slice</span></h3>
+  <ul class="tight">
+    <li><span class="chip out">OUT</span> Image removal with mandatory reason + NSW/QLD authority rules <span class="br">BR25 BR26</span></li>
+    <li><span class="chip out">OUT</span> Single / bulk export to Facial Recognition System <span class="br">BR20 BR32</span></li>
+    <li><span class="chip out">OUT</span> CID legacy migration / derivation / missing-metadata backfill <span class="br">BR34 BR35 BR36</span></li>
+    <li><span class="chip out">OUT</span> Ad-hoc CID transfer on patron merge <span class="br">BR09</span></li>
+    <li><span class="chip out">OUT</span> SharePoint document storage <span class="br">POP-2487</span></li>
+  </ul>
+
+  <!-- 3 -->
+  <h2 class="sec" id="context">3. Business Context</h2>
+  <p>Post go-live, excluded-patron profiles are no longer created in the legacy <strong>CID</strong> system, and Surveillance teams rely on holding <strong>multiple patron photos</strong> to identify excluded individuals. Images arrive from CCTV, incident reports and Synkros. The Star needs a single place on the patron (Contact) record where authorised staff can see and add the exclusion evidence images that are stored in AWS S3.</p>
+  <p>This MVP delivers exactly that surface — a gallery on the Contact — without yet building the structured metadata, reporting and lifecycle features that the full POP epics call for. It is designed so those Phase-2 features can be layered on <em>without</em> rework: the S3 key convention (§6) already namespaces every image by patron so a future index object can be reconciled against the bucket.</p>
+
+  <!-- 4 -->
+  <h2 class="sec" id="architecture">4. Solution Architecture</h2>
+  <p>Three tiers. The LWC renders and orchestrates; Apex signs and proxies every byte; S3 stores. There is no persistence layer inside Salesforce.</p>
+  <div class="card">
+    <div class="flow">
+      <div class="box b-lwc"><strong>exclusionImageGallery</strong><br><span class="muted">LWC on Contact page</span></div>
+      <span class="arrow">⇄</span>
+      <div class="box b-apex"><strong>ExclusionImageController</strong><br><span class="muted">Apex · @AuraEnabled</span></div>
+      <span class="arrow">⇄</span>
+      <div class="box b-sf"><strong>Salesforce_S3_Connection</strong><br><span class="muted">Named Credential · SigV4</span></div>
+      <span class="arrow">⇄</span>
+      <div class="box b-aws"><strong>AWS S3 bucket</strong><br><span class="muted">image objects (source of truth)</span></div>
+    </div>
+    <div class="legend" style="margin-top:8px">
+      <span><span class="dot" style="background:#3f6bae"></span>Lightning Web Component</span>
+      <span><span class="dot" style="background:#c98a3f"></span>Apex proxy</span>
+      <span><span class="dot" style="background:#3fae6b"></span>Platform integration</span>
+      <span><span class="dot" style="background:#d85b6a"></span>AWS</span>
+    </div>
+  </div>
+  <h3>Key design decisions</h3>
+  <table>
+    <tr><th>Decision</th><th>Choice</th><th>Rationale</th></tr>
+    <tr><td>Source of truth</td><td>S3 bucket only</td><td>No custom object to build/maintain; fastest path to a working tab. Listing drives the UI.</td></tr>
+    <tr><td>Byte transfer path</td><td>All S3 calls via Apex</td><td>SigV4 signing is server-side; the Named Credential only signs Apex-originated callouts. Browser cannot call S3 directly.</td></tr>
+    <tr><td>Image storage in SF</td><td>None (no Files/ContentVersion)</td><td>Avoids duplicating bytes and SF storage cost; S3 already holds them.</td></tr>
+    <tr><td>Listing</td><td>S3 <code>ListObjectsV2</code> by prefix</td><td>Returns filename, size, last-modified per patron — enough for the MVP gallery.</td></tr>
+    <tr><td>Config</td><td>Constants in Apex</td><td>Named Credential name + key prefix as class constants for the MVP; promote to Custom Metadata in Phase 2.</td></tr>
+  </table>
+
+  <!-- 5 -->
+  <h2 class="sec" id="integration">5. S3 Integration Design</h2>
+  <p>All three operations are plain AWS S3 REST calls issued from Apex against the pre-configured Named Credential. The credential injects the <code>Authorization</code> SigV4 header, host, and region automatically — Apex sets only the path, method, body and content type.</p>
+  <div class="card">
+    <div class="kv">
+      <div>Named Credential</div><div><code>callout:Salesforce_S3_Connection</code></div>
+      <div>Auth protocol</div><div>AWS Signature V4 (<code>AwsSv4</code>) via <strong>IAM Roles Anywhere</strong> (X.509 signing cert exchange)</div>
+      <div>Service / Region</div><div><code>s3</code> · <code>ap-southeast-2</code></div>
+      <div>Auth header</div><div><code>generateAuthorizationHeader = true</code> (platform signs each request)</div>
+    </div>
+  </div>
+  <h3>Operations</h3>
+  <table>
+    <tr><th>#</th><th>Operation</th><th>HTTP</th><th>Notes</th></tr>
+    <tr><td>LIST</td><td>List a patron's images</td><td><code>GET /?list-type=2&amp;prefix=exclusion-images/{patronId}/</code></td><td>Returns <code>ListBucketResult</code> XML — parse <code>&lt;Contents&gt;</code> for <code>Key</code>, <code>Size</code>, <code>LastModified</code>. Metadata only, no bytes.</td></tr>
+    <tr><td>GET</td><td>Fetch one image's bytes</td><td><code>GET /{objectKey}</code></td><td>Response body is the raw image; Apex base64-encodes it for the LWC. Content type from response header.</td></tr>
+    <tr><td>PUT</td><td>Upload one image</td><td><code>PUT /{objectKey}</code></td><td>Body = decoded image blob; <code>Content-Type</code> set from the file. 200/204 = success.</td></tr>
+  </table>
+  <h3>Example — LIST response (parsed by Apex)</h3>
+  <pre>&lt;ListBucketResult&gt;
+  &lt;Contents&gt;
+    &lt;Key&gt;exclusion-images/40818053/40818053_20260515T091230Z.jpg&lt;/Key&gt;
+    &lt;LastModified&gt;2026-05-15T09:12:30.000Z&lt;/LastModified&gt;
+    &lt;Size&gt;284517&lt;/Size&gt;
+  &lt;/Contents&gt;
+  &lt;Contents&gt; ... &lt;/Contents&gt;
+&lt;/ListBucketResult&gt;</pre>
+  <p class="muted">Parsed with <code>Dom.Document</code> (namespace-aware). A single LIST returns up to 1000 keys — sufficient per patron for the MVP; pagination via <code>continuation-token</code> is a trivial Phase-2 add if any patron exceeds that.</p>
+
+  <!-- 6 -->
+  <h2 class="sec" id="naming">6. Object Key &amp; Naming Convention</h2>
+  <p>Every image is stored under a per-patron prefix so listing is a cheap prefix query and every object is intrinsically linked to its patron (satisfies the one surviving mandatory link in <span class="br">BR13</span>).</p>
+  <pre>exclusion-images/{PatronId}/{PatronId}_{UploadedTimestampUTC}.{ext}
+
+e.g.  exclusion-images/40818053/40818053_20260515T091230Z.jpg</pre>
+  <table>
+    <tr><th>Segment</th><th>Source</th><th>Purpose</th></tr>
+    <tr><td><code>exclusion-images/</code></td><td>Fixed prefix (Apex constant)</td><td>Namespaces this feature within the bucket; also the security allow-prefix (§11).</td></tr>
+    <tr><td><code>{PatronId}/</code></td><td><code>Contact.Patron_ID__c</code></td><td>Groups all of a patron's images; drives LIST + access check.</td></tr>
+    <tr><td><code>{PatronId}_{Timestamp}.{ext}</code></td><td>Server-generated at upload</td><td>Matches the <span class="br">BR13</span> filename pattern <code>patronID_uploadedDateTimeStamp.extension</code>; guarantees uniqueness, prevents overwrite.</td></tr>
+  </table>
+  <div class="note">The <em>display</em> name in the gallery is the basename after the last <code>/</code>. The original client filename is not preserved in the MVP (it becomes a metadata field in Phase 2).</div>
+
+  <!-- 7 -->
+  <h2 class="sec" id="components">7. Salesforce Components</h2>
+  <p>Exactly two custom artefacts, plus config to place and permission them. No objects, no fields, no triggers, no flows.</p>
+  <table>
+    <tr><th>Component</th><th>Type</th><th>Responsibility</th></tr>
+    <tr><td><code>ExclusionImageController</code></td><td>Apex class (<code>with sharing</code>)</td><td>List / get / upload proxy to S3; validation; access checks. §8.</td></tr>
+    <tr><td><code>ExclusionImageControllerTest</code></td><td>Apex test class</td><td>Unit tests with <code>HttpCalloutMock</code> — list, get, upload, bad format, no-patron, S3 error.</td></tr>
+    <tr><td><code>exclusionImageGallery</code></td><td>LWC</td><td>Grid, enlarge modal, multi-file upload, download; toasts; a11y. §9.</td></tr>
+    <tr><td>Contact Lightning Record Page</td><td>Config (page edit)</td><td>Add a new tab hosting the LWC. <em>(Delivered as metadata; not auto-deployed.)</em></td></tr>
+    <tr><td><code>Exclusion_Image_User</code></td><td>Permission set</td><td>Apex class access + component visibility; assigned to the relevant staff.</td></tr>
+  </table>
+
+  <!-- 8 -->
+  <h2 class="sec" id="apex">8. Apex Controller API</h2>
+  <p>One class, three <code>@AuraEnabled</code> methods and a small DTO. Upload is <strong>one file per call</strong> — the LWC loops over selected files so each upload is an independent transaction (independent heap budget + natural partial-success).</p>
+  <pre>public with sharing class ExclusionImageController {
+
+    static final String NC     = 'callout:Salesforce_S3_Connection';
+    static final String PREFIX = 'exclusion-images/';
+    static final Set&lt;String&gt; ALLOWED_EXT = new Set&lt;String&gt;{'png','jpg','jpeg','webp'};
+
+    public class ImageItem {
+        @AuraEnabled public String key;         // full S3 object key
+        @AuraEnabled public String fileName;    // basename for display
+        @AuraEnabled public Datetime lastModified;
+        @AuraEnabled public Long   size;
+    }
+
+    // 1) LIST — metadata only, newest first. Drives the gallery.
+    @AuraEnabled(cacheable=true)
+    public static List&lt;ImageItem&gt; getImages(Id recordId) { ... }
+
+    // 2) GET — one image's bytes as base64 (+ contentType), for tile/enlarge/download.
+    @AuraEnabled
+    public static Map&lt;String,String&gt; getImage(Id recordId, String objectKey) { ... }
+
+    // 3) PUT — upload a single image; returns the created ImageItem.
+    @AuraEnabled
+    public static ImageItem uploadImage(Id recordId, String fileName,
+                                        String base64Data, String contentType) { ... }
+}</pre>
+  <table>
+    <tr><th>Method</th><th>Reads</th><th>Behaviour &amp; guards</th></tr>
+    <tr><td><code>getImages</code></td><td><code>Contact.Patron_ID__c</code></td><td>Blank patron ⇒ empty list (UI shows empty state). LIST by prefix, parse XML, sort by <code>LastModified</code> desc. <code>cacheable=true</code> for wire + <code>refreshApex</code>.</td></tr>
+    <tr><td><code>getImage</code></td><td>Contact + key</td><td>Validates the key begins with <code>exclusion-images/{thisPatronId}/</code> before calling S3 (prevents fetching another patron's or an arbitrary object). Returns <code>{data, contentType}</code>.</td></tr>
+    <tr><td><code>uploadImage</code></td><td>Contact + file</td><td>Rejects extensions/content-types outside <code>ALLOWED_EXT</code> with a clear <code>AuraHandledException</code>. Builds the key (§6), PUTs the decoded blob, returns the new item. Overwrite impossible (timestamped key).</td></tr>
+  </table>
+  <div class="note">Pattern mirrors the existing <code>PatronImageController</code> in the org (keys off <code>Contact.Patron_ID__c</code>, <code>with sharing</code>, <code>AuraHandledException</code> on non-success) — differing only in that it targets the S3 Named Credential and uses native S3 REST rather than the Patron Image API.</div>
+
+  <!-- 9 -->
+  <h2 class="sec" id="ux">9. UX / UI Design</h2>
+  <h3>9.1 Tab &amp; gallery</h3>
+  <div class="card">
+    <div class="muted" style="font-size:12px;margin-bottom:6px">Contact: Patron 40818053 &nbsp;·&nbsp; tabs: Details | Cases | Exclusion | Restriction | <strong style="color:var(--ink)">Exclusion Images</strong></div>
+    <div style="border:1px solid var(--line);border-radius:10px;padding:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <strong>Exclusion Evidence Gallery</strong>
+        <span class="box b-lwc" style="padding:6px 12px">+ Upload New Image(s)</span>
+      </div>
+      <div class="grid3">
+        <div class="box" style="padding:0;overflow:hidden">
+          <div style="height:80px;background:#0b0e1a;display:flex;align-items:center;justify-content:center;color:var(--muted)">IMG</div>
+          <div style="padding:6px 8px;font-size:12px">40818053_…0515.jpg<br><span class="muted">15-May-2026</span></div>
+        </div>
+        <div class="box" style="padding:0;overflow:hidden">
+          <div style="height:80px;background:#0b0e1a;display:flex;align-items:center;justify-content:center;color:var(--muted)">IMG</div>
+          <div style="padding:6px 8px;font-size:12px">40818053_…0518.png<br><span class="muted">18-May-2026</span></div>
+        </div>
+        <div class="box" style="padding:0;overflow:hidden">
+          <div style="height:80px;background:#0b0e1a;display:flex;align-items:center;justify-content:center;color:var(--muted)">IMG</div>
+          <div style="padding:6px 8px;font-size:12px">40818053_…0520.webp<br><span class="muted">20-May-2026</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul class="tight">
+    <li><strong>Tiles</strong> show the image, display filename and formatted date. First batch (≈5) load eagerly; the rest lazily as they scroll into view, to keep the tab responsive.</li>
+    <li><strong>Empty state</strong> — when a patron has no images (or no <code>Patron_ID__c</code>), a friendly "No exclusion images on file yet" message with the upload affordance. <span class="br">BR11</span></li>
+    <li><strong>Loading</strong> — spinner while the LIST and per-tile fetches resolve; <strong>error</strong> — inline message + toast.</li>
+  </ul>
+  <h3>9.2 Enlarge viewer <span class="br">BR28 BR29</span></h3>
+  <ul class="tight">
+    <li>Clicking a tile opens a modal with the full-size image, filename and date.</li>
+    <li><strong>‹ Previous / Next ›</strong> buttons cycle through the gallery; <kbd>←</kbd>/<kbd>→</kbd> keys mirror them; <kbd>Esc</kbd> closes.</li>
+    <li><strong>Download</strong> button converts the base64 to a Blob and triggers a browser download with the filename. <span class="br">BR19</span></li>
+  </ul>
+  <h3>9.3 Upload (single or multi) <span class="br">BR22 BR23 BR38</span></h3>
+  <ul class="tight">
+    <li><code>&lt;input type="file" accept="image/png,image/jpeg,image/webp" multiple&gt;</code> — or drag-and-drop onto the drop zone.</li>
+    <li>Client pre-checks each file: format (hard reject non-png/jpg/webp) and a <strong>soft &lt;720p warning</strong> that never blocks. <span class="br">BR10</span></li>
+    <li>Each accepted file is read via <code>FileReader.readAsDataURL</code>, base64 stripped, and sent through <code>uploadImage</code> — one call per file.</li>
+    <li><strong>Partial success:</strong> results are aggregated and reported — e.g. "3 uploaded, 1 rejected (unsupported format), 1 failed (retry)". Valid images are added even if others fail. Gallery refreshes via <code>refreshApex</code>.</li>
+  </ul>
+  <h3>9.4 Accessibility <span class="br">BR31</span></h3>
+  <ul class="tight">
+    <li>Tiles are real buttons — keyboard focusable, <kbd>Enter</kbd>/<kbd>Space</kbd> activate; alt text = filename.</li>
+    <li>Modal traps focus, exposes <code>role="dialog"</code> + label, restores focus on close; nav buttons have <code>aria-label</code>s.</li>
+    <li>SLDS components and tokens for consistent contrast; status messages announced via <code>lightning-toast</code> / live region.</li>
+  </ul>
+
+  <!-- 10 -->
+  <h2 class="sec" id="flows">10. Sequence Flows</h2>
+  <h3>10.1 Load gallery</h3>
+  <div class="card"><div class="flow">
+    <div class="box b-lwc">LWC connected</div><span class="arrow">→</span>
+    <div class="box b-apex">getImages(recordId)</div><span class="arrow">→</span>
+    <div class="box b-sf">NC signs</div><span class="arrow">→</span>
+    <div class="box b-aws">S3 LIST</div><span class="arrow">→</span>
+    <div class="box b-apex">parse XML → items</div><span class="arrow">→</span>
+    <div class="box b-lwc">render tiles</div>
+  </div>
+  <p class="muted" style="margin:6px 0 0">Then per visible tile: <code>getImage(key)</code> → base64 → <code>&lt;img src="data:…"&gt;</code>. Empty list ⇒ empty state.</p></div>
+  <h3>10.2 Enlarge &amp; download</h3>
+  <div class="card"><div class="flow">
+    <div class="box b-lwc">click tile</div><span class="arrow">→</span>
+    <div class="box b-lwc">open modal (already-fetched bytes)</div><span class="arrow">→</span>
+    <div class="box b-lwc">Download → Blob → anchor</div>
+  </div></div>
+  <h3>10.3 Multi-file upload with partial success</h3>
+  <div class="card"><div class="flow">
+    <div class="box b-lwc">select N files</div><span class="arrow">→</span>
+    <div class="box b-lwc">client validate each</div><span class="arrow">→</span>
+    <div class="box b-lwc">loop: uploadImage(file)</div><span class="arrow">→</span>
+    <div class="box b-apex">validate + PUT</div><span class="arrow">→</span>
+    <div class="box b-aws">S3 PUT</div><span class="arrow">→</span>
+    <div class="box b-lwc">aggregate results + toast</div><span class="arrow">→</span>
+    <div class="box b-lwc">refreshApex</div>
+  </div>
+  <p class="muted" style="margin:6px 0 0">Each file is an independent Apex transaction — one failure never rolls back the others.</p></div>
+
+  <!-- 11 -->
+  <h2 class="sec" id="security">11. Security &amp; Access</h2>
+  <table>
+    <tr><th>Concern</th><th>Control</th></tr>
+    <tr><td>Sharing</td><td>Controller is <code>with sharing</code>; only users who can see the Contact can reach its images.</td></tr>
+    <tr><td>FLS / CRUD</td><td>Reads <code>Patron_ID__c</code> with field-level access respected; no DML performed.</td></tr>
+    <tr><td>Object-key confinement</td><td><code>getImage</code> validates the requested key starts with <code>exclusion-images/{thisContactsPatronId}/</code> — a user cannot fetch another patron's image or an arbitrary bucket object by guessing a key.</td></tr>
+    <tr><td>AWS auth</td><td>Handled entirely by the Named / External Credential (SigV4 + Roles Anywhere). No AWS keys in code or config.</td></tr>
+    <tr><td>Feature access</td><td><code>Exclusion_Image_User</code> permission set grants Apex class + component; unassigned users don't see the tab. Uniform access (no jurisdiction rules in MVP).</td></tr>
+    <tr><td>Upload safety</td><td>Server-side format allow-list; timestamped keys prevent overwrite of existing evidence.</td></tr>
+  </table>
+
+  <!-- 12 -->
+  <h2 class="sec" id="errors">12. Validation &amp; Error Handling</h2>
+  <table>
+    <tr><th>Case</th><th>Where</th><th>Behaviour</th></tr>
+    <tr><td>Unsupported format (not png/jpg/webp)</td><td>Client + Apex</td><td><strong>Hard reject</strong> that file with a clear message; other files still upload. <span class="br">BR10</span></td></tr>
+    <tr><td>Resolution &lt; 720p</td><td>Client</td><td><strong>Warn only</strong> — upload proceeds. "The System must still allow image with less than 720p." <span class="br">BR10</span></td></tr>
+    <tr><td>Patron has no <code>Patron_ID__c</code></td><td>Apex</td><td>Empty gallery + info message; upload disabled with explanation.</td></tr>
+    <tr><td>S3 non-2xx (list/get/put)</td><td>Apex</td><td><code>AuraHandledException</code> with status; LWC shows inline error + toast; other files in a batch unaffected.</td></tr>
+    <tr><td>File too large for heap</td><td>Client</td><td>Pre-check size (~4 MB cap) and block with guidance before callout. §13.</td></tr>
+    <tr><td>Partial batch failure</td><td>LWC</td><td>Summary toast: uploaded / rejected / failed counts. <span class="br">BR22 BR23 BR38</span></td></tr>
+  </table>
+
+  <!-- 13 -->
+  <h2 class="sec" id="nfr">13. Limits &amp; Performance</h2>
+  <table>
+    <tr><th>Limit</th><th>Value</th><th>Design response</th></tr>
+    <tr><td>Apex heap (sync)</td><td>6 MB</td><td>One image per callout; base64 inflates ~33%, so cap uploads ≈4 MB. Each get/put is its own transaction.</td></tr>
+    <tr><td>Callouts / transaction</td><td>100</td><td>Not a constraint — each tile fetch and each upload is a separate LWC-initiated transaction.</td></tr>
+    <tr><td>LIST keys / call</td><td>1000</td><td>Enough per patron for MVP; continuation-token pagination is a small Phase-2 add.</td></tr>
+    <tr><td>Gallery responsiveness</td><td>First 5 in ~2–3 s</td><td>Eager-load first batch, lazy-load the rest on scroll.</td></tr>
+    <tr><td>Callout timeout</td><td>120 s set</td><td>Matches existing <code>PatronImageController</code> convention.</td></tr>
+  </table>
+
+  <!-- 14 -->
+  <h2 class="sec" id="testing">14. Testing Strategy</h2>
+  <ul class="tight">
+    <li><strong>Apex</strong> — <code>HttpCalloutMock</code> covers: LIST (multi-item XML → sorted items), LIST empty, GET (bytes → base64 + contentType), PUT success, bad-format reject, key-confinement reject (other patron's key), no-<code>Patron_ID__c</code>, S3 4xx/5xx → <code>AuraHandledException</code>. Target &gt; 85% and all branches.</li>
+    <li><strong>LWC</strong> — Jest: renders tiles from mocked wire, empty state, enlarge modal open/nav/close, download blob, multi-file selection with mixed valid/invalid → correct partial-success summary, sub-720p warning is non-blocking.</li>
+    <li><strong>Manual (sandbox)</strong> — real end-to-end against the S3 bucket via the Named Credential: upload several formats, verify keys, view/enlarge/download, cross-patron key attempt blocked.</li>
+  </ul>
+
+  <!-- 15 -->
+  <h2 class="sec" id="risks">15. Assumptions &amp; Risks</h2>
+  <table>
+    <tr><th>#</th><th>Assumption / Risk</th><th>Impact / Mitigation</th></tr>
+    <tr><td>A1</td><td><code>Salesforce_S3_Connection</code> is fully working in the ST sandbox (Roles Anywhere trust valid).</td><td>Prerequisite. Validate with a quick LIST callout before building the LWC.</td></tr>
+    <tr><td>A2</td><td>Bucket write permission (PUT) is granted to the assumed role, not just read.</td><td>Confirm with AWS team; upload fails with 403 otherwise.</td></tr>
+    <tr><td>A3</td><td><code>Contact.Patron_ID__c</code> is populated for in-scope patrons.</td><td>Empty patron ⇒ no gallery; acceptable and messaged.</td></tr>
+    <tr><td>R1</td><td>Large images breach heap.</td><td>Client size cap + clear message; larger-file streaming is Phase 2.</td></tr>
+    <tr><td>R2</td><td>No metadata means no source/property/description on images.</td><td>Accepted for MVP; key convention preserves patron link + timestamp for later enrichment.</td></tr>
+    <tr><td>R3</td><td>&gt;1000 images for one patron.</td><td>Unlikely near-term; add continuation-token paging when observed.</td></tr>
+  </table>
+
+  <!-- 16 -->
+  <h2 class="sec" id="future">16. Deferred / Roadmap</h2>
+  <div class="grid2">
+    <div class="card"><h3 style="margin-top:0">Phase 2 — Metadata &amp; audit</h3>
+      <ul class="tight">
+        <li>Introduce <code>Exclusion_Image__c</code> index object; reconcile against S3 by key.</li>
+        <li>Capture source property, event datetime, description, EXIF created-date <span class="br">BR13</span>.</li>
+        <li>Store select metadata as S3 <code>x-amz-meta-*</code> as an interim step.</li>
+        <li>Metadata edit UI + field history audit <span class="br">BR15</span>.</li>
+        <li>Reporting on images <span class="br">BR33</span>.</li>
+      </ul>
+    </div>
+    <div class="card"><h3 style="margin-top:0">Later program slices</h3>
+      <ul class="tight">
+        <li>Primary/favourite tagging &amp; ordering <span class="br">BR16 BR17 BR27</span>.</li>
+        <li>Image removal with reason + NSW/QLD authority <span class="br">BR25 BR26</span>.</li>
+        <li>Single/bulk export to Facial Recognition <span class="br">BR20 BR32</span>.</li>
+        <li>CID migration / derivation / backfill <span class="br">BR34 BR35 BR36</span>.</li>
+        <li>Signed-form PDFs in the gallery; SharePoint docs <span class="br">POP-2487</span>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 17 -->
+  <h2 class="sec" id="trace">17. Requirements Traceability</h2>
+  <p>All 22 refined stories (POP-2449 → POP-2520). Legend: <span class="chip in">IN</span> delivered by MVP · <span class="chip later">LATER</span> deferred (Phase 2) · <span class="chip out">OUT</span> out of this program slice.</p>
+  <table>
+    <tr><th>Story</th><th>BR</th><th>Summary</th><th>MVP</th></tr>
+    <tr><td>POP-2520</td><td>—</td><td>View exclusion images tab on the patron record</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2455</td><td>BR08</td><td>Images surfaced on the Contact record</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2456</td><td>BR11</td><td>Empty-gallery message</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2469</td><td>BR28</td><td>Enlarge image</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2473</td><td>BR29</td><td>Navigate next/previous in viewer</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2457</td><td>BR19</td><td>Download an image</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2454</td><td>BR10</td><td>Accept png/jpg/webp; allow &lt;720p (warn); reject other formats</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2464</td><td>BR22</td><td>Add one or many images in a single workflow</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2463</td><td>BR23</td><td>All valid images added on submit (partial success)</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2483</td><td>BR38</td><td>Multi-image submit — valid ones succeed independently</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2474</td><td>BR31</td><td>Accessibility</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2451</td><td>BR13</td><td>Image attributes; only patron link mandatory (excl./contravention struck)</td><td><span class="chip in">IN</span><br><span class="muted" style="font-size:12px">link only; rich metadata → Phase 2</span></td></tr>
+    <tr><td>POP-2449</td><td>BR07</td><td>Core exclusion-image capability</td><td><span class="chip in">IN</span></td></tr>
+    <tr><td>POP-2475</td><td>BR33</td><td>Reporting on images</td><td><span class="chip later">LATER</span></td></tr>
+    <tr><td>—</td><td>BR15</td><td>Metadata change audit</td><td><span class="chip later">LATER</span></td></tr>
+    <tr><td>—</td><td>BR16/17/27</td><td>Primary/favourite &amp; ordering</td><td><span class="chip later">LATER</span></td></tr>
+    <tr><td>POP-2470</td><td>BR26</td><td>Image removal / NSW authority rules</td><td><span class="chip out">OUT</span></td></tr>
+    <tr><td>POP-2466</td><td>BR20</td><td>Bulk / FRS export</td><td><span class="chip out">OUT</span></td></tr>
+    <tr><td>POP-2453</td><td>BR09</td><td>Ad-hoc CID transfer on merge</td><td><span class="chip out">OUT</span></td></tr>
+    <tr><td>POP-2480</td><td>BR34</td><td>CID migration</td><td><span class="chip out">OUT</span></td></tr>
+    <tr><td>POP-2479</td><td>BR36</td><td>CID derivation</td><td><span class="chip out">OUT</span></td></tr>
+    <tr><td>POP-2478</td><td>BR35</td><td>Missing-metadata backfill</td><td><span class="chip out">OUT</span></td></tr>
+    <tr><td>POP-2476</td><td>BR37</td><td>CID left unchanged</td><td><span class="chip out">OUT</span></td></tr>
+    <tr><td>POP-2487</td><td>—</td><td>SharePoint document storage</td><td><span class="chip out">OUT</span></td></tr>
+  </table>
+
+  <footer>
+    Exclusion Image Gallery · Solution Design v0.2 (S3-only MVP) · 30 Jul 2026 · The Star Entertainment Group.<br>
+    Design artefact only — no components have been deployed to any org. Supersedes v0.1 (mirror-object draft).
+  </footer>
+</main>
+</div>
+</body>
+</html>

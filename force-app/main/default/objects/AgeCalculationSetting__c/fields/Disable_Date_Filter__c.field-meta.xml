@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disable_Date_Filter__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When this field is checked batch will not check if today&apos;s date is the same Date of Birth on Record</description>
+    <inlineHelpText>When this field is checked batch will not check if today&apos;s date is the same Date of Birth on Record</inlineHelpText>
+    <label>Disable Date Filter</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Name__c</fullName>
+    <description>Any other names (s) you are, or have been known by</description>
+    <encryptionScheme>None</encryptionScheme>
+    <inlineHelpText>Any other names (s) you are, or have been known by</inlineHelpText>
+    <label>Other Name</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

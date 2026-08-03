@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specify_Other_Tournament</fullName>
+    <active>true</active>
+    <description>Specify_Other_Tournament field when &quot;other&quot; is selected for Tournament Interest.</description>
+    <errorConditionFormula>AND(
+ISBLANK( Other_Tournament__c ),
+INCLUDES( Tournament_Interests__c , &apos;Other&apos;),
+$Permission.Skip_Validations_Permission = False
+
+)</errorConditionFormula>
+    <errorDisplayField>Other_Tournament__c</errorDisplayField>
+    <errorMessage>Please specify other Tournament Interest.</errorMessage>
+</ValidationRule>

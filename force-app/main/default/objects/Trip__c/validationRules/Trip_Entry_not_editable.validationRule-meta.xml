@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trip_Entry_not_editable</fullName>
+    <active>true</active>
+    <description>User should not be amending the entry date or entry state once trip has been completed.</description>
+    <errorConditionFormula>/*
+IF(AND(OR(Trip_Status__c = &apos;Confirmed&apos;,
+            Trip_Status__c = &apos;Cancelled&apos;
+        ),
+        OR(ISCHANGED(Entry_Date__c),
+            ISCHANGED(Entry_State__c),
+            ISCHANGED(Exit_Date__c)
+        )
+    ),
+    IF(AND($Profile.Name != &apos;TSEG CRM Manager&apos;,
+            $Profile.Name != &apos;TSEG Service Host&apos;,
+            $Profile.Name != &apos;TSEG Operation Management&apos;),
+        TRUE,
+        FALSE
+    ),
+    IF(AND(Trip_Status__c = &apos;Completed&apos;,
+            OR(ISCHANGED(Entry_Date__c),
+                ISCHANGED(Entry_State__c)
+            )
+        ),
+        IF($Profile.Name != &apos;TSEG CRM Manager&apos;,
+            TRUE,
+            FALSE
+        ),
+        IF(AND(Trip_Status__c = &apos;Completed&apos;, ISCHANGED(Exit_Date__c)),
+            IF(AND($Profile.Name != &apos;TSEG CRM Manager&apos;,
+                    $Profile.Name != &apos;TSEG Service Host&apos;,
+                    $Profile.Name != &apos;TSEG Operation Management&apos;
+                ),
+                TRUE,
+                FALSE
+            ),
+            FALSE
+        )
+    )
+)
+*/
+
+IF( $Permission.Skip_Validations_Permission
+,false
+,IF(AND(OR(Trip_Status__c = &apos;Confirmed&apos;,
+            Trip_Status__c = &apos;Cancelled&apos;
+        ),
+        OR(ISCHANGED(Entry_Date__c),
+            ISCHANGED(Entry_State__c),
+            ISCHANGED(Exit_Date__c)
+        )
+    ),
+     IF(AND( $Permission.TSEG_CRM_Manager = false,
+             $Permission.TSEG_Premium_Guest_Services = false,
+             $Permission.TSEG_Operation=false),
+        TRUE,
+        FALSE
+    ),
+    IF(AND(Trip_Status__c = &apos;Completed&apos;,
+            OR(ISCHANGED(Entry_Date__c),
+                ISCHANGED(Entry_State__c)
+            )
+        ),
+        IF( $Permission.TSEG_CRM_Manager = false,
+            TRUE,
+            FALSE
+        ),
+        IF(AND(Trip_Status__c = &apos;Completed&apos;, ISCHANGED(Exit_Date__c)),
+            IF(AND( $Permission.TSEG_CRM_Manager = false,
+                    $Permission.TSEG_Premium_Guest_Services = false,
+                    $Permission.TSEG_Operation=false
+                ),
+                TRUE,
+                FALSE
+            ),
+            FALSE
+        )
+    )
+)
+)</errorConditionFormula>
+    <errorMessage>User should not be amending the entry/exit date or entry state once trip has been completed.</errorMessage>
+</ValidationRule>

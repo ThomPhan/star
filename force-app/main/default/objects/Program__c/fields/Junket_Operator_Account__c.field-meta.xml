@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Junket_Operator_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Junket Operator Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Programs Junket Operator</relationshipLabel>
+    <relationshipName>Program_Junket_Operator</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

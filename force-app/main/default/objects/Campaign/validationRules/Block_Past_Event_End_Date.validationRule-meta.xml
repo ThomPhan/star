@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Past_Event_End_Date</fullName>
+    <active>true</active>
+    <description>Blocks user to enter a past End Date</description>
+    <errorConditionFormula>/*
+AND( OR($RecordType.DeveloperName = &quot;Event&quot;, $RecordType.DeveloperName = &quot;Main_Event_Campaign&quot;),
+AND(DATEVALUE(Event_End_Date_Time__c) &lt; TODAY(),OR(ISCHANGED(Event_End_Date_Time__c),ISNEW())),
+$Permission.Skip_Validations_Permission = False)
+*/
+
+IF($Permission.Skip_Validations_Permission, 
+false,
+AND( OR($RecordType.DeveloperName = &quot;Event&quot;, $RecordType.DeveloperName = &quot;Main_Event_Campaign&quot;),
+AND(DATEVALUE(Event_End_Date_Time__c) &lt; TODAY(),OR(ISCHANGED(Event_End_Date_Time__c),ISNEW())))
+)</errorConditionFormula>
+    <errorDisplayField>Event_End_Date_Time__c</errorDisplayField>
+    <errorMessage>Please enter a future End Date!</errorMessage>
+</ValidationRule>

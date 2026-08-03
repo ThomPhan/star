@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apply_Case_NextButton_Qld__c</fullName>
+    <description>QLD Next Button value from the related Apply Case. Used to filter the Update Exclusion Delivery Details list view.</description>
+    <externalId>false</externalId>
+    <formula>ApplyCase__r.Exl_Nextbutton_Qld__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Apply Case Next Button (QLD)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Seat_Capacity__c</fullName>
+    <label>Total Seat Allocation</label>
+    <summarizedField>Event_Allocation__c.Capacity__c</summarizedField>
+    <summaryForeignKey>Event_Allocation__c.Event__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

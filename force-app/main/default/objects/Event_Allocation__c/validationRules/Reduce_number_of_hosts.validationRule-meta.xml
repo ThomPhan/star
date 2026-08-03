@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reduce_number_of_hosts</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(No_of_host__c) &amp;&amp; Seats_Reserved_All__c &gt; Capacity__c &amp;&amp;  NOT($Permission.Skip_Validations_Permission)</errorConditionFormula>
+    <errorMessage>We don’t have enough seats available, please reduce the number of hosts.</errorMessage>
+</ValidationRule>

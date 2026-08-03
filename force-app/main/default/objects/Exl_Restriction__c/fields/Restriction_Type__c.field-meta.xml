@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restriction_Type__c</fullName>
+    <description>Defines the type of restricted service or benefit.</description>
+    <label>Restriction Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+                <label>Gaming</label>
+            </value>
+            <value>
+                <fullName>Funds</fullName>
+                <default>false</default>
+                <label>Funds</label>
+            </value>
+            <value>
+                <fullName>Hotel Bookings</fullName>
+                <default>false</default>
+                <label>Hotel Bookings</label>
+            </value>
+            <value>
+                <fullName>Access to Digital Channels</fullName>
+                <default>false</default>
+                <label>Access to Digital Channels</label>
+            </value>
+            <value>
+                <fullName>Casino Points</fullName>
+                <default>false</default>
+                <label>Casino Points</label>
+            </value>
+            <value>
+                <fullName>Discounts</fullName>
+                <default>false</default>
+                <label>Discounts</label>
+            </value>
+            <value>
+                <fullName>Parking benefits</fullName>
+                <default>false</default>
+                <label>Parking benefits</label>
+            </value>
+            <value>
+                <fullName>Receive Marketing Communications</fullName>
+                <default>false</default>
+                <label>Receive Marketing Communications</label>
+            </value>
+            <value>
+                <fullName>Tier Level Lost</fullName>
+                <default>false</default>
+                <label>Tier Level Lost</label>
+            </value>
+            <value>
+                <fullName>Digital Access</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Digital Access</label>
+            </value>
+            <value>
+                <fullName>Draws</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Draws</label>
+            </value>
+            <value>
+                <fullName>Loyalty Points</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Loyalty Points</label>
+            </value>
+            <value>
+                <fullName>Parking</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parking</label>
+            </value>
+            <value>
+                <fullName>Smart Button</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Smart Button</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

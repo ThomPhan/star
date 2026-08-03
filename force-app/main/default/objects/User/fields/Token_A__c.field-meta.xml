@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Token_A__c</fullName>
+    <description>Custom Field created for Member Portal to store access token returned from Ping One Auth Provider for Portal User.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>Token A</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

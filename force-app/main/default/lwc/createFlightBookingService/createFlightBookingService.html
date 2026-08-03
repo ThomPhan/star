@@ -1,0 +1,150 @@
+<template>
+    <lightning-record-edit-form object-api-name="Service__c" record-id={serviceRecId} record-type-id={recordTypeId} onsuccess={recordSuccess} onerror={recordError} onsubmit={handleSubmit}>
+        <div class="slds-modal__content">
+            <!-- START OF FLIGHT DETAILS -->
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Flight Booking</span>
+            </h3>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Property__c" variant="label-stacked" value={vipBookingProperty} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Cost_Centre__c" variant="label-stacked" value={costCentre} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Contact__c" variant="label-stacked" value={vipBookingId} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Flight_Booking_Status__c" variant="label-stacked" value={flightBookingStatus} required> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="One_way_OR_Return__c" variant="label-stacked" value={oneWayOrReturn} onchange={checkOneWayOrReturnField} required> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Flight_Region__c" variant="label-stacked" value={flightRegion} required onchange={checkRegionField}> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <template if:true={showPassportField}>
+                        <lightning-input-field field-name="Passport_Number__c" variant="label-stacked" value={passportNumber} required> </lightning-input-field>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- END OF FLIGHT DETAILS -->
+            <!-- START OF DATES AND LOCATIONS -->
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Dates and Locations</span>
+            </h3>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Depart_Date_and_Time__c" variant="label-stacked" value={departDateTime} required> </lightning-input-field>
+                </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                        <template if:true={showReturnField}>
+                            <lightning-input-field field-name="Returning_Date_and_Time__c" variant="label-stacked" value={returnDateTime} required> </lightning-input-field>
+                        </template>
+                    </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Depart_Date_and_Time_Static__c" variant="label-stacked" disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                        <template if:true={showReturnField}>
+                            <lightning-input-field field-name="Returning_Date_and_Time_Static__c" variant="label-stacked" disabled="true"> </lightning-input-field>
+                        </template>
+                    </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Flying_from__c" variant="label-stacked" required onchange={fromOtherSelected}> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Flying_to__c" variant="label-stacked" required onchange={toOtherSelected}> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>         
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <template if:true={showFromOtherField}>
+                        <lightning-input-field field-name="Flying_from_other_location__c" variant="label-stacked" value={flyingFromOther} required> </lightning-input-field>
+                    </template>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <template if:true={showToOtherField}>
+                        <lightning-input-field field-name="Flying_to_other_location__c" variant="label-stacked" value={flyingToOther} required> </lightning-input-field>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>         
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Class_of_Travel__c" variant="label-stacked" value={classOfTravel} required> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Flight_Number__c" variant="label-stacked" value={flightNumber}> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Airline_and_Flight_Preference__c" variant="label-stacked" value={airlinePreference}> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Frequent_flyer_number__c" variant="label-stacked" value={frequentFlyerNumber} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- END OF DATES AND LOCATIONS -->
+            <!-- START OF SERVICE DETAILS -->
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Service Details</span>
+            </h3>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Flight_Booking_Reference__c" variant="label-stacked" value={flightBookingReference}> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Flight_Charge__c" variant="label-stacked" value={flightCharge} required> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Booking_Comments__c" variant="label-stacked" value={bookingComments}> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Follow_Up__c" variant="label-stacked" value={followUp}> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>    
+            <!-- END OF SERVICE DETAILS -->
+            <div class="slds-hidden">
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <lightning-input-field field-name="Contact__c" variant="label-stacked" value={vipBookingId}> </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <lightning-input-field field-name="RecordTypeId" variant="label-stacked" value={recordTypeId}> </lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+        <div class="centerComponent">
+            <b>
+                <template if:true={bookingStatusText1}>
+                    {label.VIPB_Edit_IsConfirmed}
+                </template>
+                <template if:true={bookingStatusText2}>
+                    {label.VIPB_Edit_IsNotConfirmed}
+                </template>
+            </b>
+        </div>
+        <div class="slds-modal__footer centerComponent">
+            <lightning-button variant="neutral" label="Back" onclick={endFlow} class="slds-m-right_medium"></lightning-button>
+            <lightning-button variant="brand" label="Next" type="submit" ></lightning-button>
+        </div>
+    </lightning-record-edit-form>
+</template>

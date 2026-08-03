@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DomesticPartA__c</fullName>
+    <label>Part A</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Does the person hold a Drivers License or Proof of Age card issued from the same state as the program they intend to participate in? If YES, continue to Q3, If NO, continue to Q2</fullName>
+                <default>false</default>
+                <label>Does the person hold a Drivers License or Proof of Age card issued from the same state as the program they intend to participate in? If YES, continue to Q3, If NO, continue to Q2</label>
+            </value>
+            <value>
+                <fullName>Does the person hold a Drivers License or Proof of Age card issued from a different state as the program they intend to participate in? If YES, provide a copy of eligible Drivers License or Proof of Age card  If NO, continue to Q3</fullName>
+                <default>false</default>
+                <label>Does the person hold a Drivers License or Proof of Age card issued from a different state as the program they intend to participate in? If YES, provide a copy of eligible Drivers License or Proof of Age card  If NO, continue to Q3</label>
+            </value>
+            <value>
+                <fullName>3)	Has the person provided a Secondary Proof of Address document containing an address that is different to the state the program will participate in and reflects residential address in Customer Relation Management (CRM) or Casino Management System (CMS)?</fullName>
+                <default>false</default>
+                <label>3)	Has the person provided a Secondary Proof of Address document containing an address that is different to the state the program will participate in and reflects residential address in Customer Relation Management (CRM) or Casino Management System (CMS)?</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

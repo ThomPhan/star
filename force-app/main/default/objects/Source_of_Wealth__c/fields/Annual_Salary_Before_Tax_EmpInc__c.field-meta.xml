@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Salary_Before_Tax_EmpInc__c</fullName>
+    <description>Annual Salary Before Tax (excluding Superannuation) (AUD) - Employment Income
+Sec - A Annual Salary Before Tax</description>
+    <inlineHelpText>Annual Salary Before Tax (excluding Superannuation) (AUD) - Employment Income</inlineHelpText>
+    <label>Annual Salary Before Tax</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

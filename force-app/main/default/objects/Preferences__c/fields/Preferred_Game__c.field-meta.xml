@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Game__c</fullName>
+    <label>Preferred Game</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Baccarat</fullName>
+                <default>false</default>
+                <label>Baccarat</label>
+            </value>
+            <value>
+                <fullName>Big Wheel</fullName>
+                <default>false</default>
+                <label>Big wheel</label>
+            </value>
+            <value>
+                <fullName>Blackjack</fullName>
+                <default>false</default>
+                <label>Blackjack</label>
+            </value>
+            <value>
+                <fullName>Caribbean Stud</fullName>
+                <default>false</default>
+                <label>Caribbean Stud</label>
+            </value>
+            <value>
+                <fullName>Craps</fullName>
+                <default>false</default>
+                <label>Craps</label>
+            </value>
+            <value>
+                <fullName>Electronic Gaming</fullName>
+                <default>false</default>
+                <label>Electronic Gaming</label>
+            </value>
+            <value>
+                <fullName>Four Card Poker</fullName>
+                <default>false</default>
+                <label>Four Card Poker</label>
+            </value>
+            <value>
+                <fullName>Keno</fullName>
+                <default>false</default>
+                <label>Keno</label>
+            </value>
+            <value>
+                <fullName>Mississippi</fullName>
+                <default>false</default>
+                <label>Mississippi</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Pai Gow</fullName>
+                <default>false</default>
+                <label>Pai Gow</label>
+            </value>
+            <value>
+                <fullName>Roulette</fullName>
+                <default>false</default>
+                <label>Roulette</label>
+            </value>
+            <value>
+                <fullName>Sic Bo</fullName>
+                <default>false</default>
+                <label>Sic Bo</label>
+            </value>
+            <value>
+                <fullName>TAB</fullName>
+                <default>false</default>
+                <label>TAB</label>
+            </value>
+            <value>
+                <fullName>Three Card Poker</fullName>
+                <default>false</default>
+                <label>Three Card Poker</label>
+            </value>
+            <value>
+                <fullName>Vegas Star Baccarat</fullName>
+                <default>false</default>
+                <label>Vegas Star Baccarat</label>
+            </value>
+            <value>
+                <fullName>Vegas Star Blackjack</fullName>
+                <default>false</default>
+                <label>Vegas Star Blackjack</label>
+            </value>
+            <value>
+                <fullName>Vegas Star Roulette</fullName>
+                <default>false</default>
+                <label>Vegas Star Roulette</label>
+            </value>
+            <value>
+                <fullName>Pokerpontoon</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pokerpontoon</label>
+            </value>
+            <value>
+                <fullName>Rapid roulette</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rapid roulette</label>
+            </value>
+            <value>
+                <fullName>Rapid sic bo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rapid sic bo</label>
+            </value>
+            <value>
+                <fullName>Roulette sic bo</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Roulette sic bo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

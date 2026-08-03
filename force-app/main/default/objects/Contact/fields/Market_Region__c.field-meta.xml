@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_Region__c</fullName>
+    <label>Market Region</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Indochina</fullName>
+                <default>false</default>
+                <label>Indochina</label>
+            </value>
+            <value>
+                <fullName>IRB - North Asia</fullName>
+                <default>false</default>
+                <label>IRB - North Asia</label>
+            </value>
+            <value>
+                <fullName>IRB - Other</fullName>
+                <default>false</default>
+                <label>IRB - Other</label>
+            </value>
+            <value>
+                <fullName>IRB - South Asia</fullName>
+                <default>false</default>
+                <label>IRB - South Asia</label>
+            </value>
+            <value>
+                <fullName>Regional - NSW</fullName>
+                <default>false</default>
+                <label>Regional - NSW</label>
+            </value>
+            <value>
+                <fullName>Regional - QLD</fullName>
+                <default>false</default>
+                <label>Regional - QLD</label>
+            </value>
+            <value>
+                <fullName>North Asia</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>North Asia</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>South Asia</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>South Asia</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

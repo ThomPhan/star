@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_Request__c</fullName>
+    <label>Special Request</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Hotel__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ADP – International Adaptors</fullName>
+                <default>false</default>
+                <label>ADP – International Adaptors</label>
+            </value>
+            <value>
+                <fullName>B3 – 2 Water, Shaving Kit, Dental Kit, Slippers</fullName>
+                <default>false</default>
+                <label>B3 – 2 Water, Shaving Kit, Dental Kit, Slippers</label>
+            </value>
+            <value>
+                <fullName>COT – Baby Cot</fullName>
+                <default>false</default>
+                <label>COT – Baby Cot</label>
+            </value>
+            <value>
+                <fullName>ROL – Roll away bed</fullName>
+                <default>false</default>
+                <label>ROL – Roll away bed</label>
+            </value>
+            <value>
+                <fullName>SACRN - Special offer request</fullName>
+                <default>false</default>
+                <label>SACRN - Special offer request</label>
+            </value>
+            <value>
+                <fullName>SHARE - Allow sharer to check in, approved by management</fullName>
+                <default>false</default>
+                <label>SHARE - Allow sharer to check in, approved by management</label>
+            </value>
+            <value>
+                <fullName>VVIP Gesture - Check-in Sharer, approved by Paul Monaghan</fullName>
+                <default>false</default>
+                <label>VVIP Gesture - Check-in Sharer, approved by Paul Monaghan</label>
+            </value>
+            <value>
+                <fullName>SHARE - Allow sharer to check in, approved by Paul Monaghan</fullName>
+                <default>false</default>
+                <label>SHARE - Allow sharer to check in, approved by Paul Monaghan</label>
+            </value>
+            <value>
+                <fullName>OTHERS</fullName>
+                <default>false</default>
+                <label>OTHERS</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SYD - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>SYD - The Star Residences</controllingFieldValue>
+            <controllingFieldValue>SYD - The Darling</controllingFieldValue>
+            <controllingFieldValue>GC - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>GC - The Darling</controllingFieldValue>
+            <controllingFieldValue>BNE - Treasury</controllingFieldValue>
+            <controllingFieldValue>BNE - The Star Grand</controllingFieldValue>
+            <valueName>ADP – International Adaptors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SYD - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>SYD - The Star Residences</controllingFieldValue>
+            <controllingFieldValue>SYD - The Darling</controllingFieldValue>
+            <valueName>B3 – 2 Water, Shaving Kit, Dental Kit, Slippers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SYD - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>SYD - The Star Residences</controllingFieldValue>
+            <controllingFieldValue>SYD - The Darling</controllingFieldValue>
+            <controllingFieldValue>GC - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>GC - The Darling</controllingFieldValue>
+            <controllingFieldValue>BNE - Treasury</controllingFieldValue>
+            <controllingFieldValue>BNE - The Star Grand</controllingFieldValue>
+            <valueName>COT – Baby Cot</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SYD - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>SYD - The Star Residences</controllingFieldValue>
+            <controllingFieldValue>SYD - The Darling</controllingFieldValue>
+            <controllingFieldValue>GC - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>GC - The Darling</controllingFieldValue>
+            <controllingFieldValue>BNE - Treasury</controllingFieldValue>
+            <controllingFieldValue>BNE - The Star Grand</controllingFieldValue>
+            <valueName>ROL – Roll away bed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SYD - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>SYD - The Star Residences</controllingFieldValue>
+            <controllingFieldValue>SYD - The Darling</controllingFieldValue>
+            <controllingFieldValue>GC - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>GC - The Darling</controllingFieldValue>
+            <controllingFieldValue>BNE - Treasury</controllingFieldValue>
+            <controllingFieldValue>BNE - The Star Grand</controllingFieldValue>
+            <valueName>SACRN - Special offer request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SYD - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>SYD - The Star Residences</controllingFieldValue>
+            <controllingFieldValue>SYD - The Darling</controllingFieldValue>
+            <controllingFieldValue>GC - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>GC - The Darling</controllingFieldValue>
+            <controllingFieldValue>BNE - Treasury</controllingFieldValue>
+            <controllingFieldValue>BNE - The Star Grand</controllingFieldValue>
+            <valueName>VVIP Gesture - Check-in Sharer, approved by Paul Monaghan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SYD - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>SYD - The Star Residences</controllingFieldValue>
+            <controllingFieldValue>SYD - The Darling</controllingFieldValue>
+            <valueName>SHARE - Allow sharer to check in, approved by Paul Monaghan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SYD - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>SYD - The Star Residences</controllingFieldValue>
+            <controllingFieldValue>SYD - The Darling</controllingFieldValue>
+            <controllingFieldValue>GC - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>GC - The Darling</controllingFieldValue>
+            <controllingFieldValue>BNE - Treasury</controllingFieldValue>
+            <controllingFieldValue>BNE - The Star Grand</controllingFieldValue>
+            <valueName>OTHERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GC - The Star Grand</controllingFieldValue>
+            <controllingFieldValue>GC - The Darling</controllingFieldValue>
+            <controllingFieldValue>BNE - Treasury</controllingFieldValue>
+            <controllingFieldValue>BNE - The Star Grand</controllingFieldValue>
+            <valueName>SHARE - Allow sharer to check in, approved by management</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

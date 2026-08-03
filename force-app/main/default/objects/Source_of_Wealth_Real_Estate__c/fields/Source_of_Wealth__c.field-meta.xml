@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_of_Wealth__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Source of Wealth</label>
+    <referenceTo>Source_of_Wealth__c</referenceTo>
+    <relationshipLabel>Source of Wealth Real Estates</relationshipLabel>
+    <relationshipName>Source_of_Wealth_Real_Estates</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

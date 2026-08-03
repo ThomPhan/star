@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <label>Sub-Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cruise 888</fullName>
+                <default>false</default>
+                <label>Cruise 888</label>
+            </value>
+            <value>
+                <fullName>The Star Yacht</fullName>
+                <default>false</default>
+                <label>The Star Yacht</label>
+            </value>
+            <value>
+                <fullName>Benetti</fullName>
+                <default>false</default>
+                <label>Benetti</label>
+            </value>
+            <value>
+                <fullName>Rugby League (NRL)</fullName>
+                <default>false</default>
+                <label>Rugby League (NRL)</label>
+            </value>
+            <value>
+                <fullName>AFL</fullName>
+                <default>false</default>
+                <label>AFL</label>
+            </value>
+            <value>
+                <fullName>SOCCER</fullName>
+                <default>false</default>
+                <label>SOCCER</label>
+            </value>
+            <value>
+                <fullName>CRICKET</fullName>
+                <default>false</default>
+                <label>CRICKET</label>
+            </value>
+            <value>
+                <fullName>BOXING</fullName>
+                <default>false</default>
+                <label>BOXING</label>
+            </value>
+            <value>
+                <fullName>Horse racing</fullName>
+                <default>false</default>
+                <label>Horse racing</label>
+            </value>
+            <value>
+                <fullName>Car racing</fullName>
+                <default>false</default>
+                <label>Car racing</label>
+            </value>
+            <value>
+                <fullName>Boat racing</fullName>
+                <default>false</default>
+                <label>Boat racing</label>
+            </value>
+            <value>
+                <fullName>Slots</fullName>
+                <default>false</default>
+                <label>Slots</label>
+            </value>
+            <value>
+                <fullName>Baccarat</fullName>
+                <default>false</default>
+                <label>Baccarat</label>
+            </value>
+            <value>
+                <fullName>Roulette</fullName>
+                <default>false</default>
+                <label>Roulette</label>
+            </value>
+            <value>
+                <fullName>BJ</fullName>
+                <default>false</default>
+                <label>BJ</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Racing</controllingFieldValue>
+            <valueName>Horse racing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Racing</controllingFieldValue>
+            <valueName>Car racing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Racing</controllingFieldValue>
+            <valueName>Boat racing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tournaments</controllingFieldValue>
+            <valueName>Slots</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tournaments</controllingFieldValue>
+            <valueName>Baccarat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tournaments</controllingFieldValue>
+            <valueName>Roulette</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tournaments</controllingFieldValue>
+            <valueName>BJ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cruises</controllingFieldValue>
+            <valueName>Cruise 888</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cruises</controllingFieldValue>
+            <valueName>The Star Yacht</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cruises</controllingFieldValue>
+            <valueName>Benetti</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cruises</controllingFieldValue>
+            <controllingFieldValue>Sporting Events</controllingFieldValue>
+            <valueName>Rugby League (NRL)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sporting Events</controllingFieldValue>
+            <valueName>AFL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sporting Events</controllingFieldValue>
+            <valueName>SOCCER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sporting Events</controllingFieldValue>
+            <valueName>CRICKET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sporting Events</controllingFieldValue>
+            <valueName>BOXING</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

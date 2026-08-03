@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Seats_Reserved_RollUp__c</fullName>
+    <label>Seats Reserved</label>
+    <summarizedField>Event_Allocation__c.Seats_Reserved_All__c</summarizedField>
+    <summaryForeignKey>Event_Allocation__c.Event__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

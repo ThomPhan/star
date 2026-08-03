@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>when_no_of_guest_is_edited</fullName>
+    <active>false</active>
+    <description>When an existing campaign member is edited and the seat available is already 0 the error will then pop up.</description>
+    <errorConditionFormula>AND
+    (
+    ISCHANGED(No_of_guests__c),
+    Event_Allocation__r.Seats_Available__c ==0,
+    (PRIORVALUE(No_of_guests__c)&lt; No_of_guests__c),
+    (Event_Allocation__r.Seats_Available__c &lt; (1+No_of_guests__c - PRIORVALUE(No_of_guests__c)))
+    )</errorConditionFormula>
+    <errorMessage>We don’t have enough seat available, please reduce the number</errorMessage>
+</ValidationRule>

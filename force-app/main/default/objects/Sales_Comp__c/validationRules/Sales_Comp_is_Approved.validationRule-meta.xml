@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Comp_is_Approved</fullName>
+    <active>true</active>
+    <description>If Sales Comp Status is Approved, all fields except Additional Comments cannot be updated.</description>
+    <errorConditionFormula>/*
+AND(
+    NOT(ISPICKVAL(PRIORVALUE(Status__c), &apos;Pending&apos;)),
+    OR(
+        ISPICKVAL(Status__c, &apos;Approved&apos;),
+        ISPICKVAL(Status__c, &apos;Declined&apos;),
+        ISPICKVAL(Status__c, &apos;Voided&apos;),
+        AND(ISPICKVAL(Status__c, &apos;Invalid&apos;),
+            OR(
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Approved&apos;),
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Declined&apos;),
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Voided&apos;)
+            )
+        )
+    ),
+    OR(
+        AND(ISPICKVAL(Status__c, &apos;Invalid&apos;),
+            OR(
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Approved&apos;),
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Declined&apos;),
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Voided&apos;)
+            )
+        ),
+        ISCHANGED(Comp_Type__c),
+        ISCHANGED(Adjustment_Type__c),
+        ISCHANGED(Property__c),
+        ISCHANGED(Amount__c),
+        ISCHANGED(Reason_Code__c),
+        ISCHANGED(Description__c),
+        ISCHANGED(Comments__c),
+        ISCHANGED(Justification__c),
+        ISCHANGED(Method_of_Payment__c),
+        ISCHANGED(Estimated_Gift_Presentation_Date__c),
+        ISCHANGED(Contact__c),
+        ISCHANGED(OwnerId)
+    )
+)
+*/
+
+IF( $Permission.Skip_Validations_Permission 
+,false
+,AND(
+    NOT(ISPICKVAL(PRIORVALUE(Status__c), &apos;Pending&apos;)),
+    OR(
+        ISPICKVAL(Status__c, &apos;Approved&apos;),
+        ISPICKVAL(Status__c, &apos;Declined&apos;),
+        ISPICKVAL(Status__c, &apos;Voided&apos;),
+        AND(ISPICKVAL(Status__c, &apos;Invalid&apos;),
+            OR(
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Approved&apos;),
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Declined&apos;),
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Voided&apos;)
+            )
+        )
+    ),
+    OR(
+        AND(ISPICKVAL(Status__c, &apos;Invalid&apos;),
+            OR(
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Approved&apos;),
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Declined&apos;),
+                ISPICKVAL(PRIORVALUE(Status__c), &apos;Voided&apos;)
+            )
+        ),
+        ISCHANGED(Comp_Type__c),
+        ISCHANGED(Adjustment_Type__c),
+        ISCHANGED(Property__c),
+        ISCHANGED(Amount__c),
+        ISCHANGED(Reason_Code__c),
+        ISCHANGED(Description__c),
+        ISCHANGED(Comments__c),
+        ISCHANGED(Justification__c),
+        ISCHANGED(Method_of_Payment__c),
+        ISCHANGED(Estimated_Gift_Presentation_Date__c),
+        ISCHANGED(Contact__c),
+        ISCHANGED(OwnerId)
+    )
+)
+)</errorConditionFormula>
+    <errorMessage>This record is already approved, and fields are locked.</errorMessage>
+</ValidationRule>

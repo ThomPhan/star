@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POE_Under__c</fullName>
+    <description>Legal regulation</description>
+    <label>POE Under</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Section 91O</fullName>
+                <default>false</default>
+                <label>Section 91O</label>
+            </value>
+            <value>
+                <fullName>Section 92</fullName>
+                <default>false</default>
+                <label>Section 92</label>
+            </value>
+            <value>
+                <fullName>Section 93A</fullName>
+                <default>false</default>
+                <label>Section 93A</label>
+            </value>
+            <value>
+                <fullName>Section 94</fullName>
+                <default>false</default>
+                <label>Section 94</label>
+            </value>
+            <value>
+                <fullName>Section 95</fullName>
+                <default>false</default>
+                <label>Section 95</label>
+            </value>
+            <value>
+                <fullName>NSW Section 81</fullName>
+                <default>false</default>
+                <label>NSW Section 81</label>
+            </value>
+            <value>
+                <fullName>ICM 13</fullName>
+                <default>false</default>
+                <label>ICM 13</label>
+            </value>
+            <value>
+                <fullName>ICM P</fullName>
+                <default>false</default>
+                <label>ICM P</label>
+            </value>
+            <value>
+                <fullName>Section 79</fullName>
+                <default>false</default>
+                <label>Section 79</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

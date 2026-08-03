@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Waitlisted_SUM_RSVP_Waitlisted__c</fullName>
+    <label>Waitlisted SUM(RSVP=Waitlisted))</label>
+    <summarizedField>CampaignMember.No_of_guests__c</summarizedField>
+    <summaryFilterItems>
+        <field>CampaignMember.RSVP_Status__c</field>
+        <operation>equals</operation>
+        <value>Waitlist</value>
+    </summaryFilterItems>
+    <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

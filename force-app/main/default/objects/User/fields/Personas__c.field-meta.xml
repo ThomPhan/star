@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personas__c</fullName>
+    <label>Personas</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Interstate</fullName>
+                <default>false</default>
+                <label>Interstate</label>
+            </value>
+            <value>
+                <fullName>Local Telesales</fullName>
+                <default>false</default>
+                <label>Local Telesales</label>
+            </value>
+            <value>
+                <fullName>Premium Guest</fullName>
+                <default>false</default>
+                <label>Premium Guest</label>
+            </value>
+            <value>
+                <fullName>Premium Services</fullName>
+                <default>false</default>
+                <label>Premium Services</label>
+            </value>
+            <value>
+                <fullName>Casino Services Supervisor/Hosts</fullName>
+                <default>false</default>
+                <label>Casino Services Supervisor/Hosts</label>
+            </value>
+            <value>
+                <fullName>Premium Services Host</fullName>
+                <default>false</default>
+                <label>Premium Services Host</label>
+            </value>
+            <value>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+                <label>Gaming (GOM, GAM, AGM)</label>
+            </value>
+            <value>
+                <fullName>Cage Operations</fullName>
+                <default>false</default>
+                <label>Cage Operations</label>
+            </value>
+            <value>
+                <fullName>Event Marketing</fullName>
+                <default>false</default>
+                <label>Event Marketing</label>
+            </value>
+            <value>
+                <fullName>Business Services</fullName>
+                <default>false</default>
+                <label>Business Services</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>C-Level</fullName>
+                <default>false</default>
+                <label>C-Level</label>
+            </value>
+            <value>
+                <fullName>Cashless Project</fullName>
+                <default>false</default>
+                <label>Cashless Project</label>
+            </value>
+            <value>
+                <fullName>Guest Feedback</fullName>
+                <default>false</default>
+                <label>Guest Feedback</label>
+            </value>
+            <value>
+                <fullName>Loyalty Marketing Ops</fullName>
+                <default>false</default>
+                <label>Loyalty Marketing Ops</label>
+            </value>
+            <value>
+                <fullName>Guest Support Managers</fullName>
+                <default>false</default>
+                <label>Guest Support Managers</label>
+            </value>
+            <value>
+                <fullName>Fin Crime Operations</fullName>
+                <default>false</default>
+                <label>Fin Crime Operations</label>
+            </value>
+            <value>
+                <fullName>CLM App</fullName>
+                <default>false</default>
+                <label>Exclusions - CLM GIV/Exclusion application</label>
+            </value>
+            <value>
+                <fullName>CLM App Rev</fullName>
+                <default>false</default>
+                <label>Exclusions - CLM GIV/Exclusion application and revocation</label>
+            </value>
+            <value>
+                <fullName>FinCrime Tech</fullName>
+                <default>false</default>
+                <label>Exclusions - Fin Crime Technology</label>
+            </value>
+            <value>
+                <fullName>SG Line2</fullName>
+                <default>false</default>
+                <label>Exclusions - Safer Gambling Line 2</label>
+            </value>
+            <value>
+                <fullName>PnP</fullName>
+                <default>false</default>
+                <label>Exclusions - People and Performance</label>
+            </value>
+            <value>
+                <fullName>Qld Reg</fullName>
+                <default>false</default>
+                <label>Exclusions - QLD Regulators</label>
+            </value>
+            <value>
+                <fullName>Inv WR</fullName>
+                <default>false</default>
+                <label>Exclusions - Investigations - GIV/Exclusion Read/Write</label>
+            </value>
+            <value>
+                <fullName>SG WR</fullName>
+                <default>false</default>
+                <label>Exclusions - Safer Gambling - Read/Write</label>
+            </value>
+            <value>
+                <fullName>Surv RD</fullName>
+                <default>false</default>
+                <label>Exclusions - Surveillance - Read Only</label>
+            </value>
+            <value>
+                <fullName>AP WR</fullName>
+                <default>false</default>
+                <label>Exclusions - Asset Protections - Read/Write</label>
+            </value>
+            <value>
+                <fullName>DDTMCS RD</fullName>
+                <default>false</default>
+                <label>Exclusions - DD/TM/Customer Screening GIV /Exclusion Read</label>
+            </value>
+            <value>
+                <fullName>FC Line2 RD</fullName>
+                <default>false</default>
+                <label>Exclusions - FC Line 2 GIV/Exclusion App Read Only</label>
+            </value>
+            <value>
+                <fullName>SG RD</fullName>
+                <default>false</default>
+                <label>Exclusions - Safer Gambling - Read</label>
+            </value>
+            <value>
+                <fullName>Exclusions - CLM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Exclusions - CLM</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>Revocation - CLM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Revocation - CLM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

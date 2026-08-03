@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="documentsToGenerate" type="String" label="Documents to Generate" />
+            <property name="selectedDocument" type="String" label="Selected Document" role="outputOnly" />
+            <property name="recordId" type="String" label="Record Id" />
+            <property name="WOState" type="String" label="Jurisdiction (WO State)" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

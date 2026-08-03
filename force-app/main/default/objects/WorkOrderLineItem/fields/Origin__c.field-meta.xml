@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Origin__c</fullName>
+    <label>Origin/Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>Web</fullName>
+                <default>false</default>
+                <label>Web</label>
+            </value>
+            <value>
+                <fullName>Manual</fullName>
+                <default>false</default>
+                <label>Manual</label>
+            </value>
+            <value>
+                <fullName>Safer Gambling</fullName>
+                <default>false</default>
+                <label>Safer Gambling</label>
+            </value>
+            <value>
+                <fullName>Crown</fullName>
+                <default>false</default>
+                <label>Crown</label>
+            </value>
+            <value>
+                <fullName>Police Exclusion</fullName>
+                <default>false</default>
+                <label>Police Exclusion</label>
+            </value>
+            <value>
+                <fullName>Investigations</fullName>
+                <default>false</default>
+                <label>Investigations</label>
+            </value>
+            <value>
+                <fullName>Third Party</fullName>
+                <default>false</default>
+                <label>Third Party</label>
+            </value>
+            <value>
+                <fullName>QLD Operators</fullName>
+                <default>false</default>
+                <label>QLD Operators</label>
+            </value>
+            <value>
+                <fullName>Asset Protection</fullName>
+                <default>false</default>
+                <label>Asset Protection</label>
+            </value>
+            <value>
+                <fullName>Reg Affairs</fullName>
+                <default>false</default>
+                <label>Reg Affairs</label>
+            </value>
+            <value>
+                <fullName>AML</fullName>
+                <default>false</default>
+                <label>AML</label>
+            </value>
+            <value>
+                <fullName>The Reef (Qld)</fullName>
+                <default>false</default>
+                <label>The Reef (Qld)</label>
+            </value>
+            <value>
+                <fullName>The Ville (Qld)</fullName>
+                <default>false</default>
+                <label>The Ville (Qld)</label>
+            </value>
+            <value>
+                <fullName>NICC</fullName>
+                <default>false</default>
+                <label>NICC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

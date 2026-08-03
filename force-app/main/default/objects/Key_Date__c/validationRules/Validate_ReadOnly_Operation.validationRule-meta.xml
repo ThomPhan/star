@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_ReadOnly_Operation</fullName>
+    <active>true</active>
+    <description>User should not be able to edit KYC Date.</description>
+    <errorConditionFormula>AND(
+    $Permission.Skip_Validations_Permission = FALSE,
+    NOT(ISNEW()),
+    NOT(
+        OR(
+            $Permission.TSEG_Premium_Guest_Services = TRUE,
+            $Permission.TSEG_Casino_Host_Access_PS = TRUE,
+            $Permission.TSEG_CRM_Manager = TRUE
+        )),
+    NOT(
+        OR(
+            ISPICKVAL(PRIORVALUE(Key_Date_Category__c), &quot;KYC&quot;),
+            ISPICKVAL(Key_Date_Category__c, &quot;KYC&quot;)
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Key date cannot be edited. Please contact your administrator if changes are required.</errorMessage>
+</ValidationRule>

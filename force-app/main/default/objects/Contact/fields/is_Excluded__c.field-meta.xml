@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>is_Excluded__c</fullName>
+    <description>This formula field will return TRUE if the exclusion is applied for a patron. This can be be verified by checking Patron status.</description>
+    <formula>IF(
+    OR(
+        Patron_Status__c = &quot;External Exclusion-Group Wide&quot;,
+        Patron_Status__c = &quot;WOL - Entire Property&quot;,
+        Patron_Status__c = &quot;Venue - Group Wide&quot;,
+        Patron_Status__c = &quot;Self - Exclusion&quot;,
+        Patron_Status__c = &quot;Excluded QLD&quot;,
+        Patron_Status__c = &quot;Excluded ALL&quot;,
+        Patron_Status__c = &quot;Self - CCA, Wagering &amp; Keno&quot;,
+        Patron_Status__c = &quot;Venue - CCA&quot;,
+        Patron_Status__c = &quot;TP7DAY&quot;,
+        Patron_Status__c = &quot;Problem&quot;,
+        Patron_Status__c = &quot;WOL - Property Exclusion&quot;,
+        Patron_Status__c = &quot;Venue - Exclusions&quot;,
+        Patron_Status__c = &quot;Excluded NSW&quot;,
+        Patron_Status__c = &quot;Venue - Exclusion&quot;,
+        Patron_Status__c = &quot;Problem - Group Wide&quot;,
+        Patron_Status__c = &quot;Self Exclusion - QLD&quot;,
+        Patron_Status__c = &quot;Prob Gambling&quot;,
+        Patron_Status__c = &quot;Self Exclusion - NSW&quot;,
+        Patron_Status__c = &quot;Problem Gambling - Group Wide&quot;,
+        Patron_Status__c = &quot;TP24HR&quot;,
+        Patron_Status__c = &quot;Problem Gambling&quot;,
+        Patron_Status__c = &quot;WOL - Group Wide&quot;,
+        Patron_Status__c = &quot;WOL - Property - Group Wide&quot;
+    ),
+    TRUE,
+    FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>is Excluded</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Add_guests_if_no_seats_available</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND (Campaign.RecordType.DeveloperName = &quot;Event&quot;, ISPICKVAL(RSVP_Status__c, &apos;Attending&apos;), No_of_guests__c &gt; PRIORVALUE( No_of_guests__c),  Seat_Available__c &lt;=0)</errorConditionFormula>
+    <errorMessage>You cannot add guests since there are no seats left on the Event.</errorMessage>
+</ValidationRule>

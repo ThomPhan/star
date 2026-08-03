@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Patron_ID__c</columns>
+    <columns>BrisbaneHostRole__c</columns>
+    <columns>GCHostRole__c</columns>
+    <columns>InternationalHostRole__c</columns>
+    <columns>SydneyHostRole__c</columns>
+    <columns>Variance_Actual_MTD__c</columns>
+    <columns>Actual_Trend__c</columns>
+    <columns>Actual_Win_M1to3__c</columns>
+    <columns>Actual_Win_M4to6__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Host_Sydney__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>All</label>
+</ListView>

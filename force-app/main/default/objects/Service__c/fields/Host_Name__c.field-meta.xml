@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Contact__r.Host_Brisbane__c)), Contact__r.Host_Brisbane__r.Host_Name__c,
+    IF(NOT(ISBLANK(Contact__r.Host_GC__c)), Contact__r.Host_GC__r.Host_Name__c,
+    	IF(NOT(ISBLANK(Contact__r.Host_Sydney__c)), 
+    		Contact__r.Host_Sydney__r.Host_Name__c, 
+    		&apos;&apos;
+		)
+	)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Host Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

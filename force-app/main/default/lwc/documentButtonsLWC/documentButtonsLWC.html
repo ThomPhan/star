@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Documents to Generate">
+        <template if:true={documentList.length}>
+            <ul class="slds-m-around_medium">
+                <template if:false={documentExisting}>
+                <template for:each={documentList} for:item="doc">
+                    <li key={doc} class="slds-m-vertical_x-small">
+                        <lightning-button 
+                            label={doc}
+                            data-doc={doc}
+                            onclick={handleClick}>
+                        </lightning-button>
+                    </li>
+                </template>
+
+                </template>
+                <template if:true={documentExisting}>
+                    <p class="slds-p-around_medium">You're generating a <strong>{document}</strong> document.
+                        <br>This document is already uploaded on the Exclusion, do you want to continue reprocessing this document?</p>
+                    <lightning-button label="Continue" title="Continue" onclick={handleContinueClick} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button label="Go back" title="GoBack" onclick={handleNoClick} class="slds-m-left_x-small"></lightning-button>
+                </template>
+            </ul>
+        </template>
+        <template if:false={documentList.length}>
+            <p class="slds-p-around_medium">No documents found to generate.</p>
+        </template>
+    </lightning-card>
+</template>

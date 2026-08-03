@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Events</fullName>
+    <columns>Event_Start_Date_Time__c</columns>
+    <columns>Event_End_Date_Time__c</columns>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>Static_Start_Date_Time__c</columns>
+    <columns>Static_End_Date_Time__c</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>Event_Location__c</columns>
+    <columns>EntryCriteria__c</columns>
+    <columns>Host__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.STATUS</field>
+        <operation>equals</operation>
+        <value>Proposed,Active,Cancelled,Closed</value>
+    </filters>
+    <filters>
+        <field>CAMPAIGN.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Campaign.Event</value>
+    </filters>
+    <label>All Events</label>
+</ListView>

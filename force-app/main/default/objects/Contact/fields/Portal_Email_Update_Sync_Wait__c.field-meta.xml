@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_Email_Update_Sync_Wait__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Custom Field created for Member Portal to wait for Email Update to be synced from MDM.</description>
+    <label>Portal Email Update Sync Wait</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

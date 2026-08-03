@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-form" role="group" aria-label="Image metadata">
+        <div class="slds-grid slds-wrap slds-gutters_small">
+            <div class="slds-col slds-size_1-of-1">
+                <lightning-textarea
+                    label="Description"
+                    data-field="description"
+                    value={values.description}
+                    max-length="500"
+                    field-level-help="Optional description. Not stored in Salesforce."
+                    onchange={handleFieldChange}
+                ></lightning-textarea>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+                <lightning-input
+                    label="Tags"
+                    data-field="tags"
+                    value={values.tags}
+                    field-level-help="Optional comma-separated tags."
+                    onchange={handleFieldChange}
+                ></lightning-input>
+            </div>
+        </div>
+    </div>
+</template>

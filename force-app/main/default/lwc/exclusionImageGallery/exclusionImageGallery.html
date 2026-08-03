@@ -1,0 +1,83 @@
+<template>
+    <lightning-card icon-name="custom:custom63">
+        <h1 slot="title" class="slds-text-heading_medium">Exclusion Evidence Gallery</h1>
+
+        <div slot="actions">
+            <lightning-button-icon
+                icon-name="utility:refresh"
+                alternative-text="Refresh"
+                title="Refresh"
+                class="slds-m-right_x-small"
+                onclick={handleRefresh}
+            ></lightning-button-icon>
+            <template if:true={showUploadButton}>
+                <lightning-button
+                    variant="brand"
+                    label="Upload Images"
+                    title="Upload Images"
+                    icon-name="utility:upload"
+                    onclick={handleOpenUploader}
+                ></lightning-button>
+            </template>
+        </div>
+
+        <div class="slds-p-horizontal_small">
+            <!-- Loading spinner -->
+            <template if:true={isLoading}>
+                <div class="slds-align_absolute-center slds-p-vertical_large">
+                    <lightning-spinner alternative-text="Loading images" size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <!-- Empty state -->
+            <template if:true={showEmptyState}>
+                <c-exclusion-gallery-empty-state
+                    mode={emptyStateMode}
+                    can-upload={hasAccess}
+                    onupload={handleEmptyStateUpload}
+                ></c-exclusion-gallery-empty-state>
+            </template>
+
+            <!-- Thumbnail grid -->
+            <template if:true={hasImages}>
+                <div class="slds-grid slds-wrap slds-gutters_x-small gallery-grid" role="list">
+                    <template for:each={decoratedImages} for:item="item">
+                        <div
+                            key={item.objectKey}
+                            role="listitem"
+                            class="slds-col slds-size_1-of-2 slds-small-size_1-of-3 slds-medium-size_1-of-4 slds-large-size_1-of-6 slds-p-vertical_x-small"
+                        >
+                            <c-exclusion-image-tile
+                                image={item}
+                                record-id={recordId}
+                                selected={item.selected}
+                                onenlarge={handleEnlarge}
+                                onselect={handleSelect}
+                            ></c-exclusion-image-tile>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <!-- Uploader modal (bulk) -->
+    <template if:true={showUploader}>
+        <c-exclusion-image-uploader
+            record-id={recordId}
+            onuploadcomplete={handleUploadComplete}
+            onclose={handleCloseUploader}
+        ></c-exclusion-image-uploader>
+    </template>
+
+    <!-- Viewer modal -->
+    <template if:true={showViewer}>
+        <c-exclusion-image-viewer
+            images={images}
+            record-id={recordId}
+            current-index={viewerIndex}
+            onnavigate={handleViewerNavigate}
+            onclose={handleCloseViewer}
+        ></c-exclusion-image-viewer>
+    </template>
+</template>

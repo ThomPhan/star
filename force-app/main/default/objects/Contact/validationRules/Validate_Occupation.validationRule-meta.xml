@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Occupation</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Permission.Skip_Validations_Permission = FALSE &amp;&amp; 
+(TEXT(Occupation_Type__c) = &apos;Salaried employment&apos; || TEXT(Occupation_Type__c) = &apos;Self-employed&apos;) &amp;&amp;
+(
+(ISPICKVAL(Occupation__c, &apos;&apos;) &amp;&amp; ISCHANGED(Occupation__c)) ||
+(ISPICKVAL(Occupation__c, &apos;&apos;) &amp;&amp; ISCHANGED(Occupation_Category__c))
+)</errorConditionFormula>
+    <errorMessage>Occupation cannot be blank</errorMessage>
+</ValidationRule>

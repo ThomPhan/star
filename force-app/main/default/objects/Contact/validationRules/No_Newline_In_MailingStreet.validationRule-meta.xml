@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Newline_In_MailingStreet</fullName>
+    <active>true</active>
+    <description>Prevents new line characters in the Mailing Street address field</description>
+    <errorConditionFormula>AND(OR(ISNEW(), ISCHANGED(MailingAddress)), NOT(REGEX(MailingStreet, &quot;^[^\n\r]*$&quot;)))</errorConditionFormula>
+    <errorMessage>New line characters are not allowed in the Mailing Street address.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Department</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>true</default>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>F&amp;B</fullName>
+                <default>false</default>
+                <label>F&amp;B</label>
+            </value>
+            <value>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+                <label>Gaming</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Property Services</fullName>
+                <default>false</default>
+                <label>Property Services</label>
+            </value>
+            <value>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+                <label>Entertainment</label>
+            </value>
+            <value>
+                <fullName>Public Relations / Branding</fullName>
+                <default>false</default>
+                <label>Public Relations / Branding</label>
+            </value>
+            <value>
+                <fullName>VIP Services</fullName>
+                <default>false</default>
+                <label>VIP Services</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

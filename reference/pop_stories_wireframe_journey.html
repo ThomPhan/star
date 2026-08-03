@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PoP Exclusion Images — User Stories ↔ Wireframe Traceability &amp; Journey</title>
+<style>
+  :root{
+    --ink:#1c2230; --ink2:#5c6470; --line:#c9ccd1; --line2:#e3e5e8;
+    --bg:#f2f3f4; --panel:#fff; --chip:#eceef1;
+    --blue:#0b5cab; --gold:#a98d3f; --goldbg:#f6efdc;
+    --surv:#b58900; --sg:#2b6cb0; --clm:#2e8b6f; --inv:#8b5cb0; --comp:#b3543c; --all:#5c6470;
+    --note:#fff6c9;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"Segoe UI",system-ui,sans-serif; background:var(--bg); color:var(--ink); font-size:13px; padding:26px 30px 70px;}
+  h1{font-size:21px;}
+  .sub{color:var(--ink2); font-size:12.5px; margin:6px 0 4px; max-width:960px; line-height:1.5;}
+  .src{font-size:11px; color:var(--ink2);}
+  h2{font-size:16px; margin:30px 0 4px;}
+  .secsub{font-size:12px; color:var(--ink2); margin-bottom:14px;}
+  /* legend */
+  .legend{display:flex; gap:14px; flex-wrap:wrap; margin:14px 0 4px; font-size:11.5px; color:var(--ink2);}
+  .legend b{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px;}
+  /* ===== traceability layout ===== */
+  .trace{display:grid; grid-template-columns:1.35fr 1fr; gap:18px; align-items:start;}
+  /* wireframe recreation */
+  .wf{background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:0 6px 22px rgba(0,0,0,.1);}
+  .wf .top{background:#fbf3d5; border-bottom:1px solid #e5d9a8; font-size:10px; text-align:center; padding:4px; font-style:italic;}
+  .wf .sand{background:#e8e9eb; font-size:9.5px; text-align:center; padding:3px; color:var(--ink2); border-bottom:1px solid var(--line);}
+  .wf .ghead{display:flex; align-items:center; gap:10px; padding:7px 12px; border-bottom:1px solid var(--line);}
+  .wf .lg{font-weight:700; letter-spacing:1.5px; color:#b9a05e; font-size:10px;}
+  .wf .srch{flex:1; max-width:200px; border:1px solid var(--line); border-radius:12px; padding:3px 10px; font-size:9.5px; color:var(--ink2);}
+  .wf .nav{display:flex; gap:1px; padding:0 10px; border-bottom:2px solid var(--line); font-size:9.5px;}
+  .wf .nav span{padding:6px 7px; white-space:nowrap;}
+  .wf .body{display:grid; grid-template-columns:106px 1fr; gap:8px; padding:10px;}
+  .card{background:#fff; border:1px solid var(--line); border-radius:5px;}
+  .pimg{height:64px; margin:8px auto 2px; width:64px; position:relative; background:var(--chip); border:1px solid var(--line);}
+  .pimg:before,.pimg:after{content:""; position:absolute; inset:0; background:linear-gradient(45deg,transparent 48.5%,#9aa0a8 48.5%,#9aa0a8 51.5%,transparent 51.5%);}
+  .pimg:after{transform:scaleX(-1);}
+  .kv{font-size:8.5px; padding:2px 7px; color:var(--ink2);}
+  .kv b{display:block; color:var(--ink); font-size:9px; font-weight:600;}
+  .applybtn{margin:6px; border:1px solid var(--line); border-radius:3px; text-align:center; font-size:9px; padding:4px; color:var(--ink2);}
+  .rtabs{display:flex; gap:2px; border-bottom:1px solid var(--line); font-size:9.5px; padding:4px 6px 0;}
+  .rtabs span{padding:5px 6px; color:var(--ink2);}
+  .rtabs .on{font-weight:700; color:var(--ink); border-bottom:2.5px solid var(--ink);}
+  .galhead{background:#f2f3f5; border:1px solid var(--line2); font-size:10px; font-weight:700; padding:5px 8px; margin:8px;}
+  .g{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:0 8px;}
+  .gi{text-align:center; font-size:7.5px; color:var(--ink2);}
+  .gi .im{height:36px; background:var(--chip); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:11px; color:#9aa0a8; margin-bottom:2px;}
+  .upl{margin:10px 8px 12px; display:inline-block; background:var(--blue); color:#fff; font-size:9px; padding:5px 10px; border-radius:3px;}
+  /* hotspot pins */
+  .pin{position:absolute; width:22px; height:22px; border-radius:50%; background:var(--gold); color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.35); border:2px solid #fff; z-index:5; transition:.15s;}
+  .pin:hover, .pin.on{transform:scale(1.25); background:#7d6526;}
+  .wfwrap{position:relative;}
+  /* mapping panel */
+  .maps .zone{background:var(--panel); border:1px solid var(--line); border-radius:8px; margin-bottom:10px; overflow:hidden;}
+  .maps .zh{display:flex; align-items:center; gap:9px; padding:9px 12px; cursor:pointer; background:#fafafb; border-bottom:1px solid transparent;}
+  .maps .zone.open .zh{border-bottom-color:var(--line2);}
+  .maps .zh .b{width:20px; height:20px; border-radius:50%; background:var(--gold); color:#fff; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center; flex:none;}
+  .maps .zh h3{font-size:12.5px;}
+  .maps .zh small{margin-left:auto; color:var(--ink2); font-size:10px;}
+  .maps .zb{display:none; padding:8px 12px 10px;}
+  .maps .zone.open .zb{display:block;}
+  .story{display:flex; gap:8px; padding:7px 0; border-bottom:1px solid var(--line2); cursor:pointer;}
+  .story:last-child{border-bottom:none;}
+  .story:hover .id{background:var(--blue); color:#fff;}
+  .id{font-size:9.5px; font-weight:700; background:var(--chip); border-radius:3px; padding:2px 6px; height:fit-content; white-space:nowrap;}
+  .story .t{font-size:11.5px; line-height:1.4;}
+  .story .t small{color:var(--ink2); display:block; font-size:10px;}
+  .pers{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:4px; vertical-align:middle;}
+  /* ===== journey ===== */
+  .jgrid{display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-top:8px;}
+  .stage{background:var(--panel); border:1px solid var(--line); border-radius:8px; display:flex; flex-direction:column;}
+  .stage .shead{padding:9px 10px; border-bottom:1px solid var(--line2); background:#fafafb; border-radius:8px 8px 0 0;}
+  .stage .n{font-size:9px; color:var(--gold); font-weight:700; letter-spacing:1px;}
+  .stage h3{font-size:12px; margin-top:2px;}
+  .stage .who{font-size:9.5px; color:var(--ink2); margin-top:3px;}
+  .stage .sb{padding:8px 10px; flex:1;}
+  .stage .act{font-size:10.5px; color:var(--ink2); line-height:1.45; margin-bottom:8px;}
+  .chips{display:flex; flex-wrap:wrap; gap:4px;}
+  .chip{font-size:9px; font-weight:700; background:var(--chip); border:1px solid var(--line); border-radius:3px; padding:2px 5px; cursor:pointer;}
+  .chip:hover{background:var(--blue); color:#fff; border-color:var(--blue);}
+  .stage .wfref{font-size:9px; color:var(--gold); font-weight:700; padding:7px 10px; border-top:1px dashed var(--line2);}
+  .stage0 .shead{background:#243043;} .stage0 h3, .stage0 .n{color:#fff;} .stage0 .who{color:#aeb8c9;}
+  /* pre-go-live band */
+  .preband{background:var(--panel); border:1px dashed var(--gold); border-radius:8px; padding:10px 14px; margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+  .preband b{font-size:11px; color:var(--gold);}
+  .preband .act{font-size:10.5px; color:var(--ink2);}
+  /* coverage table */
+  .covwrap{background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; margin-top:12px;}
+  table{width:100%; border-collapse:collapse; font-size:11px;}
+  th{background:#fafafb; text-align:left; font-size:9.5px; text-transform:uppercase; letter-spacing:.4px; color:var(--ink2); padding:7px 10px; border-bottom:1px solid var(--line);}
+  td{padding:6px 10px; border-bottom:1px solid var(--line2); vertical-align:top;}
+  tr:hover td{background:#f7f8f9;}
+  .zref{display:inline-flex; width:16px; height:16px; border-radius:50%; background:var(--gold); color:#fff; font-size:9px; font-weight:700; align-items:center; justify-content:center; margin-right:3px;}
+  /* modal */
+  #modal{display:none; position:fixed; inset:0; background:rgba(10,14,22,.6); z-index:60; align-items:center; justify-content:center;}
+  #modal .box{background:#fff; border-radius:10px; max-width:520px; width:92%; padding:20px 24px; max-height:80vh; overflow:auto; box-shadow:0 18px 50px rgba(0,0,0,.3);}
+  #modal .close{float:right; cursor:pointer; color:var(--ink2); font-size:17px;}
+  #modal h3{font-size:14px; margin-bottom:2px;}
+  #modal .mp{font-size:11px; color:var(--ink2); margin-bottom:10px;}
+  #modal .body{font-size:12.5px; line-height:1.65;}
+  #modal .body b{color:var(--blue);}
+  #modal .wfz{margin-top:12px; font-size:11px; background:var(--goldbg); border:1px solid #e0d3ac; border-radius:5px; padding:7px 10px; color:#6d5a24;}
+</style>
+</head>
+<body>
+
+<h1>Exclusion Images — User Stories ↔ Wireframe Traceability &amp; User Journey</h1>
+<div class="sub">All 22 refined Jira stories (POP-2449 → POP-2520) mapped to the Salesforce patron-record wireframe, then sequenced into the image-management user journey. Click a numbered pin or any story/chip for its full user-story statement.</div>
+<div class="src">Sources: Stories - Requirements.xlsx (Jira export) · Salesforce wireframe mock (Patron 40818053 — Exclusion Evidence Gallery) · BRD Exclusion Image Management</div>
+<div class="legend">
+  <span><b style="background:var(--surv)"></b>Surveillance</span>
+  <span><b style="background:var(--sg)"></b>Safer Gambling</span>
+  <span><b style="background:var(--clm)"></b>CLM</span>
+  <span><b style="background:var(--inv)"></b>Investigations</span>
+  <span><b style="background:var(--comp)"></b>Compliance / Regulatory</span>
+  <span><b style="background:var(--all)"></b>All authorised users</span>
+</div>
+
+<h2>1 · Where each story lands on the wireframe</h2>
+<div class="secsub">Numbered pins on the mock correspond to the story groups on the right. Zones 6–7 cover behaviour behind the screen (migration &amp; reporting) anchored to the patron header and signed-form items.</div>
+
+<div class="trace">
+  <div class="wfwrap">
+    <div class="wf">
+      <div class="top">⚠︎ Salesforce enforces new security requirements in June 2026. <u>See What's Changing</u></div>
+      <div class="sand">Sandbox: UAT | Log out</div>
+      <div class="ghead"><span class="lg">THE✻STAR</span><span class="srch">🔍 Search…</span><span style="margin-left:auto; font-size:10px; color:var(--ink2);">★ ⊞ ? 🔔 ◯</span></div>
+      <div class="nav"><b style="padding:6px 8px 6px 0; font-size:10px;">Exclusion Managem…</b><span>Home</span><span>Contacts ▾</span><span>Cases ▾</span><span>Exclusions ▾</span><span>Restrictions ▾</span><span>Work Orders ▾</span><span>Reports ▾</span><span>More ▾</span></div>
+      <div style="font-size:10.5px; font-weight:600; padding:7px 10px 0;">My (Patron ID: 40818053)</div>
+      <div class="body">
+        <div>
+          <div class="card">
+            <div class="pimg"></div>
+            <div style="text-align:center; font-size:7px; color:var(--ink2);">Star Club</div>
+            <div class="applybtn">Apply Exclusion ▾</div>
+            <div class="kv">Patron ID<b>40818053</b></div>
+            <div class="kv">Name<b>Ms Lea Auto Toy</b></div>
+            <div class="kv">Patron Status<b>Excluded ALL</b></div>
+            <div class="kv">Card Type Status<b>SILVER (ACTIVE)</b></div>
+            <div class="kv">Loyalty Program<b>Star Club</b></div>
+            <div class="kv" style="padding-bottom:8px;">Tier<b>Bronze</b></div>
+          </div>
+        </div>
+        <div class="card" style="position:relative;">
+          <div class="rtabs"><span>[Details]</span><span>[Cases]</span><span>[Exclusion]</span><span>[Restriction]</span><span class="on">[Exclusion Images]</span></div>
+          <div class="galhead">Exclusion Evidence Gallery</div>
+          <div class="g">
+            <div class="gi"><div class="im">📷🗎</div>IMG_001.JPG | 15-May-2026</div>
+            <div class="gi"><div class="im">📷🗎</div>IMG_001.JPG | 15-May-2026</div>
+            <div class="gi"><div class="im">📷🗎</div>IMG_001.JPG | 15-May-2026</div>
+            <div class="gi"><div class="im">📷🗎</div>IMG_002.JPG | 15-May-2026</div>
+            <div class="gi"><div class="im">📷🗎</div>IMG_001.JPG | 15-May-2026</div>
+            <div class="gi"><div class="im">🗎</div>SIGNED_FORM.PDF | 16-May-2026</div>
+            <div class="gi"><div class="im">📷🗎</div>IMG_001.JPG | 15-May-2026</div>
+            <div class="gi"><div class="im">🗎</div>SIGNED_FORM.PDF | 16-May-2026</div>
+            <div class="gi"><div class="im">📷🗎</div>IMG_001.JPG | 15-May-2026</div>
+            <div class="gi"><div class="im">🗎</div>SIGNED_FORM.PDF | 16-May-2026</div>
+            <div class="gi"><div class="im">📷🗎</div>IMG_001.JPG | 15-May-2026</div>
+            <div class="gi"><div class="im">🗎</div>SIGNED_FORM.PDF | 16-May-2026</div>
+          </div>
+          <span class="upl">[+ Upload New Image]</span>
+        </div>
+      </div>
+    </div>
+    <!-- pins (positioned over the recreation) -->
+    <div class="pin" style="top:196px; right:14px;" data-z="z1" title="Tab access">1</div>
+    <div class="pin" style="top:262px; left:52%;" data-z="z2" title="Gallery & viewer">2</div>
+    <div class="pin" style="top:318px; left:70%;" data-z="z3" title="Metadata captions">3</div>
+    <div class="pin" style="bottom:14px; left:47%;" data-z="z4" title="Upload">4</div>
+    <div class="pin" style="top:230px; right:40px;" data-z="z5" title="Export / remove actions">5</div>
+    <div class="pin" style="top:330px; left:20px;" data-z="z6" title="Migration & CID">6</div>
+    <div class="pin" style="top:392px; left:88%;" data-z="z7" title="Signed docs & reporting">7</div>
+  </div>
+
+  <div class="maps" id="maps"></div>
+</div>
+
+<h2>2 · The user journey — stories in sequence</h2>
+<div class="secsub">One journey through the Exclusion Images capability, built from the wireframe interactions and the 22 stories. The foundation band runs before day one; stages 1–6 are the recurring operational loop. Each chip links to its story.</div>
+
+<div class="preband" id="preband"></div>
+<div class="jgrid" id="jgrid"></div>
+
+<h2>3 · Full coverage matrix</h2>
+<div class="secsub">Every story, its persona, wireframe zone and journey stage — confirms no story is unmapped.</div>
+<div class="covwrap"><table id="cov"><tr><th>Story</th><th>BR</th><th>Summary</th><th>Persona</th><th>Wireframe zone</th><th>Journey stage</th></tr></table></div>
+
+<div id="modal"><div class="box"><span class="close" onclick="modal.style.display='none'">✕</span><h3 id="mt"></h3><div class="mp" id="mp"></div><div class="body" id="mb"></div><div class="wfz" id="mz"></div></div></div>
+
+<script>
+const P = {surv:["Surveillance","var(--surv)"], sg:["Safer Gambling","var(--sg)"], clm:["CLM","var(--clm)"], inv:["Investigations","var(--inv)"], comp:["Compliance / Regulatory Reporting","var(--comp)"], all:["All authorised users","var(--all)"]};
+
+const S = {
+ "POP-2520":{br:"—", p:"all", t:"View Exclusion Images tab from Patron record", want:"access an Exclusion Images tab directly from a Patron (Contact) record", so:"I can view all exclusion-related images associated with the patron", z:"z1", j:1},
+ "POP-2455":{br:"BR08", p:"surv", t:"Images directly in patron tab, no deep nesting", want:"surveillance images accessible directly within the patron tab", so:"I can retrieve images quickly and avoid deep navigation paths", z:"z1", j:1},
+ "POP-2456":{br:"BR11", p:"surv", t:"Multiple images per patron + empty-gallery message", want:"support for multiple surveillance images per patron and an empty-gallery message when no images exist", so:"records remain complete and the experience is clear in all states", z:"z2", j:1},
+ "POP-2469":{br:"BR28", p:"surv", t:"Gallery thumbnails with enlarge action", want:"to see thumbnail images in the gallery and enlarge any selected image", so:"I can quickly scan and inspect images and keep decisions fast", z:"z2", j:3},
+ "POP-2473":{br:"BR29", p:"surv", t:"Next / previous in enlarged-image viewer", want:"next and previous navigation controls in the enlarged-image viewer", so:"I can review image sets efficiently without closing and reopening", z:"z2", j:3},
+ "POP-2449":{br:"BR07", p:"surv", t:"Retain all current repository capabilities", want:"all current surveillance image repository capabilities retained", so:"go-live does not regress critical operations", z:"z2", j:0},
+ "POP-2474":{br:"BR31", p:"all", t:"Accessibility: keyboard, screen reader, contrast, alt text", want:"image functions to meet accessibility requirements including keyboard navigation, screen reader support, contrast and alt text", so:"all users can operate the workflow and compliance is met", z:"z2", j:3},
+ "POP-2451":{br:"BR13", p:"surv", t:"Metadata model — required & optional attributes", want:"a defined metadata model with required and optional attributes for surveillance images", so:"data capture is standardised and search/reporting quality improves", z:"z3", j:2},
+ "POP-2478":{br:"BR35", p:"surv", t:"Handle missing metadata via update rules", want:"missing metadata handled according to defined metadata update requirements", so:"incomplete migrated or uploaded records are remediated consistently", z:"z3", j:5},
+ "POP-2479":{br:"BR36", p:"surv", t:"CID migration metadata derivation & source rules", want:"CID migration to apply defined metadata derivation and source rules", so:"migrated records are standardised with provenance preserved", z:"z3", j:0},
+ "POP-2464":{br:"BR22", p:"sg", t:"Safer Gambling: add one or many images", want:"to add one or many images per patron in a single workflow", so:"patron image records are maintained efficiently with Surveillance", z:"z4", j:2},
+ "POP-2463":{br:"BR23", p:"clm", t:"CLM: add one or many images", want:"to add one or many images per patron in a single workflow", so:"CLM keeps patron image records current for downstream teams", z:"z4", j:2},
+ "POP-2483":{br:"BR38", p:"inv", t:"Investigations: add one or many images", want:"to add one or many images in a single workflow", so:"required patron image records stay current for downstream teams", z:"z4", j:2},
+ "POP-2454":{br:"BR10", p:"surv", t:"Enforce image specs & supported formats", want:"uploads validated for minimum 720p resolution, unchanged aspect ratio, and formats png / jpg / webp", so:"repository quality is consistent for downstream usage", z:"z4", j:2},
+ "POP-2457":{br:"BR19", p:"surv", t:"Export a single image from gallery", want:"to export a single selected image from the patron gallery", so:"I can share it in approved processes without bulk export", z:"z5", j:4},
+ "POP-2466":{br:"BR20", p:"surv", t:"Bulk export across patrons + daily FRS set", want:"to bulk export images across one or more patrons, including the daily newly-excluded primary images for FRS", so:"external reporting and daily FRS loading are efficient", z:"z5", j:4},
+ "POP-2470":{br:"BR26", p:"surv", t:"NSW role-based removal with mandatory reason", want:"to remove one or many images with a mandatory reason (NSW authorised roles)", so:"removals are controlled, auditable and jurisdictionally compliant", z:"z5", j:5},
+ "POP-2480":{br:"BR34", p:"surv", t:"Migrate all excluded patron images at go-live", want:"all excluded patron images migrated at go-live", so:"history is preserved and teams operate from day one", z:"z6", j:0},
+ "POP-2453":{br:"BR09", p:"surv", t:"Manual ad hoc CID→Salesforce transfer post go-live", want:"to manually transfer images from CID to the Salesforce repository after go-live, ad hoc", so:"outstanding images are resolved and continuity maintained", z:"z6", j:5},
+ "POP-2476":{br:"BR37", p:"surv", t:"CID unchanged & available after migration", want:"CID to remain unchanged and available after migration", so:"operational fallback and historical access remain intact", z:"z6", j:0},
+ "POP-2475":{br:"BR33", p:"clm", t:"Exclusion reports source images from EIR, not CID", want:"the four exclusion reports updated to source images from the Exclusion Image Repository instead of CID", so:"reporting uses the new source of truth for SG and Surveillance", z:"z7", j:6},
+ "POP-2487":{br:"—", p:"comp", t:"Auto-store exclusion documents to SharePoint", want:"exclusion documents generated in Salesforce automatically stored in specific SharePoint folders", so:"QLD weekly reports and NSW daily registers run without Cognos", z:"z7", j:6},
+};
+
+const ZONES = {
+ z1:{n:1, t:"[Exclusion Images] tab on the patron record", d:"Entry point — the tab sits on the Contact record itself"},
+ z2:{n:2, t:"Evidence Gallery — thumbnails & viewer", d:"The image grid and the enlarged-image experience"},
+ z3:{n:3, t:"Image captions & metadata (IMG_001.JPG | date)", d:"Filename + date labels under each thumbnail"},
+ z4:{n:4, t:"[+ Upload New Image] button", d:"Single/multi upload workflow with validation"},
+ z5:{n:5, t:"Gallery item actions — export & remove", d:"Actions on selected images (implied by mock; surfaced on hover/selection)"},
+ z6:{n:6, t:"Patron header & status — migration context", d:"Excluded-ALL status drives what was migrated and what CID still holds"},
+ z7:{n:7, t:"SIGNED_FORM.PDF items — documents & reporting", d:"Generated documents feeding registers and reports"},
+};
+
+const STAGES = [
+ {n:"STAGE 1", t:"Find the patron & open the gallery", who:"All personas", act:"Open the Contact, click the [Exclusion Images] tab — images are one click away; empty galleries show a clear message.", wf:"Zones 1 · 2", j:1},
+ {n:"STAGE 2", t:"Add images", who:"SG · CLM · Investigations · Surveillance", act:"Upload one or many images in a single workflow via [+ Upload New Image]; validation enforces 720p / aspect ratio / png-jpg-webp; required metadata captured on save.", wf:"Zones 3 · 4", j:2},
+ {n:"STAGE 3", t:"Review & identify", who:"Surveillance (read-heavy)", act:"Scan thumbnails, enlarge any image, step through with next/previous — fully keyboard- and screen-reader-operable.", wf:"Zone 2", j:3},
+ {n:"STAGE 4", t:"Share & export", who:"Surveillance", act:"Export a single image for approved use, or bulk-export across patrons — including the daily newly-excluded primary image set for FRS.", wf:"Zone 5", j:4},
+ {n:"STAGE 5", t:"Maintain & govern", who:"Surveillance (NSW authorised roles)", act:"Remove images with a mandatory reason (auditable); remediate missing metadata; pull outstanding CID images across ad hoc.", wf:"Zones 3 · 5 · 6", j:5},
+ {n:"STAGE 6", t:"Report & comply", who:"CLM · Compliance", act:"Four exclusion reports read from the EIR as source of truth; generated documents auto-file to SharePoint for QLD weekly and NSW daily registers.", wf:"Zone 7", j:6},
+];
+
+// ---- render zones panel ----
+const mapsEl = document.getElementById('maps');
+Object.entries(ZONES).forEach(([zid,z],idx)=>{
+  const stories = Object.entries(S).filter(([k,s])=>s.z===zid);
+  const div = document.createElement('div');
+  div.className='zone'+(idx===0?' open':''); div.id='zone_'+zid;
+  div.innerHTML = `<div class="zh"><span class="b">${z.n}</span><h3>${z.t}</h3><small>${stories.length} stories</small></div>
+    <div class="zb"><div style="font-size:10.5px;color:var(--ink2);margin-bottom:4px;">${z.d}</div>` +
+    stories.map(([k,s])=>`<div class="story" data-k="${k}"><span class="id">${k}${s.br!=='—'?' · '+s.br:''}</span><div class="t"><span class="pers" style="background:${P[s.p][1]}"></span>${s.t}<small>${P[s.p][0]}</small></div></div>`).join('') + `</div>`;
+  mapsEl.appendChild(div);
+});
+document.querySelectorAll('.zh').forEach(h=>h.addEventListener('click',()=>{
+  h.parentElement.classList.toggle('open');
+}));
+// pins
+document.querySelectorAll('.pin').forEach(pin=>pin.addEventListener('click',()=>{
+  document.querySelectorAll('.pin').forEach(x=>x.classList.remove('on'));
+  pin.classList.add('on');
+  document.querySelectorAll('.zone').forEach(z=>z.classList.remove('open'));
+  const el = document.getElementById('zone_'+pin.dataset.z);
+  el.classList.add('open');
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+}));
+
+// ---- render journey ----
+const pre = Object.entries(S).filter(([k,s])=>s.j===0);
+document.getElementById('preband').innerHTML =
+  `<b>FOUNDATION — BEFORE DAY ONE:</b><span class="act">bulk migration of all excluded-patron images with metadata derivation &amp; source rules; CID stays unchanged as fallback; no loss of current repository capabilities.</span>` +
+  `<span class="chips">`+pre.map(([k,s])=>`<span class="chip" data-k="${k}">${s.br!=='—'?s.br:k}</span>`).join('')+`</span>`;
+
+const jg = document.getElementById('jgrid');
+STAGES.forEach(st=>{
+  const stories = Object.entries(S).filter(([k,s])=>s.j===st.j);
+  const d = document.createElement('div');
+  d.className='stage';
+  d.innerHTML = `<div class="shead"><div class="n">${st.n}</div><h3>${st.t}</h3><div class="who">${st.who}</div></div>
+    <div class="sb"><div class="act">${st.act}</div><div class="chips">`+
+    stories.map(([k,s])=>`<span class="chip" data-k="${k}" title="${s.t}">${s.br!=='—'?s.br:k}</span>`).join('')+
+    `</div></div><div class="wfref">📍 ${st.wf}</div>`;
+  jg.appendChild(d);
+});
+
+// ---- coverage matrix ----
+const cov = document.getElementById('cov');
+const stageName = j => j===0 ? "Foundation (pre-go-live)" : STAGES.find(s=>s.j===j).t;
+Object.entries(S).sort((a,b)=>a[0].localeCompare(b[0])).forEach(([k,s])=>{
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td class="link" style="cursor:pointer; color:var(--blue); text-decoration:underline;" data-k="${k}">${k}</td><td>${s.br}</td><td>${s.t}</td><td><span class="pers" style="background:${P[s.p][1]}"></span>${P[s.p][0]}</td><td><span class="zref">${ZONES[s.z].n}</span>${ZONES[s.z].t}</td><td>${stageName(s.j)}</td>`;
+  cov.appendChild(tr);
+});
+
+// ---- modal ----
+const modal = document.getElementById('modal');
+document.addEventListener('click',e=>{
+  const el = e.target.closest('[data-k]');
+  if(!el) return;
+  const k = el.dataset.k, s = S[k];
+  document.getElementById('mt').textContent = k + (s.br!=='—' ? ' · ' + s.br : '') + ' — ' + s.t;
+  document.getElementById('mp').innerHTML = `<span class="pers" style="background:${P[s.p][1]}"></span>${P[s.p][0]} · Journey: ${s.j===0?'Foundation':'Stage '+s.j}`;
+  document.getElementById('mb').innerHTML = `<b>As a</b> ${P[s.p][0]} user,<br><b>I want</b> ${s.want},<br><b>So that</b> ${s.so}.`;
+  document.getElementById('mz').innerHTML = `📍 Wireframe zone ${ZONES[s.z].n}: ${ZONES[s.z].t}`;
+  modal.style.display='flex';
+});
+modal.addEventListener('click',e=>{ if(e.target===modal) modal.style.display='none'; });
+</script>
+</body>
+</html>

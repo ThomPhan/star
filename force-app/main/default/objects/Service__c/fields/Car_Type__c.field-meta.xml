@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Car_Type__c</fullName>
+    <label>Car Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sedan (3 seater)</fullName>
+                <default>false</default>
+                <label>Sedan (3 seater)</label>
+            </value>
+            <value>
+                <fullName>Premium Sedan (3 seater)</fullName>
+                <default>false</default>
+                <label>Premium Sedan (3 seater)</label>
+            </value>
+            <value>
+                <fullName>SUV (3 seater)</fullName>
+                <default>false</default>
+                <label>SUV (3 seater)</label>
+            </value>
+            <value>
+                <fullName>Mini Van (7 seater)</fullName>
+                <default>false</default>
+                <label>Mini Van (7 seater)</label>
+            </value>
+            <value>
+                <fullName>Sprinter (11 seater)</fullName>
+                <default>false</default>
+                <label>Sprinter (11 seater)</label>
+            </value>
+            <value>
+                <fullName>Minibus (22 seater) – 24 hour notice</fullName>
+                <default>false</default>
+                <label>Minibus (22 seater) – 24 hour notice</label>
+            </value>
+            <value>
+                <fullName>Minibus (22 seater) – 48 hour notice</fullName>
+                <default>false</default>
+                <label>Minibus (22 seater) – 48 hour notice</label>
+            </value>
+            <value>
+                <fullName>Coach (30 seater) – 48 hour notice</fullName>
+                <default>false</default>
+                <label>Coach (30 seater) – 48 hour notice</label>
+            </value>
+            <value>
+                <fullName>Coach (42 seater) – 48 hour notice</fullName>
+                <default>false</default>
+                <label>Coach (42 seater) – 48 hour notice</label>
+            </value>
+            <value>
+                <fullName>Bentley (3 Seater) - 48 hour notice</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bentley (3 Seater) - 48 hour notice</label>
+            </value>
+            <value>
+                <fullName>Coach (20 Seater)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Coach (20 Seater)</label>
+            </value>
+            <value>
+                <fullName>Coach (22 seater) - 48 hour notice</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Coach (22 seater) - 48 hour notice</label>
+            </value>
+            <value>
+                <fullName>Coach (32 seater) - 48 hour notice</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Coach (32 seater) - 48 hour notice</label>
+            </value>
+            <value>
+                <fullName>Coach (42 Seater) - 24 hour notice</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Coach (42 Seater) - 24 hour notice</label>
+            </value>
+            <value>
+                <fullName>Executive Sedan (3 seater)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Executive Sedan (3 seater)</label>
+            </value>
+            <value>
+                <fullName>Luxury Sedan (3 seater)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Luxury Sedan (3 seater)</label>
+            </value>
+            <value>
+                <fullName>Mini Bus (13 seater)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mini Bus (13 seater)</label>
+            </value>
+            <value>
+                <fullName>Rolls Royce Drophead (3 seater) - 48 hour notice</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rolls Royce Drophead (3 seater) - 48 hour notice</label>
+            </value>
+            <value>
+                <fullName>Sprinter (11 seater) - 24 hour notice</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sprinter (11 seater) - 24 hour notice</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

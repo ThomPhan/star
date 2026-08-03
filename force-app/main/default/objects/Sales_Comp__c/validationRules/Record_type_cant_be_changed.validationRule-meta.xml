@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_type_cant_be_changed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT($Permission.Skip_Validations_Permission), NOT(ISBLANK(RecordTypeId)), ISCHANGED(RecordTypeId), OR( ISPICKVAL(Status__c,&apos;Approved&apos;), ISPICKVAL(Status__c,&apos;Voided&apos;), ISPICKVAL(Status__c,&apos;Pending&apos;)))</errorConditionFormula>
+    <errorMessage>Record Type can`t be change if Status is Approved, Voided or Pending</errorMessage>
+</ValidationRule>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Does_the_patron_have_travel_document__c</fullName>
+    <inlineHelpText>Obtain a copy of a document which clearly shows entry and exit from NSW, such as:
+
+A copy of The Star limousine booking - Arrival and Department Transfer to and from The Star, and OR
+A copy of E-Ticket / Airline Ticket / Bus / Cruise Ship Ticket or provide other form of travel from Interstate to The Star
+If the guest has driven to The Star from Interstate, obtain documentation that confirms this mode of travel e.g. fuel receipts</inlineHelpText>
+    <label>Does the patron have travel document?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

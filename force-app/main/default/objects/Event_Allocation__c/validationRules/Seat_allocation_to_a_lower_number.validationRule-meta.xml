@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Seat_allocation_to_a_lower_number</fullName>
+    <active>false</active>
+    <description>Cannot change  Seat allocation to a lower number</description>
+    <errorConditionFormula>ISCHANGED(Capacity__c) &amp;&amp; (PRIORVALUE( Capacity__c ) &gt; Capacity__c)</errorConditionFormula>
+    <errorMessage>Total Seat Capacity cannot be reduce.</errorMessage>
+</ValidationRule>

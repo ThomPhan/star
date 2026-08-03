@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PoP Solution — Wireframe Prototype (Exclusion Management Console)</title>
+<style>
+  :root{
+    --ink:#181818; --ink2:#5c6470; --line:#c9ccd1; --line2:#e2e4e8;
+    --bg:#f3f3f4; --panel:#fff; --chip:#eceef1;
+    --blue:#0b5cab; --gold:#b9a05e; --ok:#2e7d4f; --warn:#b7791f; --err:#b3382c;
+    --note:#fff6c9; --noteline:#d9c15a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"Segoe UI",system-ui,-apple-system,sans-serif; background:#d9dbde; color:var(--ink); font-size:13px;}
+  .frame{max-width:1180px; margin:24px auto 70px; background:var(--bg); border:1px solid #b7bac0; border-radius:8px; overflow:hidden; box-shadow:0 8px 30px rgba(0,0,0,.18);}
+  /* browser-ish chrome */
+  .sysbar{background:#fbf3d5; border-bottom:1px solid #e5d9a8; text-align:center; padding:6px; font-size:12px; font-style:italic;}
+  .sandbox{background:#e8e9eb; border-bottom:1px solid var(--line); text-align:center; padding:4px; font-size:11.5px; color:var(--ink2);}
+  .globalhead{display:flex; align-items:center; gap:18px; padding:10px 18px; background:#fff; border-bottom:1px solid var(--line);}
+  .logo{font-weight:700; letter-spacing:2px; color:var(--gold); font-size:14px; line-height:1.1;}
+  .logo small{display:block; font-size:8px; letter-spacing:1.5px; color:#9a8b56;}
+  .gsearch{flex:1; max-width:420px; border:1px solid var(--line); border-radius:16px; padding:6px 14px; color:var(--ink2); background:#fff;}
+  .gicons{margin-left:auto; color:var(--ink2); letter-spacing:4px; font-size:15px;}
+  .avatar{width:26px; height:26px; border-radius:50%; background:var(--chip); border:1px solid var(--line); display:inline-block; vertical-align:middle;}
+  /* app nav */
+  .appnav{display:flex; align-items:center; gap:2px; background:#fff; border-bottom:2px solid var(--line); padding:0 12px;}
+  .waffle{display:grid; grid-template-columns:repeat(3,4px); gap:2px; margin-right:10px;}
+  .waffle i{width:4px; height:4px; background:#8a8f98; border-radius:1px;}
+  .appname{font-weight:700; font-size:14px; padding:10px 14px 10px 0; border-right:1px solid var(--line2); margin-right:8px;}
+  .nav{display:flex;}
+  .nav a{padding:11px 13px; color:var(--ink); text-decoration:none; font-size:12.5px; border-bottom:3px solid transparent; cursor:pointer; white-space:nowrap;}
+  .nav a:hover{background:var(--chip);}
+  .nav a.on{border-bottom-color:var(--blue); font-weight:700; color:var(--blue);}
+  /* screens */
+  .screen{display:none; padding:16px 18px 26px;}
+  .screen.on{display:block;}
+  .crumb{font-size:11px; color:var(--ink2); margin-bottom:4px;}
+  .pagetitle{font-size:17px; font-weight:700; margin-bottom:12px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .pagetitle .icon{width:26px; height:26px; border-radius:5px; background:var(--chip); border:1px solid var(--line); display:inline-block;}
+  /* generic wireframe atoms */
+  .panel{background:var(--panel); border:1px solid var(--line); border-radius:6px; margin-bottom:14px;}
+  .panel .ph{padding:9px 14px; border-bottom:1px solid var(--line2); font-weight:700; font-size:12.5px; background:#fafafb; display:flex; align-items:center; gap:8px;}
+  .panel .pb{padding:12px 14px;}
+  .btn{display:inline-block; border:1px solid var(--blue); color:var(--blue); background:#fff; border-radius:4px; padding:6px 14px; font-size:12px; font-weight:600; cursor:pointer; user-select:none;}
+  .btn.pri{background:var(--blue); color:#fff;}
+  .btn.sm{padding:3px 10px; font-size:11px;}
+  .btn.ghost{border-color:var(--line); color:var(--ink2);}
+  .btn:active{transform:translateY(1px);}
+  .chiprow{display:flex; gap:6px; flex-wrap:wrap;}
+  .status{display:inline-block; border-radius:10px; padding:2px 10px; font-size:10.5px; font-weight:700;}
+  .s-ok{background:#e0f0e6; color:var(--ok); border:1px solid #b5d9c2;}
+  .s-warn{background:#fdf1dc; color:var(--warn); border:1px solid #ecd3a2;}
+  .s-err{background:#fbe4e1; color:var(--err); border:1px solid #eec0ba;}
+  .s-mut{background:var(--chip); color:var(--ink2); border:1px solid var(--line);}
+  table{width:100%; border-collapse:collapse; font-size:12px;}
+  th{font-size:10.5px; text-transform:uppercase; letter-spacing:.4px; color:var(--ink2); text-align:left; padding:6px 8px; border-bottom:1px solid var(--line);}
+  td{padding:7px 8px; border-bottom:1px solid var(--line2); vertical-align:top;}
+  tr:hover td{background:#f7f8f9;}
+  .link{color:var(--blue); cursor:pointer; text-decoration:underline;}
+  /* layout helpers */
+  .cols{display:grid; gap:14px;}
+  .c2{grid-template-columns:300px 1fr;}
+  .c2e{grid-template-columns:1fr 1fr;}
+  .c3{grid-template-columns:repeat(3,1fr);}
+  /* record tabs */
+  .rtabs{display:flex; gap:2px; border-bottom:1px solid var(--line); padding:0 6px; background:#fafafb; border-radius:6px 6px 0 0;}
+  .rtabs span{padding:9px 13px; font-size:12px; cursor:pointer; border-bottom:3px solid transparent; color:var(--ink2);}
+  .rtabs span.on{border-bottom-color:var(--blue); color:var(--ink); font-weight:700;}
+  .rtabbody{display:none; padding:14px;}
+  .rtabbody.on{display:block;}
+  /* image placeholders */
+  .imgbox{background:var(--chip); border:1px solid var(--line); border-radius:4px; position:relative; display:flex; align-items:center; justify-content:center; color:#9aa0a8;}
+  .imgbox svg{opacity:.7;}
+  .gal{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
+  .galitem{text-align:center; font-size:10.5px; color:var(--ink2);}
+  .galitem .imgbox{height:74px; margin-bottom:5px; cursor:pointer;}
+  .galitem.primary .imgbox{outline:3px solid var(--gold);}
+  .ptag{display:block; font-size:9px; font-weight:700; color:var(--gold); letter-spacing:.5px;}
+  /* fields */
+  .fgrid{display:grid; grid-template-columns:1fr 1fr; gap:10px 22px;}
+  .field label{display:block; font-size:10.5px; color:var(--ink2); margin-bottom:2px;}
+  .field .val{border-bottom:1px solid var(--line2); padding:3px 0; min-height:22px; font-size:12.5px;}
+  .input, select.input{width:100%; border:1px solid var(--line); border-radius:4px; padding:7px 9px; font-size:12.5px; background:#fff; color:var(--ink);}
+  textarea.input{min-height:56px; resize:vertical; font-family:inherit;}
+  .radio{display:flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid var(--line); border-radius:5px; margin-bottom:7px; cursor:pointer; background:#fff;}
+  .radio:hover{border-color:var(--blue);}
+  .radio.sel{border-color:var(--blue); box-shadow:0 0 0 1px var(--blue); background:#f4f8fc;}
+  .radio i{width:12px; height:12px; border-radius:50%; border:2px solid var(--line); flex:none;}
+  .radio.sel i{border-color:var(--blue); background:var(--blue);}
+  .radio small{color:var(--ink2); display:block;}
+  .check{display:flex; gap:8px; align-items:flex-start; padding:6px 0; cursor:pointer;}
+  .check i{width:13px; height:13px; border:1.5px solid var(--line); border-radius:3px; margin-top:1px; flex:none; display:inline-flex; align-items:center; justify-content:center; font-size:10px; font-style:normal; color:#fff;}
+  .check.sel i{background:var(--blue); border-color:var(--blue);}
+  /* path (chevrons) */
+  .path{display:flex; margin-bottom:14px; border:1px solid var(--line); border-radius:20px; overflow:hidden; background:#fff;}
+  .path div{flex:1; text-align:center; padding:8px 6px; font-size:11px; font-weight:600; color:var(--ink2); background:#fff; border-right:1px solid var(--line2); position:relative;}
+  .path div.done{background:#e0f0e6; color:var(--ok);}
+  .path div.cur{background:var(--blue); color:#fff;}
+  /* wizard */
+  .wiz{max-width:640px; margin:0 auto;}
+  .wsteps{display:flex; gap:6px; margin-bottom:16px;}
+  .wsteps div{flex:1; height:5px; border-radius:3px; background:var(--line2);}
+  .wsteps div.on{background:var(--blue);}
+  .wpage{display:none;}
+  .wpage.on{display:block;}
+  .wnav{display:flex; justify-content:space-between; margin-top:16px;}
+  /* annotation notes */
+  .note{background:var(--note); border:1px solid var(--noteline); border-left:4px solid var(--noteline); border-radius:4px; padding:8px 11px; font-size:11px; color:#5f5427; margin:10px 0; line-height:1.5;}
+  .note b{color:#4a4118;}
+  /* WOLI list */
+  .woli{display:flex; align-items:center; gap:8px; padding:5px 0 5px 14px; font-size:11.5px; color:var(--ink2); border-left:2px solid var(--line2); margin-left:8px;}
+  .woli .status{margin-left:auto;}
+  .wohead{display:flex; align-items:center; gap:8px; font-weight:700; font-size:12px; padding:8px 0 3px;}
+  /* home cards */
+  .kpi{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:14px;}
+  .kpi .panel{margin:0; text-align:center; padding:14px 8px;}
+  .kpi .big{font-size:24px; font-weight:700;}
+  .kpi .lbl{font-size:10.5px; color:var(--ink2); text-transform:uppercase; letter-spacing:.5px; margin-top:3px;}
+  /* toast */
+  #toast{position:fixed; bottom:26px; left:50%; transform:translateX(-50%); background:#243043; color:#fff; padding:10px 22px; border-radius:6px; font-size:12.5px; display:none; z-index:99; box-shadow:0 6px 18px rgba(0,0,0,.3);}
+  /* screen index bar */
+  .indexbar{background:#243043; color:#c6cfdd; font-size:11px; padding:8px 18px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
+  .indexbar b{color:#fff;}
+  .indexbar span{cursor:pointer; text-decoration:underline; text-underline-offset:2px;}
+  .indexbar span:hover{color:#fff;}
+  .bars{display:flex; align-items:flex-end; gap:6px; height:90px; padding:6px 4px 0;}
+  .bars i{flex:1; background:#cfd6df; border:1px solid var(--line); border-radius:3px 3px 0 0;}
+  .maplike{height:110px; background:repeating-linear-gradient(45deg,#eef0f2,#eef0f2 12px,#e5e8ea 12px,#e5e8ea 24px); border-top:1px solid var(--line2); position:relative;}
+  .pin{position:absolute; left:48%; top:38%; width:14px; height:14px; background:#8a8f98; border-radius:50% 50% 50% 0; transform:rotate(-45deg);}
+</style>
+</head>
+<body>
+
+<div class="frame">
+  <div class="sysbar">⚠︎ <i>Salesforce enforces new security requirements in June 2026.</i> <u>See What's Changing</u></div>
+  <div class="sandbox">Sandbox: UAT | <u>Log out</u></div>
+  <div class="globalhead">
+    <div class="logo">THE✻STAR<small>ENTERTAINMENT GROUP</small></div>
+    <div class="gsearch">🔍 Search…</div>
+    <div class="gicons">★ ▾ &nbsp; ⊞ &nbsp; ☁ &nbsp; ? &nbsp; 🔔 &nbsp;<span class="avatar"></span></div>
+  </div>
+  <div class="appnav">
+    <div class="waffle"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="appname">Exclusion Managem…</div>
+    <div class="nav">
+      <a data-s="home" class="on">Home</a>
+      <a data-s="patron">Contacts ▾</a>
+      <a data-s="case">Cases ▾</a>
+      <a data-s="exclusion">Exclusions ▾</a>
+      <a data-s="exclusion">Restrictions ▾</a>
+      <a data-s="case">Work Orders ▾</a>
+      <a data-s="reports">Reports ▾</a>
+      <a>More ▾</a>
+    </div>
+  </div>
+
+  <div class="indexbar"><b>WIREFRAME SCREENS:</b>
+    <span data-s="home">1 Console Home</span>
+    <span data-s="patron">2 Patron Record (mock)</span>
+    <span data-s="applyflow">3 Apply Exclusion Flow</span>
+    <span data-s="case">4 Case & Work Orders</span>
+    <span data-s="exclusion">5 Exclusion Record</span>
+    <span data-s="revoke">6 Revoke Flow</span>
+    <span data-s="contra">7 Log Contravention</span>
+    <span data-s="surv">8 Surveillance View</span>
+    <span data-s="reports">9 Reports</span>
+  </div>
+
+  <!-- ============ 1. HOME ============ -->
+  <div class="screen on" id="home">
+    <div class="pagetitle"><span class="icon"></span>Console Home — Safer Gambling (NSW)</div>
+    <div class="note"><b>Journey link:</b> Entry point for all three journeys — work queues per persona, approval items (Financial Crime), and failed-enforcement alerts with manual retry (Integration Design: 3 auto-retries → manual retry).</div>
+    <div class="kpi">
+      <div class="panel"><div class="big">12</div><div class="lbl">My Open Cases</div></div>
+      <div class="panel"><div class="big">4</div><div class="lbl">WOLIs Awaiting Action</div></div>
+      <div class="panel"><div class="big s-errtxt" style="color:var(--err)">2</div><div class="lbl">Failed Enforcements</div></div>
+      <div class="panel"><div class="big">3</div><div class="lbl">Revocation Reminders Due</div></div>
+    </div>
+    <div class="cols c2e">
+      <div class="panel"><div class="ph">My Open Cases (Queue: Safer Gambling NSW)</div>
+        <table>
+          <tr><th>Case</th><th>Record Type</th><th>Patron</th><th>Stage</th><th></th></tr>
+          <tr><td class="link" data-s="case">C-004121</td><td>Apply Self Exclusion</td><td>Ms Lea Auto Toy</td><td><span class="status s-warn">Enforcement</span></td><td><span class="btn sm" data-s="case">Open</span></td></tr>
+          <tr><td class="link">C-004118</td><td>Apply Problem Gambling</td><td>Mr J Chen</td><td><span class="status s-mut">Validation</span></td><td><span class="btn sm ghost">Open</span></td></tr>
+          <tr><td class="link">C-004102</td><td>Revoke Exclusion</td><td>Mr T Barnes</td><td><span class="status s-warn">Approval (AML)</span></td><td><span class="btn sm ghost">Open</span></td></tr>
+          <tr><td class="link">C-004096</td><td>Contravention</td><td>Mr D Okafor</td><td><span class="status s-ok">Submitted</span></td><td><span class="btn sm ghost">Open</span></td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="panel"><div class="ph">⚠ Enforcement Failures — Action Required</div>
+          <table>
+            <tr><th>Restriction</th><th>System</th><th>Attempts</th><th></th></tr>
+            <tr><td>Gaming Stop Code — 40818053</td><td>Synkros</td><td>3 of 3</td><td><span class="btn sm" onclick="toast('Manual retry queued — PoP Event republished to Azure')">Retry</span></td></tr>
+            <tr><td>Digital Access — 40771122</td><td>PingOne</td><td>3 of 3</td><td><span class="btn sm" onclick="toast('Manual retry queued — PoP Event republished to Azure')">Retry</span></td></tr>
+          </table>
+        </div>
+        <div class="panel"><div class="ph">Quick Actions</div><div class="pb chiprow">
+          <span class="btn pri" data-s="applyflow">+ Apply Exclusion</span>
+          <span class="btn" data-s="revoke">Revoke Exclusion</span>
+          <span class="btn" data-s="contra">Log Contravention</span>
+          <span class="btn ghost" data-s="patron">Find Patron</span>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 2. PATRON RECORD (based on mock) ============ -->
+  <div class="screen" id="patron">
+    <div class="crumb">Contacts › Patron</div>
+    <div class="pagetitle"><span class="icon"></span>My (Patron ID: 40818053)</div>
+    <div class="cols c2">
+      <div>
+        <div class="panel"><div class="pb" style="text-align:center;">
+          <div class="imgbox" style="height:110px; width:110px; margin:0 auto 4px;">
+            <svg width="90" height="90" viewBox="0 0 90 90"><rect x="4" y="4" width="82" height="82" fill="none" stroke="#9aa0a8" stroke-width="2"/><line x1="4" y1="4" x2="86" y2="86" stroke="#9aa0a8" stroke-width="3"/><line x1="86" y1="4" x2="4" y2="86" stroke="#9aa0a8" stroke-width="3"/></svg>
+          </div>
+          <div style="font-size:9.5px;color:var(--ink2);">Star Club</div>
+          <div class="note" style="text-align:left;"><b>Red X replacement:</b> main profile image is overlaid with exclusion indicator when Patron Status = Excluded (BRD — Main Profile Image).</div>
+          <div style="margin:8px 0 4px;"><span class="btn pri" data-s="applyflow">Apply Exclusion ▾</span></div>
+        </div></div>
+        <div class="panel"><div class="pb">
+          <div class="field"><label>Patron ID</label><div class="val">40818053</div></div>
+          <div class="field"><label>Name</label><div class="val">Ms Lea Auto Toy</div></div>
+          <div class="field"><label>Patron Status</label><div class="val"><span class="status s-err">Excluded ALL</span></div></div>
+          <div class="field"><label>Card Type Status</label><div class="val">SILVER (ACTIVE)</div></div>
+          <div class="field"><label>Loyalty Program</label><div class="val">Star Club</div></div>
+          <div class="field"><label>Tier</label><div class="val">Bronze</div></div>
+        </div>
+        <div class="maplike"><div class="pin"></div></div></div>
+      </div>
+      <div class="panel" style="align-self:start;">
+        <div class="rtabs" id="ptabs">
+          <span class="on" data-t="pt1">[Details]</span><span data-t="pt2">[Cases]</span><span data-t="pt3">[Exclusion]</span><span data-t="pt4">[Restriction]</span><span data-t="pt5">[Exclusion Images]</span>
+        </div>
+        <div class="rtabbody on" id="pt1">
+          <div class="fgrid">
+            <div class="field"><label>First Name</label><div class="val">Lea</div></div>
+            <div class="field"><label>Last Name</label><div class="val">Auto Toy</div></div>
+            <div class="field"><label>Date of Birth</label><div class="val">██ / ██ / ████</div></div>
+            <div class="field"><label>MDM Golden ID</label><div class="val">MDM-99231</div></div>
+            <div class="field"><label>Synkros Player ID</label><div class="val">40818053</div></div>
+            <div class="field"><label>CIAM (PingOne) ID</label><div class="val">P1-88213</div></div>
+            <div class="field"><label>Jurisdiction(s)</label><div class="val">NSW · QLD</div></div>
+            <div class="field"><label>POI Profile in CID?</label><div class="val">Yes — Player of Interest</div></div>
+          </div>
+        </div>
+        <div class="rtabbody" id="pt2">
+          <table>
+            <tr><th>Case</th><th>Record Type</th><th>Status</th><th>Owner</th></tr>
+            <tr><td class="link" data-s="case">C-004121</td><td>Apply Self Exclusion</td><td><span class="status s-warn">In Progress</span></td><td>SG Officer (NSW)</td></tr>
+            <tr><td class="link" data-s="contra">C-004096</td><td>Contravention</td><td><span class="status s-ok">Closed</span></td><td>Asset Protection</td></tr>
+          </table>
+        </div>
+        <div class="rtabbody" id="pt3">
+          <table>
+            <tr><th>Exclusion</th><th>Type</th><th>Jurisdiction</th><th>Start</th><th>Review / End</th><th>Status</th></tr>
+            <tr><td class="link" data-s="exclusion">EX-20991</td><td>Self-Exclusion – Group Wide</td><td>NSW</td><td>15-May-2026</td><td>15-Nov-2026</td><td><span class="status s-err">Active</span></td></tr>
+            <tr><td class="link" data-s="exclusion">EX-20992</td><td>Self-Exclusion – Group Wide</td><td>QLD</td><td>15-May-2026</td><td>15-Nov-2026</td><td><span class="status s-err">Active</span></td></tr>
+          </table>
+          <div class="chiprow" style="margin-top:10px;"><span class="btn" data-s="revoke">Revoke Exclusion</span><span class="btn ghost" data-s="contra">Log Contravention</span></div>
+        </div>
+        <div class="rtabbody" id="pt4">
+          <table>
+            <tr><th>Restriction</th><th>Channel</th><th>System</th><th>Enforcement Status</th></tr>
+            <tr><td>Gaming Stop Code</td><td>Synkros (Direct)</td><td>Synkros</td><td><span class="status s-ok">Completed</span></td></tr>
+            <tr><td>Facial Recognition Subject</td><td>Azure → NeoFace</td><td>NeoFace</td><td><span class="status s-ok">Completed</span></td></tr>
+            <tr><td>Digital Access Block</td><td>Azure → PingOne</td><td>CIAM / PingOne</td><td><span class="status s-warn">Acknowledged</span></td></tr>
+            <tr><td>Loyalty / Entitlements Reset</td><td>Azure → Star App</td><td>Star App</td><td><span class="status s-err">Failed (3/3) </span> <span class="btn sm" onclick="toast('Manual retry queued')">Retry</span></td></tr>
+          </table>
+        </div>
+        <div class="rtabbody" id="pt5">
+          <div class="panel" style="margin:0;"><div class="ph">Exclusion Evidence Gallery</div><div class="pb">
+            <div class="note" style="margin-top:0;"><b>Journey link (BRD Scenarios 1 &amp; 2):</b> key CID identification images copied here on Apply (or uploaded from digital file if no CID history). Best image tagged <b>Surveillance Primary Image</b>; others as favourites. Repository stays active after revocation.</div>
+            <div class="gal" id="gal">
+              <div class="galitem primary"><span class="ptag">★ PRIMARY IMAGE</span><div class="imgbox">📷🗎</div>IMG_001.JPG | 15-May-2026</div>
+              <div class="galitem"><span class="ptag" style="color:var(--ink2)">FAVOURITE</span><div class="imgbox">📷🗎</div>IMG_002.JPG | 15-May-2026</div>
+              <div class="galitem"><div class="imgbox">📷🗎</div>IMG_003.JPG | 15-May-2026</div>
+              <div class="galitem"><div class="imgbox">📷🗎</div>IMG_004.JPG | 15-May-2026</div>
+              <div class="galitem"><div class="imgbox">📷🗎</div>IMG_005.JPG | 15-May-2026</div>
+              <div class="galitem"><div class="imgbox">🗎</div>SIGNED_FORM.PDF | 16-May-2026</div>
+              <div class="galitem"><div class="imgbox">📷🗎</div>IMG_006.JPG | 15-May-2026</div>
+              <div class="galitem"><div class="imgbox">🗎</div>SIGNED_FORM.PDF | 16-May-2026</div>
+            </div>
+            <div class="chiprow" style="margin-top:12px;">
+              <span class="btn pri" onclick="toast('Upload dialog — image + metadata (source, date, camera) per BRD')">[+ Upload New Image]</span>
+              <span class="btn" onclick="toast('Selected image tagged as Surveillance Primary Image')">Tag as Primary</span>
+              <span class="btn ghost" onclick="toast('Image tagged as favourite')">Tag as Favourite</span>
+            </div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 3. APPLY FLOW ============ -->
+  <div class="screen" id="applyflow">
+    <div class="crumb">Cases › New</div>
+    <div class="pagetitle"><span class="icon"></span>Apply Exclusion — Screen Flow</div>
+    <div class="note"><b>Journey link (Apply, Stages 1–2):</b> Cases are created only via the UI. Record types shown are filtered by persona profile — SG sees Self / Problem Gambling / TPOE; CLM sees Venue / WoL; Investigations sees Police / External.</div>
+    <div class="wiz panel"><div class="pb">
+      <div class="wsteps"><div class="on" id="ws1"></div><div id="ws2"></div><div id="ws3"></div><div id="ws4"></div></div>
+
+      <div class="wpage on" id="wp1">
+        <h4 style="margin-bottom:10px;">Step 1 · Select exclusion record type</h4>
+        <div class="radio sel"><i></i><div><b>Apply Self Exclusion</b><small>Voluntary — patron initiated (persona: Safer Gambling)</small></div></div>
+        <div class="radio"><i></i><div><b>Apply Problem Gambling Exclusion</b><small>Welfare intervention (persona: Safer Gambling)</small></div></div>
+        <div class="radio"><i></i><div><b>Apply TPOE Exclusion</b><small>Third-party exclusion order (persona: Safer Gambling)</small></div></div>
+        <div class="radio" style="opacity:.45;"><i></i><div><b>Apply Venue / WoL Exclusion</b><small>🔒 Visible to CLM persona only</small></div></div>
+        <div class="radio" style="opacity:.45;"><i></i><div><b>Apply Police / External Exclusion</b><small>🔒 Visible to Investigations / Asset Protection only</small></div></div>
+      </div>
+
+      <div class="wpage" id="wp2">
+        <h4 style="margin-bottom:10px;">Step 2 · Patron &amp; jurisdiction</h4>
+        <div class="field" style="margin-bottom:10px;"><label>Patron</label><input class="input" value="Ms Lea Auto Toy — 40818053" readonly></div>
+        <div class="field" style="margin-bottom:10px;"><label>Case Type (drives NSW/QLD exclusion mapping)</label>
+          <select class="input"><option>Self Exclusion in both states → Self-Exclusion – Group Wide (NSW + QLD)</option><option>Self Exclusion in NSW only</option><option>Self Exclusion in QLD only</option></select></div>
+        <div class="cols c2e">
+          <div class="field"><label>Start Date</label><input class="input" value="15-May-2026"></div>
+          <div class="field"><label>Period / Review Date</label><input class="input" value="6 months → 15-Nov-2026"></div>
+        </div>
+      </div>
+
+      <div class="wpage" id="wp3">
+        <h4 style="margin-bottom:10px;">Step 3 · Pre-checks (auto-run on submit)</h4>
+        <div class="check sel"><i>✓</i><div>Check for Open Ratings — <span class="status s-warn">1 open rating found → “Wait for Rating Closure” WOLI will be created</span></div></div>
+        <div class="check sel"><i>✓</i><div>Check for API feasibility — <span class="status s-ok">OK</span></div></div>
+        <div class="check sel"><i>✓</i><div>Notify Surveillance Team — <span class="status s-mut">Queued</span></div></div>
+        <div class="check sel"><i>✓</i><div>Patron photo required — <span class="status s-warn">Upload during Enforce Exclusion work order</span></div></div>
+        <div class="note"><b>Journey link (Apply, Stage 3):</b> these become WOLIs under the “Validate Patron Status” Work Order.</div>
+      </div>
+
+      <div class="wpage" id="wp4">
+        <h4 style="margin-bottom:10px;">Step 4 · Review &amp; submit</h4>
+        <div class="fgrid">
+          <div class="field"><label>Record Type</label><div class="val">Apply Self Exclusion</div></div>
+          <div class="field"><label>Patron</label><div class="val">Ms Lea Auto Toy (40818053)</div></div>
+          <div class="field"><label>Exclusions to create</label><div class="val">Self-Exclusion – Group Wide × NSW, QLD</div></div>
+          <div class="field"><label>Period</label><div class="val">15-May-2026 → 15-Nov-2026</div></div>
+        </div>
+        <div class="note">On submit: Case created (Private) → Work Orders auto-generated (Validate → Enforce → Authority &amp; Reminder → Generate Document → Deliver) → Exclusion &amp; Restriction records created by flow → PoP Event published to Azure.</div>
+      </div>
+
+      <div class="wnav">
+        <span class="btn ghost" id="wback" onclick="wnav(-1)" style="visibility:hidden;">← Back</span>
+        <span class="btn pri" id="wnext" onclick="wnav(1)">Next →</span>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- ============ 4. CASE + WORK ORDERS ============ -->
+  <div class="screen" id="case">
+    <div class="crumb">Cases › C-004121</div>
+    <div class="pagetitle"><span class="icon"></span>Case C-004121 — Apply Self Exclusion <span class="status s-warn">In Progress</span></div>
+    <div class="path">
+      <div class="done">New</div><div class="done">Validation</div><div class="cur">Enforcement</div><div>Authority &amp; Witness</div><div>Document &amp; e-Sign</div><div>Delivery</div><div>Closed</div>
+    </div>
+    <div class="cols c2e">
+      <div class="panel"><div class="ph">Work Orders &amp; Line Items (auto-generated)</div><div class="pb">
+        <div class="wohead">✅ WO-1 · Validate Patron Status <span class="status s-ok">Complete</span></div>
+        <div class="woli">Check for Open Ratings <span class="status s-ok">Done</span></div>
+        <div class="woli">Check for API feasibility <span class="status s-ok">Done</span></div>
+        <div class="woli">Notify Surveillance Team <span class="status s-ok">Done</span></div>
+        <div class="woli">Wait for Rating Closure <span class="status s-ok">Done</span></div>
+
+        <div class="wohead">🔷 WO-2 · Enforce Exclusion (per Jurisdiction) <span class="status s-warn">In Progress</span></div>
+        <div class="woli">Upload the Photo in SF <span class="btn sm" onclick="toast('Photo uploaded — will sync to Exclusion Image Repository')">Upload</span></div>
+        <div class="woli">Create Exclusion for NSW <span class="status s-ok">Done</span></div>
+        <div class="woli">Create Exclusion for QLD <span class="status s-warn">Pending</span></div>
+        <div class="woli">Sync to Facial Recognition (NeoFace) <span class="status s-mut">Queued</span></div>
+        <div class="woli">Create Restrictions <span class="status s-mut">Queued</span></div>
+
+        <div class="wohead">▫ WO-3 · Capture Authority &amp; Reminder <span class="status s-mut">Not Started</span></div>
+        <div class="woli">Capture Issuer Full Name + Licence No. (NSW only)</div>
+        <div class="woli">Assign Witness · Capture Witness Name + Licence No. (NSW only)</div>
+        <div class="woli">Add Reminder Date</div>
+
+        <div class="wohead">▫ WO-4 · Generate Exclusion Document <span class="status s-mut">Not Started</span></div>
+        <div class="woli">Invoke FormAssembly · Link Document to Contact &amp; Exclusion</div>
+        <div class="woli">Send Email to Issuer and Witness for eSignature (DocuSign ID tracked on WOLI)</div>
+
+        <div class="wohead">▫ WO-5 · Deliver Exclusion Document <span class="status s-mut">Not Started</span></div>
+        <div class="woli">Print · Capture Tracking Number · Handover Type (Mail/Onsite) · Update Delivery Status</div>
+      </div></div>
+      <div>
+        <div class="panel"><div class="ph">Case Details</div><div class="pb fgrid">
+          <div class="field"><label>Record Type</label><div class="val">Apply Self Exclusion</div></div>
+          <div class="field"><label>Case Type</label><div class="val">Self Exclusion in both states</div></div>
+          <div class="field"><label>Patron</label><div class="val link" data-s="patron">Ms Lea Auto Toy (40818053)</div></div>
+          <div class="field"><label>Owner</label><div class="val">SG Officer — Safer Gambling NSW</div></div>
+          <div class="field"><label>Related Exclusions</label><div class="val link" data-s="exclusion">EX-20991 (NSW) · EX-20992 (QLD)</div></div>
+          <div class="field"><label>Created</label><div class="val">15-May-2026 10:42</div></div>
+        </div></div>
+        <div class="panel"><div class="ph">Segregation of Duties</div><div class="pb" style="font-size:11.5px; color:var(--ink2); line-height:1.6;">
+          Work Orders are atomic units of work — different WOLIs can be actioned by different personas (e.g. photo upload by SG, NeoFace sync automated, witness capture by a second officer). WOLI tracks signature status, timeline, DocuSign ID and per-state status.
+        </div></div>
+        <div class="note"><b>Journey link (Apply, Stages 3–7):</b> this screen covers validation → enforcement → authority → document → delivery. Completing WO-2 publishes the PoP Event that drives the Exclusion record's enforcement lifecycle (screen 5).</div>
+        <span class="btn" data-s="exclusion">View Exclusion Record →</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 5. EXCLUSION RECORD ============ -->
+  <div class="screen" id="exclusion">
+    <div class="crumb">Exclusions › EX-20991</div>
+    <div class="pagetitle"><span class="icon"></span>Exclusion EX-20991 — Self-Exclusion – Group Wide (NSW) <span class="status s-err">Active</span></div>
+    <div class="cols c2e">
+      <div>
+        <div class="panel"><div class="ph">Details (read-only — created by Case flow, not editable)</div><div class="pb fgrid">
+          <div class="field"><label>Patron</label><div class="val link" data-s="patron">Ms Lea Auto Toy (40818053)</div></div>
+          <div class="field"><label>Type</label><div class="val">Self-Exclusion – Group Wide</div></div>
+          <div class="field"><label>Jurisdiction</label><div class="val">NSW</div></div>
+          <div class="field"><label>Status</label><div class="val">Active</div></div>
+          <div class="field"><label>Start Date</label><div class="val">15-May-2026</div></div>
+          <div class="field"><label>Review / End Date</label><div class="val">15-Nov-2026</div></div>
+          <div class="field"><label>Source Case</label><div class="val link" data-s="case">C-004121</div></div>
+          <div class="field"><label>Signed Document</label><div class="val">SIGNED_FORM.PDF (DocuSign ✓)</div></div>
+        </div></div>
+        <div class="panel"><div class="ph">Contravention History (Case–Exclusion Association)</div>
+          <table>
+            <tr><th>Case</th><th>Date</th><th>Incident Report #</th><th>Status</th></tr>
+            <tr><td class="link" data-s="contra">C-004096</td><td>02-Jun-2026</td><td>IR-2026-0412</td><td><span class="status s-ok">Logged</span></td></tr>
+          </table>
+        </div>
+        <div class="chiprow"><span class="btn" data-s="revoke">Revoke Exclusion</span><span class="btn ghost" data-s="contra">Log Contravention</span></div>
+      </div>
+      <div>
+        <div class="panel"><div class="ph">Restrictions &amp; Enforcement Status</div>
+          <table>
+            <tr><th>Restriction</th><th>System</th><th>Status</th><th></th></tr>
+            <tr><td>Gaming Stop Code</td><td>Synkros</td><td><span class="status s-ok">Completed</span></td><td></td></tr>
+            <tr><td>Facial Recognition Subject</td><td>NeoFace</td><td><span class="status s-ok">Completed</span></td><td></td></tr>
+            <tr><td>Digital Access Block</td><td>PingOne</td><td><span class="status s-warn">Acknowledged</span></td><td></td></tr>
+            <tr><td>Loyalty / Entitlements</td><td>Star App</td><td><span class="status s-err">Failed 3/3</span></td><td><span class="btn sm" onclick="toast('Manual retry — PoP Event republished (EventType=Apply)')">Retry</span></td></tr>
+            <tr><td>Exclusion Data Sync</td><td>MDM</td><td><span class="status s-ok">Completed</span></td><td></td></tr>
+          </table>
+          <div class="pb" style="font-size:10.5px; color:var(--ink2);">Lifecycle: Pending Enforcement → Acknowledged → Completed · Failed/Partial → retry · Reconciled on downstream corrections.</div>
+        </div>
+        <div class="panel"><div class="ph">Integration Log (PoP_Event__e)</div>
+          <table>
+            <tr><th>Time</th><th>Direction</th><th>EventType</th><th>Result</th></tr>
+            <tr><td>15-May 10:55</td><td>Outbound</td><td>Apply</td><td><span class="status s-ok">Ack (Azure 200)</span></td></tr>
+            <tr><td>15-May 11:02</td><td>Inbound</td><td>Update</td><td><span class="status s-ok">Synkros STOPCODE ✓</span></td></tr>
+            <tr><td>15-May 11:20</td><td>Outbound</td><td>Apply (retry 3)</td><td><span class="status s-err">Star App timeout</span></td></tr>
+          </table>
+        </div>
+        <div class="note"><b>Journey link (Apply Stage 7 / lifecycle strip):</b> single Platform Event both directions (Direction__c, EventType__c); no images stored in Salesforce — Azure fetches from Synkros; Shield audits all actions.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 6. REVOKE FLOW ============ -->
+  <div class="screen" id="revoke">
+    <div class="crumb">Cases › New › Revoke Exclusion</div>
+    <div class="pagetitle"><span class="icon"></span>Revoke Exclusion — Revocation Request</div>
+    <div class="wiz panel"><div class="pb">
+      <div class="note" style="margin-top:0;"><b>Journey link (Revoke):</b> WO “Revoke Prevention” → Capture Revocation Reason → Validate Eligibility → Sync Revocation with Systems → Notify Regulatory Authority. AML-related revocations route to Financial Crime for approval.</div>
+      <div class="fgrid" style="margin-bottom:12px;">
+        <div class="field"><label>Patron</label><input class="input" value="Ms Lea Auto Toy — 40818053" readonly></div>
+        <div class="field"><label>Case Type</label><select class="input"><option>Revocation Request</option><option>Revocation Reminder</option></select></div>
+        <div class="field"><label>Exclusion(s) to revoke</label><select class="input"><option>EX-20991 (NSW) + EX-20992 (QLD)</option></select></div>
+        <div class="field"><label>Revocation Reason</label><select class="input"><option>Exclusion period completed</option><option>Successful review / patron application</option><option>Applied in error</option><option>Regulatory direction</option></select></div>
+      </div>
+      <div class="panel" style="margin-bottom:12px;"><div class="ph">Eligibility Validation (auto)</div><div class="pb">
+        <div class="check sel"><i>✓</i><div>Minimum exclusion period served (6 months) — <span class="status s-ok">Eligible from 15-Nov-2026</span></div></div>
+        <div class="check sel"><i>✓</i><div>No open Contravention cases — <span class="status s-warn">1 contravention on record (02-Jun-2026) — review required</span></div></div>
+        <div class="check sel"><i>✓</i><div>AML flag check — <span class="status s-warn">WoL–AML related → routes to Financial Crime / Due Diligence approval</span></div></div>
+      </div></div>
+      <div class="panel" style="margin-bottom:12px;"><div class="ph">On approval — automated steps</div><div class="pb" style="font-size:11.5px; color:var(--ink2); line-height:1.7;">
+        1. PoP Event (Outbound, EventType=Revoke) published →  Azure lifts restrictions: Synkros stop codes removed · NeoFace subject removed · PingOne access restored · Star App entitlements reset · MDM synced<br>
+        2. Notify Regulatory Authority WOLI generated<br>
+        3. Exclusion status → <b>Revoked</b> on inbound confirmation<br>
+        4. Exclusion Image Repository <b>remains active</b> for Surveillance identification (CID keeps evidentiary images)
+      </div></div>
+      <div class="wnav"><span class="btn ghost" data-s="exclusion">Cancel</span><span class="btn pri" onclick="toast('Revocation Request submitted → routed to Financial Crime approval queue')">Submit for Approval</span></div>
+    </div></div>
+  </div>
+
+  <!-- ============ 7. LOG CONTRAVENTION ============ -->
+  <div class="screen" id="contra">
+    <div class="crumb">Cases › New › Contravention</div>
+    <div class="pagetitle"><span class="icon"></span>Log Contravention — Screen Flow</div>
+    <div class="wiz panel"><div class="pb">
+      <div class="note" style="margin-top:0;"><b>Journey link (Contravention):</b> submitting auto-creates Case–Exclusion Association records per selected Exclusion; duplicate Case↔Exclusion pairs blocked by Matching/Duplicate Rules. Persona: Asset Protection / Security Ops.</div>
+      <div class="fgrid" style="margin-bottom:12px;">
+        <div class="field"><label>Patron</label><input class="input" value="Ms Lea Auto Toy — 40818053" readonly></div>
+        <div class="field"><label>Detection Source</label><select class="input"><option>NeoFace facial recognition alert</option><option>Floor / gaming staff</option><option>Surveillance monitoring</option></select></div>
+        <div class="field"><label>Date / Time of Incident</label><input class="input" value="02-Jun-2026 21:14"></div>
+        <div class="field"><label>Incident Report Number</label><input class="input" value="IR-2026-0412"></div>
+        <div class="field"><label>Location</label><input class="input" value="Main Gaming Floor — Level 1"></div>
+        <div class="field"><label>Reported By</label><input class="input" value="Security Duty Manager"></div>
+      </div>
+      <div class="field" style="margin-bottom:12px;"><label>Incident Details</label><textarea class="input">Patron identified by NeoFace at entry; matched Surveillance Primary Image. Escorted from premises without incident.</textarea></div>
+      <div class="panel" style="margin-bottom:12px;"><div class="ph">Link to Exclusion(s)</div><div class="pb">
+        <div class="check sel" onclick="this.classList.toggle('sel')"><i>✓</i><div><b>EX-20991</b> — Self-Exclusion – Group Wide (NSW) · Active</div></div>
+        <div class="check sel" onclick="this.classList.toggle('sel')"><i>✓</i><div><b>EX-20992</b> — Self-Exclusion – Group Wide (QLD) · Active</div></div>
+      </div></div>
+      <div class="check sel"><i>✓</i><div>Notify Surveillance (auto WOLI)</div></div>
+      <div class="wnav"><span class="btn ghost" data-s="patron">Cancel</span><span class="btn pri" onclick="toast('Contravention submitted — Case created, Case–Exclusion Associations written, Surveillance notified')">Submit Contravention</span></div>
+    </div></div>
+  </div>
+
+  <!-- ============ 8. SURVEILLANCE VIEW ============ -->
+  <div class="screen" id="surv">
+    <div class="pagetitle"><span class="icon"></span>Surveillance Workspace <span class="status s-mut">READ-ONLY PROFILE</span></div>
+    <div class="note"><b>Journey link (Apply Stage 3 / CID gap):</b> Surveillance is read-only on Cases &amp; Work Orders. Since the CID “Excluded” profile is no longer created post-Salesforce, this queue is the trigger to build/maintain the Exclusion Image Repository, and to check CID for a Player of Interest profile.</div>
+    <div class="cols c2e">
+      <div class="panel"><div class="ph">New Exclusion Notifications (from “Notify Surveillance Team” WOLIs)</div>
+        <table>
+          <tr><th>Patron</th><th>Exclusion Type</th><th>CID History?</th><th>Image Repository Action</th></tr>
+          <tr><td class="link" data-s="patron">Ms Lea Auto Toy</td><td>Self-Exclusion GW</td><td>Yes — POI profile</td><td>Copy key CID images → tag Primary <span class="btn sm" data-s="patron">Open Gallery</span></td></tr>
+          <tr><td>Mr J Chen</td><td>Problem Gambling GW</td><td>No</td><td>Source from digital file → upload → tag Primary</td></tr>
+          <tr><td>Mr D Okafor</td><td>Venue Exclusion</td><td>Yes</td><td><span class="status s-ok">Repository complete</span></td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="panel"><div class="ph">Contravention Alerts</div>
+          <table>
+            <tr><th>Time</th><th>Patron</th><th>Source</th><th></th></tr>
+            <tr><td>21:14</td><td>Ms Lea Auto Toy</td><td>NeoFace match — entry cam 3</td><td><span class="btn sm" data-s="contra">View</span></td></tr>
+          </table>
+        </div>
+        <div class="panel"><div class="ph">Image Repository Rules (BRD)</div><div class="pb" style="font-size:11.5px; color:var(--ink2); line-height:1.7;">
+          · Identification images live in the Exclusion Image Repository; CID retained for <b>evidentiary</b> images only<br>
+          · Best image = Surveillance Primary Image (or defaults to most recent upload)<br>
+          · New identification images added while patron is excluded<br>
+          · Repository <b>persists after revocation</b> for ongoing identification
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 9. REPORTS ============ -->
+  <div class="screen" id="reports">
+    <div class="pagetitle"><span class="icon"></span>Reports &amp; Dashboards — Exclusion Register</div>
+    <div class="note"><b>Journey link:</b> breach reporting per Exclusion via Case–Exclusion Association; enforcement health from Restriction statuses + Integration Log; executive read-only oversight persona; Shield audit trail.</div>
+    <div class="cols c3">
+      <div class="panel"><div class="ph">Active Exclusions by Type</div><div class="pb">
+        <div class="bars"><i style="height:85%"></i><i style="height:60%"></i><i style="height:40%"></i><i style="height:30%"></i><i style="height:22%"></i><i style="height:14%"></i><i style="height:10%"></i></div>
+        <div style="font-size:9px; color:var(--ink2); display:flex; justify-content:space-between;"><span>Self</span><span>PG</span><span>Venue</span><span>WoL</span><span>Police</span><span>TPOE</span><span>Ext</span></div>
+      </div></div>
+      <div class="panel"><div class="ph">Contraventions per Month</div><div class="pb">
+        <div class="bars"><i style="height:30%"></i><i style="height:45%"></i><i style="height:38%"></i><i style="height:62%"></i><i style="height:50%"></i><i style="height:41%"></i></div>
+        <div style="font-size:9px; color:var(--ink2); display:flex; justify-content:space-between;"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div>
+      </div></div>
+      <div class="panel"><div class="ph">Enforcement Health</div><div class="pb">
+        <table>
+          <tr><td>Completed</td><td><span class="status s-ok">1,204</span></td></tr>
+          <tr><td>Acknowledged (in flight)</td><td><span class="status s-warn">17</span></td></tr>
+          <tr><td>Failed / Partial</td><td><span class="status s-err">2</span></td></tr>
+          <tr><td>Reconciled (downstream corrections)</td><td><span class="status s-mut">9</span></td></tr>
+        </table>
+      </div></div>
+    </div>
+    <div class="panel"><div class="ph">Regulatory Register Extract (NSW ICM 14 · QLD ICM I.5)</div>
+      <table>
+        <tr><th>Exclusion</th><th>Patron</th><th>Type</th><th>Jurisdiction</th><th>Start</th><th>End/Review</th><th>Contraventions</th><th>Status</th></tr>
+        <tr><td class="link" data-s="exclusion">EX-20991</td><td>Ms L Auto Toy</td><td>Self GW</td><td>NSW</td><td>15-May-26</td><td>15-Nov-26</td><td>1</td><td><span class="status s-err">Active</span></td></tr>
+        <tr><td>EX-20992</td><td>Ms L Auto Toy</td><td>Self GW</td><td>QLD</td><td>15-May-26</td><td>15-Nov-26</td><td>1</td><td><span class="status s-err">Active</span></td></tr>
+        <tr><td>EX-20841</td><td>Mr T Barnes</td><td>WoL – AML</td><td>NSW</td><td>02-Jan-26</td><td>—</td><td>0</td><td><span class="status s-warn">Revocation pending approval</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div id="toast"></div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('on', a.dataset.s===id));
+  window.scrollTo({top:0});
+}
+document.addEventListener('click',e=>{
+  const el = e.target.closest('[data-s]');
+  if(el){ show(el.dataset.s); }
+});
+// patron record tabs
+document.getElementById('ptabs').addEventListener('click',e=>{
+  const t = e.target.closest('span[data-t]'); if(!t) return;
+  document.querySelectorAll('#ptabs span').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.rtabbody').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');
+  document.getElementById(t.dataset.t).classList.add('on');
+});
+// wizard
+let wstep = 1;
+function wnav(d){
+  wstep = Math.min(4, Math.max(1, wstep+d));
+  for(let i=1;i<=4;i++){
+    document.getElementById('wp'+i).classList.toggle('on', i===wstep);
+    document.getElementById('ws'+i).classList.toggle('on', i<=wstep);
+  }
+  document.getElementById('wback').style.visibility = wstep>1?'visible':'hidden';
+  const next = document.getElementById('wnext');
+  if(wstep===4){ next.textContent='Submit — Create Case'; next.onclick = ()=>{ toast('Case C-004121 created — Work Orders generated'); wstep=1; wnav(0); show('case'); }; }
+  else { next.textContent='Next →'; next.onclick = ()=>wnav(1); }
+}
+// radios (visual only)
+document.querySelectorAll('.radio').forEach(r=>r.addEventListener('click',()=>{
+  if(getComputedStyle(r).opacity < 1) { toast('🔒 Record type not available to your persona profile'); return; }
+  r.parentElement.querySelectorAll('.radio').forEach(x=>x.classList.remove('sel'));
+  r.classList.add('sel');
+}));
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.style.display='block';
+  clearTimeout(t._h); t._h = setTimeout(()=>t.style.display='none', 2600);
+}
+</script>
+</body>
+</html>

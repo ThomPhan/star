@@ -1,0 +1,29 @@
+<template>
+  <lightning-card>
+    <div class="slds-m-around_medium">
+      <template if:true={report.data}>
+        <template if:true={report.data.error}>
+          <div>{report.data.error}</div>
+        </template>
+      </template>
+      <template if:true={report.data}>
+        <template if:true={report.data.embedUrl}>
+          <template if:true={containerLarge}>
+            <div class="container">
+              <div class="responsiveiframe">
+                <div data-id="embed-container" style="height: inherit"></div>
+              </div>
+            </div>
+          </template>
+          <template if:true={containerSmall}>
+            <div class="containerMobile">
+              <div class="responsiveiframeMobile">
+                <div data-id="embed-container" style="height: inherit"></div>
+              </div>
+            </div>
+          </template>
+        </template>
+      </template>
+    </div>
+  </lightning-card>
+</template>

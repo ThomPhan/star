@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nominated_Loyalty_Partner</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>P2P</compactLayoutAssignment>
+    <label>Nominated Loyalty Partner</label>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Nominated Loyalty Partner</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

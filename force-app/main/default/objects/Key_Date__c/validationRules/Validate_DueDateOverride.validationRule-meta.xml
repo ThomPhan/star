@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_DueDateOverride</fullName>
+    <active>true</active>
+    <description>User should not be able to create or edit Override record</description>
+    <errorConditionFormula>OR (
+
+AND(
+$Permission.Skip_Validations_Permission = FALSE,
+ISPICKVAL(Key_Date_Category__c, &quot;KYC&quot;),
+Name = &apos;Due Date Override&apos;,
+(NOT(ISCHANGED(Active__c)))
+),
+
+AND(
+$Permission.Skip_Validations_Permission = FALSE,
+Name = &apos;Due Date Override&apos;,
+(NOT(ISCHANGED(Active__c))),
+ISPICKVAL(PRIORVALUE(Key_Date_Category__c), &quot;KYC&quot;)
+)
+
+)</errorConditionFormula>
+    <errorMessage>Override Due Date is read-only.</errorMessage>
+</ValidationRule>

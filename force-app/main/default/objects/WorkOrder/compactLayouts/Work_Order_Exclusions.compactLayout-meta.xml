@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Order_Exclusions</fullName>
+    <fields>WorkOrderNumber</fields>
+    <fields>CaseId</fields>
+    <fields>WorkOrderType__c</fields>
+    <fields>Status</fields>
+    <label>Work Order Exclusions</label>
+</CompactLayout>

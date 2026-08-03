@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_field_should_be_Non_editable</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(OR(ISCHANGED(FirstName),ISCHANGED(LastName),ISCHANGED(MiddleName),ISCHANGED(Title)), $Permission.Skip_Validations_Permission = FALSE )</errorConditionFormula>
+    <errorMessage>You don&apos;t have the permission to edit the Patron Name</errorMessage>
+</ValidationRule>

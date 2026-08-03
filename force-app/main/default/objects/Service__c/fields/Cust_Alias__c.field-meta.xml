@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cust_Alias__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL( Property__c , &quot;Sydney&quot;) , &apos;SYD0125&apos;, 
+ IF(ISPICKVAL( Property__c , &quot;Gold Coast&quot;), &apos;GC0100&apos;, 
+ IF( ISPICKVAL(Property__c , &quot;Brisbane&quot;) , &apos;BNE0199&apos;, 
+&quot;&quot;) ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cust_Alias</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

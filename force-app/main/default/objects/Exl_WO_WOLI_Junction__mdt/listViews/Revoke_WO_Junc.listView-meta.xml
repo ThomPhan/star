@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revoke_WO_Junc</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>Work_Order__c</columns>
+    <columns>Line_Item_Sequence__c</columns>
+    <columns>Work_Order_Line_Item__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DeveloperName</field>
+        <operation>startsWith</operation>
+        <value>RE_</value>
+    </filters>
+    <label>Revoke WO Junc</label>
+</ListView>

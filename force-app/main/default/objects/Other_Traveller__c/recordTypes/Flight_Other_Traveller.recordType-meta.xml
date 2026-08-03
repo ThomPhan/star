@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flight_Other_Traveller</fullName>
+    <active>true</active>
+    <label>Flight Other Traveller</label>
+</RecordType>

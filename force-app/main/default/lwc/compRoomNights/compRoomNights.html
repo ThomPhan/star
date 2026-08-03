@@ -1,0 +1,50 @@
+<template>
+  <template if:true={containerLarge}>
+      <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+          <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <span>Benefits</span>
+              </h2>
+            </div>
+            <div class="slds-no-flex">
+                <span>Last Successful Update: {lastSuccessfulUpdate}</span> 
+            </div>
+          </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+          <lightning-layout class="slds-p-around_xx-small">
+            <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_4-of-12 slds-small-size_12-of-12 ">
+              Comp Room Night Entitlement: {compRoomNightEntitlement}
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_4-of-12 slds-small-size_12-of-12 ">
+              Comp Room Night Remaining For The Month: {compRoomNightRemainingForTheMonth}
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_4-of-12 slds-small-size_12-of-12 ">
+              Comp Room Night Remaining For The Year: {compRoomNightRemainingForTheYear}
+            </lightning-layout-item>
+          </lightning-layout>
+        </div>
+      </article>
+  </template>
+  <template if:true={containerSmall}>
+      <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+          <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <span>Benefits</span><br/>
+              </h2>
+            </div>
+          </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+          <span>Last Successful Update:<br/> {lastSuccessfulUpdate}</span><br/><br/> 
+          Comp Room Night Entitlement: {compRoomNightEntitlement}<br/><br/>
+          Comp Room Night Remaining For The Month: {compRoomNightRemainingForTheMonth}<br/><br/>
+          Comp Room Night Remaining For The Year: {compRoomNightRemainingForTheYear}<br/><br/>
+        </div>
+      </article>
+  </template>
+</template>

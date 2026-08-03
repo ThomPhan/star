@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exl_Exclusions</fullName>
+    <active>true</active>
+    <description>Used to support all Exclusion processes for prevention of play framework</description>
+    <label>Exl Exclusions</label>
+    <picklistValues>
+        <picklist>Behaviour__c</picklist>
+        <values>
+            <fullName>Behaviour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CLAGCA Ban</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CLAGCA Exclusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cheating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exec%2E Exclusion Comm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External-External</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gaming Incident</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICM 13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICM P</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Illegal%2FUndesirable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interstate - Police Exclusions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem-Responsible Gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RSA Non Vol Accord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RSA Non Vol Casino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Responsible Gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 81</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 91O</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 92</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 92%283%29%28a%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 92%283%29%28b%29%28i%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 92%283%29%28b%29%28ii%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 92%283%29%28c%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 92%283%29%28d%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 92-Self</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 93A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 94</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self- Voluntary Exclusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Liquor Exclusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Voluntary Exclusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP24HR-Timed Played 24hrs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP7DAY - Card Misuse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP7DAY - Gambling Harm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP7DAY-Timed Play 7 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unattended Children</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-AML</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Behaviour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Cheating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Exec%2E ExclusionCommittee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Gaming Incident</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Gamng-Dishonest Act</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Illegal%2FUndesirable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Police Direction Sect 81</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Theft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Unattended Children</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue-Unlawful Conduct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vol Liq Lic Areas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voluntary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-AML</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Abuse staff%2Fdisrupt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Abusive behaviour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Bankruptcy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Begging%2FScavenging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Behaviour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Cheat%2FFraud scheme</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Disorderly conduct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Extreme violence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Falsely Claim Win</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Fighting%2C brawling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Fraud Behav Non-Game</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Habitual drunkenness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Illegal%2FUnd%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Indecent Behaviour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Interfering%2Fhindering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Money Laundering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Money Lending%2FProfit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Obtain alcohol for Minor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Petty theft%2Fpickpoc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Possession of weapons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Premed minor access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Prostitution of soliciting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Refusal leave - repeat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Refusal ret overpayment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Selling Illegal Drugs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Serious Assault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Sexual Assault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Sexual Harrassment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Theft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Theft by find %28opp%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Unattended children</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Unattended children%2Fat risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Undesirable Behaviour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Use of Illegal drugs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL-Vandalism</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Status__c</picklist>
+        <values>
+            <fullName>Delivered Successfully</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Handed Successfully</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Posted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requires Hand Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Returned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HandOver_Status__c</picklist>
+        <values>
+            <fullName>Confirmed by AusPost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Handed to Patron</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Returned to Sender</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issuing_Property__c</picklist>
+        <values>
+            <fullName>The Star Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Sydney</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin__c</picklist>
+        <values>
+            <fullName>AML</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Police Exclusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reg Affairs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safer Gambling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Reef %28Qld%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Ville %28Qld%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POE_Area__c</picklist>
+        <values>
+            <fullName>Casino Licensed Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entire Property</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POE_From__c</picklist>
+        <values>
+            <fullName>The Star Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Sydney</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POE_Length__c</picklist>
+        <values>
+            <fullName>1y</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24h</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2y</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3m</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3y</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4y</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5y</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6m</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7d</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indefinite</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POE_Type__c</picklist>
+        <values>
+            <fullName>External Exclusion - Group Wide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interstate - CCA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem Gambling - Group Wide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem Gambling - NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem Gambling - QLD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Exclusion - Group Wide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Exclusion - NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Exclusion - QLD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP24HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP7DAY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue - Group Wide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WOL - Property - Group Wide</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POE_Under__c</picklist>
+        <values>
+            <fullName>ICM 13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICM P</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW Section 81</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 79</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 91O</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 92</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 93A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 94</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 95</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Property__c</picklist>
+        <values>
+            <fullName>The Star Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Sydney</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Revocation_Delivery_Status__c</picklist>
+        <values>
+            <fullName>Delivered Successfully</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Handed Successfully</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Posted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requires Hand Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Returned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Revocation_Reason__c</picklist>
+        <values>
+            <fullName>Approval from RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved by MLRO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Created in error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expiry without re-entries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Police Direction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QCAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QLD 24 hour Cooling off period</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Activation Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exclusion Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exclusion Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revocation Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revocation Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revocation Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revoked</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

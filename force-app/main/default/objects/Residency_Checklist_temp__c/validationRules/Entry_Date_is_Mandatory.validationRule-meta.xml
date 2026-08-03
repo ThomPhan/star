@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Date_is_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*
+OR(
+ 
+
+AND( 
+
+ISPICKVAL(Does_the_patron_have_travel_document__c , &apos;Yes&apos;),
+ 
+ISBLANK(Entry_Date__c)
+
+),
+ 
+
+AND(
+ 
+
+ISPICKVAL(Does_the_patron_have_travel_document__c , &apos;No&apos;),
+
+ISPICKVAL(Does_the_patron_drive_to_NSW__c , &apos;Yes&apos;),
+
+NOT(ISBLANK(Please_provide_interstate_car_registrati__c)),
+ 
+ISBLANK(Entry_Date__c)
+ 
+)
+)
+*/
+
+IF($Permission.Skip_Validations_Permission, 
+false,
+OR(
+ 
+
+AND( 
+
+ISPICKVAL(Does_the_patron_have_travel_document__c , &apos;Yes&apos;),
+ 
+ISBLANK(Entry_Date__c)
+
+),
+ 
+
+AND(
+ 
+
+ISPICKVAL(Does_the_patron_have_travel_document__c , &apos;No&apos;),
+
+ISPICKVAL(Does_the_patron_drive_to_NSW__c , &apos;Yes&apos;),
+
+NOT(ISBLANK(Please_provide_interstate_car_registrati__c)),
+ 
+ISBLANK(Entry_Date__c)
+ 
+)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Entry_Date__c</errorDisplayField>
+    <errorMessage>Entry Date is required!!</errorMessage>
+</ValidationRule>

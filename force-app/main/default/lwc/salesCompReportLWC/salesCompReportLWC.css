@@ -1,0 +1,16 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.th, .td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+/* .slds-table slds{
+    display:inline-block;
+    white-space: nowrap;
+} */

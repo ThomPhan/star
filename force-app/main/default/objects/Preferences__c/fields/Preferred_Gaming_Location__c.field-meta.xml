@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Gaming_Location__c</fullName>
+    <label>Preferred Gaming Location</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Chairman</fullName>
+                <default>false</default>
+                <label>Chairman</label>
+            </value>
+            <value>
+                <fullName>Oasis</fullName>
+                <default>false</default>
+                <label>Oasis</label>
+            </value>
+            <value>
+                <fullName>Private Gaming Room</fullName>
+                <default>false</default>
+                <label>Private Gaming Room</label>
+            </value>
+            <value>
+                <fullName>Private Salon</fullName>
+                <default>false</default>
+                <label>Private Salon</label>
+            </value>
+            <value>
+                <fullName>Private Table</fullName>
+                <default>false</default>
+                <label>Private Table</label>
+            </value>
+            <value>
+                <fullName>Sovereign Harbours</fullName>
+                <default>false</default>
+                <label>Sovereign Harbours</label>
+            </value>
+            <value>
+                <fullName>Sovereign Lakes</fullName>
+                <default>false</default>
+                <label>Sovereign Lakes</label>
+            </value>
+            <value>
+                <fullName>Sovereign Room</fullName>
+                <default>false</default>
+                <label>Sovereign Room</label>
+            </value>
+            <value>
+                <fullName>Vantage</fullName>
+                <default>false</default>
+                <label>Vantage</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

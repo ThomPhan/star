@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trip_Date_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(Entry_Date__c &gt; Exit_Date__c &amp;&amp; NOT($Permission.Skip_Validations_Permission) &amp;&amp; $Profile.Name != &apos;System Administrator&apos;, true, false)</errorConditionFormula>
+    <errorMessage>Exit Date must not be earlier than Entry Date</errorMessage>
+</ValidationRule>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limo_Charge__c</fullName>
+    <label>Limo Charge</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Property__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NGC</fullName>
+                <default>false</default>
+                <label>NGC</label>
+            </value>
+            <value>
+                <fullName>ROOM CHARGE</fullName>
+                <default>false</default>
+                <label>ROOM CHARGE</label>
+            </value>
+            <value>
+                <fullName>GAMING COMP</fullName>
+                <default>false</default>
+                <label>GAMING COMP</label>
+            </value>
+            <value>
+                <fullName>COMP DOLLAR</fullName>
+                <default>false</default>
+                <label>COMP DOLLAR</label>
+            </value>
+            <value>
+                <fullName>DIAMOND HOME TRANSFER</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DIAMOND HOME TRANSFER</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>NGC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>ROOM CHARGE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>GAMING COMP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>COMP DOLLAR</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

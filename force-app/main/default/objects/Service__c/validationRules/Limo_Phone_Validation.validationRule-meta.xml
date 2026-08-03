@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limo_Phone_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>true</errorConditionFormula>
+    <errorMessage>Validations for Mobile field is:
+-No special characters allowed except +
+-No alphabetical letters</errorMessage>
+</ValidationRule>

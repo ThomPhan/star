@@ -1,0 +1,59 @@
+<template>
+    <lightning-card icon-name="standard:opportunity" class="slds-card_boundary sales-comp-card">
+        <h1 slot="title">Sales Comp</h1>
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-grid slds-wrap slds-m-vertical_small">
+                <div class="slds-col slds-size_8-of-12"></div>
+                <div class="slds-col slds-size_4-of-12">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_6-of-12">
+                            <span class="slds-text-heading_small">Casino dollars balance</span>
+                        </div>
+                        <div class="slds-col slds-size_6-of-12">
+                            <span class="slds-text-heading_small">${casinoBalance}</span>
+                        </div>
+                        <div class="slds-col slds-size_6-of-12">
+                            <span class="slds-text-heading_small">Comp dollars balance</span>
+                        </div>
+                        <div class="slds-col slds-size_6-of-12">
+                            <span class="slds-text-heading_small">${compBalance}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap slds-m-vertical_small vertical-border">
+                <div class="slds-col slds-size_6-of-12 slds-p-around_x-small">
+                    <span class="slds-text-heading_small title-bold">Total Sales Comp MTD</span>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_3-of-12 slds-p-around_x-small">
+                            <span class="slds-text-heading_small title-bold">${totalSalesComp}</span>
+                            <!-- TODO: lightningFormattedNumber does not correctly display currency with symbol -->
+                            <!-- <span class="slds-text-heading_small title-bold">
+                                <lightning-formatted-number
+                                    currency-code="USD"
+                                    currency-display-as="symbol"
+                                    format-style="currency"
+                                    value={totalSalesComp}>
+                                </lightning-formatted-number>
+                            </span> -->
+                        </div>
+                        <div class="slds-col slds-size_3-of-12 slds-p-around_xx-small around-border-thick">
+                            <div class="slds-text-body_small">SPV</div>
+                            <div class="slds-text-body_small">${spvMPVtotal}</div>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12 slds-p-around_xx-small around-border-thick">
+                            <div class="slds-text-body_small">CD/CP</div>
+                            <div class="slds-text-body_small">${cdCPtotal}</div>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12 slds-p-around_xx-small around-border-thick">
+                            <div class="slds-text-body_small">Gift</div>
+                            <div class="slds-text-body_small">${giftTotal}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

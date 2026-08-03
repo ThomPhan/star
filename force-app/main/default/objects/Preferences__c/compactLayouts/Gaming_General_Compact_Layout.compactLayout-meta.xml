@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gaming_General_Compact_Layout</fullName>
+    <fields>Patron__c</fields>
+    <label>Gaming General Compact Layout</label>
+</CompactLayout>

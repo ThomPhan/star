@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timezone__c</fullName>
+    <label>Event Timezone (on location)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(GMT+07:00) Bangkok, Hanoi, Jakarta</fullName>
+                <default>false</default>
+                <label>(GMT+07:00) Bangkok, Hanoi, Jakarta</label>
+            </value>
+            <value>
+                <fullName>(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</fullName>
+                <default>false</default>
+                <label>(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</label>
+            </value>
+            <value>
+                <fullName>(GMT+08:00) Kuala Lumpur, Singapore</fullName>
+                <default>false</default>
+                <label>(GMT+08:00) Kuala Lumpur, Singapore</label>
+            </value>
+            <value>
+                <fullName>(GMT+08:00) Taipei</fullName>
+                <default>false</default>
+                <label>(GMT+08:00) Taipei</label>
+            </value>
+            <value>
+                <fullName>(GMT+08:00) Perth</fullName>
+                <default>false</default>
+                <label>(GMT+08:00) Perth</label>
+            </value>
+            <value>
+                <fullName>(GMT+09:00) Seoul</fullName>
+                <default>false</default>
+                <label>(GMT+09:00) Seoul</label>
+            </value>
+            <value>
+                <fullName>(GMT+09:00) Osaka, Sapporo, Tokyo</fullName>
+                <default>false</default>
+                <label>(GMT+09:00) Osaka, Sapporo, Tokyo</label>
+            </value>
+            <value>
+                <fullName>(GMT+09:30) Darwin</fullName>
+                <default>false</default>
+                <label>(GMT+09:30) Darwin</label>
+            </value>
+            <value>
+                <fullName>(GMT+09:30) Adelaide</fullName>
+                <default>false</default>
+                <label>(GMT+09:30) Adelaide</label>
+            </value>
+            <value>
+                <fullName>(GMT+10:00) Canberra, Melbourne, Sydney</fullName>
+                <default>false</default>
+                <label>(GMT+10:00) Canberra, Melbourne, Sydney</label>
+            </value>
+            <value>
+                <fullName>(GMT+10:00) Brisbane, Gold Coast</fullName>
+                <default>false</default>
+                <label>(GMT+10:00) Brisbane, Gold Coast</label>
+            </value>
+            <value>
+                <fullName>(GMT+10:00) Hobart</fullName>
+                <default>false</default>
+                <label>(GMT+10:00) Hobart</label>
+            </value>
+            <value>
+                <fullName>(GMT+11:00) Magadan, Solomon Islands, New Caledonia</fullName>
+                <default>false</default>
+                <label>(GMT+11:00) Magadan, Solomon Islands, New Caledonia</label>
+            </value>
+            <value>
+                <fullName>(GMT+12:00) Fiji, Kamchatka, Marshall Is.</fullName>
+                <default>false</default>
+                <label>(GMT+12:00) Fiji, Kamchatka, Marshall Is.</label>
+            </value>
+            <value>
+                <fullName>(GMT+12:00) Auckland, Wellington</fullName>
+                <default>false</default>
+                <label>(GMT+12:00) Auckland, Wellington</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

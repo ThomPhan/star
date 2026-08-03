@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Behaviour__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Behaviour</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Behaviour</fullName>
+                <default>true</default>
+                <label>Behaviour</label>
+            </value>
+            <value>
+                <fullName>Cheating</fullName>
+                <default>false</default>
+                <label>Cheating</label>
+            </value>
+            <value>
+                <fullName>CLAGCA Ban</fullName>
+                <default>false</default>
+                <label>CLAGCA Ban</label>
+            </value>
+            <value>
+                <fullName>CLAGCA Exclusion</fullName>
+                <default>false</default>
+                <label>CLAGCA Exclusion</label>
+            </value>
+            <value>
+                <fullName>Exec. Exclusion Comm</fullName>
+                <default>false</default>
+                <label>Exec. Exclusion Comm</label>
+            </value>
+            <value>
+                <fullName>External-External</fullName>
+                <default>false</default>
+                <label>External-External</label>
+            </value>
+            <value>
+                <fullName>Gaming Incident</fullName>
+                <default>false</default>
+                <label>Gaming Incident</label>
+            </value>
+            <value>
+                <fullName>Illegal/Undesirable</fullName>
+                <default>false</default>
+                <label>Illegal/Undesirable</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Problem-Responsible Gaming</fullName>
+                <default>false</default>
+                <label>Problem-Responsible Gaming</label>
+            </value>
+            <value>
+                <fullName>Responsible Gaming</fullName>
+                <default>false</default>
+                <label>Responsible Gaming</label>
+            </value>
+            <value>
+                <fullName>RSA Non Vol Accord</fullName>
+                <default>false</default>
+                <label>RSA Non Vol Accord</label>
+            </value>
+            <value>
+                <fullName>RSA Non Vol Casino</fullName>
+                <default>false</default>
+                <label>RSA Non Vol Casino</label>
+            </value>
+            <value>
+                <fullName>Section 81</fullName>
+                <default>false</default>
+                <label>Section 81</label>
+            </value>
+            <value>
+                <fullName>Self-Liquor Exclusion</fullName>
+                <default>false</default>
+                <label>Self-Liquor Exclusion</label>
+            </value>
+            <value>
+                <fullName>Theft</fullName>
+                <default>false</default>
+                <label>Theft</label>
+            </value>
+            <value>
+                <fullName>Unattended Children</fullName>
+                <default>false</default>
+                <label>Unattended Children</label>
+            </value>
+            <value>
+                <fullName>Venue-AML</fullName>
+                <default>false</default>
+                <label>Venue-AML</label>
+            </value>
+            <value>
+                <fullName>Venue-Behaviour</fullName>
+                <default>false</default>
+                <label>Venue-Behaviour</label>
+            </value>
+            <value>
+                <fullName>Venue-Cheating</fullName>
+                <default>false</default>
+                <label>Venue-Cheating</label>
+            </value>
+            <value>
+                <fullName>Venue-Exec. ExclusionCommittee</fullName>
+                <default>false</default>
+                <label>Venue-Exec. ExclusionCommittee</label>
+            </value>
+            <value>
+                <fullName>Venue-Gaming Incident</fullName>
+                <default>false</default>
+                <label>Venue-Gaming Incident</label>
+            </value>
+            <value>
+                <fullName>Venue-Gamng-Dishonest Act</fullName>
+                <default>false</default>
+                <label>Venue-Gamng-Dishonest Act</label>
+            </value>
+            <value>
+                <fullName>Venue-Illegal/Undesirable</fullName>
+                <default>false</default>
+                <label>Venue-Illegal/Undesirable</label>
+            </value>
+            <value>
+                <fullName>Venue-Other</fullName>
+                <default>false</default>
+                <label>Venue-Other</label>
+            </value>
+            <value>
+                <fullName>Venue-Police Direction Sect 81</fullName>
+                <default>false</default>
+                <label>Venue-Police Direction Sect 81</label>
+            </value>
+            <value>
+                <fullName>Venue-Theft</fullName>
+                <default>false</default>
+                <label>Venue-Theft</label>
+            </value>
+            <value>
+                <fullName>Venue-Unattended Children</fullName>
+                <default>false</default>
+                <label>Venue-Unattended Children</label>
+            </value>
+            <value>
+                <fullName>Venue-Unlawful Conduct</fullName>
+                <default>false</default>
+                <label>Venue-Unlawful Conduct</label>
+            </value>
+            <value>
+                <fullName>Vol Liq Lic Areas</fullName>
+                <default>false</default>
+                <label>Vol Liq Lic Areas</label>
+            </value>
+            <value>
+                <fullName>Voluntary</fullName>
+                <default>false</default>
+                <label>Voluntary</label>
+            </value>
+            <value>
+                <fullName>WOL-Abuse staff/disrupt</fullName>
+                <default>false</default>
+                <label>WOL-Abuse staff/disrupt</label>
+            </value>
+            <value>
+                <fullName>WOL-Abusive behaviour</fullName>
+                <default>false</default>
+                <label>WOL-Abusive behaviour</label>
+            </value>
+            <value>
+                <fullName>WOL-AML</fullName>
+                <default>false</default>
+                <label>WOL-AML</label>
+            </value>
+            <value>
+                <fullName>WOL-Begging/Scavenging</fullName>
+                <default>false</default>
+                <label>WOL-Begging/Scavenging</label>
+            </value>
+            <value>
+                <fullName>WOL-Behaviour</fullName>
+                <default>false</default>
+                <label>WOL-Behaviour</label>
+            </value>
+            <value>
+                <fullName>WOL-Cheat/Fraud scheme</fullName>
+                <default>false</default>
+                <label>WOL-Cheat/Fraud scheme</label>
+            </value>
+            <value>
+                <fullName>WOL-Disorderly conduct</fullName>
+                <default>false</default>
+                <label>WOL-Disorderly conduct</label>
+            </value>
+            <value>
+                <fullName>WOL-Extreme violence</fullName>
+                <default>false</default>
+                <label>WOL-Extreme violence</label>
+            </value>
+            <value>
+                <fullName>WOL-Falsely Claim Win</fullName>
+                <default>false</default>
+                <label>WOL-Falsely Claim Win</label>
+            </value>
+            <value>
+                <fullName>WOL-Fighting, brawling</fullName>
+                <default>false</default>
+                <label>WOL-Fighting, brawling</label>
+            </value>
+            <value>
+                <fullName>WOL-Fraud Behav Non-Game</fullName>
+                <default>false</default>
+                <label>WOL-Fraud Behav Non-Game</label>
+            </value>
+            <value>
+                <fullName>WOL-Habitual drunkenness</fullName>
+                <default>false</default>
+                <label>WOL-Habitual drunkenness</label>
+            </value>
+            <value>
+                <fullName>WOL-Illegal/Und.</fullName>
+                <default>false</default>
+                <label>WOL-Illegal/Und.</label>
+            </value>
+            <value>
+                <fullName>WOL-Indecent Behaviour</fullName>
+                <default>false</default>
+                <label>WOL-Indecent Behaviour</label>
+            </value>
+            <value>
+                <fullName>WOL-Interfering/hindering</fullName>
+                <default>false</default>
+                <label>WOL-Interfering/hindering</label>
+            </value>
+            <value>
+                <fullName>WOL-Money Laundering</fullName>
+                <default>false</default>
+                <label>WOL-Money Laundering</label>
+            </value>
+            <value>
+                <fullName>WOL-Money Lending/Profit</fullName>
+                <default>false</default>
+                <label>WOL-Money Lending/Profit</label>
+            </value>
+            <value>
+                <fullName>WOL-Obtain alcohol for Minor</fullName>
+                <default>false</default>
+                <label>WOL-Obtain alcohol for Minor</label>
+            </value>
+            <value>
+                <fullName>WOL-Other</fullName>
+                <default>false</default>
+                <label>WOL-Other</label>
+            </value>
+            <value>
+                <fullName>WOL-Petty theft/pickpoc</fullName>
+                <default>false</default>
+                <label>WOL-Petty theft/pickpoc</label>
+            </value>
+            <value>
+                <fullName>WOL-Possession of weapons</fullName>
+                <default>false</default>
+                <label>WOL-Possession of weapons</label>
+            </value>
+            <value>
+                <fullName>WOL-Premed minor access</fullName>
+                <default>false</default>
+                <label>WOL-Premed minor access</label>
+            </value>
+            <value>
+                <fullName>WOL-Prostitution of soliciting</fullName>
+                <default>false</default>
+                <label>WOL-Prostitution of soliciting</label>
+            </value>
+            <value>
+                <fullName>WOL-Refusal leave - repeat</fullName>
+                <default>false</default>
+                <label>WOL-Refusal leave - repeat</label>
+            </value>
+            <value>
+                <fullName>WOL-Refusal ret overpayment</fullName>
+                <default>false</default>
+                <label>WOL-Refusal ret overpayment</label>
+            </value>
+            <value>
+                <fullName>WOL-Selling Illegal Drugs</fullName>
+                <default>false</default>
+                <label>WOL-Selling Illegal Drugs</label>
+            </value>
+            <value>
+                <fullName>WOL-Serious Assault</fullName>
+                <default>false</default>
+                <label>WOL-Serious Assault</label>
+            </value>
+            <value>
+                <fullName>WOL-Sexual Assault</fullName>
+                <default>false</default>
+                <label>WOL-Sexual Assault</label>
+            </value>
+            <value>
+                <fullName>WOL-Sexual Harrassment</fullName>
+                <default>false</default>
+                <label>WOL-Sexual Harrassment</label>
+            </value>
+            <value>
+                <fullName>WOL-Theft by find (opp)</fullName>
+                <default>false</default>
+                <label>WOL-Theft by find (opp)</label>
+            </value>
+            <value>
+                <fullName>WOL-Unattended children</fullName>
+                <default>false</default>
+                <label>WOL-Unattended children</label>
+            </value>
+            <value>
+                <fullName>WOL-Unattended children/at risk</fullName>
+                <default>false</default>
+                <label>WOL-Unattended children/at risk</label>
+            </value>
+            <value>
+                <fullName>WOL-Undesirable Behaviour</fullName>
+                <default>false</default>
+                <label>WOL-Undesirable Behaviour</label>
+            </value>
+            <value>
+                <fullName>WOL-Use of Illegal drugs</fullName>
+                <default>false</default>
+                <label>WOL-Use of Illegal drugs</label>
+            </value>
+            <value>
+                <fullName>WOL-Vandalism</fullName>
+                <default>false</default>
+                <label>WOL-Vandalism</label>
+            </value>
+            <value>
+                <fullName>Self-Voluntary Exclusion</fullName>
+                <default>false</default>
+                <label>Self-Voluntary Exclusion</label>
+            </value>
+            <value>
+                <fullName>TP24HR-Timed Played 24hrs</fullName>
+                <default>false</default>
+                <label>TP24HR-Timed Played 24hrs</label>
+            </value>
+            <value>
+                <fullName>TP7DAY-Timed Play 7 days</fullName>
+                <default>false</default>
+                <label>TP7DAY-Timed Play 7 days</label>
+            </value>
+            <value>
+                <fullName>Section 91O</fullName>
+                <default>false</default>
+                <label>Section 91O</label>
+            </value>
+            <value>
+                <fullName>Section 92</fullName>
+                <default>false</default>
+                <label>Section 92</label>
+            </value>
+            <value>
+                <fullName>Section 92-Self</fullName>
+                <default>false</default>
+                <label>Section 92-Self</label>
+            </value>
+            <value>
+                <fullName>Section 93A</fullName>
+                <default>false</default>
+                <label>Section 93A</label>
+            </value>
+            <value>
+                <fullName>Section 94</fullName>
+                <default>false</default>
+                <label>Section 94</label>
+            </value>
+            <value>
+                <fullName>Section 92(3)(a)</fullName>
+                <default>false</default>
+                <label>Section 92(3)(a)</label>
+            </value>
+            <value>
+                <fullName>Section 92(3)(b)(i)</fullName>
+                <default>false</default>
+                <label>Section 92(3)(b)(i)</label>
+            </value>
+            <value>
+                <fullName>Section 92(3)(b)(ii)</fullName>
+                <default>false</default>
+                <label>Section 92(3)(b)(ii)</label>
+            </value>
+            <value>
+                <fullName>Section 92(3)(c)</fullName>
+                <default>false</default>
+                <label>Section 92(3)(c)</label>
+            </value>
+            <value>
+                <fullName>Section 92(3)(d)</fullName>
+                <default>false</default>
+                <label>Section 92(3)(d)</label>
+            </value>
+            <value>
+                <fullName>ICM 13</fullName>
+                <default>false</default>
+                <label>ICM 13</label>
+            </value>
+            <value>
+                <fullName>ICM P</fullName>
+                <default>false</default>
+                <label>ICM P</label>
+            </value>
+            <value>
+                <fullName>Section 95</fullName>
+                <default>false</default>
+                <label>Section 95</label>
+            </value>
+            <value>
+                <fullName>WOL-Theft</fullName>
+                <default>false</default>
+                <label>WOL-Theft</label>
+            </value>
+            <value>
+                <fullName>WOL-Bankruptcy</fullName>
+                <default>false</default>
+                <label>WOL-Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>TP7DAY - Card Misuse</fullName>
+                <default>false</default>
+                <label>TP7DAY - Card Misuse</label>
+            </value>
+            <value>
+                <fullName>TP7DAY - Gambling Harm</fullName>
+                <default>false</default>
+                <label>TP7DAY - Gambling Harm</label>
+            </value>
+            <value>
+                <fullName>Interstate - Police Exclusions</fullName>
+                <default>false</default>
+                <label>Interstate - Police Exclusions</label>
+            </value>
+            <value>
+                <fullName>Third Party</fullName>
+                <default>false</default>
+                <label>Third Party</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

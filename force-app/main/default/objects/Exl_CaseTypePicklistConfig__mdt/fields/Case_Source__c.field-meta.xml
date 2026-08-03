@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Source__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Source</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Safer Gambling</fullName>
+                <default>true</default>
+                <label>Safer Gambling</label>
+            </value>
+            <value>
+                <fullName>Crown</fullName>
+                <default>false</default>
+                <label>Crown</label>
+            </value>
+            <value>
+                <fullName>Police Exclusion</fullName>
+                <default>false</default>
+                <label>Police Exclusion</label>
+            </value>
+            <value>
+                <fullName>Investigations</fullName>
+                <default>false</default>
+                <label>Investigations</label>
+            </value>
+            <value>
+                <fullName>Third Party</fullName>
+                <default>false</default>
+                <label>Third Party</label>
+            </value>
+            <value>
+                <fullName>QLD Operators</fullName>
+                <default>false</default>
+                <label>QLD Operators</label>
+            </value>
+            <value>
+                <fullName>Asset Protection</fullName>
+                <default>false</default>
+                <label>Asset Protection</label>
+            </value>
+            <value>
+                <fullName>Reg Affairs</fullName>
+                <default>false</default>
+                <label>Reg Affairs</label>
+            </value>
+            <value>
+                <fullName>AML</fullName>
+                <default>false</default>
+                <label>AML</label>
+            </value>
+            <value>
+                <fullName>The Reef (Qld)</fullName>
+                <default>false</default>
+                <label>The Reef (Qld)</label>
+            </value>
+            <value>
+                <fullName>The Ville (Qld)</fullName>
+                <default>false</default>
+                <label>The Ville (Qld)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feedback_type_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( $Permission.Skip_Validations_Permission, false, 
+(TEXT(Status)= &quot;Closed - Finalise&quot;)&amp;&amp; ISCHANGED( Feedback_Type__c )&amp;&amp;($Profile.Name != &apos;System Administrator&apos;))</errorConditionFormula>
+    <errorMessage>Feedback type can only be changed when status is not Closed - Finalise</errorMessage>
+</ValidationRule>

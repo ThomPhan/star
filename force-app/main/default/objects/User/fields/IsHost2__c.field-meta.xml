@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsHost2__c</fullName>
+    <formula>IF( OR (NOT(ISBLANK(Contact.Host_Sydney__c)) ,
+  NOT(ISBLANK(Contact.Host_GC__c))  ,
+  NOT(ISBLANK(Contact.Host_Brisbane__c)),
+   NOT(ISBLANK(Contact.Host_International__c))),TRUE,FALSE)</formula>
+    <label>IsHost2</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

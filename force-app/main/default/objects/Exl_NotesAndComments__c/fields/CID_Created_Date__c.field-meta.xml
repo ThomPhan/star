@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CID_Created_Date__c</fullName>
+    <description>The date the note is created editable by the user, defaulted to Created date. Used for storing the historical created date for migrated data.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <inlineHelpText>The date the note is created editable by the user, defaulted to Created date. Used for storing the historical created date for migrated data.</inlineHelpText>
+    <label>CID Created Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

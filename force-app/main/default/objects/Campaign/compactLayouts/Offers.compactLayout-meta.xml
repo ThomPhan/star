@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offers</fullName>
+    <fields>RecordTypeId</fields>
+    <fields>Offer_Name__c</fields>
+    <fields>Offer_Type__c</fields>
+    <fields>Property__c</fields>
+    <fields>Status</fields>
+    <label>Offers</label>
+</CompactLayout>

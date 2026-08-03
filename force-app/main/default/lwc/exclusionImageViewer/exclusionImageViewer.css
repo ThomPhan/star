@@ -1,0 +1,40 @@
+.viewer-content {
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.viewer-media-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 24rem;
+    background: var(--slds-g-color-neutral-base-15, #16325c);
+}
+
+.viewer-media {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 24rem;
+}
+
+.viewer-image {
+    max-width: 100%;
+    max-height: 60vh;
+    transition: transform 0.15s ease-in-out;
+}
+
+.viewer-nav {
+    flex: 0 0 auto;
+    --slds-c-button-icon-color-foreground: #ffffff;
+}
+
+.viewer-meta {
+    border-left: 1px solid var(--slds-g-color-border-base-1, #e5e5e5);
+}
+
+.viewer-dialog:focus {
+    outline: none;
+}

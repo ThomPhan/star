@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TEMPLATE_Search_Exclusion_DOB</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Date_of_Birth__c</columns>
+    <columns>CONTACT.PHONE3</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Date_of_Birth__c</field>
+        <operation>equals</operation>
+        <value>8/6/1934</value>
+    </filters>
+    <label>TEMPLATE - Search Exclusion DOB</label>
+</ListView>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Traveller_Class_of_Travel__c</fullName>
+    <label>Other Traveller Class of Travel</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cheapest Economy Class</fullName>
+                <default>false</default>
+                <label>Cheapest Economy Class</label>
+            </value>
+            <value>
+                <fullName>Flexi Economy Class</fullName>
+                <default>false</default>
+                <label>Flexi Economy Class</label>
+            </value>
+            <value>
+                <fullName>Premium Economy Class</fullName>
+                <default>false</default>
+                <label>Premium Economy Class</label>
+            </value>
+            <value>
+                <fullName>Business Class</fullName>
+                <default>false</default>
+                <label>Business Class</label>
+            </value>
+            <value>
+                <fullName>First Class</fullName>
+                <default>false</default>
+                <label>First Class</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

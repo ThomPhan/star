@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pick_Up_Location__c</fullName>
+    <label>Pick Up Location</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Property__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>The Star Grand</fullName>
+                <default>false</default>
+                <label>The Star Grand</label>
+            </value>
+            <value>
+                <fullName>The Star Residencces</fullName>
+                <default>false</default>
+                <label>The Star Residencces</label>
+            </value>
+            <value>
+                <fullName>The Darling</fullName>
+                <default>false</default>
+                <label>The Darling</label>
+            </value>
+            <value>
+                <fullName>Sydney Airport Dom Terminal</fullName>
+                <default>false</default>
+                <label>Sydney Airport Dom Terminal</label>
+            </value>
+            <value>
+                <fullName>Sydney Airport Intl Terminal</fullName>
+                <default>false</default>
+                <label>Sydney Airport Intl Terminal</label>
+            </value>
+            <value>
+                <fullName>Private Jet Base</fullName>
+                <default>false</default>
+                <label>Private Jet Base</label>
+            </value>
+            <value>
+                <fullName>Jones Bay Wharf</fullName>
+                <default>false</default>
+                <label>Jones Bay Wharf</label>
+            </value>
+            <value>
+                <fullName>Gold Coast Airport</fullName>
+                <default>false</default>
+                <label>Gold Coast Airport</label>
+            </value>
+            <value>
+                <fullName>Brisbane Airport Dom Terminal</fullName>
+                <default>false</default>
+                <label>Brisbane Airport Dom Terminal</label>
+            </value>
+            <value>
+                <fullName>Brisbane Airport Intl Terminal</fullName>
+                <default>false</default>
+                <label>Brisbane Airport Intl Terminal</label>
+            </value>
+            <value>
+                <fullName>Marina Mirage</fullName>
+                <default>false</default>
+                <label>Marina Mirage</label>
+            </value>
+            <value>
+                <fullName>Treasury Brisbane</fullName>
+                <default>false</default>
+                <label>Treasury Brisbane</label>
+            </value>
+            <value>
+                <fullName>The Star Grand Gold Coast</fullName>
+                <default>false</default>
+                <label>The Star Grand Gold Coast</label>
+            </value>
+            <value>
+                <fullName>The Darling Gold Coast</fullName>
+                <default>false</default>
+                <label>The Darling Gold Coast</label>
+            </value>
+            <value>
+                <fullName>Gold Coast Airport Dom Terminal</fullName>
+                <default>false</default>
+                <label>Gold Coast Airport Dom Terminal</label>
+            </value>
+            <value>
+                <fullName>Gold Coast Airport Intl Terminal</fullName>
+                <default>false</default>
+                <label>Gold Coast Airport Intl Terminal</label>
+            </value>
+            <value>
+                <fullName>The Star Residence / Dorsett</fullName>
+                <default>false</default>
+                <label>The Star Residence / Dorsett</label>
+            </value>
+            <value>
+                <fullName>The Star Grand Brisbane</fullName>
+                <default>false</default>
+                <label>The Star Grand Brisbane</label>
+            </value>
+            <value>
+                <fullName>The Darling at The Star Gold Coast</fullName>
+                <default>false</default>
+                <label>The Darling at The Star Gold Coast</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>The Star Grand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>The Star Residencces</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>The Darling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Sydney Airport Dom Terminal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Sydney Airport Intl Terminal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Private Jet Base</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Jones Bay Wharf</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>Brisbane Airport Dom Terminal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>Brisbane Airport Intl Terminal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>Marina Mirage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>Gold Coast Airport Dom Terminal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>Gold Coast Airport Intl Terminal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>The Star Residence / Dorsett</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>The Star Grand Brisbane</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>The Darling at The Star Gold Coast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>The Star Grand Gold Coast</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

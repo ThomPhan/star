@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Create_Update_of_Campaigns</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+    OR(
+        $Permission.TSEG_CRM_Manager,
+        $Permission.TSEG_Event_Management,
+        $Permission.TSEG_Premium_Guest_Services,
+        $Profile.Name = &apos;System Administrator&apos;,
+        $Permission.Skip_Validations_Permission
+    ),
+    false,
+    IF(
+        OR(
+            ISCHANGED(Attended__c) || PRIORVALUE(Attended__c) = Attended__c,
+            ISCHANGED(Seats_Reserved_Count_RSVP_Attending__c) || PRIORVALUE(Seats_Reserved_Count_RSVP_Attending__c) = Seats_Reserved_Count_RSVP_Attending__c,
+            ISCHANGED(Seats_Reserved_RSVPAttending__c) || PRIORVALUE(Seats_Reserved_RSVPAttending__c) = Seats_Reserved_RSVPAttending__c,
+            ISCHANGED(Waitlisted_COUNT_RSVP_Waitlisted__c) || PRIORVALUE(Waitlisted_COUNT_RSVP_Waitlisted__c) = Waitlisted_COUNT_RSVP_Waitlisted__c,
+            ISCHANGED(Waitlisted_SUM_RSVP_Waitlisted__c) || PRIORVALUE(Waitlisted_SUM_RSVP_Waitlisted__c) = Waitlisted_SUM_RSVP_Waitlisted__c,
+            ISCHANGED(Actual_Cost__c) || PRIORVALUE(Actual_Cost__c) = Actual_Cost__c,
+            ISCHANGED(Actual_Revenue__c) || PRIORVALUE(Actual_Revenue__c) = Actual_Revenue__c,
+            ISCHANGED(Budgeted_Cost__c) || PRIORVALUE(Budgeted_Cost__c) = Budgeted_Cost__c,
+            ISCHANGED(Expected_Revenue__c) || PRIORVALUE(Expected_Revenue__c) = Expected_Revenue__c,
+            ISCHANGED(No_of_hostRollUp__c) || PRIORVALUE(No_of_hostRollUp__c) = No_of_hostRollUp__c,
+            ISCHANGED(Seats_Available_Rollup__c) || PRIORVALUE(Seats_Available_Rollup__c) = Seats_Available_Rollup__c,
+            ISCHANGED(Seats_Reserved_RollUp__c) || PRIORVALUE(Seats_Reserved_RollUp__c) = Seats_Reserved_RollUp__c,
+            ISCHANGED(Total_Seat_Capacity__c) || PRIORVALUE(Total_Seat_Capacity__c) = Total_Seat_Capacity__c,
+            ISCHANGED(Static_Start_Date_Time__c) || PRIORVALUE(Static_Start_Date_Time__c) = Static_Start_Date_Time__c,
+            ISCHANGED(Static_End_Date_Time__c) || PRIORVALUE(Static_End_Date_Time__c) = Static_End_Date_Time__c
+        ),
+        false,
+        true
+    )
+)</errorConditionFormula>
+    <errorMessage>You are not qualified to Create/Update Campaigns</errorMessage>
+</ValidationRule>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Exclusion_Delivery_Details</fullName>
+    <columns>Issuing_Property__c</columns>
+    <columns>NAME</columns>
+    <columns>POE_Type__c</columns>
+    <columns>Case_Opened_Date__c</columns>
+    <columns>Exl_Delivery_Method__c</columns>
+    <columns>Delivery_Status__c</columns>
+    <columns>Tracking_Number__c</columns>
+    <columns>Issued_By__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Issuing_Property__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Exl_Delivery_Method__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Delivery_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Delivered Successfully</value>
+    </filters>
+    <filters>
+        <field>Tracking_Number__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Apply_Case_NextButton_NSW__c</field>
+        <operation>notEqual</operation>
+        <value>Generate Document</value>
+    </filters>
+    <filters>
+        <field>Apply_Case_NextButton_NSW__c</field>
+        <operation>notEqual</operation>
+        <value>Capture Details</value>
+    </filters>
+    <filters>
+        <field>Apply_Case_NextButton_Qld__c</field>
+        <operation>notEqual</operation>
+        <value>Generate Document</value>
+    </filters>
+    <filters>
+        <field>Apply_Case_NextButton_Qld__c</field>
+        <operation>notEqual</operation>
+        <value>Capture Details</value>
+    </filters>
+    <label>Update Exclusion Delivery Details</label>
+</ListView>

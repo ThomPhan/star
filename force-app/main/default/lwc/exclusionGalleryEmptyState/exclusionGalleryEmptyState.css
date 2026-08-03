@@ -1,0 +1,8 @@
+.empty-state {
+    padding: 2rem 1rem;
+    min-height: 12rem;
+}
+
+.empty-icon {
+    --sds-c-icon-color-foreground-default: var(--slds-g-color-neutral-base-50, #747474);
+}

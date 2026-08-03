@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clothing_Size__c</fullName>
+    <label>Clothing Size</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Shirt L</fullName>
+                <default>false</default>
+                <label>Shirt L</label>
+            </value>
+            <value>
+                <fullName>Shirt M</fullName>
+                <default>false</default>
+                <label>Shirt M</label>
+            </value>
+            <value>
+                <fullName>Shirt S</fullName>
+                <default>false</default>
+                <label>Shirt S</label>
+            </value>
+            <value>
+                <fullName>Shirt XL</fullName>
+                <default>false</default>
+                <label>Shirt XL</label>
+            </value>
+            <value>
+                <fullName>Shirt XS</fullName>
+                <default>false</default>
+                <label>Shirt XS</label>
+            </value>
+            <value>
+                <fullName>Shirt XXL</fullName>
+                <default>false</default>
+                <label>Shirt XXL</label>
+            </value>
+            <value>
+                <fullName>L</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>L</label>
+            </value>
+            <value>
+                <fullName>M</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>M</label>
+            </value>
+            <value>
+                <fullName>S</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>S</label>
+            </value>
+            <value>
+                <fullName>XL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>XL</label>
+            </value>
+            <value>
+                <fullName>XS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>XS</label>
+            </value>
+            <value>
+                <fullName>XXL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>XXL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

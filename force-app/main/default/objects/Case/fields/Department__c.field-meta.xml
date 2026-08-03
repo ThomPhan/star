@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department__c</fullName>
+    <description>Related to user story CGFP1-62</description>
+    <label>Department</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Property__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+                <label>Entertainment</label>
+            </value>
+            <value>
+                <fullName>F&amp;B</fullName>
+                <default>false</default>
+                <label>F&amp;B</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+                <label>Gaming</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Property Services</fullName>
+                <default>false</default>
+                <label>Property Services</label>
+            </value>
+            <value>
+                <fullName>Public Relations / Branding</fullName>
+                <default>false</default>
+                <label>Public Relations / Branding</label>
+            </value>
+            <value>
+                <fullName>VIP Services</fullName>
+                <default>false</default>
+                <label>VIP Services</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Corporate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Entertainment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>F&amp;B</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Finance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Gaming</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Hotel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>IT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Marketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Property Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>VIP Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>Public Relations / Branding</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

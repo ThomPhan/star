@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Star_Events</compactLayoutAssignment>
+    <description>Record Type to hold TSEG event related information</description>
+    <label>Event</label>
+    <picklistValues>
+        <picklist>DB_Campaign_Tactic__c</picklist>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employment Seminars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lunches</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Banners%2FAds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Call Down</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinars</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Location__c</picklist>
+        <values>
+            <fullName>Benneti Yacht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star 888</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Brisbane %28Treasury%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Sunseeker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Sydney</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Market_Segment__c</picklist>
+        <values>
+            <fullName>IPM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IRB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indochina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inter-Division</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interstate EG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interstate TG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Program_Type__c</picklist>
+        <values>
+            <fullName>Junket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposed</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Type__c</picklist>
+        <values>
+            <fullName>AFL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BOXING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baccarat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Benetti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boat racing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRICKET</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car racing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cruise 888</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horse racing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roulette</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rugby League %28NRL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOCCER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slots</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Yacht</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Timezone__c</picklist>
+        <values>
+            <fullName>%28GMT%2B07%3A00%29 Bangkok%2C Hanoi%2C Jakarta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B08%3A00%29 Beijing%2C Chongqing%2C Hong Kong%2C Urumqi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B08%3A00%29 Kuala Lumpur%2C Singapore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B08%3A00%29 Perth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B08%3A00%29 Taipei</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B09%3A00%29 Osaka%2C Sapporo%2C Tokyo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B09%3A00%29 Seoul</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B09%3A30%29 Adelaide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B09%3A30%29 Darwin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B10%3A00%29 Brisbane%2C Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B10%3A00%29 Canberra%2C Melbourne%2C Sydney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B10%3A00%29 Hobart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B11%3A00%29 Magadan%2C Solomon Islands%2C New Caledonia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B12%3A00%29 Auckland%2C Wellington</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B12%3A00%29 Fiji%2C Kamchatka%2C Marshall Is%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Concerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cruises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dining event%2F Ambassador presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dinner %26 Draws</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fishing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gaming Draws</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gifting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Movies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Racing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sporting Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theatre%2FMusical%2FComedy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tournaments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP Shopping</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

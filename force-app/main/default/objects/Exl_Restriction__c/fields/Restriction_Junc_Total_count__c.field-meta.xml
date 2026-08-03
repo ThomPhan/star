@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restriction_Junc_Total_count__c</fullName>
+    <description>Get the count of all exclusion restriction junction records (Active + In Active) where exclusion Id != null</description>
+    <label>Restriction Junc Total count</label>
+    <summaryFilterItems>
+        <field>Exl_ExclusionRestrictionJunc__c.Exclusion_Status__c</field>
+        <operation>notEqual</operation>
+        <value></value>
+    </summaryFilterItems>
+    <summaryForeignKey>Exl_ExclusionRestrictionJunc__c.Restriction__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,13 @@
+.centerComponent{
+    display:flex;
+    justify-content: center;
+}
+
+.marginCustom{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.errorMessage{
+    color: red;
+}

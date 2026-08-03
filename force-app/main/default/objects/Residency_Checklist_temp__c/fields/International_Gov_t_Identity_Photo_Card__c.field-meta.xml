@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>International_Gov_t_Identity_Photo_Card__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>International Government issued Identity Photo Card</inlineHelpText>
+    <label>International Gov&apos;t  Identity Photo Card</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

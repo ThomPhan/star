@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExlCannotDeleteWOLI</fullName>
+    <active>true</active>
+    <description>Users cannot delete WorkOrderLineItem</description>
+    <errorConditionFormula>PRIORVALUE(WOLI_Count__c) &gt; WOLI_Count__c
+&amp;&amp; $Profile.Name != &apos;System Administrator&apos;
+&amp;&amp; $Permission.Exl_ReadOnlyUser_CP</errorConditionFormula>
+    <errorMessage>You don’t have permission to delete this record. For help, contact your Salesforce admin.</errorMessage>
+</ValidationRule>

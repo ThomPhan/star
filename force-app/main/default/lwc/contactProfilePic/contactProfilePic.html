@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title={cardTitle}>
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <template lwc:if={isLoading}>
+                <div class="slds-align_absolute-center slds-p-vertical_medium">
+                    <lightning-spinner alternative-text="Loading image" size="small"></lightning-spinner>
+                </div>
+            </template>
+            <template lwc:else>
+                <template lwc:if={hasImage}>
+                    <!-- Clickable thumbnail -->
+                    <div class="slds-align_absolute-center slds-p-vertical_small">
+                        <img src={imageUrl} alt="Patron photograph - click to enlarge"
+                             title="Click to enlarge"
+                             onclick={handleView}
+                             style="width: 120px; height: 120px; border-radius: 8px; object-fit: cover; cursor: pointer;" />
+                    </div>
+                </template>
+                <template lwc:else>
+                    <!-- No image / no patron id -->
+                    <div class="slds-p-vertical_small">
+                        <div class="no-image">No Image Available</div>
+                    </div>
+                </template>
+            </template>
+        </div>
+
+        <!-- Enlarged image popup / modal -->
+        <template lwc:if={showImage}>
+            <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={handleHide}>
+                        <lightning-icon icon-name="utility:close" size="small" variant="inverse"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <div class="slds-modal__content slds-p-around_medium slds-align_absolute-center">
+                        <img src={imageUrl} alt="Patron photograph"
+                             style="max-width: 100%; max-height: 70vh; border-radius: 8px;" />
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" onclick={handleHide}></div>
+        </template>
+    </lightning-card>
+</template>

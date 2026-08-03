@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclusions_Compact_Layout</fullName>
+    <fields>CID_Exclusion_ID__c</fields>
+    <fields>Contact__c</fields>
+    <fields>Property__c</fields>
+    <fields>POE_Type__c</fields>
+    <fields>Status__c</fields>
+    <label>Exclusions Compact Layout</label>
+</CompactLayout>

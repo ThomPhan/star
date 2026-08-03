@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Host_is_TRUE__c</fullName>
+    <formula>IF (OR(Host_GC__r.Id = Logged_In_User__c, 
+Host_International__r.Id = Logged_In_User__c,
+Host_Sydney__r.Id  = Logged_In_User__c,
+Host_Brisbane__r.Id  = Logged_In_User__c),TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Host is TRUE</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

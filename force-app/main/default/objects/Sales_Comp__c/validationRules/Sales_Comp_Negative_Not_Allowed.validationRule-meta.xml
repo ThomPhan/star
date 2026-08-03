@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Comp_Negative_Not_Allowed</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*
+Amount__c &lt; 0
+*/
+
+IF($Permission.Skip_Validations_Permission, 
+false,
+Amount__c &lt; 0
+)</errorConditionFormula>
+    <errorDisplayField>Amount__c</errorDisplayField>
+    <errorMessage>Please enter an amount greater than 0</errorMessage>
+</ValidationRule>

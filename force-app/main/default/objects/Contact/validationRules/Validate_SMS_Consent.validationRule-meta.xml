@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_SMS_Consent</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Permission.Skip_Validations_Permission = FALSE &amp;&amp; MobilePhone = &apos;&apos; &amp;&amp; SMS_Consent__c &amp;&amp; (ISCHANGED(MobilePhone) || ISCHANGED(SMS_Consent__c))</errorConditionFormula>
+    <errorMessage>Mobile field cannot be blank when SMS Consent is ticked</errorMessage>
+</ValidationRule>

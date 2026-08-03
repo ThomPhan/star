@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Immediate_Revocation_Rejection_Reason__c</fullName>
+    <description>Reason provided by the approver when an immediate revocation request is rejected.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>Immediate Revocation Rejection Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

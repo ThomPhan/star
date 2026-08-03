@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>validate_passport_on_flight_booking</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*
+AND( RecordType.DeveloperName = &apos;Flight_Other_Traveller&apos;, ISBLANK(  Passport_Number__c ),  ISPICKVAL(Service__r.Flight_Region__c, &apos;International&apos;), NOT(ISNEW()))
+*/
+
+IF($Permission.Skip_Validations_Permission
+,false
+,AND( RecordType.DeveloperName = &apos;Flight_Other_Traveller&apos;, ISBLANK(  Passport_Number__c ),  ISPICKVAL(Service__r.Flight_Region__c, &apos;International&apos;), NOT(ISNEW()))
+)</errorConditionFormula>
+    <errorDisplayField>Passport_Number__c</errorDisplayField>
+    <errorMessage>Flight booking please fill in passport number</errorMessage>
+</ValidationRule>

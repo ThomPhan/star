@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Retry_At_PE__c</fullName>
+    <description>Enables a controlled retry mechanism for the PE service to resend notifications to downstream systems (Azure) in the event of a failure.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>Next Retry At : PE</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

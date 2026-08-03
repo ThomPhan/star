@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exl_Form_3H__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;https://sydwcgwt10.casino.internal/ibmcognos/bi/?pathRef=.public_folders%2FCasino%2BPublic%2BFolders%2FSalesForce%2FUAT%2F3Hv2&apos;, &quot;Click to open Form 3H&quot;, &quot;_blank&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Form 3H</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

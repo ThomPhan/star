@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accommodation_Type__c</fullName>
+    <label>Accommodation Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Double</fullName>
+                <default>false</default>
+                <label>Double</label>
+            </value>
+            <value>
+                <fullName>King</fullName>
+                <default>false</default>
+                <label>King</label>
+            </value>
+            <value>
+                <fullName>Mini Suite</fullName>
+                <default>false</default>
+                <label>Mini Suite</label>
+            </value>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Suite</fullName>
+                <default>false</default>
+                <label>Suite</label>
+            </value>
+            <value>
+                <fullName>Penthouse</fullName>
+                <default>false</default>
+                <label>Penthouse</label>
+            </value>
+            <value>
+                <fullName>The Darling</fullName>
+                <default>false</default>
+                <label>The Darling</label>
+            </value>
+            <value>
+                <fullName>The Star Grand</fullName>
+                <default>false</default>
+                <label>The Star Grand</label>
+            </value>
+            <value>
+                <fullName>NULL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NULL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

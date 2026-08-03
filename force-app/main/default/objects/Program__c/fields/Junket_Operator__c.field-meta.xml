@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Junket_Operator__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Junket Operator</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Contact.Junket_Operator__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Programs (Junket Operator)</relationshipLabel>
+    <relationshipName>Programs_Junket_Operator</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

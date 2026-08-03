@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Written Warning Generate Button</masterLabel>
+    <description>Opens the FormAssembly Written Warning e-signature workflow URL from a flow screen.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property
+        name="documentUrl"
+        label="Document URL"
+        type="String"
+        description="Fully resolved FormAssembly workflow URL with exclusionId and contactId substituted."
+      />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,92 @@
+<template>
+    <lightning-record-edit-form object-api-name="Service__c" record-id={serviceRecId} record-type-id={recordTypeId} onsuccess={recordSuccess} onerror={recordError} onsubmit={handleSubmit}>
+        <div class="slds-modal__content">
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Date, Location and Pax Details</span>
+            </h3>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Contact__c" variant="label-stacked" value={vipBookingId} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Property__c" variant="label-stacked" value={vipBookingProperty} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Cost_Centre__c" variant="label-stacked" value={costCentre} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Booking_Date_and_Time__c" variant="label-stacked" value={bookingDateTime} required> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Restaurant_Booking_Status__c" variant="label-stacked" value={bookingStatus} required> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Booking_Date_and_Time_Static__c" variant="label-stacked" disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Venue__c" variant="label-stacked" value={bookingVenue} required> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Pax__c" variant="label-stacked" value={bookingPax} required> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Reservation Details</span>
+            </h3>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Dietary_Requirements__c" variant="label-stacked" value={bookingDietaryReq}> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Dining_Notes__c" variant="label-stacked" value={bookingDiningNotes} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Service Details</span>
+            </h3>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Restaurant_Booking_Reference__c" variant="label-stacked" value={bookingReference}> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Follow_Up__c" variant="label-stacked" value={bookingFollowUp}> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Comments__c" variant="label-stacked"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div class="slds-hidden">
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <lightning-input-field field-name="RecordTypeId" variant="label-stacked" value={recordTypeId}> </lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+        <div class="centerComponent">
+            <b>
+                <template if:true={bookingStatusText1}>
+                    {label.VIPB_Edit_IsConfirmed}
+                </template>
+                <template if:true={bookingStatusText2}>
+                    {label.VIPB_Edit_IsNotConfirmed}
+                </template>
+            </b>
+        </div>
+        <div class="slds-modal__footer centerComponent">
+            <lightning-button variant="neutral" label="Back" class="slds-m-right_medium" onclick={endFlow}></lightning-button>
+            <lightning-button variant="brand" label="Next" type="submit"></lightning-button>
+        </div>
+    </lightning-record-edit-form>
+</template>

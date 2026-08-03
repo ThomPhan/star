@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Create_Update_of_Event_Allocations</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF($Permission.Skip_Validations_Permission,
+false,
+   IF(
+      OR(
+        
+        $Permission.TSEG_CRM_Manager = true ,
+        $Permission.TSEG_Premium_Guest_Services  = true,
+        $Permission.TSEG_Event_Management = true,
+        $Profile.Name = &apos;System Administrator&apos;
+    ),
+    false,
+    IF(
+        OR(
+            ISCHANGED(Seat_Reserved__c),
+            ISCHANGED(Waitlisted__c),
+            ISCHANGED(No_of_host__c),
+            ISCHANGED(Capacity__c),
+            ISCHANGED(Seats_Available__c),
+            ISCHANGED(Seats_Available_Tech__c)
+        ),
+        false,
+        true
+      )
+    )
+)</errorConditionFormula>
+    <errorMessage>You are not qualified to Create/Update Event Allocations</errorMessage>
+</ValidationRule>

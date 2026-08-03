@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gold_Coast_Cashless_Triage_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Gold Coast Cashless Triage</label>
+    <queue>Gold_Coast_Cashless_Triage</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

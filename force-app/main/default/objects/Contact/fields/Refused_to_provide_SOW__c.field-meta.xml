@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refused_to_provide_SOW__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Reminder to complete the Unusual Activity Referral form</inlineHelpText>
+    <label>Refused to provide SOW</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

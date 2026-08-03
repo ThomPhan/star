@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description__c</fullName>
+    <label>Description</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Birthday</fullName>
+                <default>false</default>
+                <label>Birthday</label>
+            </value>
+            <value>
+                <fullName>F&amp;B Dining</fullName>
+                <default>false</default>
+                <label>F&amp;B Dining</label>
+            </value>
+            <value>
+                <fullName>Guest Reactivation</fullName>
+                <default>false</default>
+                <label>Guest Reactivation</label>
+            </value>
+            <value>
+                <fullName>Guest Service Recovery</fullName>
+                <default>false</default>
+                <label>Guest Service Recovery</label>
+            </value>
+            <value>
+                <fullName>In-Market Activity</fullName>
+                <default>false</default>
+                <label>In-Market Activity</label>
+            </value>
+            <value>
+                <fullName>Loyalty Campaign</fullName>
+                <default>false</default>
+                <label>Loyalty Campaign</label>
+            </value>
+            <value>
+                <fullName>Loyalty Recognition</fullName>
+                <default>false</default>
+                <label>Loyalty Recognition</label>
+            </value>
+            <value>
+                <fullName>Offer</fullName>
+                <default>false</default>
+                <label>Offer</label>
+            </value>
+            <value>
+                <fullName>Prizes for events and draws</fullName>
+                <default>false</default>
+                <label>Prizes for events and draws</label>
+            </value>
+            <value>
+                <fullName>Promotions - events and draws</fullName>
+                <default>false</default>
+                <label>Promotions - events and draws</label>
+            </value>
+            <value>
+                <fullName>Relationship maintenance</fullName>
+                <default>false</default>
+                <label>Relationship maintenance</label>
+            </value>
+            <value>
+                <fullName>Retention</fullName>
+                <default>false</default>
+                <label>Retention</label>
+            </value>
+            <value>
+                <fullName>Service Recovery</fullName>
+                <default>false</default>
+                <label>Service Recovery</label>
+            </value>
+            <value>
+                <fullName>Special Occasion</fullName>
+                <default>false</default>
+                <label>Special Occasion</label>
+            </value>
+            <value>
+                <fullName>Surprise &amp; Delights (Special Occasion)</fullName>
+                <default>false</default>
+                <label>Surprise &amp; Delights (Special Occasion)</label>
+            </value>
+            <value>
+                <fullName>Surprise and Delights</fullName>
+                <default>false</default>
+                <label>Surprise and Delights</label>
+            </value>
+            <value>
+                <fullName>Surprise and Delights (Special Occasion)</fullName>
+                <default>false</default>
+                <label>Surprise and Delights (Special Occasion)</label>
+            </value>
+            <value>
+                <fullName>Welcome / On Boarding / Lapsed</fullName>
+                <default>false</default>
+                <label>Welcome / On Boarding / Lapsed</label>
+            </value>
+            <value>
+                <fullName>Flights</fullName>
+                <default>false</default>
+                <label>Flights</label>
+            </value>
+            <value>
+                <fullName>Room Upgrades</fullName>
+                <default>false</default>
+                <label>Room Upgrades</label>
+            </value>
+            <value>
+                <fullName>Dinners</fullName>
+                <default>false</default>
+                <label>Dinners</label>
+            </value>
+            <value>
+                <fullName>Etc.</fullName>
+                <default>false</default>
+                <label>Etc.</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Rebate Program</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rebate Program</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

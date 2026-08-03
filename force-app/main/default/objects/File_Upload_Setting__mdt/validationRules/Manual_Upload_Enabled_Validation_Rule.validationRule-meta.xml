@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manual_Upload_Enabled_Validation_Rule</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Manual_Upload_Control_Enabled__c,
+NOT(
+REGEX(
+Manual_Upload_Applicable_Objects__c,
+&quot;^[A-Za-z0-9_]+(,\\s*[A-Za-z0-9_]+)*$&quot;
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Applicable Objects must be API names, comma-separated (e.g. Contact, Source_of_Wealth__c, Account)</errorMessage>
+</ValidationRule>

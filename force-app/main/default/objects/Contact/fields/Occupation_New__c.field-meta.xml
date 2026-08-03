@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Occupation_New__c</fullName>
+    <label>Occupation_New</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>101</fullName>
+                <default>false</default>
+                <label>Accountant</label>
+            </value>
+            <value>
+                <fullName>102</fullName>
+                <default>false</default>
+                <label>Airline Crew</label>
+            </value>
+            <value>
+                <fullName>Assist. Director - Sports Centre</fullName>
+                <default>false</default>
+                <label>Assist. Director - Sports Centre</label>
+            </value>
+            <value>
+                <fullName>Baker</fullName>
+                <default>false</default>
+                <label>Baker</label>
+            </value>
+            <value>
+                <fullName>Builder</fullName>
+                <default>false</default>
+                <label>Builder</label>
+            </value>
+            <value>
+                <fullName>Business - Printing</fullName>
+                <default>false</default>
+                <label>Business - Printing</label>
+            </value>
+            <value>
+                <fullName>Business Owner</fullName>
+                <default>false</default>
+                <label>Business Owner</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Bakery</fullName>
+                <default>false</default>
+                <label>Business Owner - Bakery</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Cleaning</fullName>
+                <default>false</default>
+                <label>Business Owner - Cleaning</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Clothing</fullName>
+                <default>false</default>
+                <label>Business Owner - Clothing</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Computer</fullName>
+                <default>false</default>
+                <label>Business Owner - Computer</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Convenience Sto</fullName>
+                <default>false</default>
+                <label>Business Owner - Convenience Sto</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Factory</fullName>
+                <default>false</default>
+                <label>Business Owner - Factory</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Furniture</fullName>
+                <default>false</default>
+                <label>Business Owner - Furniture</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Night Club</fullName>
+                <default>false</default>
+                <label>Business Owner - Night Club</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Petrol Station</fullName>
+                <default>false</default>
+                <label>Business Owner - Petrol Station</label>
+            </value>
+            <value>
+                <fullName>Business Owner - Take Away Food</fullName>
+                <default>false</default>
+                <label>Business Owner - Take Away Food</label>
+            </value>
+            <value>
+                <fullName>Business Textile</fullName>
+                <default>false</default>
+                <label>Business Textile</label>
+            </value>
+            <value>
+                <fullName>Businessman</fullName>
+                <default>false</default>
+                <label>Businessman</label>
+            </value>
+            <value>
+                <fullName>Butcher</fullName>
+                <default>false</default>
+                <label>Butcher</label>
+            </value>
+            <value>
+                <fullName>Carpenter</fullName>
+                <default>false</default>
+                <label>Carpenter</label>
+            </value>
+            <value>
+                <fullName>Cashier</fullName>
+                <default>false</default>
+                <label>Cashier</label>
+            </value>
+            <value>
+                <fullName>Catering</fullName>
+                <default>false</default>
+                <label>Catering</label>
+            </value>
+            <value>
+                <fullName>CEO - Investment Company</fullName>
+                <default>false</default>
+                <label>CEO - Investment Company</label>
+            </value>
+            <value>
+                <fullName>Chef</fullName>
+                <default>false</default>
+                <label>Chef</label>
+            </value>
+            <value>
+                <fullName>Cleaner</fullName>
+                <default>false</default>
+                <label>Cleaner</label>
+            </value>
+            <value>
+                <fullName>Clerk</fullName>
+                <default>false</default>
+                <label>Clerk</label>
+            </value>
+            <value>
+                <fullName>Co. Director - Construction</fullName>
+                <default>false</default>
+                <label>Co. Director - Construction</label>
+            </value>
+            <value>
+                <fullName>Company Director</fullName>
+                <default>false</default>
+                <label>Company Director</label>
+            </value>
+            <value>
+                <fullName>Company Director - Import</fullName>
+                <default>false</default>
+                <label>Company Director - Import</label>
+            </value>
+            <value>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+                <label>Consultant</label>
+            </value>
+            <value>
+                <fullName>Consultant - Education</fullName>
+                <default>false</default>
+                <label>Consultant - Education</label>
+            </value>
+            <value>
+                <fullName>Consultant - Funeral</fullName>
+                <default>false</default>
+                <label>Consultant - Funeral</label>
+            </value>
+            <value>
+                <fullName>Contractor - Building Trade</fullName>
+                <default>false</default>
+                <label>Contractor - Building Trade</label>
+            </value>
+            <value>
+                <fullName>Decorator</fullName>
+                <default>false</default>
+                <label>Decorator</label>
+            </value>
+            <value>
+                <fullName>Defense Forces</fullName>
+                <default>false</default>
+                <label>Defense Forces</label>
+            </value>
+            <value>
+                <fullName>Department Manager - Woolworths</fullName>
+                <default>false</default>
+                <label>Department Manager - Woolworths</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <label>Developer</label>
+            </value>
+            <value>
+                <fullName>Diplomat</fullName>
+                <default>false</default>
+                <label>Diplomat</label>
+            </value>
+            <value>
+                <fullName>Director - Coaching College</fullName>
+                <default>false</default>
+                <label>Director - Coaching College</label>
+            </value>
+            <value>
+                <fullName>Director - Export Company</fullName>
+                <default>false</default>
+                <label>Director - Export Company</label>
+            </value>
+            <value>
+                <fullName>Director - Supermarket</fullName>
+                <default>false</default>
+                <label>Director - Supermarket</label>
+            </value>
+            <value>
+                <fullName>Driver - Delivery</fullName>
+                <default>false</default>
+                <label>Driver - Delivery</label>
+            </value>
+            <value>
+                <fullName>Driver - Limo</fullName>
+                <default>false</default>
+                <label>Driver - Limo</label>
+            </value>
+            <value>
+                <fullName>Driver - Taxis</fullName>
+                <default>false</default>
+                <label>Driver - Taxis</label>
+            </value>
+            <value>
+                <fullName>Editor - Books</fullName>
+                <default>false</default>
+                <label>Editor - Books</label>
+            </value>
+            <value>
+                <fullName>Electrician</fullName>
+                <default>false</default>
+                <label>Electrician</label>
+            </value>
+            <value>
+                <fullName>Engineer - Software</fullName>
+                <default>false</default>
+                <label>Engineer - Software</label>
+            </value>
+            <value>
+                <fullName>Financial Controller</fullName>
+                <default>false</default>
+                <label>Financial Controller</label>
+            </value>
+            <value>
+                <fullName>Fitter</fullName>
+                <default>false</default>
+                <label>Fitter</label>
+            </value>
+            <value>
+                <fullName>Gaming</fullName>
+                <default>false</default>
+                <label>Gaming</label>
+            </value>
+            <value>
+                <fullName>Garment Industry</fullName>
+                <default>false</default>
+                <label>Garment Industry</label>
+            </value>
+            <value>
+                <fullName>Graphic Designer</fullName>
+                <default>false</default>
+                <label>Graphic Designer</label>
+            </value>
+            <value>
+                <fullName>Interior Designer</fullName>
+                <default>false</default>
+                <label>Interior Designer</label>
+            </value>
+            <value>
+                <fullName>International Trading</fullName>
+                <default>false</default>
+                <label>International Trading</label>
+            </value>
+            <value>
+                <fullName>Interpreter</fullName>
+                <default>false</default>
+                <label>Interpreter</label>
+            </value>
+            <value>
+                <fullName>Landlord</fullName>
+                <default>false</default>
+                <label>Landlord</label>
+            </value>
+            <value>
+                <fullName>Locksmith</fullName>
+                <default>false</default>
+                <label>Locksmith</label>
+            </value>
+            <value>
+                <fullName>Main Officer - Aust Post</fullName>
+                <default>false</default>
+                <label>Main Officer - Aust Post</label>
+            </value>
+            <value>
+                <fullName>Maker - Sample</fullName>
+                <default>false</default>
+                <label>Maker - Sample</label>
+            </value>
+            <value>
+                <fullName>Manager - Account</fullName>
+                <default>false</default>
+                <label>Manager - Account</label>
+            </value>
+            <value>
+                <fullName>Manager - Cafe</fullName>
+                <default>false</default>
+                <label>Manager - Cafe</label>
+            </value>
+            <value>
+                <fullName>Manager - Events</fullName>
+                <default>false</default>
+                <label>Manager - Events</label>
+            </value>
+            <value>
+                <fullName>Manager - Export/Import</fullName>
+                <default>false</default>
+                <label>Manager - Export/Import</label>
+            </value>
+            <value>
+                <fullName>Manager - Food Services Equip</fullName>
+                <default>false</default>
+                <label>Manager - Food Services Equip</label>
+            </value>
+            <value>
+                <fullName>Manager - Manufacturing</fullName>
+                <default>false</default>
+                <label>Manager - Manufacturing</label>
+            </value>
+            <value>
+                <fullName>Manager - Production</fullName>
+                <default>false</default>
+                <label>Manager - Production</label>
+            </value>
+            <value>
+                <fullName>Manager - Purchasing</fullName>
+                <default>false</default>
+                <label>Manager - Purchasing</label>
+            </value>
+            <value>
+                <fullName>Manager - Resorts</fullName>
+                <default>false</default>
+                <label>Manager - Resorts</label>
+            </value>
+            <value>
+                <fullName>Manager - Rice Import/Export</fullName>
+                <default>false</default>
+                <label>Manager - Rice Import/Export</label>
+            </value>
+            <value>
+                <fullName>Medical Device Business</fullName>
+                <default>false</default>
+                <label>Medical Device Business</label>
+            </value>
+            <value>
+                <fullName>Mining Engineer</fullName>
+                <default>false</default>
+                <label>Mining Engineer</label>
+            </value>
+            <value>
+                <fullName>Nurse Assistant</fullName>
+                <default>false</default>
+                <label>Nurse Assistant</label>
+            </value>
+            <value>
+                <fullName>Office Assistant</fullName>
+                <default>false</default>
+                <label>Office Assistant</label>
+            </value>
+            <value>
+                <fullName>Officer - Bank</fullName>
+                <default>false</default>
+                <label>Officer - Bank</label>
+            </value>
+            <value>
+                <fullName>Operator - Computer</fullName>
+                <default>false</default>
+                <label>Operator - Computer</label>
+            </value>
+            <value>
+                <fullName>Packaging</fullName>
+                <default>false</default>
+                <label>Packaging</label>
+            </value>
+            <value>
+                <fullName>Personal Assistant</fullName>
+                <default>false</default>
+                <label>Personal Assistant</label>
+            </value>
+            <value>
+                <fullName>Process Worker  - Poultry</fullName>
+                <default>false</default>
+                <label>Process Worker  - Poultry</label>
+            </value>
+            <value>
+                <fullName>Property Development</fullName>
+                <default>false</default>
+                <label>Property Development</label>
+            </value>
+            <value>
+                <fullName>Restaurant Owner</fullName>
+                <default>false</default>
+                <label>Restaurant Owner</label>
+            </value>
+            <value>
+                <fullName>Secretary</fullName>
+                <default>false</default>
+                <label>Secretary</label>
+            </value>
+            <value>
+                <fullName>Self Employed  - Tobacconist</fullName>
+                <default>false</default>
+                <label>Self Employed  - Tobacconist</label>
+            </value>
+            <value>
+                <fullName>Self Employed - Car Parts</fullName>
+                <default>false</default>
+                <label>Self Employed - Car Parts</label>
+            </value>
+            <value>
+                <fullName>Self Employed - Contractor</fullName>
+                <default>false</default>
+                <label>Self Employed - Contractor</label>
+            </value>
+            <value>
+                <fullName>Self Employed - Fabric Factory</fullName>
+                <default>false</default>
+                <label>Self Employed - Fabric Factory</label>
+            </value>
+            <value>
+                <fullName>Self Employed - Hardware</fullName>
+                <default>false</default>
+                <label>Self Employed - Hardware</label>
+            </value>
+            <value>
+                <fullName>Swimming Pool Renovation</fullName>
+                <default>false</default>
+                <label>Swimming Pool Renovation</label>
+            </value>
+            <value>
+                <fullName>Technician - Computer</fullName>
+                <default>false</default>
+                <label>Technician - Computer</label>
+            </value>
+            <value>
+                <fullName>Technician - Lab</fullName>
+                <default>false</default>
+                <label>Technician - Lab</label>
+            </value>
+            <value>
+                <fullName>Technician - Production</fullName>
+                <default>false</default>
+                <label>Technician - Production</label>
+            </value>
+            <value>
+                <fullName>Television Industry</fullName>
+                <default>false</default>
+                <label>Television Industry</label>
+            </value>
+            <value>
+                <fullName>Tour Guide</fullName>
+                <default>false</default>
+                <label>Tour Guide</label>
+            </value>
+            <value>
+                <fullName>Trader</fullName>
+                <default>false</default>
+                <label>Trader</label>
+            </value>
+            <value>
+                <fullName>Tradesman - Renovation</fullName>
+                <default>false</default>
+                <label>Tradesman - Renovation</label>
+            </value>
+            <value>
+                <fullName>Transporter</fullName>
+                <default>false</default>
+                <label>Transporter</label>
+            </value>
+            <value>
+                <fullName>Waiter</fullName>
+                <default>false</default>
+                <label>Waiter</label>
+            </value>
+            <value>
+                <fullName>Worker - Construction</fullName>
+                <default>false</default>
+                <label>Worker - Construction</label>
+            </value>
+            <value>
+                <fullName>Worker - Steel</fullName>
+                <default>false</default>
+                <label>Worker - Steel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

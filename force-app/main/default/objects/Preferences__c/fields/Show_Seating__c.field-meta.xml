@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Seating__c</fullName>
+    <label>Show Seating</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A Reserve only</fullName>
+                <default>false</default>
+                <label>A Reserve only</label>
+            </value>
+            <value>
+                <fullName>Wheel chair access</fullName>
+                <default>false</default>
+                <label>Wheel chair access</label>
+            </value>
+            <value>
+                <fullName>Aisle Seat</fullName>
+                <default>false</default>
+                <label>Aisle Seat</label>
+            </value>
+            <value>
+                <fullName>Close to wash room</fullName>
+                <default>false</default>
+                <label>Close to wash room</label>
+            </value>
+            <value>
+                <fullName>Close to exit door</fullName>
+                <default>false</default>
+                <label>Close to exit door</label>
+            </value>
+            <value>
+                <fullName>Corporate Box</fullName>
+                <default>false</default>
+                <label>Corporate Box</label>
+            </value>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>VIP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VIP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

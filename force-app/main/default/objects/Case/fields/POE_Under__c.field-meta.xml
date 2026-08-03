@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POE_Under__c</fullName>
+    <description>Regulation related to prevention.</description>
+    <label>POE Under</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Section 91O</fullName>
+                <default>false</default>
+                <label>Section 91O</label>
+            </value>
+            <value>
+                <fullName>Section 92</fullName>
+                <default>false</default>
+                <label>Section 92</label>
+            </value>
+            <value>
+                <fullName>Section 93A</fullName>
+                <default>false</default>
+                <label>Section 93A</label>
+            </value>
+            <value>
+                <fullName>Section 94</fullName>
+                <default>false</default>
+                <label>Section 94</label>
+            </value>
+            <value>
+                <fullName>Section 95</fullName>
+                <default>false</default>
+                <label>Section 95</label>
+            </value>
+            <value>
+                <fullName>NSW Section 81</fullName>
+                <default>false</default>
+                <label>NSW Section 81</label>
+            </value>
+            <value>
+                <fullName>ICM 13</fullName>
+                <default>false</default>
+                <label>ICM 13</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

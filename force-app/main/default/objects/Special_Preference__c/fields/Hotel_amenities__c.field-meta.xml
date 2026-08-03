@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hotel_amenities__c</fullName>
+    <label>Hotel amenities</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>$50 fruit basket</fullName>
+                <default>false</default>
+                <label>$50 fruit basket</label>
+            </value>
+            <value>
+                <fullName>bathrobe</fullName>
+                <default>false</default>
+                <label>bathrobe</label>
+            </value>
+            <value>
+                <fullName>bath salt</fullName>
+                <default>false</default>
+                <label>bath salt</label>
+            </value>
+            <value>
+                <fullName>body lotion</fullName>
+                <default>false</default>
+                <label>body lotion</label>
+            </value>
+            <value>
+                <fullName>comb</fullName>
+                <default>false</default>
+                <label>comb</label>
+            </value>
+            <value>
+                <fullName>intl adaptor</fullName>
+                <default>false</default>
+                <label>intl adaptor</label>
+            </value>
+            <value>
+                <fullName>shampoo</fullName>
+                <default>false</default>
+                <label>shampoo</label>
+            </value>
+            <value>
+                <fullName>shaver</fullName>
+                <default>false</default>
+                <label>shaver</label>
+            </value>
+            <value>
+                <fullName>shower gel</fullName>
+                <default>false</default>
+                <label>shower gel</label>
+            </value>
+            <value>
+                <fullName>slippers</fullName>
+                <default>false</default>
+                <label>slippers</label>
+            </value>
+            <value>
+                <fullName>soap</fullName>
+                <default>false</default>
+                <label>soap</label>
+            </value>
+            <value>
+                <fullName>VIP amenities 2 sets of each toothbrush</fullName>
+                <default>false</default>
+                <label>VIP amenities 2 sets of each toothbrush</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Order__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Work Order</label>
+    <referenceTo>Exl_WorkOrder__mdt</referenceTo>
+    <relationshipLabel>Work Order and Line Item Junctions</relationshipLabel>
+    <relationshipName>Work_Order_and_Line_Item_Junctions</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

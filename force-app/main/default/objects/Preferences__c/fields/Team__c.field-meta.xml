@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team__c</fullName>
+    <label>Team</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AFL - Adelaide Crows</fullName>
+                <default>false</default>
+                <label>AFL - Adelaide Crows</label>
+            </value>
+            <value>
+                <fullName>AFL - Brisbane Lions</fullName>
+                <default>false</default>
+                <label>AFL - Brisbane Lions</label>
+            </value>
+            <value>
+                <fullName>AFL - Carlton Blues</fullName>
+                <default>false</default>
+                <label>AFL - Carlton Blues</label>
+            </value>
+            <value>
+                <fullName>AFL - Collingwood Magpies</fullName>
+                <default>false</default>
+                <label>AFL - Collingwood Magpies</label>
+            </value>
+            <value>
+                <fullName>AFL - Essendon Bombers</fullName>
+                <default>false</default>
+                <label>AFL - Essendon Bombers</label>
+            </value>
+            <value>
+                <fullName>AFL - Fremantle Dockers</fullName>
+                <default>false</default>
+                <label>AFL - Fremantle Dockers</label>
+            </value>
+            <value>
+                <fullName>AFL - Geelong Cats</fullName>
+                <default>false</default>
+                <label>AFL - Geelong Cats</label>
+            </value>
+            <value>
+                <fullName>AFL - Gold Coast Suns</fullName>
+                <default>false</default>
+                <label>AFL - Gold Coast Suns</label>
+            </value>
+            <value>
+                <fullName>AFL - Greater Western Sydney Giants</fullName>
+                <default>false</default>
+                <label>AFL - Greater Western Sydney Giants</label>
+            </value>
+            <value>
+                <fullName>AFL - Hawthorn Hawks</fullName>
+                <default>false</default>
+                <label>AFL - Hawthorn Hawks</label>
+            </value>
+            <value>
+                <fullName>AFL - Melbourne Demons</fullName>
+                <default>false</default>
+                <label>AFL - Melbourne Demons</label>
+            </value>
+            <value>
+                <fullName>AFL - North Melbourne Kangaroos</fullName>
+                <default>false</default>
+                <label>AFL - North Melbourne Kangaroos</label>
+            </value>
+            <value>
+                <fullName>AFL - Port Adelaide Power</fullName>
+                <default>false</default>
+                <label>AFL - Port Adelaide Power</label>
+            </value>
+            <value>
+                <fullName>AFL - Richmond Tigers</fullName>
+                <default>false</default>
+                <label>AFL - Richmond Tigers</label>
+            </value>
+            <value>
+                <fullName>AFL - St Kilda Saints</fullName>
+                <default>false</default>
+                <label>AFL - St Kilda Saints</label>
+            </value>
+            <value>
+                <fullName>AFL - Sydney Swans</fullName>
+                <default>false</default>
+                <label>AFL - Sydney Swans</label>
+            </value>
+            <value>
+                <fullName>AFL - West Coast Eagles</fullName>
+                <default>false</default>
+                <label>AFL - West Coast Eagles</label>
+            </value>
+            <value>
+                <fullName>AFL - Western Bulldogs</fullName>
+                <default>false</default>
+                <label>AFL - Western Bulldogs</label>
+            </value>
+            <value>
+                <fullName>A-League - Adelaide United</fullName>
+                <default>false</default>
+                <label>A-League - Adelaide United</label>
+            </value>
+            <value>
+                <fullName>A-League - Brisbane Roar</fullName>
+                <default>false</default>
+                <label>A-League - Brisbane Roar</label>
+            </value>
+            <value>
+                <fullName>A-League - Central Coast Mariners</fullName>
+                <default>false</default>
+                <label>A-League - Central Coast Mariners</label>
+            </value>
+            <value>
+                <fullName>A-League - Melbourne City</fullName>
+                <default>false</default>
+                <label>A-League - Melbourne City</label>
+            </value>
+            <value>
+                <fullName>A-League - Melbourne Victory</fullName>
+                <default>false</default>
+                <label>A-League - Melbourne Victory</label>
+            </value>
+            <value>
+                <fullName>A-League - Newcastle Jets</fullName>
+                <default>false</default>
+                <label>A-League - Newcastle Jets</label>
+            </value>
+            <value>
+                <fullName>A-League - Perth Glory</fullName>
+                <default>false</default>
+                <label>A-League - Perth Glory</label>
+            </value>
+            <value>
+                <fullName>A-League - Sydney FC</fullName>
+                <default>false</default>
+                <label>A-League - Sydney FC</label>
+            </value>
+            <value>
+                <fullName>A-League - Wellington Phoenix</fullName>
+                <default>false</default>
+                <label>A-League - Wellington Phoenix</label>
+            </value>
+            <value>
+                <fullName>A-League - Western Sydney Wanderers</fullName>
+                <default>false</default>
+                <label>A-League - Western Sydney Wanderers</label>
+            </value>
+            <value>
+                <fullName>A-League - Western United</fullName>
+                <default>false</default>
+                <label>A-League - Western United</label>
+            </value>
+            <value>
+                <fullName>Cricket - New South Wales Blues</fullName>
+                <default>false</default>
+                <label>Cricket - New South Wales Blues</label>
+            </value>
+            <value>
+                <fullName>NRL - Brisbane Broncos</fullName>
+                <default>false</default>
+                <label>NRL - Brisbane Broncos</label>
+            </value>
+            <value>
+                <fullName>NRL - Canberra Raiders</fullName>
+                <default>false</default>
+                <label>NRL - Canberra Raiders</label>
+            </value>
+            <value>
+                <fullName>NRL - Canterbury-Bankstown Bulldogs</fullName>
+                <default>false</default>
+                <label>NRL - Canterbury-Bankstown Bulldogs</label>
+            </value>
+            <value>
+                <fullName>NRL - Cronulla-Sutherland Sharks</fullName>
+                <default>false</default>
+                <label>NRL - Cronulla-Sutherland Sharks</label>
+            </value>
+            <value>
+                <fullName>NRL - Gold Coast Titans</fullName>
+                <default>false</default>
+                <label>NRL - Gold Coast Titans</label>
+            </value>
+            <value>
+                <fullName>NRL - Manly-Warringah Sea Eagles</fullName>
+                <default>false</default>
+                <label>NRL - Manly-Warringah Sea Eagles</label>
+            </value>
+            <value>
+                <fullName>NRL - Melbourne Storm</fullName>
+                <default>false</default>
+                <label>NRL - Melbourne Storm</label>
+            </value>
+            <value>
+                <fullName>NRL - Newcastle Knights</fullName>
+                <default>false</default>
+                <label>NRL - Newcastle Knights</label>
+            </value>
+            <value>
+                <fullName>NRL - New Zealand Warriors</fullName>
+                <default>false</default>
+                <label>NRL - New Zealand Warriors</label>
+            </value>
+            <value>
+                <fullName>NRL - North Queensland Cowboys</fullName>
+                <default>false</default>
+                <label>NRL - North Queensland Cowboys</label>
+            </value>
+            <value>
+                <fullName>NRL - NSW Blues</fullName>
+                <default>false</default>
+                <label>NRL - NSW Blues</label>
+            </value>
+            <value>
+                <fullName>NRL - Parramatta Eels</fullName>
+                <default>false</default>
+                <label>NRL - Parramatta Eels</label>
+            </value>
+            <value>
+                <fullName>NRL - Penrith Panthers</fullName>
+                <default>false</default>
+                <label>NRL - Penrith Panthers</label>
+            </value>
+            <value>
+                <fullName>NRL - QLD Maroons</fullName>
+                <default>false</default>
+                <label>NRL - QLD Maroons</label>
+            </value>
+            <value>
+                <fullName>NRL - Redcliffe Dolphins</fullName>
+                <default>false</default>
+                <label>NRL - Redcliffe Dolphins</label>
+            </value>
+            <value>
+                <fullName>NRL - South Sydney Rabbitohs</fullName>
+                <default>false</default>
+                <label>NRL - South Sydney Rabbitohs</label>
+            </value>
+            <value>
+                <fullName>NRL - St. George Illawarra Dragons</fullName>
+                <default>false</default>
+                <label>NRL - St. George Illawarra Dragons</label>
+            </value>
+            <value>
+                <fullName>NRL - Sydney Roosters</fullName>
+                <default>false</default>
+                <label>NRL - Sydney Roosters</label>
+            </value>
+            <value>
+                <fullName>NRL - Wests Tigers</fullName>
+                <default>false</default>
+                <label>NRL - Wests Tigers</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - ACT Brumbies</fullName>
+                <default>false</default>
+                <label>SuperRugby - ACT Brumbies</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - Melbourne Rebels</fullName>
+                <default>false</default>
+                <label>SuperRugby - Melbourne Rebels</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - NSW Waratahs</fullName>
+                <default>false</default>
+                <label>SuperRugby - NSW Waratahs</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - NZ - Blues</fullName>
+                <default>false</default>
+                <label>SuperRugby - NZ - Blues</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - NZ- Chiefs</fullName>
+                <default>false</default>
+                <label>SuperRugby - NZ- Chiefs</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - NZ - Crusaders</fullName>
+                <default>false</default>
+                <label>SuperRugby - NZ - Crusaders</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - NZ - Highlanders</fullName>
+                <default>false</default>
+                <label>SuperRugby - NZ - Highlanders</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - NZ- Hurricanes</fullName>
+                <default>false</default>
+                <label>SuperRugby - NZ- Hurricanes</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - QLD Reds</fullName>
+                <default>false</default>
+                <label>SuperRugby - QLD Reds</label>
+            </value>
+            <value>
+                <fullName>SuperRugby - Western Force</fullName>
+                <default>false</default>
+                <label>SuperRugby - Western Force</label>
+            </value>
+            <value>
+                <fullName>Twenty20 - Adelaide Strikers</fullName>
+                <default>false</default>
+                <label>Twenty20 - Adelaide Strikers</label>
+            </value>
+            <value>
+                <fullName>Twenty20 - Brisbane Heat</fullName>
+                <default>false</default>
+                <label>Twenty20 - Brisbane Heat</label>
+            </value>
+            <value>
+                <fullName>Twenty20 - Hobart Hurricanes</fullName>
+                <default>false</default>
+                <label>Twenty20 - Hobart Hurricanes</label>
+            </value>
+            <value>
+                <fullName>Twenty20 - Melbourne Renegades</fullName>
+                <default>false</default>
+                <label>Twenty20 - Melbourne Renegades</label>
+            </value>
+            <value>
+                <fullName>Twenty20 - Melbourne Stars</fullName>
+                <default>false</default>
+                <label>Twenty20 - Melbourne Stars</label>
+            </value>
+            <value>
+                <fullName>Twenty20 - Perth Scorchers</fullName>
+                <default>false</default>
+                <label>Twenty20 - Perth Scorchers</label>
+            </value>
+            <value>
+                <fullName>Twenty20 - Sydney Sixers</fullName>
+                <default>false</default>
+                <label>Twenty20 - Sydney Sixers</label>
+            </value>
+            <value>
+                <fullName>Twenty20 - Sydney Thunder</fullName>
+                <default>false</default>
+                <label>Twenty20 - Sydney Thunder</label>
+            </value>
+            <value>
+                <fullName>V8 Supercars</fullName>
+                <default>false</default>
+                <label>V8 Supercars</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

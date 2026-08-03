@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Status_of_Manual_Decline</fullName>
+    <active>true</active>
+    <description>Cannot Change Status of Manually Declined Records</description>
+    <errorConditionFormula>ISPICKVAL(PRIORVALUE(Approval_Status__c), &quot;Manually Declined&quot;) &amp;&amp;  $Profile.Name != &apos;System Administrator&apos; &amp;&amp;  $Permission.TSEG_CRM_Manager=true  &amp;&amp; NOT($Permission.Skip_Validations_Permission)</errorConditionFormula>
+    <errorDisplayField>Approval_Status__c</errorDisplayField>
+    <errorMessage>Cannot Change Status of Manually Declined Records</errorMessage>
+</ValidationRule>

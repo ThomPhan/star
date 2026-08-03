@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Preferred_Address2</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Permission.Skip_Validations_Permission = FALSE &amp;&amp; 
+(ISPICKVAL(Preferred_Address__c, &apos;Residential Address&apos;) &amp;&amp; ISBLANK(OtherAddress) ||
+ISPICKVAL(Preferred_Address__c, &apos;Mailing Address&apos;) &amp;&amp; ISBLANK(MailingAddress)) &amp;&amp;
+(ISCHANGED(Direct_Mail_Consent__c) || ISCHANGED(Preferred_Address__c))</errorConditionFormula>
+    <errorMessage>Preferred Address value cannot be blank</errorMessage>
+</ValidationRule>

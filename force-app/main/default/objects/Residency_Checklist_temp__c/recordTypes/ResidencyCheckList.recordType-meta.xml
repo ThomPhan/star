@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ResidencyCheckList</fullName>
+    <active>false</active>
+    <compactLayoutAssignment>Default</compactLayoutAssignment>
+    <label>ResidencyCheckList</label>
+    <picklistValues>
+        <picklist>AustralianPassportHolder__c</picklist>
+        <values>
+            <fullName>International Government issued Identity photo card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residency VISA or proof of Right of Residency in another country</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Documents %E2%80%93 A Copy of E-Ticket%2FAirline Ticket %28must be valid and clearly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utility Bill reflecting International Address %28not more than 3 months old%2C or 6 months if permitted by the Premium Service Operations Manager or above%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Does_the_Person_hold_current_NSW_Lic__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Does_the_patron_drive_to_NSW__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Does_the_patron_have_travel_document__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DomesticPartA__c</picklist>
+        <values>
+            <fullName>3%29%09Has the person provided a Secondary Proof of Address document containing an address that is different to the state the program will participate in and reflects residential address in Customer Relation Management %28CRM%29 or Casino Management System %28CMS%29%3F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Does the person hold a Drivers License or Proof of Age card issued from a different state as the program they intend to participate in%3F If YES%2C provide a copy of eligible Drivers License or Proof of Age card  If NO%2C continue to Q3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Does the person hold a Drivers License or Proof of Age card issued from the same state as the program they intend to participate in%3F If YES%2C continue to Q3%2C If NO%2C continue to Q2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DomesticPartB__c</picklist>
+        <values>
+            <fullName>1%29     Are there personal details%2Fremarks in CMS or CRM that may prevent the person from participating in a rebate program%3F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%29%09Is the address in CMS or CRM the same state as the program they intend to participate%3F If yes%2C why%3F Please  proceed to Comment section C2%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%29%09Is the drivers license in CMS or CRM the same state as the program they intend to participate%3F If yes%2C why%3F Please proceed to Comment section C3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DomesticPartC__c</picklist>
+        <values>
+            <fullName>1%29%09Is the participant staying in house%3F If NO%2C provide address%2Fcontact details and reason they are not staying in house%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Entry_State__c</picklist>
+        <values>
+            <fullName>NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QLD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Has_the_patron_spent_less_than_183_days__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>InternationPartB__c</picklist>
+        <values>
+            <fullName>Does the person have an Australian Business visa or a Working Holiday Visa %E2%80%93 subclass 417%2C 462%3F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Does the person have any Educational Interests in Australia%3F If yes%2C provide details of who and where%3F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Does the person hold an Australian Medicare Card or Drivers License%3F %28Take a copy if card is provided%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>InternationalPartA__c</picklist>
+        <values>
+            <fullName>Does the person hold an Australian or New Zealand passport%3F</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>InternationalPartC__c</picklist>
+        <values>
+            <fullName>1%29 Are there personal details%2Fremarks in Customer Relation Management %28CRM%29 or Casino Management System %28CMS%29 that may prevent the person from participating in a rebate program%3F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%29 Australian address%2Fphone number recorded in CRM and%2For CMS%2C if yes why%3F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%29 Australian Drivers License recorded in CRM and%2For CMS%2C if yes why%3F</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%29 Other %E2%80%93 please provide detailed comment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>InternationalPartD__c</picklist>
+        <values>
+            <fullName>1%29 Is the participant staying in house%3F If NO%2C provide address%2Fcontact details and reason they are not staying in house</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Non_Australian_Passport_Holders__c</picklist>
+        <values>
+            <fullName>International Government issued Identity Photo Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Documents %E2%80%93 A Copy of E-Ticket%2FAirline Ticket %28must be valid and clearly show entry and exit from Australia%29 and%2For Boarding pass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utility Bill reflecting International Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VEVO Report%0950</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Residency_Status__c</picklist>
+        <values>
+            <fullName>Domestic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Cash Play</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initiate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Join Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Entertainment Group LtdUnlimited EditionSandbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Dates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Documents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Questionnaire%3F</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Domestic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>choice__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

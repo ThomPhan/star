@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Trend__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+Variance_Actual_MTD__c &gt;10, &quot;UP&quot;,
+IF(
+AND(
+Variance_Actual_MTD__c &gt;-10 , Variance_Actual_MTD__c &lt;10), &quot;SAME&quot;, &quot;DOWN&quot;
+)
+)</formula>
+    <label>Actual Trend</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

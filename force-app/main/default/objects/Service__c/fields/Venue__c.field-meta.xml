@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Venue__c</fullName>
+    <label>Venue</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Property__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BNE - Black Hide</fullName>
+                <default>false</default>
+                <label>BNE - Black Hide</label>
+            </value>
+            <value>
+                <fullName>BNE - Fat Noodle</fullName>
+                <default>false</default>
+                <label>BNE - Fat Noodle</label>
+            </value>
+            <value>
+                <fullName>BNE - Kitchen at Treasury</fullName>
+                <default>false</default>
+                <label>BNE - Kitchen at Treasury</label>
+            </value>
+            <value>
+                <fullName>BNE - Mei Wei</fullName>
+                <default>false</default>
+                <label>BNE - Mei Wei</label>
+            </value>
+            <value>
+                <fullName>BNE - Ryan’s Lobby Bar</fullName>
+                <default>false</default>
+                <label>BNE - Ryan’s Lobby Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Cucina Vivo</fullName>
+                <default>false</default>
+                <label>GC - Cucina Vivo</label>
+            </value>
+            <value>
+                <fullName>GC - Garden Kitchen &amp; Bar</fullName>
+                <default>false</default>
+                <label>GC - Garden Kitchen &amp; Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Harvest</fullName>
+                <default>false</default>
+                <label>GC - Harvest</label>
+            </value>
+            <value>
+                <fullName>GC - Kiyomi</fullName>
+                <default>false</default>
+                <label>GC - Kiyomi</label>
+            </value>
+            <value>
+                <fullName>GC - Nineteen Restaurant</fullName>
+                <default>false</default>
+                <label>GC - Nineteen Restaurant</label>
+            </value>
+            <value>
+                <fullName>GC - Sovereign Dining</fullName>
+                <default>false</default>
+                <label>GC - Sovereign Dining</label>
+            </value>
+            <value>
+                <fullName>GC - Uncle Su</fullName>
+                <default>false</default>
+                <label>GC - Uncle Su</label>
+            </value>
+            <value>
+                <fullName>SYD - Black</fullName>
+                <default>false</default>
+                <label>SYD - Black</label>
+            </value>
+            <value>
+                <fullName>SYD - Black Bar</fullName>
+                <default>false</default>
+                <label>SYD - Black Bar</label>
+            </value>
+            <value>
+                <fullName>SYD - Cherry Bar</fullName>
+                <default>false</default>
+                <label>SYD - Cherry Bar</label>
+            </value>
+            <value>
+                <fullName>SYD - Cucina Porto</fullName>
+                <default>false</default>
+                <label>SYD - Cucina Porto</label>
+            </value>
+            <value>
+                <fullName>SYD - Fat Noodle</fullName>
+                <default>false</default>
+                <label>SYD - Fat Noodle</label>
+            </value>
+            <value>
+                <fullName>SYD - G&amp;T</fullName>
+                <default>false</default>
+                <label>SYD - G&amp;T</label>
+            </value>
+            <value>
+                <fullName>SYD - Harvest Buffet</fullName>
+                <default>false</default>
+                <label>SYD - Harvest Buffet</label>
+            </value>
+            <value>
+                <fullName>SYD - Sokyo</fullName>
+                <default>false</default>
+                <label>SYD - Sokyo</label>
+            </value>
+            <value>
+                <fullName>SYD - Sokyo Bar</fullName>
+                <default>false</default>
+                <label>SYD - Sokyo Bar</label>
+            </value>
+            <value>
+                <fullName>SYD - Sovereign Bar</fullName>
+                <default>false</default>
+                <label>SYD - Sovereign Bar</label>
+            </value>
+            <value>
+                <fullName>SYD - Sovereign Dining</fullName>
+                <default>false</default>
+                <label>SYD - Sovereign Dining</label>
+            </value>
+            <value>
+                <fullName>SYD - The Century</fullName>
+                <default>false</default>
+                <label>SYD - The Century</label>
+            </value>
+            <value>
+                <fullName>BNE - Bite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNE - Bite</label>
+            </value>
+            <value>
+                <fullName>BNE - Fuel Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNE - Fuel Bar</label>
+            </value>
+            <value>
+                <fullName>BNE - Lab</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNE - Lab</label>
+            </value>
+            <value>
+                <fullName>BNE - Livewire</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNE - Livewire</label>
+            </value>
+            <value>
+                <fullName>BNE - Lobby Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNE - Lobby Bar</label>
+            </value>
+            <value>
+                <fullName>BNE - Orchid</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNE - Orchid</label>
+            </value>
+            <value>
+                <fullName>BNE - Sovereign</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNE - Sovereign</label>
+            </value>
+            <value>
+                <fullName>BNE - The Club</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNE - The Club</label>
+            </value>
+            <value>
+                <fullName>BNE - Will &amp; Flow</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BNE - Will &amp; Flow</label>
+            </value>
+            <value>
+                <fullName>GC - Atrium Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Atrium Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Cherry Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Cherry Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Food Fantasy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Food Fantasy</label>
+            </value>
+            <value>
+                <fullName>GC - Food Quarter</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Food Quarter</label>
+            </value>
+            <value>
+                <fullName>GC - GKB In Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - GKB In Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Garden Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Garden Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Garden Kitchen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Garden Kitchen</label>
+            </value>
+            <value>
+                <fullName>GC - Imperial</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Imperial</label>
+            </value>
+            <value>
+                <fullName>GC - Kiyomi Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Kiyomi Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Latitude</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Latitude</label>
+            </value>
+            <value>
+                <fullName>GC - Nineteen Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Nineteen Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Oasis Lounge</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Oasis Lounge</label>
+            </value>
+            <value>
+                <fullName>GC - Poker Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Poker Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Pool Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Pool Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Quid Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Quid Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Sovereign Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Sovereign Bar</label>
+            </value>
+            <value>
+                <fullName>GC - Sport Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - Sport Bar</label>
+            </value>
+            <value>
+                <fullName>GC - The Club</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - The Club</label>
+            </value>
+            <value>
+                <fullName>GC - The Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - The Suite</label>
+            </value>
+            <value>
+                <fullName>GC - VIVO</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GC - VIVO</label>
+            </value>
+            <value>
+                <fullName>SYD - Bar Tikram</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Bar Tikram</label>
+            </value>
+            <value>
+                <fullName>SYD - Chairman</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Chairman</label>
+            </value>
+            <value>
+                <fullName>SYD - Chuuka</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Chuuka</label>
+            </value>
+            <value>
+                <fullName>SYD - Flying Fish Restaurant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Flying Fish Restaurant</label>
+            </value>
+            <value>
+                <fullName>SYD - Food Quarter</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Food Quarter</label>
+            </value>
+            <value>
+                <fullName>SYD - Jade Rabbit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Jade Rabbit</label>
+            </value>
+            <value>
+                <fullName>SYD - Mai Vang</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Mai Vang</label>
+            </value>
+            <value>
+                <fullName>SYD - Marquee Bar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Marquee Bar</label>
+            </value>
+            <value>
+                <fullName>SYD - Milky Lane</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Milky Lane</label>
+            </value>
+            <value>
+                <fullName>SYD - Momofuku</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Momofuku</label>
+            </value>
+            <value>
+                <fullName>SYD - Oasis Dining</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Oasis Dining</label>
+            </value>
+            <value>
+                <fullName>SYD - Oasis Lounge</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Oasis Lounge</label>
+            </value>
+            <value>
+                <fullName>SYD - Rock Lily</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Rock Lily</label>
+            </value>
+            <value>
+                <fullName>SYD - Vantage</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SYD - Vantage</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Black</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Black Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Cherry Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Cucina Porto</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Fat Noodle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - G&amp;T</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Harvest Buffet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Sokyo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Sokyo Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Sovereign Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - Sovereign Dining</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>SYD - The Century</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>GC - Cucina Vivo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>GC - Garden Kitchen &amp; Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>GC - Harvest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>GC - Kiyomi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>GC - Nineteen Restaurant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>GC - Sovereign Dining</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>GC - Uncle Su</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>BNE - Black Hide</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>BNE - Fat Noodle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>BNE - Kitchen at Treasury</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>BNE - Mei Wei</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>BNE - Ryan’s Lobby Bar</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

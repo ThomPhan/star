@@ -1,0 +1,116 @@
+.loading-spinner{
+    position:relative;
+    display:inline-block;
+    width:80px;
+    height:80px;
+}
+
+.error-message{
+    font-weight:bold;
+    background-color:#C23934;
+    color:white;
+    border-radius:.25rem;
+}
+
+.slds-modal__container {
+    max-width: 55rem !important;
+    width: 100% !important;
+}
+
+.div_height{
+    height:4rem
+}
+
+.slds-modal__content2{
+    padding: 0 !important;
+    background: white;
+    overflow: initial;
+}
+
+.slds-modal__close2{
+    width: var(--lwc-squareIconMediumBoundary,2rem);
+    height: var(--lwc-squareIconMediumBoundary,2rem);
+    position: absolute;
+    top: -2.5rem;
+    right: -.5rem  
+}
+
+
+@media only screen and (min-width: 400px) and (max-device-width: 767px) {
+    .slds-modal__container{
+        width: 85% !important;
+        -webkit-appearance: none;
+    }
+    .field-padding{
+        padding-bottom: 75vw !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .slds-modal__container{
+        max-width: 50rem !important;
+        width: 100% !important;
+    }
+
+    .field-padding{
+        padding-bottom: 0px !important;
+    }
+}
+
+
+/* Media query for Iphone SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 399px) {
+    .slds-modal__container {
+        width: 85% !important;
+        -webkit-appearance: none;
+    }
+    .field-padding {
+        padding-bottom: 75vw !important;
+    }
+}
+
+/** overriding the slds styles **/
+
+.forceChatterBasePublisher  {
+    padding: 0 !important;
+}
+
+.slds-modal{
+    outline: none !important;
+    background-color:transparent;
+}
+
+.cuf-content {
+padding: 0 0rem !important;
+} 
+.slds-p-around--medium {
+padding: 0rem !important;
+}
+
+.slds-modal__content{
+    background:transparent !important;
+    box-shadow:0 0 black !important;
+}
+
+.allowOverflow{
+    overflow-y: visible !important;
+}
+
+.zindexheader{
+    position: relative;
+    z-index: -1 !important;
+}
+
+.zindexfooter{
+    position: relative;
+    z-index: -1 !important;
+}
+
+.zindexfront{
+    position: relative;
+    z-index: 1000 !important;
+}
+
+.hideoverflowx{
+    overflow-x : hidden;
+}

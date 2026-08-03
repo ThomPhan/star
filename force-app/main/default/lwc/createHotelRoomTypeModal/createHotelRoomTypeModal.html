@@ -1,0 +1,160 @@
+<template>
+	<!-- CRM2-2724 Deactivate rule post 28th of August-->
+	<!-- CRM2-2694 -->
+	<!--<template if:true={showError}>
+		<div class="slds-notify_container slds-is-relative">
+			<div class="slds-notify slds-notify_toast slds-theme_error" role="status">
+				<span class="slds-assistive-text">error</span>
+				<span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+					<lightning-icon icon-name="utility:error" variant="inverse" size="small"></lightning-icon>
+				</span>
+				<div class="slds-notify__content">
+					{errorMsg}
+				</div>
+			</div>
+		</div>
+	 </template>-->
+	<lightning-record-edit-form object-api-name="Service__c" record-id={serviceRecId} record-type-id={recordTypeId} onsuccess={recordSuccess} onerror={recordError} onsubmit={handleSubmit}>
+		<div class="slds-modal__content">
+			<h3 class="slds-section__title slds-theme_shade">
+				<span class="slds-truncate slds-p-horizontal_small" title="Section Title">Pax Details</span>
+			</h3>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Contact__c" variant="label-stacked" required value={vipBookingId} disabled="true"> </lightning-input-field>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Hotel_Booking_Status__c" variant="label-stacked" required onchange={handleStatusChange}> </lightning-input-field>
+					<div if:true={statusIsInvalid} class="errorMessage">
+						<lightning-formatted-text value="Status cannot be Confirmed if Hotel Confirmation Number is blank"></lightning-formatted-text>
+					</div>
+				</lightning-layout-item>
+			</lightning-layout>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Adult_Pax__c" variant="label-stacked" onchange={handleAdultChange} required value={adultPax}> </lightning-input-field>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Children_Pax__c" variant="label-stacked" onchange={handleChildChange} required onload={handleLoad}> </lightning-input-field>
+				</lightning-layout-item>
+			</lightning-layout>
+			<h3 class="slds-section__title slds-theme_shade">
+				<span class="slds-truncate slds-p-horizontal_small" title="Section Title">Dates</span>
+			</h3>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Arrival_Date__c" variant="label-stacked" required onchange={arrivalDateChange}> </lightning-input-field>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Pre_Register__c" variant="label-stacked" required> </lightning-input-field>
+				</lightning-layout-item>
+			</lightning-layout>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Departure_Date__c" variant="label-stacked" required onchange={departureDateChange}> </lightning-input-field>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Number_of_Nights__c" variant="label-stacked" disabled="true" value={diffDays}> </lightning-input-field>
+				</lightning-layout-item>
+			</lightning-layout>
+			<h3 class="slds-section__title slds-theme_shade">
+				<span class="slds-truncate slds-p-horizontal_small" title="Section Title">Hotel Details</span>
+			</h3>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Property__c" variant="label-stacked" value={vipBookingProperty} disabled="true"> </lightning-input-field>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Cost_Centre__c" variant="label-stacked" value={costCentre} disabled="true"> </lightning-input-field>
+				</lightning-layout-item>
+			</lightning-layout>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Hotel__c" variant="label-stacked" onchange={handleHotelChange} required value={selectedHotel}> </lightning-input-field>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Rate_Code__c" variant="label-stacked" required></lightning-input-field>
+				</lightning-layout-item>
+			</lightning-layout>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-combobox
+						name="roomTypeField"
+						label="Room Type:"
+						class="marginCustom"
+						disabled={roomTypeDisabled}
+						value={roomType}
+						required
+						placeholder={roomPlaceholder}
+						options={listOfRooms}
+						onchange={handleRoomChange}>
+					</lightning-combobox>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Smoking_Room_Request__c" variant="label-stacked"> </lightning-input-field>
+				</lightning-layout-item>
+				
+			</lightning-layout>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="MOP_Status__c" variant="label-stacked" onchange={checkMopField} required></lightning-input-field>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<template if:true={showOtherMop}>
+						<lightning-input-field field-name="Other_MOP_Status__c" variant="label-stacked"> </lightning-input-field>
+					</template>
+				</lightning-layout-item>
+			</lightning-layout>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Special_Request__c" variant="label-stacked" onchange={checkSpecialRequestField}> </lightning-input-field>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<template if:true={showOtherSpecialRequest}>
+						<lightning-input-field field-name="Other_Special_Request__c" variant="label-stacked"> </lightning-input-field>
+					</template>
+				</lightning-layout-item>
+			</lightning-layout>
+			<h3 class="slds-section__title slds-theme_shade">
+				<span class="slds-truncate slds-p-horizontal_small" title="Section Title">Service Details</span>
+			</h3>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Hotel_Confirmation_Number__c" variant="label-stacked" onchange={handleConfNumChange}> </lightning-input-field>
+				</lightning-layout-item>
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Follow_Up__c" variant="label-stacked"> </lightning-input-field>
+				</lightning-layout-item>
+			</lightning-layout>
+			<lightning-layout class="slds-p-around_xx-small">
+				<lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+					<lightning-input-field field-name="Booking_Comments__c" variant="label-stacked"> </lightning-input-field>
+				</lightning-layout-item>
+			</lightning-layout>
+			<div class="slds-hidden">
+				<lightning-layout>
+					<lightning-layout-item>
+						<lightning-input-field field-name="Room_Type__c" variant="label-stacked" required value={selectedRoomType}> </lightning-input-field>
+					</lightning-layout-item>
+					<lightning-layout-item>
+						<lightning-input-field field-name="RecordTypeId" variant="label-stacked" value={recordTypeId}> </lightning-input-field>
+					</lightning-layout-item>
+				</lightning-layout>
+			</div>
+		</div>
+		<div class="centerComponent">
+			<b>
+				<template if:true={bookingStatusText1}>
+					{label.VIPB_Edit_IsConfirmed}
+				</template>
+				<template if:true={bookingStatusText2}>
+					{label.VIPB_Edit_IsNotConfirmed}
+				</template>
+			</b>
+		</div>
+		<div class="slds-modal__footer centerComponent">
+			<lightning-button variant="neutral" label="Back" class="slds-m-right_medium" onclick={endFlow}></lightning-button>
+			<lightning-button variant="brand" label="Next" type="submit" class="nextButton" disabled={isInvalid} tabindex="0"></lightning-button>
+		</div>
+	</lightning-record-edit-form>
+</template>

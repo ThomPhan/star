@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_Allowed_to_Edit_Gift</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF($Permission.Skip_Validations_Permission,
+false,
+IF( RecordType.Name = &apos;Gift&apos; &amp;&amp; ( $Permission.TSEG_Casino_Host_Access_PS = true ||   $Permission.TSEG_Operation = true), true, false)
+)</errorConditionFormula>
+    <errorMessage>You do not have access to edit Gift Sales Comp Records</errorMessage>
+</ValidationRule>

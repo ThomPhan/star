@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Immediate_Revocation_Decided_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>User (approver) who approved or rejected the immediate revocation request.</description>
+    <label>Immediate Revocation Decided By</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Immediate_Revocation_Decisions</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

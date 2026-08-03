@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WhenStatusChangedToAttenendFromWaitlist</fullName>
+    <active>false</active>
+    <description>When Status Changed To Attending from Waitlist and seats available is Zero</description>
+    <errorConditionFormula>AND
+(
+ISCHANGED( RSVP_Status__c ),
+AND(OR(ISPICKVAL(PRIORVALUE(RSVP_Status__c),&quot;Waitlist&quot;),ISPICKVAL(PRIORVALUE(RSVP_Status__c),&quot;Decline&quot;)),ISPICKVAL(RSVP_Status__c, &quot;Attending&quot;) ),
+Event_Allocation__r.Seats_Available__c&lt;0
+)</errorConditionFormula>
+    <errorMessage>Status can`t be change from waitlist to attending,We don’t have enough seat available, please reduce the number.</errorMessage>
+</ValidationRule>

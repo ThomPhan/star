@@ -1,0 +1,119 @@
+<template>
+    <!--lightning-card title="Sales Comp Report" class="slds-m-left_x-small"-->
+        <template if:true={salesComps}>
+            <lightning-layout>
+                <lightning-layout-item size="12" class="slds-m-left_x-small slds-m-bottom_medium">
+                    <b>Sales Comp Report</b>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item size="10">
+                    <div>
+                        <lightning-input
+                            name="enter-search"
+                            type="search"
+                            onkeyup={handleSearch}
+                            variant="label-hidden"
+                            class="slds-m-left_x-small slds-m-bottom_medium"
+                        ></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="2">
+                    <lightning-button label="Export to CSV" onclick={downloadCSV} class="slds-m-left_x-small slds-m-bottom_medium"></lightning-button>
+                    <template if:true={queryTerm}>             
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+                
+            <lightning-layout>
+                <lightning-layout-item size="12" class="slds-m-left_x-small">
+                    <div>
+                        <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-scrollable">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th><b>Sales Comp Name</b></th>
+                                    <th><b>Patron Id</b></th>
+                                    <th><b>First Name</b></th>
+                                    <th><b>Last Name</b></th>
+                                    <th><b>Loyalty Program</b></th>
+                                    <th><b>Tier</b></th>
+                                    <th><b>Status</b></th>
+                                    <th><b>Adjustment</b></th>
+                                    <th><b>Comp Type</b></th>
+                                    <th><b>Amount</b></th>
+                                    <th><b>Property</b></th>
+                                    <th><b>Description</b></th>
+                                    <th><b>Owner</b></th>
+                                    <th><b>Comments</b></th>
+                                    <th><b>Additional Comments</b></th>
+                                    <th><b>Created By</b></th>
+                                    <th><b>Created Date</b></th>
+                                    <th><b>Last Modified By</b></th>
+                                    <th><b>Last Modified Date</b></th>
+                                    <th><b>Approval Process History</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={salesComps} for:item="salesComp">
+                                    <tr key={salesComp.Id}>
+                                        <!--td>{salesComp.Name}</td-->
+                                        <td><a onclick={recordClick} data-id={salesComp.Id}>{salesComp.Name}</a></td>
+                                        <td>{salesComp.Contact__r.Patron_ID__c}</td>
+                                        <td>{salesComp.Contact__r.FirstName}</td>
+                                        <td>{salesComp.Contact__r.LastName}</td>
+                                        <td>{salesComp.Contact__r.Loyalty_Program__c}</td>
+                                        <td>{salesComp.Contact__r.Tier__c}</td>
+                                        <td>{salesComp.Status__c}</td>
+                                        <td>{salesComp.Adjustment_Type__c}</td>
+                                        <td>{salesComp.Comp_Type__c}</td>
+                                        <td>{salesComp.Amount__c}</td>
+                                        <td>{salesComp.Property__c}</td>
+                                        <td>{salesComp.Description__c}</td>
+                                        <td>{salesComp.Owner.Name}</td>
+                                        <td>{salesComp.Comments__c}</td>
+                                        <td>{salesComp.Additional_Comments__c}</td>
+                                        <td>{salesComp.CreatedBy.Name}</td>
+                                        <!-- <td><p><lightning-formatted-date-time value={salesComp.CreatedDate} year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                            minute="2-digit" time-zone-name="short"></lightning-formatted-date-time></p></td> -->
+                                        <td><p><lightning-formatted-date-time value={salesComp.CreatedDate} year="numeric" month="numeric" day="numeric"></lightning-formatted-date-time></p></td>
+                                        <td>{salesComp.LastModifiedBy.Name}</td>
+                                        <td><p><lightning-formatted-date-time value={salesComp.LastModifiedDate} year="numeric" month="numeric" day="numeric"></lightning-formatted-date-time></p></td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <th class="slds-m-left_x-small"><b>Status</b></th>
+                                                    <th class="slds-m-left_x-small"><b>Submitted by</b></th>
+                                                    <th class="slds-m-left_x-small"><b>Approver</b></th>
+                                                    <th class="slds-m-left_x-small"><b>Comments</b></th>
+                                                </tr>
+                                                <template for:each={salesComp.ProcessSteps} for:item="step">
+                                                    <tr key={step.Id} class="slds-m-left_x-small">
+                                                        <td>{step.StepStatus}</td>
+                                                        <td>
+                                                            <template if:true={step.ProcessInstance.SubmittedBy}>
+                                                                {step.ProcessInstance.SubmittedBy.Name}
+                                                            </template>
+                                                        </td>
+                                                        <td>
+                                                            <template if:true={step.ProcessInstance.LastActor}>
+                                                                {step.ProcessInstance.LastActor.Name}
+                                                            </template>
+                                                        </td>
+                                                        <td>{step.Comments}</td>
+                                                    </tr>
+                                                </template>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+        <template if:false={salesComps}>
+            <p>No data to display</p>
+        </template>
+    <!--/lightning-card-->
+</template>

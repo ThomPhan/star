@@ -1,0 +1,17 @@
+.sales-comp-card {
+    display: block;
+}
+
+.vertical-border {
+    border: 1px black;
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+
+.around-border-thick {
+    border: 2px solid black;
+}
+
+.title-bold {
+    font-weight: bold;
+}

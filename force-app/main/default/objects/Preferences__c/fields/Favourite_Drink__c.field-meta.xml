@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Favourite_Drink__c</fullName>
+    <label>Favourite Drink</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Beer</fullName>
+                <default>false</default>
+                <label>Beer</label>
+            </value>
+            <value>
+                <fullName>Champagne / Sparkling</fullName>
+                <default>false</default>
+                <label>Champagne / Sparkling</label>
+            </value>
+            <value>
+                <fullName>Cocktail</fullName>
+                <default>false</default>
+                <label>Cocktail</label>
+            </value>
+            <value>
+                <fullName>Coffee</fullName>
+                <default>false</default>
+                <label>Coffee</label>
+            </value>
+            <value>
+                <fullName>Juice</fullName>
+                <default>false</default>
+                <label>Juice</label>
+            </value>
+            <value>
+                <fullName>Red Wine</fullName>
+                <default>false</default>
+                <label>Red Wine</label>
+            </value>
+            <value>
+                <fullName>Soft drink</fullName>
+                <default>false</default>
+                <label>Soft drink</label>
+            </value>
+            <value>
+                <fullName>Spirits</fullName>
+                <default>false</default>
+                <label>Spirits</label>
+            </value>
+            <value>
+                <fullName>Tea</fullName>
+                <default>false</default>
+                <label>Tea</label>
+            </value>
+            <value>
+                <fullName>White wine</fullName>
+                <default>false</default>
+                <label>White wine</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

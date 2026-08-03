@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclusion_Document_Mapping__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Exclusion Document Mapping</label>
+    <referenceTo>Exl_ExclusionDocumentMapping__mdt</referenceTo>
+    <relationshipLabel>POE Documents Junction</relationshipLabel>
+    <relationshipName>POE_Documents_Junction</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

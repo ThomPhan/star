@@ -1,0 +1,72 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid bgColor">
+          <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__figure">
+              <lightning-icon icon-name="custom:custom13" size="small"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <a href="#" class="slds-card__header-link slds-truncate" title="Loyalty">
+                  <span>Update Room Type:</span>
+                </a>
+              </h2>
+            </div>
+          </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+          <lightning-layout>
+            <lightning-layout-item padding="around-small" class="slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+              <lightning-combobox
+                name="adultPax"
+                label="Adult:"
+                value={adultPax}
+                options={numberOfAdult}
+                onchange={handleAdultChange}>
+              </lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" class="slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+              <lightning-combobox
+                name="childPax"
+                label="Child:"
+                value={childPax}
+                options={numberOfChild}
+                onchange={handleChildChange}>
+              </lightning-combobox>
+            </lightning-layout-item>
+          </lightning-layout>
+          <lightning-layout>
+            <lightning-layout-item padding="around-small" class="slds-medium-size_12-of-12 slds-large-size_12-of-12 slds-small-size_12-of-12">
+              <lightning-button class="centerComponent" variant="neutral" icon-name="utility:search" onclick={handleSearchButton} label="Search Rooms"></lightning-button>
+            </lightning-layout-item>
+          </lightning-layout>
+          <div if:true={showRooms}>
+            <lightning-layout>
+              <lightning-layout-item padding="around-small" class="slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                <lightning-combobox
+                  name="roomType"
+                  label="Room Type:"
+                  value={roomType}
+                  options={listOfRooms}
+                  onchange={handleRoomChange}>
+                </lightning-combobox>
+              </lightning-layout-item>
+            </lightning-layout>
+            <div if:true={selectedRoomType}>
+              <lightning-layout>
+                <lightning-layout-item padding="around-small" class="slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                  <lightning-button variant="brand" onclick={updateRecord} label="Save" class="centerComponent"></lightning-button>
+                </lightning-layout-item>
+              </lightning-layout>
+            </div>
+          </div>
+          <div if:true={showNA}>
+            <lightning-layout>
+              <lightning-layout-item padding="around-small" class="centerComponent">
+                <i>No available rooms.</i>
+              </lightning-layout-item>
+            </lightning-layout>
+          </div>
+        </div>
+      </article>
+</template>

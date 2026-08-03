@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exl_Restrictions</fullName>
+    <active>true</active>
+    <description>Used to support all Exl-related Restriction processes for prevention of play framework</description>
+    <label>Exl Restrictions</label>
+    <picklistValues>
+        <picklist>Enforced_By__c</picklist>
+        <values>
+            <fullName>MDM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NeoFace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PingOne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart Button</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star APP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Synkros</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Enforcement_Status__c</picklist>
+        <values>
+            <fullName>Acknowledged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migrated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overridden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revoked</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Restriction_Type__c</picklist>
+        <values>
+            <fullName>Access to Digital Channels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino Points</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel Bookings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parking benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receive Marketing Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier Level Lost</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

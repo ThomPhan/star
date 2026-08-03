@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Type__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Case Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NICC Exclusion in NSW</fullName>
+                <default>true</default>
+                <label>NICC Exclusion in NSW</label>
+            </value>
+            <value>
+                <fullName>Police Exclusion in NSW</fullName>
+                <default>false</default>
+                <label>Police Exclusion in NSW</label>
+            </value>
+            <value>
+                <fullName>Police Exclusion in QLD</fullName>
+                <default>false</default>
+                <label>Police Exclusion in QLD</label>
+            </value>
+            <value>
+                <fullName>Problem Gambling in both states</fullName>
+                <default>false</default>
+                <label>Problem Gambling in both states</label>
+            </value>
+            <value>
+                <fullName>Self Exclusion in NSW with Problem Gambling in Qld</fullName>
+                <default>false</default>
+                <label>Self Exclusion in NSW with Problem Gambling in Qld</label>
+            </value>
+            <value>
+                <fullName>Self Exclusion in QLD with Problem Gambling in NSW</fullName>
+                <default>false</default>
+                <label>Self Exclusion in QLD with Problem Gambling in NSW</label>
+            </value>
+            <value>
+                <fullName>Self Exclusion in both states</fullName>
+                <default>false</default>
+                <label>Self Exclusion in both states</label>
+            </value>
+            <value>
+                <fullName>Venue Exclusion in NSW</fullName>
+                <default>false</default>
+                <label>Venue Exclusion in NSW</label>
+            </value>
+            <value>
+                <fullName>Venue Exclusion in QLD</fullName>
+                <default>false</default>
+                <label>Venue Exclusion in QLD</label>
+            </value>
+            <value>
+                <fullName>WOL AML + Venue AML in NSW</fullName>
+                <default>false</default>
+                <label>WOL AML + Venue AML in NSW</label>
+            </value>
+            <value>
+                <fullName>WOL in NSW</fullName>
+                <default>false</default>
+                <label>WOL in NSW</label>
+            </value>
+            <value>
+                <fullName>WOL in QLD</fullName>
+                <default>false</default>
+                <label>WOL in QLD</label>
+            </value>
+            <value>
+                <fullName>TP7DAY</fullName>
+                <default>false</default>
+                <label>TP7DAY</label>
+            </value>
+            <value>
+                <fullName>TP24HR</fullName>
+                <default>false</default>
+                <label>TP24HR</label>
+            </value>
+            <value>
+                <fullName>Extend</fullName>
+                <default>false</default>
+                <label>Extend</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

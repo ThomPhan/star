@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Centrelink_Concession_Card_Hold</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Permission.Skip_Validations_Permission = FALSE &amp;&amp; ISPICKVAL(Centrelink_Concession_Card_Holder__c , &apos;&apos;) &amp;&amp; ISCHANGED(Centrelink_Concession_Card_Holder__c )</errorConditionFormula>
+    <errorMessage>Centrelink Concession Card Holder cannot be blank</errorMessage>
+</ValidationRule>

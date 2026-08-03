@@ -1,0 +1,39 @@
+<template>
+    <div class={tileCssClass}>
+        <div class="tile-select" onclick={stopPropagation}>
+            <lightning-input
+                type="checkbox"
+                label="Select image"
+                variant="label-hidden"
+                checked={selected}
+                onchange={handleSelect}
+            ></lightning-input>
+        </div>
+
+        <div
+            class="tile-media"
+            role="button"
+            tabindex="0"
+            title={fileName}
+            onclick={handleEnlarge}
+            onkeydown={handleKeyDown}
+        >
+            <template if:true={isLoadingImage}>
+                <lightning-spinner alternative-text="Loading image" size="small"></lightning-spinner>
+            </template>
+            <template if:true={showImage}>
+                <img src={thumbnailUrl} alt={altText} class="tile-image" />
+            </template>
+            <template if:true={loadError}>
+                <lightning-icon
+                    icon-name="utility:image"
+                    alternative-text={altText}
+                    size="small"
+                    class="tile-error-glyph"
+                ></lightning-icon>
+            </template>
+        </div>
+
+        <p class="tile-caption slds-truncate" title={fileName}>{fileName}</p>
+    </div>
+</template>

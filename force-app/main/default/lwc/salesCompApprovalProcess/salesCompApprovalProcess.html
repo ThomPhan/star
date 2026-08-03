@@ -1,0 +1,95 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open ">
+        <div class="slds-modal__container">
+            <template if:false={showModal}>
+                <header class="slds-modal__header zindexheader">
+                    <button class='slds-button slds-button_icon slds-modal__close2 slds-button_icon-inverse'
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+                        Choose approver for {salesCompName}
+                    </h2>
+                </header>
+                <div class="slds-modal__content2 slds-p-around_medium" id="modal-content-id-1">
+                    <template if:false={isReady}>
+                        <div class="slds-align_absolute-center div_height slds-var-m-top_medium">
+                            <br>
+                            <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_inline">
+                            <span class="slds-assistive-text">Loading</span>
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:true={isReady}>
+                        <div class="slds-scrollable slds-modal_medium hideoverflowx">
+                            <div class="slds-section slds-is-open">
+                                <template if:true={recordId}>
+                                    <div class="slds-grid slds-wrap ">
+                                        <div class="slds-var-m-around_x-small slds-p-top_medium slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12 slds-var-p-horizontal_medium">
+                                            <lightning-combobox
+                                            name="role"
+                                            label="Select Role:"
+                                            value={selectedRole}
+                                            dropdown-alignment="auto"
+                                            required
+                                            placeholder={approverPlaceholder}
+                                            options={listOfApproversRole}
+                                            onchange={handleRoleChange}>
+                                        </lightning-combobox>
+                                        </div>
+                                    </div>
+                                    <div if:true={isApproverRole}>
+                                        <div class="slds-grid slds-wrap field-padding">
+                                            <div class="slds-var-m-around_x-small slds-p-top_x-small slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12 slds-var-p-horizontal_medium">
+                                                <lightning-combobox
+                                                name="approver"
+                                                label="Select Approver:"
+                                                value={selectedApprover}
+                                                required
+                                                class="$z-index-overlay"
+                                                dropdown-alignment="auto"
+                                                placeholder={approverPlaceholder}
+                                                options={listOfApprovers}
+                                                onchange={handleApproverChange}>
+                                            </lightning-combobox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <footer class="slds-modal__footer zindexfooter">
+                    <div if:false={isLoading} class="slds-button slds-align_absolute-center">
+                        <lightning-button 
+                            variant="neutral" 
+                            label="Cancel" 
+                            name="close"
+                            onclick={closeModal}>
+                        </lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <lightning-button 
+                            variant="brand" 
+                            label="Submit" 
+                            type="submit"
+                            name="save"
+                            disabled={confirmSave}
+                            onclick={saveClick}>
+                        </lightning-button>
+                    </div>
+                    <div if:true={isLoading} class="slds-button slds-align_absolute-center slds-var-p-around_small">
+                        <lightning-spinner 
+                            size="small" 
+                            variant="brand">
+                        </lightning-spinner>
+                    </div>
+                </footer>
+            </template>
+        </div>
+    </section>
+    <!--div class="slds-backdrop slds-backdrop_open"></div-->
+</template>

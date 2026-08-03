@@ -1,0 +1,74 @@
+<template>
+    <section
+        role="dialog"
+        tabindex="-1"
+        aria-modal="true"
+        aria-labelledby="uploader-heading"
+        class="slds-modal slds-fade-in-open"
+    >
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button
+                    class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                    title="Close"
+                    onclick={handleCancel}
+                >
+                    <lightning-icon icon-name="utility:close" size="small" alternative-text="Close"></lightning-icon>
+                </button>
+                <h2 id="uploader-heading" class="slds-modal__title slds-hyphenate">Upload Images</h2>
+            </header>
+
+            <div class="slds-modal__content slds-p-around_medium">
+                <lightning-input
+                    type="file"
+                    label="Select image(s)"
+                    multiple
+                    accept="image/png,image/jpeg,image/webp"
+                    onchange={handleFileChange}
+                ></lightning-input>
+
+                <template if:true={hasFiles}>
+                    <div class="slds-m-top_small" aria-label="Selected files">
+                        <p class="slds-text-title_caps slds-m-bottom_xx-small">Selected Files</p>
+                        <ul class="slds-has-dividers_bottom-space">
+                            <template for:each={files} for:item="item">
+                                <li key={item.key} class="slds-item slds-grid slds-grid_align-spread">
+                                    <span class="slds-truncate" title={item.fileName}>{item.fileName}</span>
+                                    <span class="slds-text-body_small">{item.message}</span>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+
+                <div class="slds-m-top_medium">
+                    <p class="slds-text-title_caps slds-m-bottom_x-small">Optional Metadata</p>
+                    <c-image-metadata-form></c-image-metadata-form>
+                </div>
+
+                <template if:true={isUploading}>
+                    <div class="slds-m-top_small slds-align_absolute-center">
+                        <lightning-spinner alternative-text="Uploading" size="small"></lightning-spinner>
+                    </div>
+                </template>
+            </div>
+
+            <footer class="slds-modal__footer">
+                <lightning-button
+                    label="Cancel"
+                    title="Cancel"
+                    onclick={handleCancel}
+                    class="slds-m-right_x-small"
+                ></lightning-button>
+                <lightning-button
+                    variant="brand"
+                    label="Upload"
+                    title="Upload"
+                    onclick={handleConfirm}
+                    disabled={confirmDisabled}
+                ></lightning-button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

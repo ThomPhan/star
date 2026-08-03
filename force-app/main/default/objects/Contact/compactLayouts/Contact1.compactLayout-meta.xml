@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact1</fullName>
+    <fields>ContactPhoto__c</fields>
+    <fields>Patron_ID__c</fields>
+    <fields>Name</fields>
+    <fields>Patron_Status__c</fields>
+    <fields>Card_Type_with_Status__c</fields>
+    <fields>Loyalty_Program__c</fields>
+    <fields>Tier__c</fields>
+    <label>Contact1</label>
+</CompactLayout>

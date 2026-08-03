@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactLookup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>ContactLookup</description>
+    <label>ContactLookup</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Campaign Members (ContactLookup)</relationshipLabel>
+    <relationshipName>Campaign_Members1</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

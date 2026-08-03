@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordAction</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordAction">
+            <actionType>ScreenAction</actionType>
+        </targetConfig>
+        <targetConfig targets="lightning__FlowScreen">
+           <property name="vipBookingId" label="Contact Id" type="String" role="inputOnly"/>
+           <property name="vipBookingProperty" label="VIP Booking Property" type="String" role="inputOnly"/>
+           <property name="recordTypeId" label="Record Type Id" type="String" role="inputOnly"/>
+           <property name="serviceRecId" label="Record Id" type="String" role="inputOnly"/>
+           <property name="costCentre" label="Cost Centre" type="String" role="inputOnly"/>
+           <property name="isDMLCreate" label="For creation?" type="Boolean" role="inputOnly"/>
+           <property name="dmlResult" type="String" role="outputOnly"/>
+           <property name="serviceRecord" type="@salesforce/schema/Service__c" role="outputOnly"/>
+       </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

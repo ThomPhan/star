@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flight_Charge__c</fullName>
+    <label>Flight Charge</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NGC</fullName>
+                <default>false</default>
+                <label>NGC</label>
+            </value>
+            <value>
+                <fullName>Room Charge</fullName>
+                <default>false</default>
+                <label>Room Charge</label>
+            </value>
+            <value>
+                <fullName>Gaming Comp</fullName>
+                <default>false</default>
+                <label>Gaming Comp</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

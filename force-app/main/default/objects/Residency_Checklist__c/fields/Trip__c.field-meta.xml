@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trip__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Days in NSW/QLD or AUS</label>
+    <referenceTo>Trip__c</referenceTo>
+    <relationshipLabel>Residency Checklists</relationshipLabel>
+    <relationshipName>Residency_Checklists</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

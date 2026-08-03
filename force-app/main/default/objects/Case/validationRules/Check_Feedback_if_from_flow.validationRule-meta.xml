@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Feedback_if_from_flow</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( $Permission.Skip_Validations_Permission, false,
+IF($Profile.Name != &apos;System Administrator&apos;, (RecordType.Name = &apos;Guest Feedback&apos; &amp;&amp; ISPICKVAL(Relating_to__c,&apos;&apos;)), false))</errorConditionFormula>
+    <errorMessage>Please create Feedback Case via &apos;Create Feedback&apos; Button</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Host_on_contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Update Host on contact</label>
+    <type>Checkbox</type>
+</CustomField>

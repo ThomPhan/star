@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dining_Notes_is_not_editable</fullName>
+    <active>true</active>
+    <description>Dining Notes is not editable if it already has a value</description>
+    <errorConditionFormula>IF(
+AND(NOT($Permission.Skip_Validations_Permission),
+NOT(ISBLANK( Dining_Notes__c )),
+ISCHANGED( Dining_Notes__c )
+),
+TRUE,
+FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Dining_Notes__c</errorDisplayField>
+    <errorMessage>Dining Notes is not editable</errorMessage>
+</ValidationRule>

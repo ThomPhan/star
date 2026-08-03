@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Measurement_Source__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Measurement Source</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Synkros</fullName>
+                <default>true</default>
+                <label>Synkros</label>
+            </value>
+            <value>
+                <fullName>MDM</fullName>
+                <default>false</default>
+                <label>MDM</label>
+            </value>
+            <value>
+                <fullName>ACE</fullName>
+                <default>false</default>
+                <label>ACE</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>PingOne</fullName>
+                <default>false</default>
+                <label>PingOne</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

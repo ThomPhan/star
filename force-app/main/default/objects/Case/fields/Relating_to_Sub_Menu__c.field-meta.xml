@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relating_to_Sub_Menu__c</fullName>
+    <description>Related to user story CGFP1-62</description>
+    <label>Relating to Sub Menu</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Relating_to__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>24/7 Sports Bar</fullName>
+                <default>false</default>
+                <label>24/7 Sports Bar</label>
+            </value>
+            <value>
+                <fullName>Payment Detail Verification</fullName>
+                <default>false</default>
+                <label>Payment Detail Verification</label>
+            </value>
+            <value>
+                <fullName>Bar Nexus</fullName>
+                <default>false</default>
+                <label>Bar Nexus</label>
+            </value>
+            <value>
+                <fullName>Bar Tikram</fullName>
+                <default>false</default>
+                <label>Bar Tikram</label>
+            </value>
+            <value>
+                <fullName>BLACK Bar</fullName>
+                <default>false</default>
+                <label>BLACK Bar</label>
+            </value>
+            <value>
+                <fullName>Cherry</fullName>
+                <default>false</default>
+                <label>Cherry</label>
+            </value>
+            <value>
+                <fullName>Flying Fish Bar</fullName>
+                <default>false</default>
+                <label>Flying Fish Bar</label>
+            </value>
+            <value>
+                <fullName>G&amp;Tea</fullName>
+                <default>false</default>
+                <label>G&amp;Tea</label>
+            </value>
+            <value>
+                <fullName>Jade Rabbit</fullName>
+                <default>false</default>
+                <label>Jade Rabbit</label>
+            </value>
+            <value>
+                <fullName>Latitude</fullName>
+                <default>false</default>
+                <label>Latitude</label>
+            </value>
+            <value>
+                <fullName>Marquee</fullName>
+                <default>false</default>
+                <label>Marquee</label>
+            </value>
+            <value>
+                <fullName>Oasis Lounge</fullName>
+                <default>false</default>
+                <label>Oasis Lounge</label>
+            </value>
+            <value>
+                <fullName>Rock Lily</fullName>
+                <default>false</default>
+                <label>Rock Lily</label>
+            </value>
+            <value>
+                <fullName>Sokyo Lounge</fullName>
+                <default>false</default>
+                <label>Sokyo Lounge</label>
+            </value>
+            <value>
+                <fullName>Vantage Bar</fullName>
+                <default>false</default>
+                <label>Vantage Bar</label>
+            </value>
+            <value>
+                <fullName>Atrium Bar</fullName>
+                <default>false</default>
+                <label>Atrium Bar</label>
+            </value>
+            <value>
+                <fullName>Garden Kitchen and Bar</fullName>
+                <default>false</default>
+                <label>Garden Kitchen and Bar</label>
+            </value>
+            <value>
+                <fullName>Kiyomi Bar</fullName>
+                <default>false</default>
+                <label>Kiyomi Bar</label>
+            </value>
+            <value>
+                <fullName>Nineteen at The Star</fullName>
+                <default>false</default>
+                <label>Nineteen at The Star</label>
+            </value>
+            <value>
+                <fullName>Sports Bar</fullName>
+                <default>false</default>
+                <label>Sports Bar</label>
+            </value>
+            <value>
+                <fullName>LIVEWIRE</fullName>
+                <default>false</default>
+                <label>LIVEWIRE</label>
+            </value>
+            <value>
+                <fullName>Ryans on The Park</fullName>
+                <default>false</default>
+                <label>Ryans on The Park</label>
+            </value>
+            <value>
+                <fullName>TAB Bar</fullName>
+                <default>false</default>
+                <label>TAB Bar</label>
+            </value>
+            <value>
+                <fullName>Will &amp; Flow</fullName>
+                <default>false</default>
+                <label>Will &amp; Flow</label>
+            </value>
+            <value>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <label>Event</label>
+            </value>
+            <value>
+                <fullName>Show</fullName>
+                <default>false</default>
+                <label>Show</label>
+            </value>
+            <value>
+                <fullName>The Star Club Host Service Desk</fullName>
+                <default>false</default>
+                <label>The Star Club Host Service Desk</label>
+            </value>
+            <value>
+                <fullName>The Star Club Program / Benefits</fullName>
+                <default>false</default>
+                <label>The Star Club Program / Benefits</label>
+            </value>
+            <value>
+                <fullName>Bar</fullName>
+                <default>false</default>
+                <label>Bar</label>
+            </value>
+            <value>
+                <fullName>Dining-Pool Facilities</fullName>
+                <default>false</default>
+                <label>Dining-Pool Facilities</label>
+            </value>
+            <value>
+                <fullName>Main Gaming Floor</fullName>
+                <default>false</default>
+                <label>Main Gaming Floor</label>
+            </value>
+            <value>
+                <fullName>Premium Gaming Room</fullName>
+                <default>false</default>
+                <label>Premium Gaming Room</label>
+            </value>
+            <value>
+                <fullName>Concert</fullName>
+                <default>false</default>
+                <label>Concert</label>
+            </value>
+            <value>
+                <fullName>Conference</fullName>
+                <default>false</default>
+                <label>Conference</label>
+            </value>
+            <value>
+                <fullName>Stage Show</fullName>
+                <default>false</default>
+                <label>Stage Show</label>
+            </value>
+            <value>
+                <fullName>Cabinet Room</fullName>
+                <default>false</default>
+                <label>Cabinet Room</label>
+            </value>
+            <value>
+                <fullName>Court Lounge</fullName>
+                <default>false</default>
+                <label>Court Lounge</label>
+            </value>
+            <value>
+                <fullName>Map Room</fullName>
+                <default>false</default>
+                <label>Map Room</label>
+            </value>
+            <value>
+                <fullName>Surveyors Room</fullName>
+                <default>false</default>
+                <label>Surveyors Room</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>The Darling</fullName>
+                <default>false</default>
+                <label>The Darling</label>
+            </value>
+            <value>
+                <fullName>The Star Grand Hotel</fullName>
+                <default>false</default>
+                <label>The Star Grand Hotel</label>
+            </value>
+            <value>
+                <fullName>The Star Grand Residences</fullName>
+                <default>false</default>
+                <label>The Star Grand Residences</label>
+            </value>
+            <value>
+                <fullName>Executive Floor</fullName>
+                <default>false</default>
+                <label>Executive Floor</label>
+            </value>
+            <value>
+                <fullName>Hotel Room</fullName>
+                <default>false</default>
+                <label>Hotel Room</label>
+            </value>
+            <value>
+                <fullName>In Room Dining</fullName>
+                <default>false</default>
+                <label>In Room Dining</label>
+            </value>
+            <value>
+                <fullName>Reception Check In/Out</fullName>
+                <default>false</default>
+                <label>Reception Check In/Out</label>
+            </value>
+            <value>
+                <fullName>Sovereign Lounge</fullName>
+                <default>false</default>
+                <label>Sovereign Lounge</label>
+            </value>
+            <value>
+                <fullName>GD- Atrium</fullName>
+                <default>false</default>
+                <label>GD- Atrium</label>
+            </value>
+            <value>
+                <fullName>The Star Club Guest Service Desk</fullName>
+                <default>false</default>
+                <label>The Star Club Guest Service Desk</label>
+            </value>
+            <value>
+                <fullName>Dining</fullName>
+                <default>false</default>
+                <label>Dining</label>
+            </value>
+            <value>
+                <fullName>Pool Facilities</fullName>
+                <default>false</default>
+                <label>Pool Facilities</label>
+            </value>
+            <value>
+                <fullName>The Star Residences</fullName>
+                <default>false</default>
+                <label>The Star Residences</label>
+            </value>
+            <value>
+                <fullName>Antidote</fullName>
+                <default>false</default>
+                <label>Antidote</label>
+            </value>
+            <value>
+                <fullName>BLACK Bar &amp; Grill</fullName>
+                <default>false</default>
+                <label>BLACK Bar &amp; Grill</label>
+            </value>
+            <value>
+                <fullName>Café Court</fullName>
+                <default>false</default>
+                <label>Café Court</label>
+            </value>
+            <value>
+                <fullName>Cucina Porto</fullName>
+                <default>false</default>
+                <label>Cucina Porto</label>
+            </value>
+            <value>
+                <fullName>Ele</fullName>
+                <default>false</default>
+                <label>Ele</label>
+            </value>
+            <value>
+                <fullName>Fat Noodle</fullName>
+                <default>false</default>
+                <label>Fat Noodle</label>
+            </value>
+            <value>
+                <fullName>Flying Fish</fullName>
+                <default>false</default>
+                <label>Flying Fish</label>
+            </value>
+            <value>
+                <fullName>Food Quarter</fullName>
+                <default>false</default>
+                <label>Food Quarter</label>
+            </value>
+            <value>
+                <fullName>Fuel</fullName>
+                <default>false</default>
+                <label>Fuel</label>
+            </value>
+            <value>
+                <fullName>Harvest Buffet</fullName>
+                <default>false</default>
+                <label>Harvest Buffet</label>
+            </value>
+            <value>
+                <fullName>Mashi No Mashi</fullName>
+                <default>false</default>
+                <label>Mashi No Mashi</label>
+            </value>
+            <value>
+                <fullName>Oasis Dining</fullName>
+                <default>false</default>
+                <label>Oasis Dining</label>
+            </value>
+            <value>
+                <fullName>Pop Up Casual Dining</fullName>
+                <default>false</default>
+                <label>Pop Up Casual Dining</label>
+            </value>
+            <value>
+                <fullName>Pulse</fullName>
+                <default>false</default>
+                <label>Pulse</label>
+            </value>
+            <value>
+                <fullName>Rumble</fullName>
+                <default>false</default>
+                <label>Rumble</label>
+            </value>
+            <value>
+                <fullName>Sokyo</fullName>
+                <default>false</default>
+                <label>Sokyo</label>
+            </value>
+            <value>
+                <fullName>Sovereign</fullName>
+                <default>false</default>
+                <label>Sovereign</label>
+            </value>
+            <value>
+                <fullName>The Century</fullName>
+                <default>false</default>
+                <label>The Century</label>
+            </value>
+            <value>
+                <fullName>Vantage</fullName>
+                <default>false</default>
+                <label>Vantage</label>
+            </value>
+            <value>
+                <fullName>Cucino Vivo</fullName>
+                <default>false</default>
+                <label>Cucino Vivo</label>
+            </value>
+            <value>
+                <fullName>Garden Kitchen &amp; Bar</fullName>
+                <default>false</default>
+                <label>Garden Kitchen &amp; Bar</label>
+            </value>
+            <value>
+                <fullName>Kiyomi</fullName>
+                <default>false</default>
+                <label>Kiyomi</label>
+            </value>
+            <value>
+                <fullName>Mei Wei Dumplings</fullName>
+                <default>false</default>
+                <label>Mei Wei Dumplings</label>
+            </value>
+            <value>
+                <fullName>M&amp;G Cafe &amp; Bar</fullName>
+                <default>false</default>
+                <label>M&amp;G Cafe &amp; Bar</label>
+            </value>
+            <value>
+                <fullName>Uncle Su</fullName>
+                <default>false</default>
+                <label>Uncle Su</label>
+            </value>
+            <value>
+                <fullName>Bean Counter</fullName>
+                <default>false</default>
+                <label>Bean Counter</label>
+            </value>
+            <value>
+                <fullName>Black Hide by Gambaro</fullName>
+                <default>false</default>
+                <label>Black Hide by Gambaro</label>
+            </value>
+            <value>
+                <fullName>Kitchen at Treasury</fullName>
+                <default>false</default>
+                <label>Kitchen at Treasury</label>
+            </value>
+            <value>
+                <fullName>Mei Wei</fullName>
+                <default>false</default>
+                <label>Mei Wei</label>
+            </value>
+            <value>
+                <fullName>The Star Grand</fullName>
+                <default>false</default>
+                <label>The Star Grand</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Budgets</fullName>
+                <default>false</default>
+                <label>Budgets</label>
+            </value>
+            <value>
+                <fullName>Manage Funds</fullName>
+                <default>false</default>
+                <label>Manage Funds</label>
+            </value>
+            <value>
+                <fullName>Play Game</fullName>
+                <default>false</default>
+                <label>Play Game</label>
+            </value>
+            <value>
+                <fullName>Transaction History</fullName>
+                <default>false</default>
+                <label>Transaction History</label>
+            </value>
+            <value>
+                <fullName>Safer Gaming Tool</fullName>
+                <default>false</default>
+                <label>Safer Gaming Tool</label>
+            </value>
+            <value>
+                <fullName>Account Status</fullName>
+                <default>false</default>
+                <label>Account Status</label>
+            </value>
+            <value>
+                <fullName>Deposit</fullName>
+                <default>false</default>
+                <label>Deposit</label>
+            </value>
+            <value>
+                <fullName>Withdrawal</fullName>
+                <default>false</default>
+                <label>Withdrawal</label>
+            </value>
+            <value>
+                <fullName>Limits</fullName>
+                <default>false</default>
+                <label>Limits</label>
+            </value>
+            <value>
+                <fullName>Technical Issues</fullName>
+                <default>false</default>
+                <label>Technical Issues</label>
+            </value>
+            <value>
+                <fullName>Daily Deposit Limit</fullName>
+                <default>false</default>
+                <label>Daily Deposit Limit</label>
+            </value>
+            <value>
+                <fullName>EFTPOS Transaction</fullName>
+                <default>false</default>
+                <label>EFTPOS Transaction</label>
+            </value>
+            <value>
+                <fullName>Star Account</fullName>
+                <default>false</default>
+                <label>Star Account</label>
+            </value>
+            <value>
+                <fullName>Funds &amp; Transaction</fullName>
+                <default>false</default>
+                <label>Funds &amp; Transaction</label>
+            </value>
+            <value>
+                <fullName>Device Assistance</fullName>
+                <default>false</default>
+                <label>Device Assistance</label>
+            </value>
+            <value>
+                <fullName>Card-In</fullName>
+                <default>false</default>
+                <label>Card-In</label>
+            </value>
+            <value>
+                <fullName>Transfer to Machine</fullName>
+                <default>false</default>
+                <label>Transfer to Machine</label>
+            </value>
+            <value>
+                <fullName>Transfer from Machine</fullName>
+                <default>false</default>
+                <label>Transfer from Machine</label>
+            </value>
+            <value>
+                <fullName>Safer Gaming Tools</fullName>
+                <default>false</default>
+                <label>Safer Gaming Tools</label>
+            </value>
+            <value>
+                <fullName>Budgets / Limits</fullName>
+                <default>false</default>
+                <label>Budgets / Limits</label>
+            </value>
+            <value>
+                <fullName>General Feedback</fullName>
+                <default>false</default>
+                <label>General Feedback</label>
+            </value>
+            <value>
+                <fullName>Compliment</fullName>
+                <default>false</default>
+                <label>Compliment</label>
+            </value>
+            <value>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+                <label>Complaint</label>
+            </value>
+            <value>
+                <fullName>Suggestion</fullName>
+                <default>false</default>
+                <label>Suggestion</label>
+            </value>
+            <value>
+                <fullName>Lobby Bar</fullName>
+                <default>false</default>
+                <label>Lobby Bar</label>
+            </value>
+            <value>
+                <fullName>The Star Grand Lobby Bar</fullName>
+                <default>false</default>
+                <label>The Star Grand Lobby Bar</label>
+            </value>
+            <value>
+                <fullName>Sovereign (Level 6)</fullName>
+                <default>false</default>
+                <label>Sovereign (Level 6)</label>
+            </value>
+            <value>
+                <fullName>Oasis (Level 6)</fullName>
+                <default>false</default>
+                <label>Oasis (Level 6)</label>
+            </value>
+            <value>
+                <fullName>Chairmans</fullName>
+                <default>false</default>
+                <label>Chairmans</label>
+            </value>
+            <value>
+                <fullName>Cucina Regina</fullName>
+                <default>false</default>
+                <label>Cucina Regina</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>Casino</fullName>
+                <default>false</default>
+                <label>Casino</label>
+            </value>
+            <value>
+                <fullName>Bars / Restaurants</fullName>
+                <default>false</default>
+                <label>Bars / Restaurants</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>Treasury Hotel</fullName>
+                <default>false</default>
+                <label>Treasury Hotel</label>
+            </value>
+            <value>
+                <fullName>Azteca</fullName>
+                <default>false</default>
+                <label>Azteca</label>
+            </value>
+            <value>
+                <fullName>Queen&apos;s Wharf Brisbane</fullName>
+                <default>false</default>
+                <label>Queen&apos;s Wharf Brisbane</label>
+            </value>
+            <value>
+                <fullName>The Star Brisbane</fullName>
+                <default>false</default>
+                <label>The Star Brisbane</label>
+            </value>
+            <value>
+                <fullName>Health &amp; Safety Concern</fullName>
+                <default>false</default>
+                <label>Health &amp; Safety Concern</label>
+            </value>
+            <value>
+                <fullName>Aloria</fullName>
+                <default>false</default>
+                <label>Aloria</label>
+            </value>
+            <value>
+                <fullName>Blabbers</fullName>
+                <default>false</default>
+                <label>Blabbers</label>
+            </value>
+            <value>
+                <fullName>Cicada Blu</fullName>
+                <default>false</default>
+                <label>Cicada Blu</label>
+            </value>
+            <value>
+                <fullName>Program/Benefits</fullName>
+                <default>false</default>
+                <label>Program/Benefits</label>
+            </value>
+            <value>
+                <fullName>Sign Up Process</fullName>
+                <default>false</default>
+                <label>Sign Up Process</label>
+            </value>
+            <value>
+                <fullName>The Star App</fullName>
+                <default>false</default>
+                <label>The Star App</label>
+            </value>
+            <value>
+                <fullName>The Star Club Desk</fullName>
+                <default>false</default>
+                <label>The Star Club Desk</label>
+            </value>
+            <value>
+                <fullName>Pompette</fullName>
+                <default>false</default>
+                <label>Pompette</label>
+            </value>
+            <value>
+                <fullName>Dark Shepherd</fullName>
+                <default>false</default>
+                <label>Dark Shepherd</label>
+            </value>
+            <value>
+                <fullName>Luc Lac</fullName>
+                <default>false</default>
+                <label>Luc Lac</label>
+            </value>
+            <value>
+                <fullName>CRT Deposit/Withdrawal</fullName>
+                <default>false</default>
+                <label>CRT Deposit/Withdrawal</label>
+            </value>
+            <value>
+                <fullName>CRT Technical Issues</fullName>
+                <default>false</default>
+                <label>CRT Technical Issues</label>
+            </value>
+            <value>
+                <fullName>Player Card Conversion</fullName>
+                <default>false</default>
+                <label>Player Card Conversion</label>
+            </value>
+            <value>
+                <fullName>Update Details</fullName>
+                <default>false</default>
+                <label>Update Details</label>
+            </value>
+            <value>
+                <fullName>Account Duplication/Existing Member</fullName>
+                <default>false</default>
+                <label>Account Duplication/Existing Member</label>
+            </value>
+            <value>
+                <fullName>Website/App Sign-Up</fullName>
+                <default>false</default>
+                <label>Website/App Sign-Up</label>
+            </value>
+            <value>
+                <fullName>Staff Portal Verification</fullName>
+                <default>false</default>
+                <label>Staff Portal Verification</label>
+            </value>
+            <value>
+                <fullName>Kiosk Technical Issues</fullName>
+                <default>false</default>
+                <label>Kiosk Technical Issues</label>
+            </value>
+            <value>
+                <fullName>Getting Started</fullName>
+                <default>false</default>
+                <label>Getting Started</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Sky Deck (Level 23)</controllingFieldValue>
+            <valueName>Aloria</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sky Deck (Level 23)</controllingFieldValue>
+            <valueName>Blabbers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sky Deck (Level 23)</controllingFieldValue>
+            <valueName>Cicada Blu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Grand Pool Area</controllingFieldValue>
+            <valueName>Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Grand Pool Area</controllingFieldValue>
+            <valueName>Dining</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Grand Pool Area</controllingFieldValue>
+            <valueName>Pool Facilities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Star App Funds Transfer (SAFT)</controllingFieldValue>
+            <valueName>Payment Detail Verification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Star App Funds Transfer (SAFT)</controllingFieldValue>
+            <valueName>Onboarding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Star App Funds Transfer (SAFT)</controllingFieldValue>
+            <valueName>Budgets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Star App Funds Transfer (SAFT)</controllingFieldValue>
+            <valueName>Manage Funds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Star App Funds Transfer (SAFT)</controllingFieldValue>
+            <valueName>Play Game</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Star App Funds Transfer (SAFT)</controllingFieldValue>
+            <valueName>Transaction History</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Star App Funds Transfer (SAFT)</controllingFieldValue>
+            <valueName>Safer Gaming Tool</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashier Services</controllingFieldValue>
+            <valueName>Daily Deposit Limit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashier Services</controllingFieldValue>
+            <valueName>EFTPOS Transaction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashier Services</controllingFieldValue>
+            <valueName>CRT Deposit/Withdrawal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashier Services</controllingFieldValue>
+            <valueName>CRT Technical Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless Table</controllingFieldValue>
+            <controllingFieldValue>The Star App (General)</controllingFieldValue>
+            <valueName>Technical Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless Table</controllingFieldValue>
+            <valueName>Star Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless Table</controllingFieldValue>
+            <valueName>Funds &amp; Transaction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless Table</controllingFieldValue>
+            <valueName>Device Assistance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless EGM</controllingFieldValue>
+            <valueName>Card-In</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless EGM</controllingFieldValue>
+            <valueName>Transfer to Machine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless EGM</controllingFieldValue>
+            <valueName>Transfer from Machine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cashless EGM</controllingFieldValue>
+            <valueName>Safer Gaming Tools</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star App (General)</controllingFieldValue>
+            <valueName>Getting Started</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Theatre</controllingFieldValue>
+            <valueName>Event</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Theatre</controllingFieldValue>
+            <valueName>Show</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Theatre</controllingFieldValue>
+            <controllingFieldValue>Event Centre</controllingFieldValue>
+            <valueName>Concert</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Star Account</controllingFieldValue>
+            <controllingFieldValue>The Star Program</controllingFieldValue>
+            <valueName>Account Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Program</controllingFieldValue>
+            <valueName>Player Card Conversion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Program</controllingFieldValue>
+            <valueName>Update Details</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Program</controllingFieldValue>
+            <valueName>Account Duplication/Existing Member</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Program</controllingFieldValue>
+            <valueName>Website/App Sign-Up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Program</controllingFieldValue>
+            <valueName>Staff Portal Verification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Program</controllingFieldValue>
+            <valueName>Kiosk Technical Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guest Experience</controllingFieldValue>
+            <valueName>General Feedback</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guest Experience</controllingFieldValue>
+            <valueName>Compliment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guest Experience</controllingFieldValue>
+            <valueName>Complaint</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guest Experience</controllingFieldValue>
+            <valueName>Suggestion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Club</controllingFieldValue>
+            <valueName>The Star Club Host Service Desk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Club</controllingFieldValue>
+            <valueName>The Star Club Program / Benefits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Club</controllingFieldValue>
+            <valueName>The Star Club Guest Service Desk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Club</controllingFieldValue>
+            <valueName>Program/Benefits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Club</controllingFieldValue>
+            <valueName>Sign Up Process</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Club</controllingFieldValue>
+            <valueName>The Star App</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Club</controllingFieldValue>
+            <valueName>The Star Club Desk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Event / Conference</controllingFieldValue>
+            <valueName>Cabinet Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Event / Conference</controllingFieldValue>
+            <valueName>Court Lounge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Event / Conference</controllingFieldValue>
+            <valueName>Map Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Event / Conference</controllingFieldValue>
+            <valueName>Surveyors Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Event / Conference</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Restaurants</controllingFieldValue>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Fat Noodle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Restaurants</controllingFieldValue>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Food Quarter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Restaurants</controllingFieldValue>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Sokyo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Restaurants</controllingFieldValue>
+            <valueName>Cucina Regina</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>24/7 Sports Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Bar Nexus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Bar Tikram</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>BLACK Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Cherry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Flying Fish Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>G&amp;Tea</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Jade Rabbit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Marquee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Oasis Lounge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Rock Lily</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Sokyo Lounge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Vantage Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Atrium Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Garden Kitchen and Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Kiyomi Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Nineteen at The Star</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Sports Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>LIVEWIRE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Ryans on The Park</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>TAB Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Will &amp; Flow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Sovereign Lounge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Garden Kitchen &amp; Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>Lobby Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bars</controllingFieldValue>
+            <valueName>The Star Grand Lobby Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Casino</controllingFieldValue>
+            <valueName>Main Gaming Floor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Casino</controllingFieldValue>
+            <valueName>Premium Gaming Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Casino</controllingFieldValue>
+            <valueName>Sovereign (Level 6)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Casino</controllingFieldValue>
+            <valueName>Oasis (Level 6)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Casino</controllingFieldValue>
+            <valueName>Chairmans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Event Centre</controllingFieldValue>
+            <valueName>Conference</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Event Centre</controllingFieldValue>
+            <valueName>Stage Show</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel</controllingFieldValue>
+            <valueName>The Darling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel</controllingFieldValue>
+            <valueName>The Star Grand Hotel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel</controllingFieldValue>
+            <valueName>The Star Grand Residences</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel</controllingFieldValue>
+            <valueName>Executive Floor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel</controllingFieldValue>
+            <valueName>Hotel Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel</controllingFieldValue>
+            <valueName>In Room Dining</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel</controllingFieldValue>
+            <valueName>Reception Check In/Out</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel</controllingFieldValue>
+            <valueName>The Star Residences</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel</controllingFieldValue>
+            <valueName>Treasury Hotel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Antidote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>BLACK Bar &amp; Grill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Café Court</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Cucina Porto</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Ele</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Flying Fish</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Fuel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Harvest Buffet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Mashi No Mashi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Oasis Dining</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Pop Up Casual Dining</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Pulse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Rumble</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Sovereign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>The Century</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Vantage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Cucino Vivo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Kiyomi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Mei Wei Dumplings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>M&amp;G Cafe &amp; Bar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Uncle Su</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Bean Counter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <controllingFieldValue>Other Venues</controllingFieldValue>
+            <valueName>Black Hide by Gambaro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Kitchen at Treasury</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Restaurants</controllingFieldValue>
+            <valueName>Mei Wei</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Cleaning</controllingFieldValue>
+            <valueName>Hotel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Cleaning</controllingFieldValue>
+            <valueName>Casino</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Cleaning</controllingFieldValue>
+            <valueName>Bars / Restaurants</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Cleaning</controllingFieldValue>
+            <valueName>General</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Venues</controllingFieldValue>
+            <valueName>Azteca</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Venues</controllingFieldValue>
+            <valueName>Pompette</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Venues</controllingFieldValue>
+            <valueName>Dark Shepherd</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Venues</controllingFieldValue>
+            <valueName>Luc Lac</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Precinct</controllingFieldValue>
+            <valueName>Queen&apos;s Wharf Brisbane</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Precinct</controllingFieldValue>
+            <valueName>The Star Brisbane</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Property Services</controllingFieldValue>
+            <valueName>Health &amp; Safety Concern</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

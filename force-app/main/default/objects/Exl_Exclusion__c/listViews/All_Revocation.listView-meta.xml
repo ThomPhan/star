@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Revocation</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Origin__c</columns>
+    <columns>POE_Type__c</columns>
+    <columns>Property__c</columns>
+    <columns>POE_Length__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Revocation_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>All Revocation</label>
+    <sharedTo>
+        <group>Exl_Exclusion_Admins</group>
+        <group>Exl_Exclusion_Users</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limo_Accessories__c</fullName>
+    <label>Limo Accessories</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Baby Capsule (0-6months)</fullName>
+                <default>false</default>
+                <label>Baby Capsule (0-6months)</label>
+            </value>
+            <value>
+                <fullName>Child seat (6months - 4 years old)</fullName>
+                <default>false</default>
+                <label>Child seat (6months - 4 years old)</label>
+            </value>
+            <value>
+                <fullName>Booster Seat (4 - 7 Years old)</fullName>
+                <default>false</default>
+                <label>Booster Seat (4 - 7 Years old)</label>
+            </value>
+            <value>
+                <fullName>Trailer</fullName>
+                <default>false</default>
+                <label>Trailer</label>
+            </value>
+            <value>
+                <fullName>Baby Seat (6 months to 4 years)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Baby Seat (6 months to 4 years)</label>
+            </value>
+            <value>
+                <fullName>Booster (4 years to 7 years)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Booster (4 years to 7 years)</label>
+            </value>
+            <value>
+                <fullName>Capsule (under 6 months)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Capsule (under 6 months)</label>
+            </value>
+            <value>
+                <fullName>Not Required</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Required</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

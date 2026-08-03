@@ -1,0 +1,166 @@
+<template>
+    <lightning-record-edit-form object-api-name="Service__c" record-id={serviceRecId} record-type-id={recordTypeId} onsuccess={recordSuccess} onerror={recordError} onsubmit={handleSubmit}>
+        <div class="slds-modal__content">
+            <!-- DATES AND LOCATIONS START -->
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Dates and Locations</span>
+            </h3>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Contact__c" variant="label-stacked" value={vipBookingId} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Mobile__c" variant="label-stacked" onchange={validateMobileField} class="mobileField" required> </lightning-input-field>
+                    <div if:true={mobileFieldError} class="slds-text-color_error slds-m-bottom_medium">
+                        {mobileFieldError}
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Property__c" variant="label-stacked" value={vipBookingProperty} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Cost_Centre__c" variant="label-stacked" value={costCentre} disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Pick_Up_Location__c" variant="label-stacked" onchange={checkPickUpField} required> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <template if:true={showOtherPickUp}>
+                        <lightning-input-field field-name="Other_Pick_Up_Location__c" variant="label-stacked" required> </lightning-input-field>
+                    </template>
+                    <template if:true={showPickUpFlight}>
+                        <lightning-input-field field-name="Pick_Up_Flight_Details__c" variant="label-stacked" required> </lightning-input-field>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Limo_Booking_Status__c" variant="label-stacked" required> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Drop_Off_Location__c" variant="label-stacked" onchange={checkDropOffField} required> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Pick_Up_Date_and_Time__c" variant="label-stacked" required> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <template if:true={showOtherDropOff}>
+                        <lightning-input-field field-name="Other_Drop_Off_Location__c" variant="label-stacked" required> </lightning-input-field>
+                    </template>
+                    <template if:true={showDropoffFlight}>
+                        <lightning-input-field field-name="Drop_Off_Flight_Details__c" variant="label-stacked" required> </lightning-input-field>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Pick_Up_Date_and_Time_Static__c" variant="label-stacked" disabled="true"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- DATES AND LOCATIONS END -->
+            <!-- LIMO DETAILS START -->
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Limo Details</span>
+            </h3>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Preferences__c" variant="label-stacked" value={carTypePreference} disabled={disablePreference}> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Pax__c" variant="label-stacked" required> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout class="slds-p-around_xx-small">
+                <!-- <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Car_Type__c" variant="label-stacked" required> </lightning-input-field>
+                </lightning-layout-item> -->
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-combobox
+                        name="carTypeField"
+                        label="Car Type:"
+                        value={selectedCar}
+                        class="marginCustom"
+                        required
+                        disabled={carTypeDisabled}
+                        options={listOfCars}
+                        onchange={handleCarChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Booking_Comments__c" variant="label-stacked"> </lightning-input-field>
+                </lightning-layout-item>
+                
+            </lightning-layout>
+
+
+            <lightning-layout class="slds-p-around_xx-small">
+
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-layout class="slds-p-around_xx-small">
+                    <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                        <lightning-input-field field-name="Signage_Required__c" variant="label-stacked"> </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                        <lightning-input-field field-name="Meet_Greet__c" variant="label-stacked"> </lightning-input-field>
+                    </lightning-layout-item>
+            <!-- ENHANCEMENT -->
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_12-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Limo_Accessories__c" variant="label-stacked"> </lightning-input-field>
+                </lightning-layout-item>
+            <!-- ENHANCEMENT -->
+
+                </lightning-layout>
+                </lightning-layout-item>
+            </lightning-layout>
+
+
+            
+
+            <!-- LIMO DETAILS END -->
+            <!-- SERVICE DETAILS START -->
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Service Details</span>
+            </h3>
+            <lightning-layout class="slds-p-around_xx-small">
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Limo_Charge__c" variant="label-stacked" required> </lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_xx-small slds-medium-size_12-of-12 slds-large-size_6-of-12 slds-small-size_12-of-12">
+                    <lightning-input-field field-name="Follow_Up__c" variant="label-stacked"> </lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- SERVICE DETAILS END -->
+            <div class="slds-hidden">
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <lightning-input-field field-name="RecordTypeId" variant="label-stacked" value={recordTypeId}> </lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <lightning-input-field field-name="Car_Type__c" variant="label-stacked" required value={selectedCar}> </lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+        <div class="centerComponent">
+            <b>
+                <template if:true={bookingStatusText1}>
+                    {label.VIPB_Edit_IsConfirmed}
+                </template>
+                <template if:true={bookingStatusText2}>
+                    {label.VIPB_Edit_IsNotConfirmed}
+                </template>
+            </b>
+        </div>
+        <div class="slds-modal__footer centerComponent">
+            <lightning-button variant="neutral" label="Back" class="slds-m-right_medium" onclick={endFlow}></lightning-button>
+            <lightning-button variant="brand" label="Next" type="submit"></lightning-button>
+            
+        </div>
+    </lightning-record-edit-form>
+</template>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DomesticPartB__c</fullName>
+    <label>Part B</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1)     Are there personal details/remarks in CMS or CRM that may prevent the person from participating in a rebate program?</fullName>
+                <default>false</default>
+                <label>1)     Are there personal details/remarks in CMS or CRM that may prevent the person from participating in a rebate program?</label>
+            </value>
+            <value>
+                <fullName>2)	Is the address in CMS or CRM the same state as the program they intend to participate? If yes, why? Please  proceed to Comment section C2.</fullName>
+                <default>false</default>
+                <label>2)	Is the address in CMS or CRM the same state as the program they intend to participate? If yes, why? Please  proceed to Comment section C2.</label>
+            </value>
+            <value>
+                <fullName>3)	Is the drivers license in CMS or CRM the same state as the program they intend to participate? If yes, why? Please proceed to Comment section C3</fullName>
+                <default>false</default>
+                <label>3)	Is the drivers license in CMS or CRM the same state as the program they intend to participate? If yes, why? Please proceed to Comment section C3</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforcement_System__c</fullName>
+    <description>System responsible for enforcing restriction
+Mapped to Exl_Restriction__c.Enforced_By__c</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Enforcement System</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Synkros</fullName>
+                <default>true</default>
+                <label>Synkros</label>
+            </value>
+            <value>
+                <fullName>NeoFace</fullName>
+                <default>false</default>
+                <label>NeoFace</label>
+            </value>
+            <value>
+                <fullName>PingOne</fullName>
+                <default>false</default>
+                <label>PingOne</label>
+            </value>
+            <value>
+                <fullName>MDM</fullName>
+                <default>false</default>
+                <label>MDM</label>
+            </value>
+            <value>
+                <fullName>SFMC</fullName>
+                <default>false</default>
+                <label>SFMC</label>
+            </value>
+            <value>
+                <fullName>Smart Button</fullName>
+                <default>false</default>
+                <label>Smart Button</label>
+            </value>
+            <value>
+                <fullName>Star APP</fullName>
+                <default>false</default>
+                <label>Star APP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

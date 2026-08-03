@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesforcePropertyID__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>SalesforcePropertyID</description>
+    <externalDeveloperName>SalesforcePropertyID</externalDeveloperName>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>SalesforcePropertyID</label>
+    <referenceTo>Property__c</referenceTo>
+    <relationshipLabel>gamingdata</relationshipLabel>
+    <relationshipName>gamingdata</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

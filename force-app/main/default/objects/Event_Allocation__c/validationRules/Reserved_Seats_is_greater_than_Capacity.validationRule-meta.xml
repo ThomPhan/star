@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reserved_Seats_is_greater_than_Capacity</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISCHANGED(Seat_Reserved__c) &amp;&amp; (Seat_Reserved__c +  No_of_host__c) &gt; Capacity__c</errorConditionFormula>
+    <errorMessage>We don’t have enough seat available, please reduce the number. TEST</errorMessage>
+</ValidationRule>

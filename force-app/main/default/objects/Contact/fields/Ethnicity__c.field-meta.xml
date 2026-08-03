@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ethnicity__c</fullName>
+    <label>Ethnicity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A1</fullName>
+                <default>false</default>
+                <label>Africa</label>
+            </value>
+            <value>
+                <fullName>Americas</fullName>
+                <default>false</default>
+                <label>Americas</label>
+            </value>
+            <value>
+                <fullName>Cambodian</fullName>
+                <default>false</default>
+                <label>Cambodian</label>
+            </value>
+            <value>
+                <fullName>Central Asia</fullName>
+                <default>false</default>
+                <label>Central Asia</label>
+            </value>
+            <value>
+                <fullName>Chinese</fullName>
+                <default>false</default>
+                <label>Chinese</label>
+            </value>
+            <value>
+                <fullName>East Asia</fullName>
+                <default>false</default>
+                <label>East Asia</label>
+            </value>
+            <value>
+                <fullName>Eastern Europe</fullName>
+                <default>false</default>
+                <label>Eastern Europe</label>
+            </value>
+            <value>
+                <fullName>Indonesian</fullName>
+                <default>false</default>
+                <label>Indonesian</label>
+            </value>
+            <value>
+                <fullName>Japanese</fullName>
+                <default>false</default>
+                <label>Japanese</label>
+            </value>
+            <value>
+                <fullName>Korean</fullName>
+                <default>false</default>
+                <label>Korean</label>
+            </value>
+            <value>
+                <fullName>Laotians</fullName>
+                <default>false</default>
+                <label>Laotians</label>
+            </value>
+            <value>
+                <fullName>Malay</fullName>
+                <default>false</default>
+                <label>Malay</label>
+            </value>
+            <value>
+                <fullName>Mediterranean</fullName>
+                <default>false</default>
+                <label>Mediterranean</label>
+            </value>
+            <value>
+                <fullName>Middle East</fullName>
+                <default>false</default>
+                <label>Middle East</label>
+            </value>
+            <value>
+                <fullName>Northern Asia</fullName>
+                <default>false</default>
+                <label>Northern Asia</label>
+            </value>
+            <value>
+                <fullName>Northern Europe</fullName>
+                <default>false</default>
+                <label>Northern Europe</label>
+            </value>
+            <value>
+                <fullName>Oceania</fullName>
+                <default>false</default>
+                <label>Oceania</label>
+            </value>
+            <value>
+                <fullName>Rest of Europe</fullName>
+                <default>false</default>
+                <label>Rest of Europe</label>
+            </value>
+            <value>
+                <fullName>South Asia</fullName>
+                <default>false</default>
+                <label>South Asia</label>
+            </value>
+            <value>
+                <fullName>Southeast Asia</fullName>
+                <default>false</default>
+                <label>Southeast Asia</label>
+            </value>
+            <value>
+                <fullName>Southwest Asia</fullName>
+                <default>false</default>
+                <label>Southwest Asia</label>
+            </value>
+            <value>
+                <fullName>Thai</fullName>
+                <default>false</default>
+                <label>Thai</label>
+            </value>
+            <value>
+                <fullName>Vietnamese</fullName>
+                <default>false</default>
+                <label>Vietnamese</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

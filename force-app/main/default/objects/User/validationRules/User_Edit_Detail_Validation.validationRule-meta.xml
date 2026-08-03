@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Edit_Detail_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*
+IF($Profile.Name != &apos;System Administrator&apos; &amp;&amp; $Profile.Name != &apos;Integration User&apos; &amp;&amp; $Profile.Name != &apos;StarAPIUserforAzure&apos;,
+    IF(OR(
+            ISCHANGED(FirstName),
+            ISCHANGED(MiddleName),
+            ISCHANGED(LastName),
+            ISCHANGED(Alias),
+            ISCHANGED(Email),
+            ISCHANGED(CommunityNickname),
+            ISCHANGED(Extension),
+            ISCHANGED(Fax),
+            ISCHANGED(Street),
+            ISCHANGED(City),
+            ISCHANGED(State),
+            ISCHANGED(PostalCode),
+            ISCHANGED(Country),
+            ISCHANGED(CompanyName),
+            ISCHANGED(Title),
+            ISCHANGED(Department),
+            ISCHANGED(Division),
+            ISCHANGED(EmployeeNumber),
+            ISCHANGED(StartDay),
+            ISCHANGED(EndDay),
+            ISCHANGED(MTD_Target__c),
+            ISCHANGED(YTD_Target__c),
+            ISCHANGED(LocaleSidKey),
+            ISCHANGED(LanguageLocaleKey)
+        ),
+        IF(AND($Profile.Name = &apos;TSEG CRM Manager&apos;, ISCHANGED(FirstName)), false, true),
+        false
+    ),
+    IF(AND($Profile.Name != &apos;System Administrator&apos;, ISCHANGED(FirstName)), true, false)
+)
+*/
+
+IF($Permission.Skip_Validations_Permission, 
+false,
+IF($Profile.Name != &apos;System Administrator&apos; &amp;&amp; $Profile.Name != &apos;Integration User&apos; &amp;&amp; $Profile.Name != &apos;StarAPIUserforAzure&apos;,
+    IF(OR(
+            ISCHANGED(FirstName),
+            ISCHANGED(MiddleName),
+            ISCHANGED(LastName),
+            ISCHANGED(Alias),
+            ISCHANGED(Email),
+            ISCHANGED(CommunityNickname),
+            ISCHANGED(Extension),
+            ISCHANGED(Fax),
+            ISCHANGED(Street),
+            ISCHANGED(City),
+            ISCHANGED(State),
+            ISCHANGED(PostalCode),
+            ISCHANGED(Country),
+            ISCHANGED(CompanyName),
+            ISCHANGED(Title),
+            ISCHANGED(Department),
+            ISCHANGED(Division),
+            ISCHANGED(EmployeeNumber),
+            ISCHANGED(StartDay),
+            ISCHANGED(EndDay),
+            ISCHANGED(MTD_Target__c),
+            ISCHANGED(YTD_Target__c),
+            ISCHANGED(LocaleSidKey),
+            ISCHANGED(LanguageLocaleKey),
+            ISCHANGED(Personas__c)
+        ),
+        /*Check if FirstName was changed by the ff Profile*/
+        IF(AND($Permission.TSEG_CRM_Manager=true, ISCHANGED(FirstName)), false, true),
+        false
+    ),
+    /*Check if FirstName was changed by the ff Profile*/
+    IF(AND($Profile.Name != &apos;System Administrator&apos;, ISCHANGED(FirstName)), true, false)
+)
+)</errorConditionFormula>
+    <errorMessage>Editing of User Details is not allowed.</errorMessage>
+</ValidationRule>

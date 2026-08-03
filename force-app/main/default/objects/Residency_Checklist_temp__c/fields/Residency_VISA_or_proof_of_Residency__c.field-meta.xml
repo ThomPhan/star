@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Residency_VISA_or_proof_of_Residency__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Residency VISA or proof of Right of Residency in another country.</inlineHelpText>
+    <label>Residency  VISA or proof of Residency</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>File_Type_Exempt_Objects__c</fullName>
+    <description>Skip file-type validation for objects mentioned in this field</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Skip file-type validation for objects mentioned in this field</inlineHelpText>
+    <label>File Type Exempt Objects</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

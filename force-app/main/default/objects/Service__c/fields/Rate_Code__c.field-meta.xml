@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rate_Code__c</fullName>
+    <label>Rate Code</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Property__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SCDMND</fullName>
+                <default>false</default>
+                <label>SCDMND</label>
+            </value>
+            <value>
+                <fullName>SCPLAT</fullName>
+                <default>false</default>
+                <label>SCPLAT</label>
+            </value>
+            <value>
+                <fullName>SCGOLD</fullName>
+                <default>false</default>
+                <label>SCGOLD</label>
+            </value>
+            <value>
+                <fullName>SCGOLDP</fullName>
+                <default>false</default>
+                <label>SCGOLDP</label>
+            </value>
+            <value>
+                <fullName>SCDMND2</fullName>
+                <default>false</default>
+                <label>SCDMND2</label>
+            </value>
+            <value>
+                <fullName>SCDMND3</fullName>
+                <default>false</default>
+                <label>SCDMND3</label>
+            </value>
+            <value>
+                <fullName>SCDMND4</fullName>
+                <default>false</default>
+                <label>SCDMND4</label>
+            </value>
+            <value>
+                <fullName>SCDMND5</fullName>
+                <default>false</default>
+                <label>SCDMND5</label>
+            </value>
+            <value>
+                <fullName>SCPLAT2</fullName>
+                <default>false</default>
+                <label>SCPLAT2</label>
+            </value>
+            <value>
+                <fullName>SCPLAT3</fullName>
+                <default>false</default>
+                <label>SCPLAT3</label>
+            </value>
+            <value>
+                <fullName>SCPLAT4</fullName>
+                <default>false</default>
+                <label>SCPLAT4</label>
+            </value>
+            <value>
+                <fullName>SCPLAT5</fullName>
+                <default>false</default>
+                <label>SCPLAT5</label>
+            </value>
+            <value>
+                <fullName>DIAMOND</fullName>
+                <default>false</default>
+                <label>DIAMOND</label>
+            </value>
+            <value>
+                <fullName>PLAT</fullName>
+                <default>false</default>
+                <label>PLAT</label>
+            </value>
+            <value>
+                <fullName>GOLD</fullName>
+                <default>false</default>
+                <label>GOLD</label>
+            </value>
+            <value>
+                <fullName>CASNSW</fullName>
+                <default>false</default>
+                <label>CASNSW</label>
+            </value>
+            <value>
+                <fullName>CASATP1</fullName>
+                <default>false</default>
+                <label>CASATP1</label>
+            </value>
+            <value>
+                <fullName>CASQLD</fullName>
+                <default>false</default>
+                <label>CASQLD</label>
+            </value>
+            <value>
+                <fullName>CASCOMP</fullName>
+                <default>false</default>
+                <label>CASCOMP</label>
+            </value>
+            <value>
+                <fullName>CASDOM</fullName>
+                <default>false</default>
+                <label>CASDOM</label>
+            </value>
+            <value>
+                <fullName>CASINTL</fullName>
+                <default>false</default>
+                <label>CASINTL</label>
+            </value>
+            <value>
+                <fullName>BAR</fullName>
+                <default>false</default>
+                <label>BAR</label>
+            </value>
+            <value>
+                <fullName>COMPLIM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COMPLIM</label>
+            </value>
+            <value>
+                <fullName>DIAMONDBB (Breakfast included)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DIAMONDBB (Breakfast included)</label>
+            </value>
+            <value>
+                <fullName>GOLDBB (Breakfast included)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GOLDBB (Breakfast included)</label>
+            </value>
+            <value>
+                <fullName>PLATBB (Breakfast Included)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PLATBB (Breakfast Included)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCDMND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCPLAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCGOLD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCGOLDP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCDMND2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCDMND3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCDMND4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCDMND5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCPLAT2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCPLAT3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCPLAT4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>SCPLAT5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>DIAMOND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>PLAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>GOLD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <valueName>CASNSW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>CASDOM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sydney</controllingFieldValue>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>CASINTL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <valueName>CASQLD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gold Coast</controllingFieldValue>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>CASCOMP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brisbane</controllingFieldValue>
+            <valueName>BAR</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

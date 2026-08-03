@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POE_Type__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>POE Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>External Exclusion - Group Wide</fullName>
+                <default>true</default>
+                <label>External Exclusion - Group Wide</label>
+            </value>
+            <value>
+                <fullName>Problem Gambling - Group Wide</fullName>
+                <default>false</default>
+                <label>Problem Gambling - Group Wide</label>
+            </value>
+            <value>
+                <fullName>Self Exclusion - Group Wide</fullName>
+                <default>false</default>
+                <label>Self Exclusion - Group Wide</label>
+            </value>
+            <value>
+                <fullName>Problem Gambling - NSW</fullName>
+                <default>false</default>
+                <label>Problem Gambling - NSW</label>
+            </value>
+            <value>
+                <fullName>Problem Gambling - QLD</fullName>
+                <default>false</default>
+                <label>Problem Gambling - QLD</label>
+            </value>
+            <value>
+                <fullName>Self Exclusion - NSW</fullName>
+                <default>false</default>
+                <label>Self Exclusion - NSW</label>
+            </value>
+            <value>
+                <fullName>Self Exclusion - QLD</fullName>
+                <default>false</default>
+                <label>Self Exclusion - QLD</label>
+            </value>
+            <value>
+                <fullName>TP24HR</fullName>
+                <default>false</default>
+                <label>TP24HR</label>
+            </value>
+            <value>
+                <fullName>TP7DAY</fullName>
+                <default>false</default>
+                <label>TP7DAY</label>
+            </value>
+            <value>
+                <fullName>Venue - Group Wide</fullName>
+                <default>false</default>
+                <label>Venue - Group Wide</label>
+            </value>
+            <value>
+                <fullName>WOL - Property - Group Wide</fullName>
+                <default>false</default>
+                <label>WOL - Property - Group Wide</label>
+            </value>
+            <value>
+                <fullName>Police Exclusion</fullName>
+                <default>false</default>
+                <label>Police Exclusion</label>
+            </value>
+            <value>
+                <fullName>Venue Exclusion</fullName>
+                <default>false</default>
+                <label>Venue Exclusion</label>
+            </value>
+            <value>
+                <fullName>WoL</fullName>
+                <default>false</default>
+                <label>WoL</label>
+            </value>
+            <value>
+                <fullName>WoL - Undesirable Behaviour</fullName>
+                <default>false</default>
+                <label>WoL - Undesirable Behaviour</label>
+            </value>
+            <value>
+                <fullName>TPOE - 24hr</fullName>
+                <default>false</default>
+                <label>TPOE - 24hr</label>
+            </value>
+            <value>
+                <fullName>TPOE - 7day</fullName>
+                <default>false</default>
+                <label>TPOE - 7day</label>
+            </value>
+            <value>
+                <fullName>Venue Exclusion - Group Wide</fullName>
+                <default>false</default>
+                <label>Venue Exclusion - Group Wide</label>
+            </value>
+            <value>
+                <fullName>Interstate - CCA</fullName>
+                <default>false</default>
+                <label>Interstate - CCA</label>
+            </value>
+            <value>
+                <fullName>Interstate – CCA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Interstate – CCA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

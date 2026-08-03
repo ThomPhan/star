@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brisbane_The_Star_Grand_Arrival_Date</fullName>
+    <active>false</active>
+    <description>This Rule to be made inactive post 28th of August 2024</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()) 
+,ISPICKVAL(Hotel__c, &quot;BNE - The Star Grand&quot;)
+,Arrival_Date__c &lt;= DATEVALUE(&quot;2024-08-28&quot;)
+)</errorConditionFormula>
+    <errorMessage>First physical stay date can’t be before 29 Aug 2024.</errorMessage>
+</ValidationRule>

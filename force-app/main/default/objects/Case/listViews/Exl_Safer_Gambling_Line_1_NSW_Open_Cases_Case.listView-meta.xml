@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exl_Safer_Gambling_Line_1_NSW_Open_Cases_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.Exl_Apply_Exclusion</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>Exl_Nextbutton_NSW__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>CASES.TYPE</field>
+        <operation>equals</operation>
+        <value>Self Exclusion in both states,Self Exclusion in NSW with Problem Gambling in Qld,Self Exclusion in QLD with Problem Gambling in NSW,Problem Gambling in both states,TP24HR,TP7DAY</value>
+    </filters>
+    <label>Safer Gambling (Line 1) NSW Open Cases</label>
+    <sharedTo>
+        <group>Exl_Exclusion_Admins</group>
+        <group>Exl_Exclusion_Safer_Gam_Line_1_NSW_Users</group>
+    </sharedTo>
+</ListView>

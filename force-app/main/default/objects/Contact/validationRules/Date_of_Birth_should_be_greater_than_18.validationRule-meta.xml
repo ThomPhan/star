@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_of_Birth_should_be_greater_than_18</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*
+AND (YEAR(TODAY()) - YEAR(Date_of_Birth__c) &lt;18, $Permission.Skip_Validations_Permission = FALSE)
+*/
+
+IF($Permission.Skip_Validations_Permission, 
+false,
+YEAR(TODAY()) - YEAR(Date_of_Birth__c) &lt;18
+)</errorConditionFormula>
+    <errorDisplayField>Date_of_Birth__c</errorDisplayField>
+    <errorMessage>Patron must be at least 18 years of age</errorMessage>
+</ValidationRule>

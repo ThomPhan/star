@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Controls whether a specific Platform Event is allowed to be published.
+Each record represents one Platform Event and acts as a kill-switch.
+When disabled, publishing of the corresponding Platform Event is skipped, allowing safe, configuration-based control during incidents, maintenance, or testing—without changing code.</description>
+    <label>PlatformEvent Switch</label>
+    <pluralLabel>PlatformEvent Switches</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

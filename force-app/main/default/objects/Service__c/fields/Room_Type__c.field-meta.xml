@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Room_Type__c</fullName>
+    <label>Room Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SKN - Superior King</fullName>
+                <default>false</default>
+                <label>SKN - Superior King</label>
+            </value>
+            <value>
+                <fullName>STN - Superior Twin</fullName>
+                <default>false</default>
+                <label>STN - Superior Twin</label>
+            </value>
+            <value>
+                <fullName>WKP - Accessible King</fullName>
+                <default>false</default>
+                <label>WKP - Accessible King</label>
+            </value>
+            <value>
+                <fullName>EKP - Executive King Pyrmont</fullName>
+                <default>false</default>
+                <label>EKP - Executive King Pyrmont</label>
+            </value>
+            <value>
+                <fullName>EKH - Executive King Harbour</fullName>
+                <default>false</default>
+                <label>EKH - Executive King Harbour</label>
+            </value>
+            <value>
+                <fullName>PHKN - Harbour King</fullName>
+                <default>false</default>
+                <label>PHKN - Harbour King</label>
+            </value>
+            <value>
+                <fullName>PHTN - Harbour Twin</fullName>
+                <default>false</default>
+                <label>PHTN - Harbour Twin</label>
+            </value>
+            <value>
+                <fullName>PSK - Premium</fullName>
+                <default>false</default>
+                <label>PSK - Premium</label>
+            </value>
+            <value>
+                <fullName>SSC - Star Suite</fullName>
+                <default>false</default>
+                <label>SSC - Star Suite</label>
+            </value>
+            <value>
+                <fullName>SSH - Harbour Star</fullName>
+                <default>false</default>
+                <label>SSH - Harbour Star</label>
+            </value>
+            <value>
+                <fullName>D1H - Deluxe 1 bedroom</fullName>
+                <default>false</default>
+                <label>D1H - Deluxe 1 bedroom</label>
+            </value>
+            <value>
+                <fullName>D2H - Deluxe 2 bedroom</fullName>
+                <default>false</default>
+                <label>D2H - Deluxe 2 bedroom</label>
+            </value>
+            <value>
+                <fullName>RSH - Royale</fullName>
+                <default>false</default>
+                <label>RSH - Royale</label>
+            </value>
+            <value>
+                <fullName>PSH - Penthouse</fullName>
+                <default>false</default>
+                <label>PSH - Penthouse</label>
+            </value>
+            <value>
+                <fullName>1BP - 1 Bedroom Pyrmont</fullName>
+                <default>false</default>
+                <label>1BP - 1 Bedroom Pyrmont</label>
+            </value>
+            <value>
+                <fullName>1BC - 1 Bedroom City</fullName>
+                <default>false</default>
+                <label>1BC - 1 Bedroom City</label>
+            </value>
+            <value>
+                <fullName>1BH - 1 Bedroom Harbour</fullName>
+                <default>false</default>
+                <label>1BH - 1 Bedroom Harbour</label>
+            </value>
+            <value>
+                <fullName>2BP - 2 Bedroom Pyrmont</fullName>
+                <default>false</default>
+                <label>2BP - 2 Bedroom Pyrmont</label>
+            </value>
+            <value>
+                <fullName>2BC - 2 Bedroom City</fullName>
+                <default>false</default>
+                <label>2BC - 2 Bedroom City</label>
+            </value>
+            <value>
+                <fullName>2BCL - 2 Bedroom Loft</fullName>
+                <default>false</default>
+                <label>2BCL - 2 Bedroom Loft</label>
+            </value>
+            <value>
+                <fullName>2BH - 2 Bedroom Harbour</fullName>
+                <default>false</default>
+                <label>2BH - 2 Bedroom Harbour</label>
+            </value>
+            <value>
+                <fullName>2BPE - 2 Bedroom Ent</fullName>
+                <default>false</default>
+                <label>2BPE - 2 Bedroom Ent</label>
+            </value>
+            <value>
+                <fullName>2BG - 2 Bedroom Gym</fullName>
+                <default>false</default>
+                <label>2BG - 2 Bedroom Gym</label>
+            </value>
+            <value>
+                <fullName>3BH - 3 Bedroom Harbour</fullName>
+                <default>false</default>
+                <label>3BH - 3 Bedroom Harbour</label>
+            </value>
+            <value>
+                <fullName>DRCK - Darling King</fullName>
+                <default>false</default>
+                <label>DRCK - Darling King</label>
+            </value>
+            <value>
+                <fullName>DRCT - Darling Twin</fullName>
+                <default>false</default>
+                <label>DRCT - Darling Twin</label>
+            </value>
+            <value>
+                <fullName>WDRL - Accessible King</fullName>
+                <default>false</default>
+                <label>WDRL - Accessible King</label>
+            </value>
+            <value>
+                <fullName>DRHK - Harbour King</fullName>
+                <default>false</default>
+                <label>DRHK - Harbour King</label>
+            </value>
+            <value>
+                <fullName>IDHT - Interconnecting</fullName>
+                <default>false</default>
+                <label>IDHT - Interconnecting</label>
+            </value>
+            <value>
+                <fullName>JSUI - Jewel</fullName>
+                <default>false</default>
+                <label>JSUI - Jewel</label>
+            </value>
+            <value>
+                <fullName>JSUH - Jewel City</fullName>
+                <default>false</default>
+                <label>JSUH - Jewel City</label>
+            </value>
+            <value>
+                <fullName>JSPA - Jewel Spa</fullName>
+                <default>false</default>
+                <label>JSPA - Jewel Spa</label>
+            </value>
+            <value>
+                <fullName>JSPH - Jewel Spa City</fullName>
+                <default>false</default>
+                <label>JSPH - Jewel Spa City</label>
+            </value>
+            <value>
+                <fullName>ASCN - Adored</fullName>
+                <default>false</default>
+                <label>ASCN - Adored</label>
+            </value>
+            <value>
+                <fullName>ASCD - Adored Deluxe</fullName>
+                <default>false</default>
+                <label>ASCD - Adored Deluxe</label>
+            </value>
+            <value>
+                <fullName>SSUI - Stellar</fullName>
+                <default>false</default>
+                <label>SSUI - Stellar</label>
+            </value>
+            <value>
+                <fullName>SSUH - Stellar Harbour</fullName>
+                <default>false</default>
+                <label>SSUH - Stellar Harbour</label>
+            </value>
+            <value>
+                <fullName>PSCJ - Junior Penthouse</fullName>
+                <default>false</default>
+                <label>PSCJ - Junior Penthouse</label>
+            </value>
+            <value>
+                <fullName>PSCN - Penthouse</fullName>
+                <default>false</default>
+                <label>PSCN - Penthouse</label>
+            </value>
+            <value>
+                <fullName>PSCD - Penthouse Deluxe</fullName>
+                <default>false</default>
+                <label>PSCD - Penthouse Deluxe</label>
+            </value>
+            <value>
+                <fullName>SUK - Superior Deluxe King Room</fullName>
+                <default>false</default>
+                <label>SUK - Superior Deluxe King Room</label>
+            </value>
+            <value>
+                <fullName>SUT - Superior Deluxe Twin Room</fullName>
+                <default>false</default>
+                <label>SUT - Superior Deluxe Twin Room</label>
+            </value>
+            <value>
+                <fullName>ACK - Accessible King Room</fullName>
+                <default>false</default>
+                <label>ACK - Accessible King Room</label>
+            </value>
+            <value>
+                <fullName>CBK - Corner Balcony King Room</fullName>
+                <default>false</default>
+                <label>CBK - Corner Balcony King Room</label>
+            </value>
+            <value>
+                <fullName>CBT - Corner Balcony Twin Room</fullName>
+                <default>false</default>
+                <label>CBT - Corner Balcony Twin Room</label>
+            </value>
+            <value>
+                <fullName>EXK - Executive King Room</fullName>
+                <default>false</default>
+                <label>EXK - Executive King Room</label>
+            </value>
+            <value>
+                <fullName>EXT - Executive Twin Room</fullName>
+                <default>false</default>
+                <label>EXT - Executive Twin Room</label>
+            </value>
+            <value>
+                <fullName>GKS - Club Grande Suite</fullName>
+                <default>false</default>
+                <label>GKS - Club Grande Suite</label>
+            </value>
+            <value>
+                <fullName>XKS - Club Suite</fullName>
+                <default>false</default>
+                <label>XKS - Club Suite</label>
+            </value>
+            <value>
+                <fullName>KKS - King Terrace Suite</fullName>
+                <default>false</default>
+                <label>KKS - King Terrace Suite</label>
+            </value>
+            <value>
+                <fullName>VKS - Pacific View Suite</fullName>
+                <default>false</default>
+                <label>VKS - Pacific View Suite</label>
+            </value>
+            <value>
+                <fullName>OKWN - Ocean Terrace Suite</fullName>
+                <default>false</default>
+                <label>OKWN - Ocean Terrace Suite</label>
+            </value>
+            <value>
+                <fullName>PLNS - North Penthouses</fullName>
+                <default>false</default>
+                <label>PLNS - North Penthouses</label>
+            </value>
+            <value>
+                <fullName>PTNS - North Penthouses</fullName>
+                <default>false</default>
+                <label>PTNS - North Penthouses</label>
+            </value>
+            <value>
+                <fullName>PKNS - North Penthouses</fullName>
+                <default>false</default>
+                <label>PKNS - North Penthouses</label>
+            </value>
+            <value>
+                <fullName>SKS - Stellar King Suite</fullName>
+                <default>false</default>
+                <label>SKS - Stellar King Suite</label>
+            </value>
+            <value>
+                <fullName>JTS - Stellar Twin Suite</fullName>
+                <default>false</default>
+                <label>JTS - Stellar Twin Suite</label>
+            </value>
+            <value>
+                <fullName>JKA - Stellar Accessible King Suite</fullName>
+                <default>false</default>
+                <label>JKA - Stellar Accessible King Suite</label>
+            </value>
+            <value>
+                <fullName>DKS - Penthouse Suite</fullName>
+                <default>false</default>
+                <label>DKS - Penthouse Suite</label>
+            </value>
+            <value>
+                <fullName>DSS - Penthouse Spa Suite</fullName>
+                <default>false</default>
+                <label>DSS - Penthouse Spa Suite</label>
+            </value>
+            <value>
+                <fullName>DKM - Media Penthouse Deluxe Suite</fullName>
+                <default>false</default>
+                <label>DKM - Media Penthouse Deluxe Suite</label>
+            </value>
+            <value>
+                <fullName>DKE - Exercise Penthouse Deluxe Suite</fullName>
+                <default>false</default>
+                <label>DKE - Exercise Penthouse Deluxe Suite</label>
+            </value>
+            <value>
+                <fullName>DKB - Billard Penthouse Deluxe Suite</fullName>
+                <default>false</default>
+                <label>DKB - Billard Penthouse Deluxe Suite</label>
+            </value>
+            <value>
+                <fullName>DK - Deluxe King</fullName>
+                <default>false</default>
+                <label>DK - Deluxe King</label>
+            </value>
+            <value>
+                <fullName>DT - Deluxe Twin</fullName>
+                <default>false</default>
+                <label>DT - Deluxe Twin</label>
+            </value>
+            <value>
+                <fullName>CK - Casino King (18+)</fullName>
+                <default>false</default>
+                <label>CK - Casino King (18+)</label>
+            </value>
+            <value>
+                <fullName>CT - Casino Twin (18+)</fullName>
+                <default>false</default>
+                <label>CT - Casino Twin (18+)</label>
+            </value>
+            <value>
+                <fullName>CW - Casino Wheelchair access Twin (18+)</fullName>
+                <default>false</default>
+                <label>CW - Casino Wheelchair access Twin (18+)</label>
+            </value>
+            <value>
+                <fullName>DD - Deluxe Double</fullName>
+                <default>false</default>
+                <label>DD - Deluxe Double</label>
+            </value>
+            <value>
+                <fullName>PK - Parlour King</fullName>
+                <default>false</default>
+                <label>PK - Parlour King</label>
+            </value>
+            <value>
+                <fullName>CP - Casino Parlour King (18+)</fullName>
+                <default>false</default>
+                <label>CP - Casino Parlour King (18+)</label>
+            </value>
+            <value>
+                <fullName>HS - Hotel Suite King</fullName>
+                <default>false</default>
+                <label>HS - Hotel Suite King</label>
+            </value>
+            <value>
+                <fullName>CS - Casino Suite King (18+)</fullName>
+                <default>false</default>
+                <label>CS - Casino Suite King (18+)</label>
+            </value>
+            <value>
+                <fullName>AEK - Accessible Executive Deluxe King Room</fullName>
+                <default>false</default>
+                <label>AEK - Accessible Executive Deluxe King Room</label>
+            </value>
+            <value>
+                <fullName>AMT - Ambulant Twin Room</fullName>
+                <default>false</default>
+                <label>AMT - Ambulant Twin Room</label>
+            </value>
+            <value>
+                <fullName>WK - Wheelchair access King</fullName>
+                <default>false</default>
+                <label>WK - Wheelchair access King</label>
+            </value>
+            <value>
+                <fullName>CK - City King</fullName>
+                <default>false</default>
+                <label>CK - City King</label>
+            </value>
+            <value>
+                <fullName>CT - City Twin</fullName>
+                <default>false</default>
+                <label>CT - City Twin</label>
+            </value>
+            <value>
+                <fullName>CW - City Accessible</fullName>
+                <default>false</default>
+                <label>CW - City Accessible</label>
+            </value>
+            <value>
+                <fullName>RK - River King</fullName>
+                <default>false</default>
+                <label>RK - River King</label>
+            </value>
+            <value>
+                <fullName>RW - River Accessible</fullName>
+                <default>false</default>
+                <label>RW - River Accessible</label>
+            </value>
+            <value>
+                <fullName>CS - City Suite</fullName>
+                <default>false</default>
+                <label>CS - City Suite</label>
+            </value>
+            <value>
+                <fullName>RS - River Suite</fullName>
+                <default>false</default>
+                <label>RS - River Suite</label>
+            </value>
+            <value>
+                <fullName>SCS - Skyline City Suite</fullName>
+                <default>false</default>
+                <label>SCS - Skyline City Suite</label>
+            </value>
+            <value>
+                <fullName>PS - Skyline Penthouse Suite</fullName>
+                <default>false</default>
+                <label>PS - Skyline Penthouse Suite</label>
+            </value>
+            <value>
+                <fullName>1 Bedroom City</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1 Bedroom City</label>
+            </value>
+            <value>
+                <fullName>1 Bedroom Harbour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1 Bedroom Harbour</label>
+            </value>
+            <value>
+                <fullName>1 Bedroom Pyrmont</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1 Bedroom Pyrmont</label>
+            </value>
+            <value>
+                <fullName>2 Bedroom City</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2 Bedroom City</label>
+            </value>
+            <value>
+                <fullName>2 Bedroom Ent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2 Bedroom Ent</label>
+            </value>
+            <value>
+                <fullName>2 Bedroom Gym</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2 Bedroom Gym</label>
+            </value>
+            <value>
+                <fullName>2 Bedroom Harbour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2 Bedroom Harbour</label>
+            </value>
+            <value>
+                <fullName>2 Bedroom Loft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2 Bedroom Loft</label>
+            </value>
+            <value>
+                <fullName>2 Bedroom Pyrmont</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2 Bedroom Pyrmont</label>
+            </value>
+            <value>
+                <fullName>3 Bedroom Harbour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>3 Bedroom Harbour</label>
+            </value>
+            <value>
+                <fullName>Accessible King</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Accessible King</label>
+            </value>
+            <value>
+                <fullName>Adored</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adored</label>
+            </value>
+            <value>
+                <fullName>Adored Deluxe</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adored Deluxe</label>
+            </value>
+            <value>
+                <fullName>Cas W Chair Access Twin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cas W Chair Access Twin</label>
+            </value>
+            <value>
+                <fullName>Cas W Chair Access Twin (18 +)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cas W Chair Access Twin (18 +)</label>
+            </value>
+            <value>
+                <fullName>Casino King</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Casino King</label>
+            </value>
+            <value>
+                <fullName>Casino King (18 +)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Casino King (18 +)</label>
+            </value>
+            <value>
+                <fullName>Casino Parlour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Casino Parlour</label>
+            </value>
+            <value>
+                <fullName>Casino Parlour (18 +)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Casino Parlour (18 +)</label>
+            </value>
+            <value>
+                <fullName>Casino Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Casino Suite</label>
+            </value>
+            <value>
+                <fullName>Casino Suite (18 +)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Casino Suite (18 +)</label>
+            </value>
+            <value>
+                <fullName>Casino Twin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Casino Twin</label>
+            </value>
+            <value>
+                <fullName>Casino Twin (18 +)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Casino Twin (18 +)</label>
+            </value>
+            <value>
+                <fullName>Club Grande Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Club Grande Suite</label>
+            </value>
+            <value>
+                <fullName>Club Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Club Suite</label>
+            </value>
+            <value>
+                <fullName>Corner Balcony Deluxe King</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corner Balcony Deluxe King</label>
+            </value>
+            <value>
+                <fullName>Corner Balcony Deluxe Twin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corner Balcony Deluxe Twin</label>
+            </value>
+            <value>
+                <fullName>DKB - Penthouse Deluxe Suites</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DKB - Penthouse Deluxe Suites</label>
+            </value>
+            <value>
+                <fullName>DKE - Penthouse Deluxe Suites</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DKE - Penthouse Deluxe Suites</label>
+            </value>
+            <value>
+                <fullName>DKM - Penthouse Deluxe Suites</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DKM - Penthouse Deluxe Suites</label>
+            </value>
+            <value>
+                <fullName>Darling King</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Darling King</label>
+            </value>
+            <value>
+                <fullName>Darling Twin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Darling Twin</label>
+            </value>
+            <value>
+                <fullName>Deluxe 1 bedroom</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deluxe 1 bedroom</label>
+            </value>
+            <value>
+                <fullName>Deluxe 2 bedroom</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deluxe 2 bedroom</label>
+            </value>
+            <value>
+                <fullName>Deluxe Double (Not a twin)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deluxe Double (Not a twin)</label>
+            </value>
+            <value>
+                <fullName>Deluxe King</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deluxe King</label>
+            </value>
+            <value>
+                <fullName>Deluxe Twin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deluxe Twin</label>
+            </value>
+            <value>
+                <fullName>Executive Deluxe  King Room</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Executive Deluxe  King Room</label>
+            </value>
+            <value>
+                <fullName>Executive Deluxe  Twin Room</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Executive Deluxe  Twin Room</label>
+            </value>
+            <value>
+                <fullName>Executive King Harbour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Executive King Harbour</label>
+            </value>
+            <value>
+                <fullName>Executive King Pyrmont</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Executive King Pyrmont</label>
+            </value>
+            <value>
+                <fullName>GKS - Club Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GKS - Club Suite</label>
+            </value>
+            <value>
+                <fullName>Harbour King</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Harbour King</label>
+            </value>
+            <value>
+                <fullName>Harbour Star</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Harbour Star</label>
+            </value>
+            <value>
+                <fullName>Harbour Twin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Harbour Twin</label>
+            </value>
+            <value>
+                <fullName>Hotel Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hotel Suite</label>
+            </value>
+            <value>
+                <fullName>Interconnecting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Interconnecting</label>
+            </value>
+            <value>
+                <fullName>Jewel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Jewel</label>
+            </value>
+            <value>
+                <fullName>Jewel City</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Jewel City</label>
+            </value>
+            <value>
+                <fullName>Jewel Spa</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Jewel Spa</label>
+            </value>
+            <value>
+                <fullName>Jewel Spa City</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Jewel Spa City</label>
+            </value>
+            <value>
+                <fullName>Junior Penthouse</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Junior Penthouse</label>
+            </value>
+            <value>
+                <fullName>KKS - Pacific View Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>KKS - Pacific View Suite</label>
+            </value>
+            <value>
+                <fullName>King Terrace Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>King Terrace Suite</label>
+            </value>
+            <value>
+                <fullName>North Penthouse Interconnecting King Room</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>North Penthouse Interconnecting King Room</label>
+            </value>
+            <value>
+                <fullName>North Penthouse Interconnecting Twin Room</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>North Penthouse Interconnecting Twin Room</label>
+            </value>
+            <value>
+                <fullName>North Penthouse Lounge</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>North Penthouse Lounge</label>
+            </value>
+            <value>
+                <fullName>Ocean Terrace Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ocean Terrace Suite</label>
+            </value>
+            <value>
+                <fullName>Pacific View Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pacific View Suite</label>
+            </value>
+            <value>
+                <fullName>Parlour King</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parlour King</label>
+            </value>
+            <value>
+                <fullName>Penthouse</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Penthouse</label>
+            </value>
+            <value>
+                <fullName>Penthouse Deluxe</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Penthouse Deluxe</label>
+            </value>
+            <value>
+                <fullName>Penthouse Deluxe Suite (Billiard 2 Bedroom King)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Penthouse Deluxe Suite (Billiard 2 Bedroom King)</label>
+            </value>
+            <value>
+                <fullName>Penthouse Deluxe Suite (Exercise 2 Bedroom King)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Penthouse Deluxe Suite (Exercise 2 Bedroom King)</label>
+            </value>
+            <value>
+                <fullName>Penthouse Deluxe Suite (Media 2 Bedroom King)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Penthouse Deluxe Suite (Media 2 Bedroom King)</label>
+            </value>
+            <value>
+                <fullName>Penthouse Spa Suite (2 Bedroom King)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Penthouse Spa Suite (2 Bedroom King)</label>
+            </value>
+            <value>
+                <fullName>Penthouse Suite (2 Bedroom King)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Penthouse Suite (2 Bedroom King)</label>
+            </value>
+            <value>
+                <fullName>Premium</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Premium</label>
+            </value>
+            <value>
+                <fullName>Royale</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Royale</label>
+            </value>
+            <value>
+                <fullName>Star Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Star Suite</label>
+            </value>
+            <value>
+                <fullName>Stellar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stellar</label>
+            </value>
+            <value>
+                <fullName>Stellar Accessible Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stellar Accessible Suite</label>
+            </value>
+            <value>
+                <fullName>Stellar Harbour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stellar Harbour</label>
+            </value>
+            <value>
+                <fullName>Stellar Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stellar Suite</label>
+            </value>
+            <value>
+                <fullName>Stellar Twin Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stellar Twin Suite</label>
+            </value>
+            <value>
+                <fullName>Superior Deluxe King Room</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Superior Deluxe King Room</label>
+            </value>
+            <value>
+                <fullName>Superior Deluxe Twin Room</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Superior Deluxe Twin Room</label>
+            </value>
+            <value>
+                <fullName>Superior King</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Superior King</label>
+            </value>
+            <value>
+                <fullName>Superior Twin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Superior Twin</label>
+            </value>
+            <value>
+                <fullName>VKS - King Terrace Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VKS - King Terrace Suite</label>
+            </value>
+            <value>
+                <fullName>WT - Wheelchair access Twin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>WT - Wheelchair access Twin</label>
+            </value>
+            <value>
+                <fullName>Wheelchair Access King</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wheelchair Access King</label>
+            </value>
+            <value>
+                <fullName>Wheelchair Access Twin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wheelchair Access Twin</label>
+            </value>
+            <value>
+                <fullName>XKS - Club Grande Suite</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>XKS - Club Grande Suite</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

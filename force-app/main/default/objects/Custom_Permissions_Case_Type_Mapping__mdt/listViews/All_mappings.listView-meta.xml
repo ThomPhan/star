@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_mappings</fullName>
+    <columns>MasterLabel</columns>
+    <columns>Custom_Permission_Name__c</columns>
+    <columns>Case_Types__c</columns>
+    <columns>Case_Types_Contraventions__c</columns>
+    <columns>Case_Types_Preventions__c</columns>
+    <columns>Case_Types_Revocations__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All mappings</label>
+</ListView>

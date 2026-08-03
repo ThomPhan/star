@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Due_date_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF($Permission.Skip_Validations_Permission,
+false,
+IF(and((or($Profile.Name != &apos;System Administrator&apos; &amp;&amp; $Profile.Name != &apos;Integration User&apos; &amp;&amp; $Profile.Name != &apos;StarAPIUserforAzure&apos;)),ISBLANK(ActivityDate)),TRUE,FALSE)
+)</errorConditionFormula>
+    <errorDisplayField>ActivityDate</errorDisplayField>
+    <errorMessage>Enter the Due Date</errorMessage>
+</ValidationRule>

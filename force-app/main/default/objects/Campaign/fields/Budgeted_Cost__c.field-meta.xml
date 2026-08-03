@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budgeted_Cost__c</fullName>
+    <label>Budgeted Cost</label>
+    <summarizedField>Event_Allocation__c.Budget__c</summarizedField>
+    <summaryForeignKey>Event_Allocation__c.Event__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,2722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Guest_Feedback</fullName>
+    <active>true</active>
+    <businessProcess>Guest Feedback</businessProcess>
+    <compactLayoutAssignment>Guest_Feedback</compactLayoutAssignment>
+    <description>Please create Feedback Case via &apos;Create Feedback&apos; Button</description>
+    <label>Guest Feedback</label>
+    <picklistValues>
+        <picklist>Area__c</picklist>
+        <values>
+            <fullName>Astral Tower %26 Residences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audio Visual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Azure Spa %26 Fitness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beauty %2F Spa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cashier Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Centre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dorsett Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronic Gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events %2F Functions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facility Cleaning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MGF Drinks Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overall Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PGR Overall Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Wide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restaurants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Table Games</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Darling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Darling Syd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Entertainment Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Residences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theatre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Treasury Hotel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>24%2F7 Sport Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atrium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Bar %26 Grill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Hide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>By George</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cafe Court</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Centre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash Change Machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino - MGF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino - PGR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino Host</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Centre Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cherry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chuuka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloak Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concierge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cucina Porto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cucina Vivo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Relations Executives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Mail %2F Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drink Vending Machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E Street</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EGM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ele</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events %2F Functions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F%2FB Admin Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fat Noodle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flying Fish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Front Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G%26Tea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garden Kitchen and Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Floor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gym Amenities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hair Dresser</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harvest Buffet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel - Astral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel - Astral Towers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel - The Darling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housekeeping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Imperial at The Star</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Isoletto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jade Rabbit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Keno Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kiosks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kitchen at Treasury</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kiyomi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kiyomi Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Latitude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Live Wire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MG Cafe and Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MGF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MGF - Buffet Entrance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MGF - Harbour Side Entrance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Gaming Floor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marquee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mei Wei Dumplings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Movies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nineteen at the Star</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oasis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oasis Level 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orchid Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outdoor Bar - GKB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overall Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PABX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PGR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poker Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pool Amenities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poolside Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Porters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Casino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Wide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Area Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Area Toilets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pulse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reservations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rock Lily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ryan%27s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sokyo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sokyo Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sovereign Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star Play App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Table Games</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Century</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Chairman%27s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Lab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Shop %40 The Star</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Entertainment Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theatre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theatre Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theatre guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket Master</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Touch Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncle Su%27s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP Concerige</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP Gaming Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP Service Hosts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Valet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Will %26 Flow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Compliance__c</picklist>
+        <values>
+            <fullName>Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Responsible Gaming</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Department__c</picklist>
+        <values>
+            <fullName>Corporate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F%26B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Relations %2F Branding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Feedback_Type__c</picklist>
+        <values>
+            <fullName>Complaint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suggestion</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue__c</picklist>
+        <values>
+            <fullName>ATMs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AV Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AV Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ability to find game of choice - Type %2F Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ability to find machine to choice - Type %2F Denomination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Absolute Points Accural</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accessibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accessibility to rest of property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accommodation Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accuracy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accuracy of Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advertising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Conditioning Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Quality %2F Temperature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alleged Cheating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alleged Food Borne Illness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alleged Foreign Object</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ambience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atmosphere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability of CRE%2FExecutive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability of Car Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability of Casino Host</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability of Meal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability of Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability of Vending Machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability of gaming machine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability of table game</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bathroom Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bedding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bell Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beverage Menu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beverage Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beverage Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bingo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Birthday Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booking Comparatives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booking Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bookings%2Frecommendations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bronze Tier Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Park Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Park Ticket Validation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Security %28damage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Card Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino Dollars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Check In %2F Check Out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleanliness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleanliness of Bathrooms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleanliness of Bedding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleanliness of Property %28hotel%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleanliness of Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleanliness of Sheets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleanliness of Toilets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleanliness of machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comfort</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comfort %2F Amenities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communication with CRE%2FExecutive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comp Night Accrual Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comp Night Availability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comp Nights Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compendium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covid-19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit card surcharge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crockery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Damage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Damage Vehicle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diamond Tier Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Directional Signage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disabled Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disabled Car Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disturbance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Door Lock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draw Ambience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dress Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dress Regulations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dress Regulations %2F Tattoo Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drinks Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment Content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feedback form %2F policy concerns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fire Alarm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage Service %26 wait times</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Availability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Quality %26 Temperature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Temperature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food allergy %2F tolerance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food allergy%2Ftolerance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Format Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frequency of Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Tier Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health %26 Safety Concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health and Safety Concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hours of Operation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ID Requirement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impressive Venue Overall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Booking Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet %2F Wi-Fi Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invites %2F Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Item left%2Ffound in room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Item replenishment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Keno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Knowledge of Rewards Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Late Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laundry Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Layout</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lighting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lightrail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Log-In Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost Luggage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost Property Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MOBILE APP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance %2FRepair Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical attention</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member Meal Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Menu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mini Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misleading Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Movie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Music</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Music Selection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Music Volume %2F Clarity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NULL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newspapers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Towel Rail or Hooks in Bathroom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No condiments on the table</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Noise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Noise from Atrium Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Number of Promotions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer %2F Discount Vouchers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer Mechanics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opening Hours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other - Account Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other - Air Conditioner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other - Lift Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other - Noisy Aircon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Room Amenities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overall Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overcrowded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PGR Access for Silver Tier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Package Deal %2F Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parking Criteria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patron Conduct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patron Conduct Concerns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patron Lockers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pest Sighting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum Tier Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Points Accural</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pool Amenities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pool Parties</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portion Size</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Program Overall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotion Mechanic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotion Transparency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotion quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotion times %2F days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promptness of Telephone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quality of facilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RSA Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ratings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recognition of Return Guest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redeeming Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redemption of Offers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refusal %2F Removal of Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renovation Impact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reported incident %2F illness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reservations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reserved Functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Responsible Gambling Concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Responsible Service of Alcohol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return to Play</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rewards Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room Key</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room Keys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room Preference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Royale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rules %26 Regulations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rules and Regulations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAR CLUB MOBILE APP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seating Arrangement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service %26 Attitude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service %26 wait times</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Alleged Theft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Lost Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Missing Item</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Missing Items</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Ticketek Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Wait Time for Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service - Wait Times for Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Frequency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver Tier Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smoking Areas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smoking Preference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Requests</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff skills and knowledge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Procedures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star Gift Expiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star Gift Reset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star Gift Value</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star Gifts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star Gifts Ending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Survey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Fault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV %2F Movies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tattoo Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temperature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club Tier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket Validation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket in Ticket OUT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tidiness and Presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier Points Accural</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier Relegation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toilet Facilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tournaments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transparency of Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vaccination Rules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value for Money</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value of Rewards Program Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Variety of Food</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Variety of gaming machine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Variety of table game</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>View</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wait Times</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wait Times %2F Availability of Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wait Times %2F Availabity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wait Times%2F Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wait times %2F Availability of Attendants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Way Finding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>William Street Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working Order - General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working Order - Lifts %2F Escalators</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working Order of Vending Machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working order of gaming machine</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POE_Area__c</picklist>
+        <values>
+            <fullName>Casino Licensed Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entire Property</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POE_Under__c</picklist>
+        <values>
+            <fullName>ICM 13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW Section 81</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 91O</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 92</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 93A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 94</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 95</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>1 %E2%80%93 High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 %E2%80%93 Medium</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>3 %E2%80%93 Low</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Property__c</picklist>
+        <values>
+            <fullName>Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relating_To_Sub_Category__c</picklist>
+        <values>
+            <fullName>Cash Gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cashless Gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino Cashiers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronic Gaming Machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Floor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Room Dining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oasis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orchid Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Gaming Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reception - Check In %2F Out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sovereign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Table Games</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Ground Floor Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turbines Health Club</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relating_to_Sub_Category1__c</picklist>
+        <values>
+            <fullName>Adding or withdrawing funds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Budgets or limits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino Cashiers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronic Gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronic Gaming Machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Table Games</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relating_to_Sub_Menu__c</picklist>
+        <values>
+            <fullName>24%2F7 Sports Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aloria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Antidote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atrium Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Azteca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BLACK Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BLACK Bar %26 Grill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bar Nexus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bar Tikram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bars %2F Restaurants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bean Counter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blabbers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Hide by Gambaro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabinet Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Café Court</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chairmans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cherry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cicada Blu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Court Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cucina Porto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cucina Regina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cucino Vivo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dark Shepherd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dining-Pool Facilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ele</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Floor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fat Noodle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flying Fish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flying Fish Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Quarter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G%26Tea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GD- Atrium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garden Kitchen %26 Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garden Kitchen and Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Harvest Buffet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health %26 Safety Concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Room Dining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jade Rabbit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kitchen at Treasury</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kiyomi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kiyomi Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIVEWIRE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Latitude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lobby Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luc Lac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M%26G Cafe %26 Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Main Gaming Floor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Map Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marquee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mashi No Mashi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mei Wei</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mei Wei Dumplings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nineteen at The Star</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oasis %28Level 6%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oasis Dining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oasis Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pompette</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pool Facilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pop Up Casual Dining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium Gaming Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Program%2FBenefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pulse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Queen%27s Wharf Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reception Check In%2FOut</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rock Lily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rumble</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ryans on The Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sign Up Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sokyo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sokyo Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sovereign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sovereign %28Level 6%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sovereign Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stage Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surveyors Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAB Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Century</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Darling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Brisbane</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club Guest Service Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club Host Service Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club Program %2F Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand Lobby Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand Residences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Residences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Treasury Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncle Su</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vantage Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Will %26 Flow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relating_to__c</picklist>
+        <values>
+            <fullName>Azure Spa %26 Fitness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Casino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event %2F Conference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event Centre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facility Cleaning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fitness Centre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Cards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Isolette Pool Club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Isoletto Pool Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Venues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Precinct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restaurants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retailers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sky Deck %28Level 23%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The SPA at Darling Harbour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Shop %40 The Star</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Spa at The Darling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star At Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Grand Pool Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Star Restaurants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theatre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Revocation_Reason__c</picklist>
+        <values>
+            <fullName>Approval from RDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expiry without re-entries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QCAT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>State__c</picklist>
+        <values>
+            <fullName>NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QLD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exl_ExclusionUsersCannotUpdateOwner</fullName>
+    <active>true</active>
+    <description>Users should not be able to update record Owner</description>
+    <errorConditionFormula>$Profile.Name != &apos;System Administrator&apos; 
+&amp;&amp; $Permission.Exl_ReadOnlyUser_CP 
+&amp;&amp; ISCHANGED( OwnerId )</errorConditionFormula>
+    <errorMessage>You don’t have permission to take that action on this record or related records. For help, contact your Salesforce admin.</errorMessage>
+</ValidationRule>

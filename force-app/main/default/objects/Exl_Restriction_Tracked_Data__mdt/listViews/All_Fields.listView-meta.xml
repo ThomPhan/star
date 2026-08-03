@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Fields</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>Restriction_Type__c</columns>
+    <columns>Tracked_Field__c</columns>
+    <columns>Object__c</columns>
+    <columns>Expected_Value__c</columns>
+    <columns>Measurement_Source__c</columns>
+    <columns>Frequency__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Fields</label>
+</ListView>

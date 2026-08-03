@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relating_To_Sub_Category__c</fullName>
+    <label>Relating To Sub Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Relating_to_Sub_Menu__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hotel Room</fullName>
+                <default>false</default>
+                <label>Hotel Room</label>
+            </value>
+            <value>
+                <fullName>In Room Dining</fullName>
+                <default>false</default>
+                <label>In Room Dining</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Casino Cashiers</fullName>
+                <default>false</default>
+                <label>Casino Cashiers</label>
+            </value>
+            <value>
+                <fullName>Electronic Gaming Machines</fullName>
+                <default>false</default>
+                <label>Electronic Gaming Machines</label>
+            </value>
+            <value>
+                <fullName>Table Games</fullName>
+                <default>false</default>
+                <label>Table Games</label>
+            </value>
+            <value>
+                <fullName>Premium Gaming Room</fullName>
+                <default>false</default>
+                <label>Premium Gaming Room</label>
+            </value>
+            <value>
+                <fullName>Oasis</fullName>
+                <default>false</default>
+                <label>Oasis</label>
+            </value>
+            <value>
+                <fullName>Sovereign</fullName>
+                <default>false</default>
+                <label>Sovereign</label>
+            </value>
+            <value>
+                <fullName>Orchid Room</fullName>
+                <default>false</default>
+                <label>Orchid Room</label>
+            </value>
+            <value>
+                <fullName>The Ground Floor Suite</fullName>
+                <default>false</default>
+                <label>The Ground Floor Suite</label>
+            </value>
+            <value>
+                <fullName>The Suite</fullName>
+                <default>false</default>
+                <label>The Suite</label>
+            </value>
+            <value>
+                <fullName>Turbines Health Club</fullName>
+                <default>false</default>
+                <label>Turbines Health Club</label>
+            </value>
+            <value>
+                <fullName>Executive Floor</fullName>
+                <default>false</default>
+                <label>Executive Floor</label>
+            </value>
+            <value>
+                <fullName>Reception - Check In / Out</fullName>
+                <default>false</default>
+                <label>Reception - Check In / Out</label>
+            </value>
+            <value>
+                <fullName>Cash Gaming</fullName>
+                <default>false</default>
+                <label>Cash Gaming</label>
+            </value>
+            <value>
+                <fullName>Cashless Gaming</fullName>
+                <default>false</default>
+                <label>Cashless Gaming</label>
+            </value>
+            <value>
+                <fullName>Reception  Check in / out</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reception  Check in / out</label>
+            </value>
+            <value>
+                <fullName>Reception - Check In/Out</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reception - Check In/Out</label>
+            </value>
+            <value>
+                <fullName>Reception Check In Out</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reception Check In Out</label>
+            </value>
+            <value>
+                <fullName>Reception Check in/out</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reception Check in/out</label>
+            </value>
+            <value>
+                <fullName>Reception – Check in / out</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reception – Check in / out</label>
+            </value>
+            <value>
+                <fullName>Reception+-+Check+In+%2F+Out</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reception+-+Check+In+%2F+Out</label>
+            </value>
+            <value>
+                <fullName>Reception+Check+in%2Fout</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reception+Check+in%2Fout</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Treasury Hotel</controllingFieldValue>
+            <controllingFieldValue>The Darling</controllingFieldValue>
+            <controllingFieldValue>The Star Grand Hotel</controllingFieldValue>
+            <controllingFieldValue>The Star Grand Residences</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Treasury Hotel</controllingFieldValue>
+            <controllingFieldValue>The Darling</controllingFieldValue>
+            <controllingFieldValue>The Star Grand Hotel</controllingFieldValue>
+            <controllingFieldValue>The Star Grand Residences</controllingFieldValue>
+            <controllingFieldValue>The Star Grand</controllingFieldValue>
+            <valueName>Reception - Check In / Out</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Main Gaming Floor</controllingFieldValue>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>Casino Cashiers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Main Gaming Floor</controllingFieldValue>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>Electronic Gaming Machines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Main Gaming Floor</controllingFieldValue>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>Table Games</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Main Gaming Floor</controllingFieldValue>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>Cash Gaming</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Main Gaming Floor</controllingFieldValue>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>Cashless Gaming</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>Premium Gaming Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>Oasis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>Sovereign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>Orchid Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>The Ground Floor Suite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Premium Gaming Room</controllingFieldValue>
+            <valueName>The Suite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Darling</controllingFieldValue>
+            <controllingFieldValue>The Star Grand Hotel</controllingFieldValue>
+            <controllingFieldValue>The Star Grand Residences</controllingFieldValue>
+            <controllingFieldValue>The Star Grand</controllingFieldValue>
+            <valueName>Hotel Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Darling</controllingFieldValue>
+            <controllingFieldValue>The Star Grand Hotel</controllingFieldValue>
+            <controllingFieldValue>The Star Grand Residences</controllingFieldValue>
+            <controllingFieldValue>The Star Grand</controllingFieldValue>
+            <valueName>In Room Dining</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Grand Hotel</controllingFieldValue>
+            <controllingFieldValue>The Star Grand Residences</controllingFieldValue>
+            <valueName>Turbines Health Club</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Star Grand</controllingFieldValue>
+            <valueName>Executive Floor</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

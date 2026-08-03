@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transportation_Type__c</fullName>
+    <label>Transportation Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Any flight</fullName>
+                <default>false</default>
+                <label>Any flight</label>
+            </value>
+            <value>
+                <fullName>Bus</fullName>
+                <default>false</default>
+                <label>Bus</label>
+            </value>
+            <value>
+                <fullName>Business Class Only</fullName>
+                <default>false</default>
+                <label>Business Class Only</label>
+            </value>
+            <value>
+                <fullName>Car</fullName>
+                <default>false</default>
+                <label>Car</label>
+            </value>
+            <value>
+                <fullName>First Class only</fullName>
+                <default>false</default>
+                <label>First Class only</label>
+            </value>
+            <value>
+                <fullName>Limo</fullName>
+                <default>false</default>
+                <label>Limo</label>
+            </value>
+            <value>
+                <fullName>Private Jet</fullName>
+                <default>false</default>
+                <label>Private Jet</label>
+            </value>
+            <value>
+                <fullName>Public Transport</fullName>
+                <default>false</default>
+                <label>Public Transport</label>
+            </value>
+            <value>
+                <fullName>NULL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NULL</label>
+            </value>
+            <value>
+                <fullName>Private jet del</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Private jet del</label>
+            </value>
+            <value>
+                <fullName>Public transport del</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Public transport del</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AustralianPassportHolder__c</fullName>
+    <label>Australian Passport Holder</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Utility Bill reflecting International Address (not more than 3 months old, or 6 months if permitted by the Premium Service Operations Manager or above)</fullName>
+                <default>false</default>
+                <label>Utility Bill reflecting International Address (not more than 3 months old, or 6 months if permitted by the Premium Service Operations Manager or above)</label>
+            </value>
+            <value>
+                <fullName>Residency VISA or proof of Right of Residency in another country</fullName>
+                <default>false</default>
+                <label>Residency VISA or proof of Right of Residency in another country</label>
+            </value>
+            <value>
+                <fullName>Travel Documents – A Copy of E-Ticket/Airline Ticket (must be valid and clearly</fullName>
+                <default>false</default>
+                <label>Travel Documents – A Copy of E-Ticket/Airline Ticket (must be valid and clearly</label>
+            </value>
+            <value>
+                <fullName>International Government issued Identity photo card</fullName>
+                <default>false</default>
+                <label>International Government issued Identity photo card</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

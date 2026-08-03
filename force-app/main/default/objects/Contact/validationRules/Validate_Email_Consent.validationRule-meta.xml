@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Email_Consent</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Permission.Skip_Validations_Permission = FALSE &amp;&amp; Email = &apos;&apos; &amp;&amp;  Email_Consent__c &amp;&amp; (ISCHANGED(Email) || ISCHANGED(Email_Consent__c))</errorConditionFormula>
+    <errorMessage>Personal Email cannot be blank when Email Consent is ticked</errorMessage>
+</ValidationRule>
