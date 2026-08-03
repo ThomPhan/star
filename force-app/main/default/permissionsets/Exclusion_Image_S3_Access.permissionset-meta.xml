@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Exclusion Image S3 Access</label>
+    <description>Grants access to the Salesforce_S3_Connection external credential principal(s) used by the Exclusion Evidence Gallery S3 integration, plus access to the ExclusionImageService Apex class. Assign to users who need to view/upload exclusion evidence images.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <classAccesses>
+        <apexClass>ExclusionImageService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <externalCredentialPrincipalAccesses>
+        <enabled>true</enabled>
+        <externalCredentialPrincipal>Salesforce_S3_Connection-AWS_S3_Access</externalCredentialPrincipal>
+    </externalCredentialPrincipalAccesses>
+    <externalCredentialPrincipalAccesses>
+        <enabled>true</enabled>
+        <externalCredentialPrincipal>Salesforce_S3_Connection-mTLS_Access</externalCredentialPrincipal>
+    </externalCredentialPrincipalAccesses>
+</PermissionSet>
