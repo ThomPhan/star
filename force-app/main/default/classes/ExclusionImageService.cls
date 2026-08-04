@@ -24,6 +24,13 @@ public with sharing class ExclusionImageService {
     @TestVisible
     private static final String NAMED_CREDENTIAL = 'callout:Salesforce_S3_Connection';
 
+    // Fixed feature prefix within the shared bucket. Every image lives under
+    // `exclusion-images/{Patron_ID__c}/` so listing is a cheap prefix query, each
+    // object is intrinsically linked to its patron (BR13), and the prefix doubles as
+    // the security allow-prefix for object-key confinement (see getImage).
+    @TestVisible
+    private static final String PREFIX = 'exclusion-images/';
+
     // Supported upload MIME content types (client + server enforced) — images only.
     private static final Set<String> SUPPORTED_CONTENT_TYPES = new Set<String>{
         'image/png',
@@ -44,11 +51,12 @@ public with sharing class ExclusionImageService {
     private static final String SSE_ALGORITHM = 'AES256';
 
     /**
-     * @description Lists all image objects stored under the current Contact's key prefix in
+     * @description Lists all image objects stored under the current patron's key prefix in
      *              the shared S3 bucket. Calls S3 ListObjectsV2 (filtered by prefix) via the
-     *              Named Credential, parses the XML response, and returns a list of ImageDto.
-     * @param contactId Contact Id (used as the object-key prefix for per-patron isolation).
-     * @return List of ImageDto (empty when the patron has no images).
+     *              Named Credential, parses the XML response, and returns a list of ImageDto
+     *              sorted newest-first.
+     * @param contactId Contact Id (its Patron_ID__c drives the object-key prefix).
+     * @return List of ImageDto (empty when the patron has no images or no Patron ID).
      */
     @AuraEnabled(cacheable=true)
     public static List<ImageDto> listImages(Id contactId) {
@@ -56,11 +64,17 @@ public with sharing class ExclusionImageService {
             throw new AuraHandledException('A Contact Id is required to load exclusion images.');
         }
 
+        // No Patron ID => no images to list (UI shows the empty state).
+        String patronId = resolvePatronId(contactId);
+        if (String.isBlank(patronId)) {
+            return new List<ImageDto>();
+        }
+
         try {
             HttpRequest req = new HttpRequest();
             // ListObjectsV2 on the bucket root (bucket is in the Named Credential host),
-            // filtered to this patron's prefix: GET /?list-type=2&prefix=<contactId>/
-            req.setEndpoint(buildListEndpoint(contactId));
+            // filtered to this patron's prefix: GET /?list-type=2&prefix=exclusion-images/<patronId>/
+            req.setEndpoint(buildListEndpoint(patronId));
             req.setMethod('GET');
             req.setTimeout(120000);
 
@@ -77,7 +91,10 @@ public with sharing class ExclusionImageService {
                 );
             }
 
-            return parseListObjectsXml(res.getBody());
+            List<ImageDto> images = parseListObjectsXml(res.getBody());
+            // Newest first (BR / design §8: LIST sorted by LastModified desc).
+            images.sort();
+            return images;
         } catch (AuraHandledException ahe) {
             throw ahe;
         } catch (Exception e) {
@@ -99,6 +116,14 @@ public with sharing class ExclusionImageService {
         }
         if (String.isBlank(objectKey)) {
             throw new AuraHandledException('An object key is required to retrieve an image.');
+        }
+
+        // Object-key confinement: a user may only fetch objects under this patron's own
+        // prefix. Prevents retrieving another patron's image or an arbitrary bucket object
+        // by guessing/forging a key (design §11). Enforced BEFORE any callout.
+        String patronId = resolvePatronId(contactId);
+        if (String.isBlank(patronId) || !objectKey.startsWith(buildPatronPrefix(patronId))) {
+            throw new AuraHandledException('Access to this image is not permitted.');
         }
 
         try {
@@ -136,68 +161,68 @@ public with sharing class ExclusionImageService {
     }
 
     /**
-     * @description BULK direct-to-S3 upload. PUTs each supplied image object under the
-     *              Contact's key prefix, with a server-side encryption header. Every file is
-     *              attempted independently so a single failure does not abort the batch; a
-     *              per-file UploadResultDto is returned for each request.
-     * @param contactId Contact Id (object-key prefix for per-patron isolation).
-     * @param images List of ImageUploadRequest (fileName, base64Content, contentType).
-     * @return List of UploadResultDto (fileName, success, objectKey, errorMessage).
+     * @description SINGLE-FILE direct-to-S3 upload. PUTs one image object under the patron's
+     *              key prefix with a server-side-encryption header, using a server-generated
+     *              timestamped key that prevents overwriting existing evidence. One file per
+     *              call keeps each upload in its own transaction (independent heap budget), so
+     *              the LWC loops over selected files for natural partial success (design §8).
+     * @param contactId Contact Id (its Patron_ID__c drives the object-key prefix).
+     * @param image ImageUploadRequest (fileName, base64Content, contentType).
+     * @return UploadResultDto (fileName, success, objectKey, eTag, errorMessage).
      */
     @AuraEnabled
-    public static List<UploadResultDto> uploadImages(Id contactId, List<ImageUploadRequest> images) {
+    public static UploadResultDto uploadImage(Id contactId, ImageUploadRequest image) {
         if (contactId == null) {
-            throw new AuraHandledException('A Contact Id is required to upload images.');
-        }
-        if (images == null || images.isEmpty()) {
-            throw new AuraHandledException('At least one image is required to upload.');
+            throw new AuraHandledException('A Contact Id is required to upload an image.');
         }
 
-        List<UploadResultDto> results = new List<UploadResultDto>();
+        String patronId = resolvePatronId(contactId);
+        if (String.isBlank(patronId)) {
+            throw new AuraHandledException(
+                'This patron has no Patron ID; exclusion images cannot be uploaded.'
+            );
+        }
 
-        for (ImageUploadRequest request : images) {
-            UploadResultDto result = new UploadResultDto();
-            result.fileName = request == null ? null : request.fileName;
-            result.success = false;
+        UploadResultDto result = new UploadResultDto();
+        result.fileName = image == null ? null : image.fileName;
+        result.success = false;
 
-            try {
-                validateUploadRequest(request);
+        try {
+            validateUploadRequest(image);
 
-                String extension = getExtension(request.fileName);
-                String objectKey = buildObjectKey(contactId, request.fileName, extension);
-                result.objectKey = objectKey;
+            String extension = getExtension(image.fileName);
+            String objectKey = buildObjectKey(patronId, extension);
+            result.objectKey = objectKey;
 
-                Blob body = EncodingUtil.base64Decode(request.base64Content);
+            Blob body = EncodingUtil.base64Decode(image.base64Content);
 
-                HttpRequest req = new HttpRequest();
-                req.setEndpoint(buildObjectEndpoint(objectKey));
-                req.setMethod('PUT');
-                req.setHeader('Content-Type', request.contentType);
-                // Server-side encryption required for evidence storage (NFR04/NFR05).
-                req.setHeader('x-amz-server-side-encryption', SSE_ALGORITHM);
-                req.setBodyAsBlob(body);
-                req.setTimeout(120000);
-                // AWS SigV4 signing is handled by the Named Credential config;
-                // no manual Authorization header is set here.
+            HttpRequest req = new HttpRequest();
+            req.setEndpoint(buildObjectEndpoint(objectKey));
+            req.setMethod('PUT');
+            req.setHeader('Content-Type', image.contentType);
+            // Server-side encryption required for evidence storage (NFR04/NFR05).
+            req.setHeader('x-amz-server-side-encryption', SSE_ALGORITHM);
+            req.setBodyAsBlob(body);
+            req.setTimeout(120000);
+            // AWS SigV4 signing is handled by the Named Credential config;
+            // no manual Authorization header is set here.
 
-                HttpResponse res = new Http().send(req);
-                Integer status = res.getStatusCode();
-                if (status < 200 || status >= 300) {
-                    throw new CalloutException(
-                        'S3 PutObject failed with status ' + status + ' (' + res.getStatus() + ').'
-                    );
-                }
-
-                result.success = true;
-                result.eTag = res.getHeader('ETag');
-            } catch (Exception e) {
-                result.success = false;
-                result.errorMessage = e.getMessage();
+            HttpResponse res = new Http().send(req);
+            Integer status = res.getStatusCode();
+            if (status < 200 || status >= 300) {
+                throw new CalloutException(
+                    'S3 PutObject failed with status ' + status + ' (' + res.getStatus() + ').'
+                );
             }
-            results.add(result);
+
+            result.success = true;
+            result.eTag = res.getHeader('ETag');
+        } catch (Exception e) {
+            result.success = false;
+            result.errorMessage = e.getMessage();
         }
 
-        return results;
+        return result;
     }
 
     /**
@@ -218,12 +243,37 @@ public with sharing class ExclusionImageService {
     // =========================================================================
 
     /**
+     * @description Resolves the patron identifier (Contact.Patron_ID__c) for a Contact.
+     *              Field-level security is respected (WITH SECURITY_ENFORCED). Returns null
+     *              when the Contact does not exist or has no Patron ID.
+     */
+    private static String resolvePatronId(Id contactId) {
+        List<Contact> contacts = [
+            SELECT Patron_ID__c
+            FROM Contact
+            WHERE Id = :contactId
+            WITH SECURITY_ENFORCED
+            LIMIT 1
+        ];
+        return contacts.isEmpty() ? null : contacts[0].Patron_ID__c;
+    }
+
+    /**
+     * @description Builds the per-patron key prefix: `exclusion-images/{patronId}/`.
+     *              Used for listing and object-key confinement.
+     */
+    private static String buildPatronPrefix(String patronId) {
+        return PREFIX + patronId + '/';
+    }
+
+    /**
      * @description Builds the bucket-root ListObjectsV2 endpoint, filtered to a patron's
      *              key prefix. The bucket lives in the Named Credential host (virtual-hosted).
      */
-    private static String buildListEndpoint(Id contactId) {
-        String prefix = String.valueOf(contactId) + '/';
-        return NAMED_CREDENTIAL + '?list-type=2&prefix=' + EncodingUtil.urlEncode(prefix, 'UTF-8');
+    private static String buildListEndpoint(String patronId) {
+        return NAMED_CREDENTIAL +
+            '?list-type=2&prefix=' +
+            EncodingUtil.urlEncode(buildPatronPrefix(patronId), 'UTF-8');
     }
 
     /**
@@ -246,13 +296,15 @@ public with sharing class ExclusionImageService {
     }
 
     /**
-     * @description Builds a stable object key. Preserves the original (sanitised) file name
-     *              and prefixes it with the Contact Id for per-patron isolation:
-     *              <contactId>/<fileName>.
+     * @description Builds a server-generated, collision-resistant object key following the
+     *              design's naming convention (§6):
+     *              `exclusion-images/{patronId}/{patronId}_{UTCtimestamp}.{ext}`.
+     *              The timestamp (millisecond precision, GMT) guarantees uniqueness and makes
+     *              overwriting existing evidence impossible.
      */
-    private static String buildObjectKey(Id contactId, String fileName, String extension) {
-        String safeName = fileName.replaceAll('[^a-zA-Z0-9._-]', '_');
-        return String.valueOf(contactId) + '/' + safeName;
+    private static String buildObjectKey(String patronId, String extension) {
+        String ts = Datetime.now().formatGmt('yyyyMMdd\'T\'HHmmssSSS\'Z\'');
+        return buildPatronPrefix(patronId) + patronId + '_' + ts + '.' + extension;
     }
 
     /**
@@ -389,8 +441,29 @@ public with sharing class ExclusionImageService {
 
     /**
      * @description Describes a single image object listed from S3. No Salesforce record backs it.
+     *              Comparable so a list sorts newest-first (LastModified desc). LastModified is
+     *              the S3 ISO-8601 string, which sorts lexicographically == chronologically.
      */
-    public class ImageDto {
+    public class ImageDto implements Comparable {
+
+        /**
+         * @description Orders newest-first by lastModified; null timestamps sort last.
+         */
+        public Integer compareTo(Object other) {
+            ImageDto that = (ImageDto) other;
+            if (this.lastModified == that.lastModified) {
+                return 0;
+            }
+            if (String.isBlank(this.lastModified)) {
+                return 1;
+            }
+            if (String.isBlank(that.lastModified)) {
+                return -1;
+            }
+            // Descending: later timestamp (greater string) comes first.
+            return that.lastModified.compareTo(this.lastModified);
+        }
+
         /** S3 object key. */
         @AuraEnabled
         public String key { get; set; }

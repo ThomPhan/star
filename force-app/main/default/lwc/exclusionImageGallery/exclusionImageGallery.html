@@ -29,11 +29,27 @@
                 </div>
             </template>
 
+            <!-- Load error (callout/config/permission failure) — a real error, not an empty gallery -->
+            <template if:true={hasLoadError}>
+                <div class="slds-p-vertical_medium" role="alert">
+                    <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                        <span class="slds-assistive-text">error</span>
+                        <lightning-icon
+                            icon-name="utility:error"
+                            size="x-small"
+                            variant="inverse"
+                            class="slds-m-right_x-small"
+                        ></lightning-icon>
+                        <h2>Unable to load exclusion images: {loadError}</h2>
+                    </div>
+                </div>
+            </template>
+
             <!-- Empty state -->
             <template if:true={showEmptyState}>
                 <c-exclusion-gallery-empty-state
                     mode={emptyStateMode}
-                    can-upload={hasAccess}
+                    can-upload={showUploadButton}
                     onupload={handleEmptyStateUpload}
                 ></c-exclusion-gallery-empty-state>
             </template>

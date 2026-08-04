@@ -1,26 +1,30 @@
 import { LightningElement, api, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import uploadImages from '@salesforce/apex/ExclusionImageService.uploadImages';
+import uploadImage from '@salesforce/apex/ExclusionImageService.uploadImage';
 import getUploadValidationRules from '@salesforce/apex/ExclusionImageService.getUploadValidationRules';
 
 /**
  * exclusionImageUploader
- * BULK upload modal. Accepts multiple image files (png/jpg/webp), validates each
- * client-side (format + size), reads them to base64, and calls the Apex bulk method
- * ExclusionImageService.uploadImages ONCE with all valid files — Apex PUTs each object
- * directly to the patron's S3 bucket. Shows per-file results and fires `uploadcomplete`
- * so the parent gallery refreshes. The LWC never calls S3 directly.
+ * Upload modal. Accepts multiple image files (png/jpg/webp), validates each client-side
+ * (format + size + a soft sub-720p warning), reads them to base64, then uploads them
+ * ONE FILE PER Apex call (ExclusionImageService.uploadImage) in a loop. One transaction
+ * per file keeps each upload within its own heap budget (design §8) and gives natural
+ * partial success. Apex PUTs each object directly to the patron's S3 prefix; the LWC
+ * never calls S3 directly. Fires `uploadcomplete` so the parent gallery refreshes.
  */
 export default class ExclusionImageUploader extends LightningElement {
-    /** @type {string} The Contact Id (S3 bucket name). */
+    /** @type {string} The Contact Id whose Patron_ID__c drives the S3 key prefix. */
     @api recordId;
 
     @track files = [];
     @track isUploading = false;
 
     supportedFormats = ['png', 'jpg', 'jpeg', 'webp'];
-    // Client-side max size guard (25 MB) to avoid oversized base64 payloads to Apex.
-    maxSizeBytes = 25 * 1024 * 1024;
+    // Client-side max size guard. Apex runs a 6 MB synchronous heap limit and base64
+    // inflates the payload ~33%, so cap uploads at 4 MB (design §13) to stay heap-safe.
+    maxSizeBytes = 4 * 1024 * 1024;
+    // Minimum recommended image height (BR10). Below this we WARN but still allow upload.
+    minRecommendedHeight = 720;
 
     connectedCallback() {
         // Load server-side validation rules so client and server stay in sync.
@@ -60,7 +64,8 @@ export default class ExclusionImageUploader extends LightningElement {
     }
 
     /**
-     * Validates a single file (format + size) and reads it as base64.
+     * Validates a single file (format + size), reads it as base64, and adds a soft,
+     * non-blocking warning when the image is below the recommended 720p height (BR10).
      * @returns {Promise<object>} per-file descriptor with valid flag and message.
      */
     validateAndReadFile(file, index) {
@@ -81,7 +86,7 @@ export default class ExclusionImageUploader extends LightningElement {
                 return;
             }
             if (file.size > this.maxSizeBytes) {
-                descriptor.message = 'File exceeds the 25 MB size limit.';
+                descriptor.message = 'File exceeds the 4 MB size limit.';
                 resolve(descriptor);
                 return;
             }
@@ -92,13 +97,38 @@ export default class ExclusionImageUploader extends LightningElement {
                 descriptor.base64 = dataUrl.substring(dataUrl.indexOf(',') + 1);
                 descriptor.valid = true;
                 descriptor.message = 'Ready';
-                resolve(descriptor);
+                // Soft resolution check: inspect natural height, warn but keep valid.
+                this.checkResolution(dataUrl)
+                    .then((height) => {
+                        if (height && height < this.minRecommendedHeight) {
+                            descriptor.message = `Ready (warning: below 720p — ${height}px tall)`;
+                            // Re-assign to trigger reactivity on the tracked array.
+                            this.files = this.files.map((f) =>
+                                f.key === descriptor.key ? { ...descriptor } : f
+                            );
+                        }
+                        resolve(descriptor);
+                    })
+                    .catch(() => resolve(descriptor));
             };
             reader.onerror = () => {
                 descriptor.message = 'Unable to read file.';
                 resolve(descriptor);
             };
             reader.readAsDataURL(file);
+        });
+    }
+
+    /**
+     * Loads a data URL into an Image to read its natural height.
+     * @returns {Promise<number>} the natural height in px (0 if it cannot be determined).
+     */
+    checkResolution(dataUrl) {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => resolve(img.naturalHeight || 0);
+            img.onerror = () => resolve(0);
+            img.src = dataUrl;
         });
     }
 
@@ -109,7 +139,7 @@ export default class ExclusionImageUploader extends LightningElement {
         return fileName.split('.').pop().toLowerCase();
     }
 
-    /** Confirm: build the bulk request and upload all valid files in a single Apex call. */
+    /** Confirm: upload each valid file in its own Apex call (one transaction per file). */
     async handleConfirm() {
         const validFiles = this.files.filter((f) => f.valid);
         if (validFiles.length === 0) {
@@ -117,28 +147,43 @@ export default class ExclusionImageUploader extends LightningElement {
             return;
         }
 
-        const requests = validFiles.map((f) => ({
-            fileName: f.fileName,
-            base64Content: f.base64,
-            contentType: f.contentType
-        }));
-
         this.isUploading = true;
+        let successCount = 0;
+        const failures = [];
+        const outcomes = {};
+
         try {
-            const results = await uploadImages({ contactId: this.recordId, images: requests });
-            const successCount = results.filter((r) => r.success).length;
-            const failures = results
-                .filter((r) => !r.success)
-                .map((r) => `${r.fileName}: ${r.errorMessage}`);
+            for (let i = 0; i < validFiles.length; i++) {
+                const f = validFiles[i];
+                /* eslint-disable no-await-in-loop */
+                try {
+                    const result = await uploadImage({
+                        contactId: this.recordId,
+                        image: {
+                            fileName: f.fileName,
+                            base64Content: f.base64,
+                            contentType: f.contentType
+                        }
+                    });
+                    if (result && result.success) {
+                        successCount++;
+                        outcomes[f.key] = 'Uploaded';
+                    } else {
+                        const msg = (result && result.errorMessage) || 'Upload failed';
+                        failures.push(`${f.fileName}: ${msg}`);
+                        outcomes[f.key] = msg;
+                    }
+                } catch (error) {
+                    const msg = this.reduceError(error);
+                    failures.push(`${f.fileName}: ${msg}`);
+                    outcomes[f.key] = msg;
+                }
+            }
 
             // Reflect per-file outcomes back into the list.
-            this.files = this.files.map((f) => {
-                const match = results.find((r) => r.fileName === f.fileName);
-                if (match) {
-                    return { ...f, message: match.success ? 'Uploaded' : match.errorMessage };
-                }
-                return f;
-            });
+            this.files = this.files.map((f) =>
+                outcomes[f.key] ? { ...f, message: outcomes[f.key] } : f
+            );
 
             if (successCount > 0) {
                 this.showToast('Upload complete', `${successCount} image(s) uploaded successfully.`, 'success');
@@ -147,8 +192,6 @@ export default class ExclusionImageUploader extends LightningElement {
                 this.showToast('Some uploads failed', failures.join(' | '), 'error');
             }
             this.dispatchEvent(new CustomEvent('uploadcomplete', { detail: { count: successCount } }));
-        } catch (error) {
-            this.showToast('Upload failed', this.reduceError(error), 'error');
         } finally {
             this.isUploading = false;
         }

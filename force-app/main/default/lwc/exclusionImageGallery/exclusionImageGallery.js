@@ -26,8 +26,8 @@ export default class ExclusionImageGallery extends LightningElement {
     @track showViewer = false;
     @track viewerIndex = 0;
     @track selectedKeys = [];
+    @track loadError = '';
 
-    hasAccess = true;
     _wiredImages;
 
     /** Wire the S3 image list so we can refreshApex after a bulk upload. */
@@ -37,16 +37,17 @@ export default class ExclusionImageGallery extends LightningElement {
         const { data, error } = result;
         if (data) {
             this.images = data;
-            this.hasAccess = true;
+            this.loadError = '';
             this.isLoading = false;
         } else if (error) {
             this.isLoading = false;
-            const message = this.reduceError(error);
-            if (message && message.toLowerCase().indexOf('access') > -1) {
-                this.hasAccess = false;
-            } else {
-                this.showToast('Unable to load images', message, 'error');
-            }
+            this.images = [];
+            // A load failure is a real error (callout/config/permission), not an empty
+            // gallery. Surface it via a toast AND an inline message — never disguise it
+            // as a "no access" screen (design §9.1). Access is gated by the permission
+            // set + tab visibility, not by parsing error text.
+            this.loadError = this.reduceError(error);
+            this.showToast('Unable to load images', this.loadError, 'error');
         }
     }
 
@@ -55,15 +56,21 @@ export default class ExclusionImageGallery extends LightningElement {
     }
 
     get showEmptyState() {
-        return !this.isLoading && !this.hasImages;
+        return !this.isLoading && !this.hasImages && !this.loadError;
     }
 
     get emptyStateMode() {
-        return this.hasAccess ? 'noimages' : 'noaccess';
+        // The gallery has no separate "no access" screen — access is gated by the
+        // permission set + tab visibility. An empty gallery always means "no images".
+        return 'noimages';
+    }
+
+    get hasLoadError() {
+        return !this.isLoading && !!this.loadError;
     }
 
     get showUploadButton() {
-        return this.hasAccess;
+        return !this.loadError;
     }
 
     /** Decorate images with their selection state for the tiles. */
